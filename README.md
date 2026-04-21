@@ -4,13 +4,10 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 
 ---
 
-## 🖥️ Screenshots
+## 🚀 Latest Changes & Status
 
-> Launch the dev server locally to see the full interactive prototype.
-
----
-
-## ✨ Design Philosophy
+- **Completed:** Finished designing all screens within the View tab, consolidating legacy structures into a unified, notion-inspired layout.
+- **Next Steps:** Refining the UX across these components and splitting administrative-level tabs into a dedicated "HR Admin" section.
 
 - **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
 - **Webtel Corporate Blue** (`#0284c7`) accent throughout
