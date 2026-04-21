@@ -1,0 +1,158 @@
+<!-- VIEW > MY PROFILE (merged: Profile + Change Password + Personal Details) -->
+
+<!-- Profile Header -->
+<div class="card" style="padding: 32px; display: flex; gap: 32px; align-items: center; margin-bottom: 24px;">
+  <div style="position: relative;">
+    <img src="https://ui-avatars.com/api/?name=Surender+Singh&background=0284c7&color=fff&size=200" alt="Avatar" style="width: 120px; height: 120px; border-radius: 50%;">
+    <div style="position: absolute; bottom: 0; right: 0; background: var(--accent-green); width: 24px; height: 24px; border-radius: 50%; border: 3px solid #fff;"></div>
+  </div>
+  <div style="flex: 1;">
+    <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Surender Singh</h2>
+    <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Senior Manager  |  Store & Purchase</div>
+    <div style="display: flex; gap: 12px;">
+      <button class="btn-primary" onclick="togglePanel('section-personal')"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</button>
+      <button class="btn-secondary" onclick="togglePanel('pw-body')"><i class="fa-regular fa-eye"></i> View Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bento Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+  
+  <!-- Role Information -->
+  <div class="card" style="padding: 24px; margin-bottom: 0;">
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="fa-solid fa-briefcase"></i> Role Information</h3>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Employee No</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"># 100003</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Department</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);">Store & Purchase</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Sub Department</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-muted);">N/A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Information -->
+  <div class="card" style="padding: 24px; margin-bottom: 0;">
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="fa-regular fa-user"></i> Personal Data</h3>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Gender</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);">Male</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Date of Birth</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"><i class="fa-solid fa-cake-candles" style="color:var(--accent-orange); margin-right:6px;"></i> 05 Apr 1972</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Date of Joining</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--primary-color);">01 Jun 1998</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACCORDION: Change Password -->
+<div class="card" style="margin-bottom: 24px;">
+  <div onclick="togglePanel('pw-body')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+    <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main);"><i class="fa-solid fa-shield-halved" style="color: var(--primary-color); margin-right: 10px;"></i>Change Password</h3>
+    <i class="fa-solid fa-chevron-down" id="pw-body-chevron" style="font-size: 12px; color: var(--text-muted); transition: transform 0.2s ease;"></i>
+  </div>
+  <div id="pw-body" style="display: none; margin-top: 24px;">
+    <div style="max-width: 500px;">
+      <div class="form-group">
+        <label>Old Password <span style="color:red">*</span></label>
+        <input type="password" class="form-control" placeholder="Enter current password">
+      </div>
+      <div class="form-group">
+        <label>New Password <span style="color:red">*</span></label>
+        <input type="password" class="form-control" placeholder="Enter new password">
+      </div>
+      <div class="form-group">
+        <label>Confirm Password <span style="color:red">*</span></label>
+        <input type="password" class="form-control" placeholder="Re-enter new password">
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 8px;">
+        <button class="btn-primary"><i class="fa-solid fa-check" style="margin-right: 8px;"></i>Update</button>
+        <button class="btn-secondary">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACCORDION: Enter Personal Details -->
+<div class="card" style="margin-bottom: 0;">
+  <div onclick="togglePanel('pd-body')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+    <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main);"><i class="fa-regular fa-address-card" style="color: var(--primary-color); margin-right: 10px;"></i>Enter Personal Details</h3>
+    <i class="fa-solid fa-chevron-down" id="pd-body-chevron" style="font-size: 12px; color: var(--text-muted); transition: transform 0.2s ease;"></i>
+  </div>
+  <div id="pd-body" style="display: none; margin-top: 24px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px;">
+      <div class="form-group">
+        <label>Employee Code <span style="color:red">*</span></label>
+        <div style="display:flex; gap:10px;">
+          <input type="text" class="form-control" value="100003" readonly style="background: var(--border-light);">
+          <button class="btn-secondary" style="padding: 0 12px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Employee Name</label>
+        <input type="text" class="form-control" value="Surender Singh" readonly style="background: var(--border-light);">
+      </div>
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" class="form-control" value="Store & Purchase" readonly style="background: var(--border-light);">
+      </div>
+      <div class="form-group">
+        <label>Designation</label>
+        <input type="text" class="form-control" value="Senior Manager" readonly style="background: var(--border-light);">
+      </div>
+      <div class="form-group">
+        <label>Communication</label>
+        <div style="display: flex; gap: 20px; padding: 10px 0;">
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm" checked> Best</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Good</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Avg</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Poor</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Presentable</label>
+        <div style="display: flex; gap: 20px; padding: 10px 0;">
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="present" checked> Yes</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="present"> No</label>
+        </div>
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Family Background</label>
+        <textarea class="form-control" style="min-height: 80px;" placeholder="Enter family background details..."></textarea>
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Experience <span style="color:red">*</span></label>
+        <textarea class="form-control" style="min-height: 80px;" placeholder="Describe your professional experience..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Verification From Last Employer</label>
+        <div style="display: flex; gap: 20px; padding: 10px 0;">
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="verify" checked> Yes</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="verify"> No</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Comments</label>
+        <textarea class="form-control" style="min-height: 60px;" placeholder="Any additional notes..."></textarea>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 16px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+      <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,51 @@
+<!-- VIEW > ASSIGN SHIFT THROUGH IMPORT -->
+
+<div class="card" style="margin-bottom: 24px;">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 16px;"><i class="fa-solid fa-file-import" style="color: var(--primary-color); margin-right: 10px;"></i>Assign Shift Through Import</h3>
+
+  <!-- Instructions -->
+  <div style="background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 4px; padding: 16px; margin-bottom: 24px;">
+    <div style="font-size: 13px; font-weight: 600; color: var(--accent-orange); margin-bottom: 8px;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px;"></i>Attention: Please follow the below mentioned rules else attendance might be calculated wrong.</div>
+    <ol style="font-size: 12px; color: var(--text-secondary); line-height: 2; padding-left: 20px;">
+      <li>Do not left blank any mandatory fields in Import Excel file.</li>
+      <li>Mandatory fields are Emp_Code, From_Date, To_Date and Shift_Code.</li>
+      <li>Enter From_Date and To_date in excel sheet as 10-Jul-10 (DD-MMM-YY) or 10 Jul 2010 (DD MMM YYYY) Format <strong>(mandatory fields)</strong>.</li>
+      <li>If there is any wrong input in any cell, you need to correct it first and then re-import the whole excel sheet again or delete that row and re-import.</li>
+      <li>Above is the excel sheet that will open once you click on Export.</li>
+      <li>By default the file would get saved in XML. You need to save the file in XLS format.</li>
+      <li>Check "Populate Last Shift" to populate last month shift.</li>
+      <li>Check "Complete Month Format" to populate excel sheet in datewise format.</li>
+      <li>If a user assigns more than one Shift in a month to an employee then be careful in inserting From_Date and To_Date.</li>
+    </ol>
+  </div>
+
+  <!-- Search Parameters -->
+  <div style="background: var(--border-light); border-radius: 4px; padding: 16px 20px; margin-bottom: 24px;">
+    <div style="font-size: 12px; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Custom Search Parameters</div>
+    <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: end;">
+      <div class="form-group" style="margin-bottom:0;">
+        <label>Month/Year</label>
+        <select class="form-control">
+          <option>Apr - 2026</option>
+          <option>Mar - 2026</option>
+          <option>Feb - 2026</option>
+        </select>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <label style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-secondary);"><input type="checkbox"> Populate Last Shift</label>
+        <label style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-secondary);"><input type="checkbox"> Complete Month Format</label>
+      </div>
+      <button class="btn-primary"><i class="fa-solid fa-download" style="margin-right: 8px;"></i>Export</button>
+    </div>
+  </div>
+
+  <!-- Import Section -->
+  <div style="display: flex; gap: 16px; align-items: end;">
+    <div class="form-group" style="margin-bottom:0; flex: 1; max-width: 400px;">
+      <label>Select Excel File to Import <span style="color:red">*</span></label>
+      <input type="file" class="form-control" style="padding: 8px;" accept=".xls,.xlsx">
+    </div>
+    <button class="btn-primary"><i class="fa-solid fa-file-import" style="margin-right: 8px;"></i>Import And Save</button>
+    <button class="btn-secondary">Reset</button>
+  </div>
+</div>

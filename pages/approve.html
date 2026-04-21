@@ -1,0 +1,74 @@
+<div class="page-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar-menu">
+    <div class="menu-group-label">Core Approvals</div>
+    <ul>
+      <li><a href="#" class="active"><i class="fa-solid fa-calendar-check"></i> Leave Approval</a></li>
+      <li><a href="#"><i class="fa-solid fa-plane"></i> Outduty & Tour</a></li>
+      <li><a href="#"><i class="fa-solid fa-money-bill-transfer"></i> Reimbursement</a></li>
+      <li><a href="#"><i class="fa-solid fa-wallet"></i> Expense</a></li>
+    </ul>
+
+    <div class="menu-group-label">HR Operations</div>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-door-open"></i> Exit Interview</a></li>
+      <li><a href="#"><i class="fa-solid fa-file-circle-check"></i> Clearance</a></li>
+      <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Overtime</a></li>
+      <li><a href="#"><i class="fa-solid fa-user-xmark"></i> Resignation</a></li>
+    </ul>
+
+    <div class="menu-group-label">Performance</div>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-clipboard-check"></i> Objectives</a></li>
+      <li><a href="#"><i class="fa-solid fa-hand-holding-dollar"></i> Incentives</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="content-area">
+
+    <!-- SEARCH & FILTER BAR -->
+    <div class="card" style="padding: 16px 24px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <div style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-right: 8px;">Filter Requests</div>
+        <input type="date" class="form-control" value="2026-04-01" style="width: auto;">
+        <span style="color: var(--text-muted); font-size: 12px;">to</span>
+        <input type="date" class="form-control" value="2026-04-30" style="width: auto;">
+        <button class="btn-primary" style="padding: 0 16px;"><i class="fa-solid fa-filter"></i></button>
+      </div>
+      <div>
+        <button class="btn-secondary" style="font-size: 11px;">Clear Filters</button>
+      </div>
+    </div>
+
+    <!-- PENDING APPROVALS LIST -->
+    <div class="card" style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--border-light);">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main);">Pending Approvals</h3>
+        <span class="badge badge-green" style="background: rgba(148, 163, 184, 0.1); color: var(--text-muted); border: 1px solid var(--border-color);">0 Records Found</span>
+      </div>
+      
+      <!-- EMPTY STATE UX -->
+      <div style="padding: 60px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--bg-app); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+          <i class="fa-solid fa-inbox" style="font-size: 24px; color: var(--border-color);"></i>
+        </div>
+        <div style="font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">No Pending Requests</div>
+        <div style="font-size: 13px; color: var(--text-muted); max-width: 300px;">You're all caught up! There are currently no leave requests awaiting your approval within the selected date range.</div>
+      </div>
+    </div>
+
+    <!-- BULK ACTION BAR -->
+    <div class="card" style="padding: 24px; display: flex; gap: 32px; align-items:stretch;">
+      <div style="flex: 1;">
+        <label style="font-size: 13px; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 8px;">Bulk Action Remarks <span style="color:red">*</span></label>
+        <textarea class="form-control" style="min-height: 80px;" placeholder="Provide mandatory justification if rejecting requests..."></textarea>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; width: 180px;">
+        <button class="btn-primary" style="width: 100%;"><i class="fa-solid fa-check" style="margin-right:8px;"></i> Approve Selected</button>
+        <button class="btn-secondary" style="width: 100%; color: var(--accent-red); border-color: rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05);"><i class="fa-solid fa-xmark" style="margin-right:8px;"></i> Reject Selected</button>
+      </div>
+    </div>
+
+  </div>
+</div>

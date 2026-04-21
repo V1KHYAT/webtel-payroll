@@ -1,0 +1,56 @@
+<!-- VIEW > SELECT YOUR HOLIDAY -->
+
+<div class="card">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 20px;">
+    <i class="fa-regular fa-calendar-plus" style="color: var(--primary-color); margin-right: 10px;"></i>Select Your Holiday
+  </h3>
+
+  <!-- Legend -->
+  <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+    <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted);"><span style="width:12px; height:12px; border-radius:2px; background:rgba(2, 132, 199, 0.15); display:inline-block;"></span> Admin Assigned</span>
+    <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted);"><span style="width:12px; height:12px; border-radius:2px; background:rgba(245, 158, 11, 0.2); display:inline-block;"></span> Before Joining</span>
+    <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted);"><span style="width:12px; height:12px; border-radius:2px; background:rgba(16, 185, 129, 0.15); display:inline-block;"></span> Selected by You</span>
+    <span style="display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted);"><span style="width:12px; height:12px; border-radius:2px; background:rgba(99, 102, 241, 0.15); display:inline-block;"></span> Marked in Attendance</span>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 40px; padding-left:12px;"><input type="checkbox" checked></th>
+          <th>Holiday</th>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th style="padding-right:12px;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(16, 185, 129, 0.06);">
+          <td style="padding-left:12px;"><input type="checkbox" checked></td>
+          <td style="font-weight: 600;">Independence Day</td>
+          <td>15 Aug 2026</td>
+          <td>15 Aug 2026</td>
+          <td style="padding-right:12px;"><span class="badge badge-green">Selected</span></td>
+        </tr>
+        <tr>
+          <td style="padding-left:12px;"><input type="checkbox"></td>
+          <td style="font-weight: 600;">Gandhi Jayanti</td>
+          <td>02 Oct 2026</td>
+          <td>02 Oct 2026</td>
+          <td style="padding-right:12px;"><span class="badge" style="background:rgba(148, 163, 184, 0.1); color:var(--text-muted);">Available</span></td>
+        </tr>
+        <tr style="background: rgba(16, 185, 129, 0.06);">
+          <td style="padding-left:12px;"><input type="checkbox" checked></td>
+          <td style="font-weight: 600;">Diwali</td>
+          <td>08 Nov 2026</td>
+          <td>08 Nov 2026</td>
+          <td style="padding-right:12px;"><span class="badge badge-green">Selected</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+    <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save Selection</button>
+  </div>
+</div>

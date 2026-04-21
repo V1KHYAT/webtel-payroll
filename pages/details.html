@@ -1,0 +1,169 @@
+<div class="page-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar-menu">
+    <div class="menu-group-label">Applications</div>
+    <ul>
+      <li><a href="#" class="active"><i class="fa-solid fa-calendar-minus"></i> Leave Requisition</a></li>
+      <li><a href="#"><i class="fa-solid fa-plane-departure"></i> Tour Request</a></li>
+      <li><a href="#"><i class="fa-solid fa-money-bill-wave"></i> Income Details</a></li>
+    </ul>
+
+    <div class="menu-group-label">Records</div>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-users"></i> My References</a></li>
+      <li><a href="#"><i class="fa-solid fa-notes-medical"></i> Accident Details</a></li>
+      <li><a href="#"><i class="fa-solid fa-fingerprint"></i> Team Punch Detail</a></li>
+      <li><a href="#"><i class="fa-solid fa-list-check"></i> My Activity List</a></li>
+      <li><a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Salary Slip</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="content-area">
+
+    <!-- TOP ROW: LEAVE BALANCE CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;">
+      
+      <div class="card" style="padding: 16px; margin-bottom: 0;">
+        <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; font-weight: 700; margin-bottom: 8px;">Sick Leave</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-main);">6</div>
+          <div style="font-size: 13px; color: var(--text-muted);">/ 10</div>
+        </div>
+        <div style="width: 100%; height: 6px; background: rgba(245, 158, 11, 0.2); border-radius: 4px; margin-top: 12px; overflow: hidden;">
+          <div style="width: 40%; height: 100%; background: var(--accent-orange); border-radius: 4px;"></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px; margin-bottom: 0;">
+        <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; font-weight: 700; margin-bottom: 8px;">Casual Leave</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-main);">10</div>
+          <div style="font-size: 13px; color: var(--text-muted);">/ 10</div>
+        </div>
+        <div style="width: 100%; height: 6px; background: rgba(16, 185, 129, 0.2); border-radius: 4px; margin-top: 12px; overflow: hidden;">
+          <div style="width: 0%; height: 100%; background: var(--accent-green); border-radius: 4px;"></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px; margin-bottom: 0;">
+        <div style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; font-weight: 700; margin-bottom: 8px;">Earned Leave</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-main);">48</div>
+          <div style="font-size: 13px; color: var(--text-muted);">Balance</div>
+        </div>
+        <div style="width: 100%; height: 6px; background: rgba(59, 130, 246, 0.2); border-radius: 4px; margin-top: 12px; overflow: hidden;">
+          <div style="width: 100%; height: 100%; background: var(--primary-color); border-radius: 4px;"></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px; margin-bottom: 0; display:flex; flex-direction:column; justify-content:center; align-items:center; background: rgba(59, 130, 246, 0.05); border: 1px dashed var(--primary-color);">
+        <i class="fa-solid fa-circle-info" style="color: var(--primary-color); margin-bottom: 8px; font-size: 18px;"></i>
+        <div style="font-size: 11px; color: var(--primary-color); text-align: center; font-weight: 600;">Sanction Authority:<br>Shashikant Sahoo</div>
+      </div>
+
+    </div>
+
+    <!-- MIDDLE ROW: LEAVE APPLICATION FORM WIZARD -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h3 style="padding: 24px 24px 16px 24px; border-bottom: 1px solid var(--border-light); font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 24px;">New Leave Application</h3>
+      
+      <div style="padding: 0 40px 30px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        
+        <div>
+          <div class="form-group">
+            <label>Leave Reason *</label>
+            <select class="form-control">
+              <option disabled selected>Select Leave Type</option>
+              <option>Sick Leave</option>
+              <option>Casual Leave</option>
+              <option>Earned Leave</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 16px;">
+            <div class="form-group" style="flex:1;">
+              <label>From Date *</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label>To Date *</label>
+              <input type="date" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Detailed Reason *</label>
+            <textarea class="form-control" style="min-height: 80px;" placeholder="Provide brief context for your manager..."></textarea>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-app); border-radius: 8px; padding: 24px; border: 1px solid var(--border-color);">
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 12px; display:block;">Workflow Configuration</label>
+          
+          <div class="form-group">
+            <label>Person in charge during absence</label>
+            <div style="display:flex; gap:10px;">
+              <input type="text" class="form-control" placeholder="Select Employee" readonly>
+              <button class="btn-secondary" style="padding: 0 16px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </div>
+          
+          <div style="margin-top: 40px; text-align: right; border-top: 1px solid var(--border-color); padding-top: 24px;">
+            <button class="btn-secondary" style="margin-right: 12px;">Reset</button>
+            <button class="btn-primary" style="padding-left: 32px; padding-right: 32px;"><i class="fa-solid fa-paper-plane"></i> Submit Request</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOTTOM ROW: RECENT ACTIVITY TIMELINE -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 24px 16px 24px; border-bottom: 1px solid var(--border-light); margin-bottom: 8px;">
+        <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main);">Leave History</h3>
+        <select class="form-control" style="width: 120px; padding: 4px 12px; font-size:12px;"><option>Year 2025</option></select>
+      </div>
+
+      <div style="padding: 16px 24px;">
+        
+        <!-- Timeline Item 1 -->
+        <div style="display: flex; margin-bottom: 24px;">
+          <!-- Date / Line Component -->
+          <div style="display: flex; flex-direction: column; align-items: center; margin-right: 20px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-green);"></div>
+            <div style="width: 2px; height: 50px; background: var(--border-light); margin-top: 4px;"></div>
+          </div>
+          <!-- Content Component -->
+          <div style="flex: 1; padding-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <div style="font-weight: 600; font-size: 14px; color: var(--text-main);">LWP - Sanctioned</div>
+              <div class="badge badge-green">Sanction by HR</div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 4px;">Mar 31, 2025</div>
+            <div style="font-size: 13px; color: var(--text-muted); background: var(--bg-app); padding: 8px 12px; border-radius: 6px;">Reason: Latecoming Limit Cross</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div style="display: flex;">
+          <!-- Date / Line Component -->
+          <div style="display: flex; flex-direction: column; align-items: center; margin-right: 20px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-green);"></div>
+          </div>
+          <!-- Content Component -->
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <div style="font-weight: 600; font-size: 14px; color: var(--text-main);">LWP - Sanctioned</div>
+              <div class="badge badge-green">Sanction by HR</div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 4px;">Mar 29, 2025</div>
+            <div style="font-size: 13px; color: var(--text-muted); background: var(--bg-app); padding: 8px 12px; border-radius: 6px;">Reason: Latecoming Limit Cross</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

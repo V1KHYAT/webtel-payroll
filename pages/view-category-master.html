@@ -1,0 +1,121 @@
+<!-- VIEW > CATEGORY MASTER -->
+
+<div class="card">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 20px;"><i class="fa-solid fa-tags" style="color: var(--primary-color); margin-right: 10px;"></i>Category Master</h3>
+
+  <!-- Tab Bar -->
+  <div style="display: flex; border-bottom: 1px solid var(--border-light); margin-bottom: 24px;">
+    <button class="tab-btn active" onclick="switchTab('tab-review-factor', this)">Review Factor</button>
+    <button class="tab-btn" onclick="switchTab('tab-review-combo', this)">Review Factor Combination</button>
+  </div>
+
+  <!-- TAB 1: Review Factor -->
+  <div id="tab-review-factor" class="tab-panel" style="display: block;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px;">
+      
+      <!-- Left Column -->
+      <div>
+        <div class="form-group">
+          <label>Review Factor <span style="color:red">*</span></label>
+          <input type="text" class="form-control" placeholder="Enter review factor name">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Active</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Mark Rating</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Show Achievements</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox" checked> Show Employee Remarks on Performance Appraisal Report</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Add PLI with PRMS Process</label>
+        </div>
+        <div class="form-group" style="margin-top: 16px;">
+          <label>Caption of Review Factor's Remarks on Performance Appraisal Report</label>
+          <input type="text" class="form-control" placeholder="Enter caption">
+        </div>
+
+        <!-- Configuration for Objective / KRA -->
+        <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin: 20px 0 12px;">Configuration for Objective / KRA</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Define Objective / KRA Weightage</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Objective / KRA Set by Employee</label>
+        </div>
+
+        <!-- Configuration for Measurable Parameter / KPI -->
+        <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin: 20px 0 12px;">Configuration for Measurable Parameter / KPI</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Define Measurable Parameter / KPI</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Define Measurable Parameter / KPI Weightage</label>
+        </div>
+        <div class="form-group" style="margin-top: 12px;">
+          <label>Measurable Parameter / KPI Target / Result</label>
+          <select class="form-control" style="max-width: 200px;">
+            <option>Manual</option>
+            <option>Auto</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div>
+        <div class="form-group">
+          <label>Sequence <span style="color:red">*</span></label>
+          <input type="number" class="form-control" placeholder="Enter sequence">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Show Total Weightage <span style="color: var(--accent-orange); font-size: 11px; margin-left: 4px;">(Max Score)</span></label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Subjective</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Show Organizational Review Factor on "Show KRA/KPI" form ESS</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Add Unit with PRMS Process</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Show L1, L2,... HR Rating/Remarks on ESS (Reports)</label>
+        </div>
+
+        <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin: 20px 0 12px;">Define Objective / KRA Target</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Define Objective / KRA Target</label>
+        </div>
+        <div class="form-group" style="margin-top: 12px;">
+          <label>Objective / KRA Target / Result</label>
+          <select class="form-control" style="max-width: 200px;">
+            <option>Manual</option>
+            <option>Auto</option>
+          </select>
+        </div>
+
+        <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin: 20px 0 12px;">Rate Measurable Parameter / KPI</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Rate Measurable Parameter / KPI</label>
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Define Measurable Parameter / KPI Target</label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+      <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+
+  <!-- TAB 2: Review Factor Combination -->
+  <div id="tab-review-combo" class="tab-panel" style="display: none;">
+    <div style="max-width: 500px;">
+      <div class="form-group">
+        <label>Select Group <span style="color:red">*</span></label>
+        <select class="form-control">
+          <option disabled selected>-- Select Group --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Review Factor <span style="color:red">*</span></label>
+        <select class="form-control">
+          <option disabled selected>-- Select Review Factor --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Weightage <span style="color:red">*</span></label>
+        <input type="number" class="form-control" placeholder="Enter weightage">
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 16px;">
+      <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+</div>

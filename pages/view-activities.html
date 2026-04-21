@@ -1,0 +1,82 @@
+<!-- VIEW > EXTRA CURRICULAR ACTIVITIES -->
+
+<div class="card" style="margin-bottom: 24px;">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 24px;"><i class="fa-solid fa-trophy" style="color: var(--primary-color); margin-right: 10px;"></i>Extra Curricular Activities</h3>
+
+  <!-- Employee Info (read-only) -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; margin-bottom: 16px; max-width: 700px;">
+    <div class="form-group">
+      <label>Code</label>
+      <input type="text" class="form-control" value="100003" readonly style="background: var(--border-light);">
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" value="Surender Singh" readonly style="background: var(--border-light);">
+    </div>
+    <div class="form-group">
+      <label>Department</label>
+      <input type="text" class="form-control" value="STORE & PURCHASE" readonly style="background: var(--border-light);">
+    </div>
+    <div class="form-group">
+      <label>Designation</label>
+      <input type="text" class="form-control" value="SENIOR MANAGER" readonly style="background: var(--border-light);">
+    </div>
+  </div>
+
+  <!-- Activity Fields -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; max-width: 700px;">
+    <div class="form-group">
+      <label>Curricular Type <span style="color:red">*</span></label>
+      <select class="form-control">
+        <option disabled selected>-- Select Curricular Type --</option>
+        <option>Sports</option>
+        <option>Cultural</option>
+        <option>Academic</option>
+        <option>Social Service</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Curricular Description <span style="color:red">*</span></label>
+      <select class="form-control">
+        <option disabled selected>-- Select Curricular Description --</option>
+      </select>
+    </div>
+    <div class="form-group" style="grid-column: span 2;">
+      <label>Remark <span style="color:red">*</span></label>
+      <textarea class="form-control" style="min-height: 60px;" placeholder="Enter your remarks..."></textarea>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 12px; margin-top: 8px;">
+    <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+    <button class="btn-secondary">Reset</button>
+  </div>
+</div>
+
+<!-- Activities List -->
+<div class="card">
+  <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin-bottom: 12px;">List of Curricular Activities</div>
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="padding-left:12px;">Curricular Type</th>
+          <th>Curricular Description</th>
+          <th>Emp-Remark</th>
+          <th>Sanction-Remark</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th style="padding-right:12px;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7" style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+            <i class="fa-solid fa-inbox" style="font-size: 24px; display: block; margin-bottom: 8px; color: var(--border-color);"></i>
+            No activities recorded
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

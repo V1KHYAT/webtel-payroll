@@ -1,0 +1,399 @@
+/* -------------------------------------------
+   HR PEARLS - NOTION STYLE
+   Production-ready. Single theme.
+   ------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-family: 'Inter', sans-serif;
+  
+  /* Core Colors */
+  --bg-app: #ffffff;
+  --bg-sidebar: #f4f9fd;
+  --bg-card: #ffffff;
+  
+  /* Text */
+  --text-main: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  
+  /* Accents */
+  --primary-color: #0284c7;
+  --primary-hover: #0369a1;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-orange: #f59e0b;
+  
+  /* Borders & Shadows */
+  --border-color: #e9e9e7;
+  --border-light: #f3f3f2;
+  
+  --transition-speed: 0.15s;
+}
+
+/* -------------------------------------------
+   BASE STYLES
+   ------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: var(--text-main);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -------------------------------------------
+   NOTION SIDEBAR
+   ------------------------------------------- */
+.notion-sidebar {
+  width: 260px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.notion-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 20px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.notion-nav {
+  padding: 4px 12px;
+  flex: 1;
+}
+
+.notion-group {
+  padding: 16px 8px 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.notion-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+
+.notion-nav a i {
+  color: var(--text-muted);
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+.notion-nav a:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-main);
+}
+
+.notion-nav a.active {
+  background: rgba(2, 132, 199, 0.08);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.notion-nav a.active i {
+  color: var(--primary-color);
+}
+
+.notion-submenu {
+  padding-left: 20px;
+}
+
+.chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+.chevron-expanded {
+  transform: rotate(90deg);
+}
+
+/* -------------------------------------------
+   APP WRAPPER & CONTENT
+   ------------------------------------------- */
+.app-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+#app-content {
+  padding: 40px 48px;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* -------------------------------------------
+   DASHBOARD GRID & CARDS
+   ------------------------------------------- */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.fancy-card {
+  background: #ffffff;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.card-header .action-icon {
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* -------------------------------------------
+   BUTTONS
+   ------------------------------------------- */
+.btn-primary {
+  background: #2383e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  background: #0077d4;
+}
+
+.btn-secondary {
+  background: var(--bg-app);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* -------------------------------------------
+   TYPOGRAPHY & TABLES
+   ------------------------------------------- */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.table th {
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-green { background: rgba(16, 185, 129, 0.1); color: var(--accent-green); }
+
+/* -------------------------------------------
+   INFO ROWS (Profile Data)
+   ------------------------------------------- */
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.info-row:last-child { border-bottom: none; }
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.info-label i {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+.info-value {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+/* -------------------------------------------
+   PAGE LAYOUT (local sidebars — hidden)
+   Local sidebars in page templates are hidden
+   because the global Notion sidebar handles nav.
+   ------------------------------------------- */
+.page-layout {
+  display: block;
+}
+
+.content-area {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.sidebar-menu {
+  display: none !important;
+}
+
+/* -------------------------------------------
+   FORMS
+   ------------------------------------------- */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+/* -------------------------------------------
+   TAB BUTTONS
+   ------------------------------------------- */
+.tab-btn {
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Collapsible sections */
+.collapsible-section {
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,122 @@
+<!-- VIEW > CREATE PERIOD, APPRAISEE AND APPRAISER -->
+
+<div class="card">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 20px;"><i class="fa-solid fa-user-gear" style="color: var(--primary-color); margin-right: 10px;"></i>Create Period, Appraisee And Appraiser</h3>
+
+  <!-- Tab Bar -->
+  <div style="display: flex; border-bottom: 1px solid var(--border-light); margin-bottom: 24px;">
+    <button class="tab-btn active" onclick="switchTab('tab-period-master', this)">Appraisal Period Master</button>
+    <button class="tab-btn" onclick="switchTab('tab-appraisee-master', this)">Appraisee Master</button>
+    <button class="tab-btn" onclick="switchTab('tab-notify-appraiser', this)">Notify Appraiser</button>
+  </div>
+
+  <!-- TAB 1: Appraisal Period Master -->
+  <div id="tab-period-master" class="tab-panel" style="display: block;">
+    <div style="max-width: 600px;">
+      <div class="form-group">
+        <label>Appraisal Start Date <span style="color:red">*</span></label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Appraisal End Date <span style="color:red">*</span></label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Appraisal Group <span style="color:red">*</span></label>
+        <div style="border: 1px solid var(--border-color); border-radius: 4px; padding: 12px; min-height: 80px; background: var(--border-light);">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Select All</label>
+        </div>
+      </div>
+      <div style="margin-top: 8px;">
+        <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary);"><input type="checkbox"> Appraisal Period Status</label>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+      <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+
+  <!-- TAB 2: Appraisee Master -->
+  <div id="tab-appraisee-master" class="tab-panel" style="display: none;">
+    <!-- Search Parameters Bar -->
+    <div style="background: var(--border-light); border-radius: 4px; padding: 16px 20px; margin-bottom: 24px;">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Custom Search Parameters</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Group <span style="color:red">*</span></label>
+          <select class="form-control">
+            <option disabled selected>-- Select Group --</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Period <span style="color:red">*</span></label>
+          <select class="form-control">
+            <option disabled selected>-- Select All --</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0; grid-column: span 2;">
+          <label>Search According To</label>
+          <div style="display: flex; gap: 20px; padding: 8px 0;">
+            <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="search-type" checked> According to DOJ</label>
+            <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="search-type"> According to Month-Year and Completion of Months</label>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>DOJ</label>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="date" class="form-control">
+            <select class="form-control" style="width: 60px;">
+              <option>&lt;</option>
+              <option>&gt;</option>
+              <option>=</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px;">
+      <button class="btn-primary"><i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i>Search</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+
+  <!-- TAB 3: Notify Appraiser -->
+  <div id="tab-notify-appraiser" class="tab-panel" style="display: none;">
+    <div style="background: var(--border-light); border-radius: 4px; padding: 16px 20px; margin-bottom: 24px;">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Custom Search Parameters</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Group <span style="color:red">*</span></label>
+          <select class="form-control">
+            <option disabled selected>-- Select Group --</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Period <span style="color:red">*</span></label>
+          <select class="form-control">
+            <option disabled selected>-- Select All --</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Start Date <span style="color:red">*</span></label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>End Date <span style="color:red">*</span></label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="form-group" style="margin-bottom:0; grid-column: span 2;">
+          <label>Filter Appraiser(s)</label>
+          <select class="form-control">
+            <option disabled selected>-- Select Appraiser --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px;">
+      <button class="btn-primary"><i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i>Search</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<!-- VIEW > CREATE CATEGORY PARAMETER -->
+
+<div class="card">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 20px;"><i class="fa-solid fa-sliders" style="color: var(--primary-color); margin-right: 10px;"></i>Create Category Parameter</h3>
+
+  <!-- Tab Bar -->
+  <div style="display: flex; border-bottom: 1px solid var(--border-light); margin-bottom: 24px;">
+    <button class="tab-btn active" onclick="switchTab('tab-create-params', this)">Create Review Factor Parameters</button>
+    <button class="tab-btn" onclick="switchTab('tab-import-params', this)">Import Review Factor Parameters</button>
+  </div>
+
+  <!-- TAB 1: Create Review Factor Parameters -->
+  <div id="tab-create-params" class="tab-panel" style="display: block;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; max-width: 700px;">
+      <div class="form-group">
+        <label>Review Factor <span style="color:red">*</span></label>
+        <select class="form-control">
+          <option disabled selected>-- Select Review Factor --</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Select Group <span style="color:red">*</span></label>
+        <div style="border: 1px solid var(--border-color); border-radius: 4px; padding: 12px; min-height: 100px; background: var(--border-light);">
+          <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary); margin-bottom: 8px;"><input type="checkbox"> Select All</label>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 16px;">
+      <button class="btn-primary"><i class="fa-solid fa-plus" style="margin-right: 8px;"></i>Add Objective / KRA</button>
+      <button class="btn-primary" style="background: var(--accent-green);"><i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i>Search</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+
+  <!-- TAB 2: Import Review Factor Parameters -->
+  <div id="tab-import-params" class="tab-panel" style="display: none;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; max-width: 700px;">
+      <div class="form-group">
+        <label>Review Factor <span style="color:red">*</span></label>
+        <select class="form-control">
+          <option disabled selected>-- Select Review Factor --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>KRA/KPI Use for</label>
+        <select class="form-control">
+          <option>Employee</option>
+          <option>Manager</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label>Select Excel File to Import <span style="color:red">*</span></label>
+        <input type="file" class="form-control" style="padding: 8px;" accept=".xls,.xlsx">
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 16px;">
+      <button class="btn-primary"><i class="fa-solid fa-download" style="margin-right: 8px;"></i>Export</button>
+      <button class="btn-primary" style="background: var(--accent-green);"><i class="fa-solid fa-file-import" style="margin-right: 8px;"></i>Import And Save</button>
+      <button class="btn-secondary">Reset</button>
+    </div>
+  </div>
+</div>

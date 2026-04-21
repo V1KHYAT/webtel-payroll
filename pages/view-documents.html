@@ -1,0 +1,65 @@
+<!-- VIEW > UPLOAD DOCUMENTS -->
+
+<div class="card" style="margin-bottom: 24px;">
+  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 24px;"><i class="fa-solid fa-cloud-arrow-up" style="color: var(--primary-color); margin-right: 10px;"></i>Upload Documents</h3>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; max-width: 700px;">
+    <div class="form-group">
+      <label>Document Type <span style="color:red">*</span></label>
+      <select class="form-control">
+        <option disabled selected>-- Select Document Type --</option>
+        <option>ID Proof</option>
+        <option>Address Proof</option>
+        <option>Education Certificate</option>
+        <option>Experience Letter</option>
+        <option>Employee Signature</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Upload Document <span style="color:red">*</span></label>
+      <input type="file" class="form-control" style="padding: 8px;">
+    </div>
+    <div class="form-group" style="grid-column: span 2;">
+      <label>Description <span style="color:red">*</span></label>
+      <textarea class="form-control" style="min-height: 60px;" placeholder="Brief description of the document..."></textarea>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 12px; align-items: center; margin-top: 8px;">
+    <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
+    <button class="btn-secondary">Reset</button>
+    <span style="font-size: 11px; color: var(--accent-orange); margin-left: 12px;"><i class="fa-solid fa-circle-info" style="margin-right: 4px;"></i>If document status is pending, click on edit.</span>
+  </div>
+</div>
+
+<!-- Uploaded Documents List -->
+<div class="card">
+  <div style="font-size: 12px; font-weight: 600; color: var(--primary-color); margin-bottom: 12px;">List of Uploaded Documents</div>
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="padding-left:12px;">Document</th>
+          <th>Status</th>
+          <th>Last Date to Submit</th>
+          <th>Submitted by Emp on</th>
+          <th>Approved by Admin on</th>
+          <th>Doc. Link</th>
+          <th style="padding-right:12px;">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding-left:12px; font-weight: 600;">Employee Signature</td>
+          <td><span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-orange);">Approval Pending</span></td>
+          <td>—</td>
+          <td>06 Sep 2025</td>
+          <td>—</td>
+          <td><button class="btn-secondary" style="padding: 4px 10px; font-size: 11px;"><i class="fa-solid fa-file-pdf" style="color: var(--accent-red);"></i></button></td>
+          <td style="padding-right:12px;"><button class="btn-secondary" style="padding: 4px 10px; font-size: 11px;"><i class="fa-regular fa-pen-to-square"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align: right; padding-top: 12px; border-top: 1px solid var(--border-light); margin-top: 12px; font-size: 12px; color: var(--text-muted);">Total: 1 document</div>
+</div>
