@@ -12,7 +12,7 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 - **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
 - **Webtel Corporate Blue** (`#0284c7`) accent throughout
 - **Inter font family** for modern, professional typography
-- **No glassmorphism or gradients** — Pure flat, editorial design language
+- **Design Language** — Pure flat, editorial design language
 - **Fluid layouts** that maximize horizontal screen real estate
 
 ---
