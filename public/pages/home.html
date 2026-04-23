@@ -9,62 +9,6 @@
   <!-- LEFT COLUMN -->
   <div class="col-left" style="display:flex; flex-direction:column; gap:24px;">
     
-    <!-- QUICK ACTIONS -->
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      
-      <!-- Quick Action 1 -->
-      <div class="card" style="margin-bottom:0; padding:20px;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="width:36px; height:36px; border-radius:8px; background:rgba(2, 132, 199, 0.1); color:var(--primary-color); display:flex; justify-content:center; align-items:center; font-size:16px;">
-            <i class="fa-solid fa-calendar-minus"></i>
-          </div>
-          <h3 style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Request Leave</h3>
-        </div>
-        <select class="form-control" style="margin-bottom:16px; padding:8px 12px; font-size:12px;">
-          <option>Casual Leave (CL)</option>
-          <option>Sick Leave (SL)</option>
-          <option>Earned Leave (EL)</option>
-          <option>Comp Off (CO)</option>
-        </select>
-        <button class="btn-primary" style="width:100%; justify-content:center; padding:8px; font-size:12px;">Submit Request</button>
-      </div>
-
-      <!-- Quick Action 2 -->
-      <div class="card" style="margin-bottom:0; padding:20px;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="width:36px; height:36px; border-radius:8px; background:rgba(245, 158, 11, 0.1); color:var(--accent-orange); display:flex; justify-content:center; align-items:center; font-size:16px;">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <h3 style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">IT Helpdesk</h3>
-        </div>
-        <select class="form-control" style="margin-bottom:16px; padding:8px 12px; font-size:12px;">
-          <option>Hardware Issue</option>
-          <option>Software Access</option>
-          <option>Network Problem</option>
-          <option>Other Query</option>
-        </select>
-        <button class="btn-primary" style="width:100%; justify-content:center; padding:8px; font-size:12px; background:var(--accent-orange);">Raise Ticket</button>
-      </div>
-
-      <!-- Quick Action 3 -->
-      <div class="card" style="margin-bottom:0; padding:20px;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="width:36px; height:36px; border-radius:8px; background:rgba(16, 185, 129, 0.1); color:var(--accent-green); display:flex; justify-content:center; align-items:center; font-size:16px;">
-            <i class="fa-solid fa-file-invoice-dollar"></i>
-          </div>
-          <h3 style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Export Reports</h3>
-        </div>
-        <select class="form-control" style="margin-bottom:16px; padding:8px 12px; font-size:12px;">
-          <option>My Salary Slip</option>
-          <option>Tax Details</option>
-          <option>Daily Attendance</option>
-          <option>Form 16</option>
-        </select>
-        <button class="btn-primary" style="width:100%; justify-content:center; padding:8px; font-size:12px; background:var(--accent-green); border:none;">Download PDF</button>
-      </div>
-
-    </div>
-
     <!-- TOP METRICS (Training Hours mapped to top metric cards) -->
     <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
       <div class="card" style="margin-bottom:0;">
@@ -152,6 +96,28 @@
           </div>
         </div>
 
+      </div>
+    </div>
+    
+    <!-- QUICK SHORTCUTS -->
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-header" style="margin-bottom:16px;">
+        <h3 style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Quick Shortcuts</h3>
+        <i class="fa-regular fa-pen-to-square action-icon" title="Edit Shortcuts"></i>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+        <button class="btn-secondary" style="justify-content:center; padding:12px; height:auto; display:flex; flex-direction:column; gap:8px; background:#f8fafc; border:1px solid var(--border-light);" onclick="loadSubPage('details', this)">
+          <i class="fa-solid fa-calendar-minus" style="font-size:18px; color:var(--primary-color);"></i>
+          <span style="font-size:12px;">Request Leave</span>
+        </button>
+        <button class="btn-secondary" style="justify-content:center; padding:12px; height:auto; display:flex; flex-direction:column; gap:8px; background:#f8fafc; border:1px solid var(--border-light);" onclick="loadSubPage('view-helpdesk', this)">
+          <i class="fa-solid fa-headset" style="font-size:18px; color:var(--accent-orange);"></i>
+          <span style="font-size:12px;">IT Helpdesk</span>
+        </button>
+        <button class="btn-secondary" style="justify-content:center; padding:12px; height:auto; display:flex; flex-direction:column; gap:8px; background:#f8fafc; border:1px solid var(--border-light);" onclick="loadSubPage('reports', this)">
+          <i class="fa-solid fa-file-invoice-dollar" style="font-size:18px; color:var(--accent-green);"></i>
+          <span style="font-size:12px;">My Reports</span>
+        </button>
       </div>
     </div>
     
