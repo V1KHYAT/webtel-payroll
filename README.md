@@ -6,9 +6,14 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 
 ## 🚀 Latest Changes & Status
 
-- **Completed:** Successfully overhauled the "Approve Requisitions" module. Created 13 new approval pages matching the unified design system. Added a sophisticated Floating Action Bar (FAB) for bulk table approvals.
-- **Completed:** Separated "Self Service" from "HR Admin" links in the sidebar, and expanded the "View Profile" modal into a premium multi-section view.
-- **Next Steps:** Implement further UX refinements (e.g., Glass-morphic Side Drawers for PDFs, custom Empty States) and begin migrating the "Reports" module.
+### Core Features Overhauled (Latest Update)
+- **Approve Requisitions Complete (13 Pages):** Built and wired all 13 approval pages (e.g. Leave, Expense, Overtime, Clearance) replacing old teal styles with a Premium Notion-inspired design system. Populated key modules like Expense and Leave with functional mock data tables.
+- **Bulk Floating Action Bar (FAB):** Engineered a dynamic, sticky frosted-glass action drawer. When managers select multiple rows in huge tables, the FAB smoothly slides up, offering immediate access to `APPROVE ALL` and `REJECT ALL` buttons.
+- **Advanced "View Profile" Modal:** Upgraded the legacy profile view into an expansive, segmented pop-up interface housing Personal, Statutory, Contact, and structured Family Relationship data tables.
+- **Dashboard Refinement & Bug Fixes:** Removed the Quick Shortcuts widget to maintain a strictly minimalist dashboard overview. Standardized global JavaScript `switchTab()` functions to resolve tab-switching bugs inside nested wizard modes (like the Edit Profile module).
+- **Navigation Redesign:** Reorganized the primary Sidebar schema, explicitly bisecting "Self Service" utilities from "HR Admin" configurations.
+
+- **Next Steps:** Implement advanced interactions (Glass-morphic Side Drawers over PDF links, customized Empty State SVGs, Skeleton loading) and systematically tackle the 'Reports' dashboard implementation.
 
 - **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
 - **Webtel Corporate Blue** (`#0284c7`) accent throughout
