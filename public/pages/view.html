@@ -10,8 +10,8 @@
     <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Surender Singh</h2>
     <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Senior Manager  |  Store & Purchase</div>
     <div style="display: flex; gap: 12px;">
-      <button class="btn-primary" onclick="togglePanel('section-personal')"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</button>
-      <button class="btn-secondary" onclick="togglePanel('pw-body')"><i class="fa-regular fa-eye"></i> View Profile</button>
+      <button class="btn-primary" onclick="openModal('edit-profile-modal')"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</button>
+      <button class="btn-secondary" onclick="openModal('view-profile-modal')"><i class="fa-regular fa-eye"></i> View Profile</button>
     </div>
   </div>
 </div>
@@ -58,101 +58,155 @@
   </div>
 </div>
 
-<!-- ACCORDION: Change Password -->
-<div class="card" style="margin-bottom: 24px;">
-  <div onclick="togglePanel('pw-body')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-    <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main);"><i class="fa-solid fa-shield-halved" style="color: var(--primary-color); margin-right: 10px;"></i>Change Password</h3>
-    <i class="fa-solid fa-chevron-down" id="pw-body-chevron" style="font-size: 12px; color: var(--text-muted); transition: transform 0.2s ease;"></i>
-  </div>
-  <div id="pw-body" style="display: none; margin-top: 24px;">
-    <div style="max-width: 500px;">
-      <div class="form-group">
-        <label>Old Password <span style="color:red">*</span></label>
-        <input type="password" class="form-control" placeholder="Enter current password">
+<!-- VIEW PROFILE MODAL -->
+<div id="view-profile-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-window modal-xl">
+    <div class="modal-header">
+      <div class="modal-title"><i class="fa-regular fa-user"></i> Employee Details</div>
+      <button class="modal-close" onclick="closeModal('view-profile-modal')"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" style="background:#f4f9fd;">
+      <!-- Profile Header -->
+      <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:32px;">
+        <h2 style="font-size:20px; font-weight:700;">Surender Singh</h2>
+        <div style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">Senior Manager, Store & Purchase</div>
+        <img src="https://ui-avatars.com/api/?name=Surender+Singh&background=0284c7&color=fff&size=150" style="width:80px; height:80px; border-radius:50%; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);">
       </div>
-      <div class="form-group">
-        <label>New Password <span style="color:red">*</span></label>
-        <input type="password" class="form-control" placeholder="Enter new password">
-      </div>
-      <div class="form-group">
-        <label>Confirm Password <span style="color:red">*</span></label>
-        <input type="password" class="form-control" placeholder="Re-enter new password">
-      </div>
-      <div style="display: flex; gap: 12px; margin-top: 8px;">
-        <button class="btn-primary"><i class="fa-solid fa-check" style="margin-right: 8px;"></i>Update</button>
-        <button class="btn-secondary">Reset</button>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+        
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Personal Details</h3>
+          <div class="info-row"><span class="info-label">Employee No</span><span class="info-value">100003</span></div>
+          <div class="info-row"><span class="info-label">Gender</span><span class="info-value">Male</span></div>
+          <div class="info-row"><span class="info-label">Date of Birth</span><span class="info-value">05 Apr 1972</span></div>
+          <div class="info-row"><span class="info-label">Date of Joining</span><span class="info-value">01 Jun 1998</span></div>
+        </div>
+
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Positions Details</h3>
+          <div class="info-row"><span class="info-label">Department</span><span class="info-value">Store & Purchase</span></div>
+          <div class="info-row"><span class="info-label">Designation</span><span class="info-value">Senior Manager</span></div>
+          <div class="info-row"><span class="info-label">Employee Type</span><span class="info-value">Regular</span></div>
+          <div class="info-row"><span class="info-label">Experience</span><span class="info-value">0 Year(s) and 6 Month(s)</span></div>
+        </div>
+        
+        <div class="card" style="grid-column: span 2; margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Current Address</h3>
+          <div class="info-row"><span class="info-label">Address</span><span class="info-value" style="font-weight:400; text-align:right;">BONY POLYMERS PVT. LTD.<br>FARIDABAD, HARYANA, India</span></div>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- ACCORDION: Enter Personal Details -->
-<div class="card" style="margin-bottom: 0;">
-  <div onclick="togglePanel('pd-body')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-    <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main);"><i class="fa-regular fa-address-card" style="color: var(--primary-color); margin-right: 10px;"></i>Enter Personal Details</h3>
-    <i class="fa-solid fa-chevron-down" id="pd-body-chevron" style="font-size: 12px; color: var(--text-muted); transition: transform 0.2s ease;"></i>
-  </div>
-  <div id="pd-body" style="display: none; margin-top: 24px;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px;">
-      <div class="form-group">
-        <label>Employee Code <span style="color:red">*</span></label>
-        <div style="display:flex; gap:10px;">
-          <input type="text" class="form-control" value="100003" readonly style="background: var(--border-light);">
-          <button class="btn-secondary" style="padding: 0 12px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+<!-- EDIT PROFILE MODAL (PREMIUM WIZARD) -->
+<div id="edit-profile-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-window modal-xl">
+    <div class="modal-header">
+      <div class="modal-title"><i class="fa-regular fa-pen-to-square"></i> Edit Profile Information</div>
+      <button class="modal-close" onclick="closeModal('edit-profile-modal')"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="wizard-layout">
+      <!-- Wizard Sidebar -->
+      <div class="wizard-sidebar">
+        <div class="wizard-nav">
+          <button class="active" onclick="switchTab('edit-personal', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-user" style="width:16px;"></i> Personal Details</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-address', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-location-dot" style="width:16px;"></i> Address Info</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-family', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-users" style="width:16px;"></i> Family Details</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-contact', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-phone" style="width:16px;"></i> Phone & Email</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-emergency', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-heart-pulse" style="width:16px;"></i> Emergency Contacts</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-passport', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-passport" style="width:16px;"></i> Passport Info</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
         </div>
       </div>
-      <div class="form-group">
-        <label>Employee Name</label>
-        <input type="text" class="form-control" value="Surender Singh" readonly style="background: var(--border-light);">
-      </div>
-      <div class="form-group">
-        <label>Department</label>
-        <input type="text" class="form-control" value="Store & Purchase" readonly style="background: var(--border-light);">
-      </div>
-      <div class="form-group">
-        <label>Designation</label>
-        <input type="text" class="form-control" value="Senior Manager" readonly style="background: var(--border-light);">
-      </div>
-      <div class="form-group">
-        <label>Communication</label>
-        <div style="display: flex; gap: 20px; padding: 10px 0;">
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm" checked> Best</label>
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Good</label>
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Avg</label>
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="comm"> Poor</label>
+      
+      <!-- Wizard Content -->
+      <div class="wizard-content card" style="border:none; border-radius:0; box-shadow:none;">
+        
+        <!-- Tab: Personal Details -->
+        <div id="edit-personal" class="tab-panel">
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-main); margin-bottom:24px;">Personal Details</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px;">
+            <div class="form-group"><label>First Name</label><input type="text" class="form-control" value="Surender"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" class="form-control" value="Singh"></div>
+            <div class="form-group"><label>Father Name</label><input type="text" class="form-control" value="Ram Kumar"></div>
+            <div class="form-group"><label>Mother Name</label><input type="text" class="form-control" placeholder="Mother's Name"></div>
+            <div class="form-group"><label>Date of Birth</label><input type="date" class="form-control" value="1972-04-05"></div>
+            <div class="form-group"><label>Nationality</label><select class="form-control"><option>Indian</option><option>Other</option></select></div>
+            <div class="form-group"><label>PAN Number</label><input type="text" class="form-control" value="BBVPS1982D"></div>
+            <div class="form-group"><label>Upload Photo</label><input type="file" class="form-control" style="padding:6px;"></div>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Presentable</label>
-        <div style="display: flex; gap: 20px; padding: 10px 0;">
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="present" checked> Yes</label>
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="present"> No</label>
+
+        <!-- Tab: Address -->
+        <div id="edit-address" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-main); margin-bottom:24px;">Address Information</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:13px; font-weight:600; margin-bottom:12px; color:var(--primary-color);">Current Address</h4>
+              <div class="form-group"><label>Address Line 1</label><input type="text" class="form-control" value="BONY POLYMERS PVT. LTD."></div>
+              <div class="form-group"><label>City</label><input type="text" class="form-control" value="FARIDABAD"></div>
+              <div class="form-group"><label>State</label><select class="form-control"><option>HARYANA</option></select></div>
+              <div class="form-group"><label>Country</label><select class="form-control"><option>India</option></select></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <h4 style="font-size:13px; font-weight:600; color:var(--primary-color);">Permanent Address</h4>
+                <label style="font-size:12px; color:var(--text-muted); display:flex; gap:6px; align-items:center;"><input type="checkbox"> Same as Current</label>
+              </div>
+              <div class="form-group"><label>Address Line 1</label><input type="text" class="form-control" value="BONY POLYMERS PVT. LTD."></div>
+              <div class="form-group"><label>City</label><input type="text" class="form-control" value="FARIDABAD"></div>
+              <div class="form-group"><label>State</label><select class="form-control"><option>HARYANA</option></select></div>
+              <div class="form-group"><label>Country</label><select class="form-control"><option>India</option></select></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="form-group" style="grid-column: span 2;">
-        <label>Family Background</label>
-        <textarea class="form-control" style="min-height: 80px;" placeholder="Enter family background details..."></textarea>
-      </div>
-      <div class="form-group" style="grid-column: span 2;">
-        <label>Experience <span style="color:red">*</span></label>
-        <textarea class="form-control" style="min-height: 80px;" placeholder="Describe your professional experience..."></textarea>
-      </div>
-      <div class="form-group">
-        <label>Verification From Last Employer</label>
-        <div style="display: flex; gap: 20px; padding: 10px 0;">
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="verify" checked> Yes</label>
-          <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); margin:0;"><input type="radio" name="verify"> No</label>
+
+        <!-- Placeholder Tabs for others -->
+        <div id="edit-family" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Family Details</h3>
+          <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
+            <i class="fa-solid fa-users" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <p>Family members and dependents will be listed here.</p>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Comments</label>
-        <textarea class="form-control" style="min-height: 60px;" placeholder="Any additional notes..."></textarea>
+        
+        <div id="edit-contact" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Phone & Email Details</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px;">
+            <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control" placeholder="+91"></div>
+            <div class="form-group"><label>Personal Email</label><input type="email" class="form-control" placeholder="example@gmail.com"></div>
+            <div class="form-group"><label>Office Phone</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Official Email</label><input type="email" class="form-control" placeholder="name@company.com"></div>
+          </div>
+        </div>
+        
+        <div id="edit-emergency" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Emergency Contacts</h3>
+          <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
+            <i class="fa-solid fa-heart-pulse" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <p>Emergency contact details form.</p>
+          </div>
+        </div>
+        
+        <div id="edit-passport" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Passport Information</h3>
+           <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
+            <i class="fa-solid fa-passport" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <p>Passport and Visa details form.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:40px; border-top:1px solid var(--border-light); padding-top:24px; display:flex; justify-content:flex-end; gap:12px;">
+          <button class="btn-secondary" onclick="closeModal('edit-profile-modal')">Cancel</button>
+          <button class="btn-primary" onclick="closeModal('edit-profile-modal'); togglePanel('toast')"><i class="fa-solid fa-check" style="margin-right:8px;"></i> Save Changes</button>
+        </div>
+
       </div>
     </div>
-    <div style="display: flex; gap: 12px; margin-top: 16px; padding-top: 24px; border-top: 1px solid var(--border-light);">
-      <button class="btn-primary"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Save</button>
-      <button class="btn-secondary">Reset</button>
-    </div>
+    
   </div>
 </div>
 

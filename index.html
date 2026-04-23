@@ -41,6 +41,26 @@
         <a href="#" onclick="loadSubPage('view-documents', this)"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Documents</a>
       </div>
 
+      <!-- HR Admin (expandable) -->
+      <a href="#" onclick="toggleSection('admin', this)" id="nav-admin">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="fa-solid fa-users-gear"></i> HR Admin</span>
+          <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-admin" style="display:none;">
+        <div class="notion-group">Operations</div>
+        <a href="#" onclick="loadSubPage('view-activities', this)"><i class="fa-solid fa-trophy"></i> Extra Curricular Activities</a>
+        <a href="#" onclick="loadSubPage('view-shift-import', this)"><i class="fa-solid fa-file-import"></i> Assign Shift Through Import</a>
+        <a href="#" onclick="loadSubPage('view-assign-shift', this)"><i class="fa-solid fa-calendar-days"></i> Assign Shift To Employee's</a>
+        <a href="#" onclick="loadSubPage('view-weekly-off', this)"><i class="fa-solid fa-calendar-week"></i> Assign Weekly Off To Employee's</a>
+        <div class="notion-group">Performance</div>
+        <a href="#" onclick="loadSubPage('view-category-master', this)"><i class="fa-solid fa-tags"></i> Category Master</a>
+        <a href="#" onclick="loadSubPage('view-category-param', this)"><i class="fa-solid fa-sliders"></i> Create Category Parameter</a>
+        <a href="#" onclick="loadSubPage('view-appraisal', this)"><i class="fa-solid fa-user-gear"></i> Create Period, Appraisee And Appraiser</a>
+        <a href="#" onclick="loadSubPage('view-shortlist', this)"><i class="fa-solid fa-star-half-stroke"></i> Shortlist And Rate Candidate</a>
+      </div>
+
       <!-- Details (expandable) -->
       <a href="#" onclick="toggleSection('details', this)" id="nav-details">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
@@ -99,26 +119,6 @@
         <a href="#"><i class="fa-solid fa-clipboard-check"></i> Fixation - Objective Setting Form (Employee)</a>
         <a href="#"><i class="fa-solid fa-file-signature"></i> Employee Assessment Form</a>
         <a href="#"><i class="fa-solid fa-comment-dots"></i> Trainer's Feedback Form</a>
-      </div>
-
-      <!-- HR Admin (expandable) -->
-      <a href="#" onclick="toggleSection('admin', this)" id="nav-admin">
-        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-solid fa-users-gear"></i> HR Admin</span>
-          <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
-        </div>
-      </a>
-      <div class="notion-submenu" id="sub-admin" style="display:none;">
-        <div class="notion-group">Operations</div>
-        <a href="#" onclick="loadSubPage('view-activities', this)"><i class="fa-solid fa-trophy"></i> Extra Curricular Activities</a>
-        <a href="#" onclick="loadSubPage('view-shift-import', this)"><i class="fa-solid fa-file-import"></i> Assign Shift Through Import</a>
-        <a href="#" onclick="loadSubPage('view-assign-shift', this)"><i class="fa-solid fa-calendar-days"></i> Assign Shift To Employee's</a>
-        <a href="#" onclick="loadSubPage('view-weekly-off', this)"><i class="fa-solid fa-calendar-week"></i> Assign Weekly Off To Employee's</a>
-        <div class="notion-group">Performance</div>
-        <a href="#" onclick="loadSubPage('view-category-master', this)"><i class="fa-solid fa-tags"></i> Category Master</a>
-        <a href="#" onclick="loadSubPage('view-category-param', this)"><i class="fa-solid fa-sliders"></i> Create Category Parameter</a>
-        <a href="#" onclick="loadSubPage('view-appraisal', this)"><i class="fa-solid fa-user-gear"></i> Create Period, Appraisee And Appraiser</a>
-        <a href="#" onclick="loadSubPage('view-shortlist', this)"><i class="fa-solid fa-star-half-stroke"></i> Shortlist And Rate Candidate</a>
       </div>
 
       <!-- Investment Declaration -->
@@ -230,6 +230,57 @@
       document.getElementById(tabId).style.display = 'block';
       btn.classList.add('active');
     }
+
+    // Global Modal System
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = 'flex';
+        // Subtly animate entry
+        const win = modal.querySelector('.modal-window');
+        if (win) {
+          win.style.opacity = '0';
+          win.style.transform = 'translateY(10px) scale(0.98)';
+          setTimeout(() => {
+            win.style.transition = 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+            win.style.opacity = '1';
+            win.style.transform = 'translateY(0) scale(1)';
+          }, 10);
+        }
+      }
+    }
+    
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        const win = modal.querySelector('.modal-window');
+        if (win) {
+          win.style.opacity = '0';
+          win.style.transform = 'translateY(10px) scale(0.98)';
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 200);
+        } else {
+            modal.style.display = 'none';
+        }
+      }
+    }
+
+    // Close modal when clicking outside overlay
+    window.addEventListener('click', function(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        const win = event.target.querySelector('.modal-window');
+        if (win) {
+          win.style.opacity = '0';
+          win.style.transform = 'translateY(10px) scale(0.98)';
+          setTimeout(() => {
+            event.target.style.display = 'none';
+          }, 200);
+        } else {
+            event.target.style.display = 'none';
+        }
+      }
+    });
 
     // Init
     window.onload = () => loadPage('home');
