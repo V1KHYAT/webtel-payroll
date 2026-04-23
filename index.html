@@ -89,11 +89,11 @@
         </div>
       </a>
       <div class="notion-submenu" id="sub-approve" style="display:none;">
-        <a href="#"><i class="fa-solid fa-plane"></i> Approve Outduty And Tour Request</a>
-        <a href="#" onclick="loadSubPage('approve', this)"><i class="fa-solid fa-calendar-check"></i> Online Leave Approval</a>
-        <a href="#"><i class="fa-solid fa-money-bill-transfer"></i> Reimbursement Approval</a>
-        <a href="#"><i class="fa-solid fa-wallet"></i> Expense Approval</a>
-        <a href="#"><i class="fa-solid fa-door-open"></i> Exit Interview Approval</a>
+        <a href="#" onclick="loadSubPage('approve-outduty', this)"><i class="fa-solid fa-plane"></i> Approve Outduty And Tour Request</a>
+        <a href="#" onclick="loadSubPage('approve-leave', this)"><i class="fa-solid fa-calendar-check"></i> Online Leave Approval</a>
+        <a href="#" onclick="loadSubPage('approve-reimbursement', this)"><i class="fa-solid fa-money-bill-transfer"></i> Reimbursement Approval</a>
+        <a href="#" onclick="loadSubPage('approve-expense', this)"><i class="fa-solid fa-wallet"></i> Expense Approval</a>
+        <a href="#" onclick="loadSubPage('approve-exit', this)"><i class="fa-solid fa-door-open"></i> Exit Interview Approval</a>
         <a href="#"><i class="fa-solid fa-file-circle-check"></i> Clearance Approval</a>
         <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Overtime Approval</a>
         <a href="#"><i class="fa-solid fa-user-xmark"></i> Employee Resignation Approval</a>
@@ -221,12 +221,12 @@
       }
     }
 
-    // Tab switching inside loaded pages (e.g. Category Master, Appraisal)
+    // Tab switching inside loaded pages and modals
     function switchTab(tabId, btn) {
-      // Find the parent card to scope tab switching
-      const parent = btn.closest('.card') || document;
+      // Find the parent container (card or wizard layout) to scope tab switching
+      const parent = btn.closest('.wizard-layout') || btn.closest('.card') || document;
       parent.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
-      parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      parent.querySelectorAll('.tab-btn, .wizard-nav button').forEach(b => b.classList.remove('active'));
       document.getElementById(tabId).style.display = 'block';
       btn.classList.add('active');
     }

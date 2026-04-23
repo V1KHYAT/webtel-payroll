@@ -1,0 +1,101 @@
+<div style="margin-bottom: 24px;">
+  <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Online Leave Approval</h2>
+  <div style="font-size: 14px; color: var(--text-muted);">Review and approve pending employee leave requests.</div>
+</div>
+
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header" style="background:#2dd4bf; display:flex; justify-content:center; color:#fff; border-radius:4px 4px 0 0; margin:-24px -24px 24px -24px; padding:8px;">
+    <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; margin:0; color:#fff; letter-spacing:0.5px;">Custom Search Parameters</h3>
+  </div>
+  
+  <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+    <div style="max-width: 500px; flex:1;">
+      <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:16px;">
+        <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">From Date <span style="color:red;">*</span> <span style="float:right;">:</span></label>
+        <div style="padding-left:12px;"><input type="date" class="form-control" value="2026-04-01" style="max-width:200px;"></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:24px;">
+        <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">To Date <span style="color:red;">*</span> <span style="float:right;">:</span></label>
+        <div style="padding-left:12px;"><input type="date" class="form-control" value="2026-04-30" style="max-width:200px;"></div>
+      </div>
+      <div style="display:flex; gap:12px; margin-left:152px;">
+        <button class="btn-primary" style="background:#99f6e4; color:#0f766e; font-weight:600; border:none; box-shadow:0 1px 2px rgba(0,0,0,0.05);">SEARCH</button>
+        <button class="btn-secondary" style="background:#f3f4f6; color:#4b5563; font-weight:600; border:none; box-shadow:0 1px 2px rgba(0,0,0,0.05);">RESET</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:0;">
+  <div style="margin-bottom:16px;">
+    <a href="#" style="font-size:12px; color:var(--primary-color); text-decoration:none; font-weight:500;">Employee Details</a>
+  </div>
+  
+  <div class="table-wrapper" style="margin-bottom:24px; border:1px solid var(--border-color); border-radius:4px;">
+    <table class="table" style="width:100%; border-collapse:collapse; margin:0;">
+      <thead style="background:#f8fafc;">
+        <tr>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color);"><input type="checkbox"></th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">Emp ID</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">Employee Name</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">Leave Type</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">From</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">To</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:right;">Days</th>
+          <th style="padding:10px 16px; border-bottom:1px solid var(--border-color); text-align:left;">Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;"><input type="checkbox" checked></td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">100048</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9; font-weight:600;">Dalip Kumar</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;"><span class="badge" style="background:#e0f2fe; color:#0369a1;">Earned Leave</span></td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">12 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">15 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9; text-align:right;">4.0</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">Family Event</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;"><input type="checkbox" checked></td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">100928</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9; font-weight:600;">Jitesh Kumar</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;"><span class="badge" style="background:#fef3c7; color:#b45309;">Sick Leave</span></td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">18 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">19 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9; text-align:right;">2.0</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #f1f5f9;">Fever / Viral</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px; border-bottom:none;"><input type="checkbox"></td>
+          <td style="padding:12px 16px; border-bottom:none;">101516</td>
+          <td style="padding:12px 16px; border-bottom:none; font-weight:600;">Vikas Patankar</td>
+          <td style="padding:12px 16px; border-bottom:none;"><span class="badge" style="background:#dcfce7; color:#15803d;">Casual Leave</span></td>
+          <td style="padding:12px 16px; border-bottom:none;">22 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:none;">22 Apr 2026</td>
+          <td style="padding:12px 16px; border-bottom:none; text-align:right;">1.0</td>
+          <td style="padding:12px 16px; border-bottom:none;">Bank Work</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display:flex; gap:12px; align-items:center; margin-bottom:24px;">
+    <button class="btn-primary" style="background:#0ea5e9;">Check Mandatory Status</button>
+    <button class="btn-primary" style="background:#0ea5e9;">Balance Change Status</button>
+    <select class="form-control" style="max-width:150px; margin-left:12px;">
+      <option>Select All</option>
+      <option>Select None</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom:16px; max-width:600px;">
+    <label style="display:block; font-size:12px; color:var(--text-secondary); margin-bottom:8px;">Request Approval / Rejection Remarks (Policy)<br><span style="color:#ef4444;">(Mandatory on Rejection)</span></label>
+    <textarea class="form-control" style="height:80px; resize:vertical;"></textarea>
+  </div>
+
+  <div style="display:flex; gap:12px;">
+    <button class="btn-primary" style="background:#99f6e4; color:#0f766e; font-weight:600; border:none; box-shadow:0 1px 2px rgba(0,0,0,0.05);"><i class="fa-solid fa-check" style="margin-right:8px;"></i> APPROVE</button>
+    <button class="btn-secondary" style="background:#fee2e2; color:#991b1b; font-weight:600; border:none; box-shadow:0 1px 2px rgba(0,0,0,0.05);"><i class="fa-solid fa-xmark" style="margin-right:8px;"></i> REJECT</button>
+  </div>
+</div>

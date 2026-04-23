@@ -1,0 +1,24 @@
+<div style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end;">
+  <div>
+    <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Reimbursement Approval</h2>
+    <div style="font-size: 14px; color: var(--text-muted);">Manage and track employee reimbursement claims</div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom: 24px;">
+  <div style="max-width: 600px; padding-top: 12px;">
+    <div style="display:grid; grid-template-columns: 180px 1fr; align-items:center; margin-bottom:16px;">
+      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Paycode <span style="float:right;">:</span></label>
+      <div style="padding-left:12px;"><select class="form-control" style="max-width:250px;"><option>-- Select Reimbursement --</option><option>Travel Allowance</option><option>Medical Allowance</option></select></div>
+    </div>
+    <div style="display:grid; grid-template-columns: 180px 1fr; align-items:center; margin-bottom:24px;">
+      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Request Status <span style="float:right;">:</span></label>
+      <div style="padding-left:12px;"><select class="form-control" style="max-width:250px;"><option>-- Select Request Status --</option><option>Pending</option><option>Approved</option><option>Rejected</option></select></div>
+    </div>
+  </div>
+
+  <div style="background:var(--bg-body); padding:24px; text-align:center; border-radius:8px; border:1px dashed var(--border-color); color:var(--text-muted); font-size:13px;">
+    <i class="fa-solid fa-file-invoice" style="font-size:24px; color:var(--border-light); margin-bottom:12px;"></i><br>
+    No pending reimbursement request or record(s) does not exist according to above searching criteria!
+  </div>
+</div>
