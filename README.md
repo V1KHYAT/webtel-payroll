@@ -6,8 +6,9 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 
 ## 🚀 Latest Changes & Status
 
-- **Completed:** Finished designing all screens within the View tab, consolidating legacy structures into a unified, notion-inspired layout.
-- **Next Steps:** Refining the UX across these components and splitting administrative-level tabs into a dedicated "HR Admin" section.
+- **Completed:** Successfully overhauled the "Approve Requisitions" module. Created 13 new approval pages matching the unified design system. Added a sophisticated Floating Action Bar (FAB) for bulk table approvals.
+- **Completed:** Separated "Self Service" from "HR Admin" links in the sidebar, and expanded the "View Profile" modal into a premium multi-section view.
+- **Next Steps:** Implement further UX refinements (e.g., Glass-morphic Side Drawers for PDFs, custom Empty States) and begin migrating the "Reports" module.
 
 - **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
 - **Webtel Corporate Blue** (`#0284c7`) accent throughout
@@ -100,7 +101,7 @@ npm run preview   # Preview the production build
 ### Other Sections
 - **Dashboard** — KPI cards, leave balance bars, team directory, documents & links
 - **Details** — Leave requisition with calendar-based request form
-- **Approve Requisitions** — Manager approval workflows
+- **Approve Requisitions** — 13 complete manager approval workflows with unified styling and bulk-action processing
 - **Reports** — Daily attendance with date-range search
 
 ---
@@ -177,7 +178,7 @@ npm run preview   # Preview the production build
 ## 🛣️ Roadmap
 
 - [ ] Migrate remaining Details sub-pages (Tour Request, Income Details, Salary Slip, etc.)
-- [ ] Migrate remaining Approve Requisitions sub-pages
+- [x] Migrate remaining Approve Requisitions sub-pages
 - [ ] Migrate remaining Reports sub-pages
 - [ ] Add Investment Declaration page
 - [ ] Implement role-based sidebar visibility (Employee vs HR Admin)
