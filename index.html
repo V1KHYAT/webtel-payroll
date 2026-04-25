@@ -12,19 +12,19 @@
 
   <!-- GLOBAL NOTION SIDEBAR -->
   <aside class="notion-sidebar">
-    <div class="notion-brand">HR Pearls</div>
+    <div class="notion-brand"><div>HR Pearls<small>Payroll Management</small></div></div>
     
     <nav class="notion-nav">
       
       <!-- Dashboard -->
       <a href="#" onclick="loadPage('home')" id="nav-home" class="active">
-        <i class="fa-solid fa-shapes"></i> Dashboard
+        <i class="fa-solid fa-grid-2"></i> Dashboard
       </a>
 
       <!-- Self Service (expandable) -->
       <a href="#" onclick="toggleSection('selfservice', this)" id="nav-selfservice">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-regular fa-id-badge"></i> Self Service</span>
+          <span><i class="fa-regular fa-user"></i> Self Service</span>
           <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
         </div>
       </a>
@@ -32,98 +32,98 @@
         <div class="notion-group">Account</div>
         <a href="#" onclick="loadSubPage('view', this)"><i class="fa-regular fa-id-badge"></i> My Profile</a>
         <div class="notion-group">Requests</div>
-        <a href="#" onclick="loadSubPage('view-holiday', this)"><i class="fa-regular fa-calendar-plus"></i> Select Your Holiday</a>
-        <a href="#" onclick="loadSubPage('view-compoff', this)"><i class="fa-solid fa-clock-rotate-left"></i> Assign Compensatory Off</a>
-        <a href="#" onclick="loadSubPage('view-loan', this)"><i class="fa-solid fa-hand-holding-dollar"></i> Loan And Advance Request</a>
+        <a href="#" onclick="loadSubPage('view-holiday', this)"><i class="fa-regular fa-calendar"></i> Select Your Holiday</a>
+        <a href="#" onclick="loadSubPage('view-compoff', this)"><i class="fa-regular fa-clock"></i> Assign Compensatory Off</a>
+        <a href="#" onclick="loadSubPage('view-loan', this)"><i class="fa-regular fa-credit-card"></i> Loan And Advance Request</a>
         <div class="notion-group">Help & Docs</div>
-        <a href="#" onclick="loadSubPage('view-suggestions', this)"><i class="fa-solid fa-comment-dots"></i> Send Your Suggestions</a>
-        <a href="#" onclick="loadSubPage('view-helpdesk', this)"><i class="fa-solid fa-headset"></i> Ticket Help Desk</a>
-        <a href="#" onclick="loadSubPage('view-documents', this)"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Documents</a>
+        <a href="#" onclick="loadSubPage('view-suggestions', this)"><i class="fa-regular fa-comment"></i> Send Your Suggestions</a>
+        <a href="#" onclick="loadSubPage('view-helpdesk', this)"><i class="fa-regular fa-circle-question"></i> Ticket Help Desk</a>
+        <a href="#" onclick="loadSubPage('view-documents', this)"><i class="fa-regular fa-folder-open"></i> Upload Documents</a>
       </div>
 
       <!-- HR Admin (expandable) -->
       <a href="#" onclick="toggleSection('admin', this)" id="nav-admin">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-solid fa-users-gear"></i> HR Admin</span>
+          <span><i class="fa-solid fa-shield-halved"></i> HR Admin</span>
           <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
         </div>
       </a>
       <div class="notion-submenu" id="sub-admin" style="display:none;">
         <div class="notion-group">Operations</div>
-        <a href="#" onclick="loadSubPage('view-activities', this)"><i class="fa-solid fa-trophy"></i> Extra Curricular Activities</a>
-        <a href="#" onclick="loadSubPage('view-shift-import', this)"><i class="fa-solid fa-file-import"></i> Assign Shift Through Import</a>
-        <a href="#" onclick="loadSubPage('view-assign-shift', this)"><i class="fa-solid fa-calendar-days"></i> Assign Shift To Employee's</a>
-        <a href="#" onclick="loadSubPage('view-weekly-off', this)"><i class="fa-solid fa-calendar-week"></i> Assign Weekly Off To Employee's</a>
+        <a href="#" onclick="loadSubPage('view-activities', this)"><i class="fa-regular fa-star"></i> Extra Curricular Activities</a>
+        <a href="#" onclick="loadSubPage('view-shift-import', this)"><i class="fa-regular fa-file"></i> Assign Shift Through Import</a>
+        <a href="#" onclick="loadSubPage('view-assign-shift', this)"><i class="fa-regular fa-calendar-days"></i> Assign Shift To Employee's</a>
+        <a href="#" onclick="loadSubPage('view-weekly-off', this)"><i class="fa-regular fa-calendar-check"></i> Assign Weekly Off To Employee's</a>
         <div class="notion-group">Performance</div>
-        <a href="#" onclick="loadSubPage('view-category-master', this)"><i class="fa-solid fa-tags"></i> Category Master</a>
+        <a href="#" onclick="loadSubPage('view-category-master', this)"><i class="fa-regular fa-bookmark"></i> Category Master</a>
         <a href="#" onclick="loadSubPage('view-category-param', this)"><i class="fa-solid fa-sliders"></i> Create Category Parameter</a>
-        <a href="#" onclick="loadSubPage('view-appraisal', this)"><i class="fa-solid fa-user-gear"></i> Create Period, Appraisee And Appraiser</a>
-        <a href="#" onclick="loadSubPage('view-shortlist', this)"><i class="fa-solid fa-star-half-stroke"></i> Shortlist And Rate Candidate</a>
+        <a href="#" onclick="loadSubPage('view-appraisal', this)"><i class="fa-regular fa-clipboard"></i> Create Period, Appraisee And Appraiser</a>
+        <a href="#" onclick="loadSubPage('view-shortlist', this)"><i class="fa-regular fa-star-half-stroke"></i> Shortlist And Rate Candidate</a>
       </div>
 
       <!-- Details (expandable) -->
       <a href="#" onclick="toggleSection('details', this)" id="nav-details">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-solid fa-calendar-minus"></i> Details</span>
+          <span><i class="fa-regular fa-rectangle-list"></i> Details</span>
           <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
         </div>
       </a>
       <div class="notion-submenu" id="sub-details" style="display:none;">
-        <a href="#"><i class="fa-solid fa-plane-departure"></i> Outdoor And Tour Request</a>
-        <a href="#" onclick="loadSubPage('details', this)"><i class="fa-solid fa-calendar-minus"></i> Leave Requisition</a>
+        <a href="#"><i class="fa-regular fa-paper-plane"></i> Outdoor And Tour Request</a>
+        <a href="#" onclick="loadSubPage('details', this)"><i class="fa-regular fa-calendar-minus"></i> Leave Requisition</a>
         <a href="#"><i class="fa-solid fa-users"></i> My References</a>
-        <a href="#"><i class="fa-solid fa-notes-medical"></i> Accident Details</a>
-        <a href="#"><i class="fa-solid fa-money-bill-wave"></i> Other Income Details</a>
-        <a href="#"><i class="fa-solid fa-fingerprint"></i> Team Punch Detail</a>
-        <a href="#"><i class="fa-solid fa-list-check"></i> My Activity List</a>
-        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> My Salary Slip With Pf And Loan Details</a>
-        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> My Salary Slip With Tax Details</a>
-        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i> Salary Slip With / Without Leave Details</a>
+        <a href="#"><i class="fa-regular fa-file-lines"></i> Accident Details</a>
+        <a href="#"><i class="fa-regular fa-money-bill-1"></i> Other Income Details</a>
+        <a href="#"><i class="fa-regular fa-hand-point-up"></i> Team Punch Detail</a>
+        <a href="#"><i class="fa-regular fa-square-check"></i> My Activity List</a>
+        <a href="#"><i class="fa-regular fa-file"></i> My Salary Slip With Pf And Loan Details</a>
+        <a href="#"><i class="fa-regular fa-file"></i> My Salary Slip With Tax Details</a>
+        <a href="#"><i class="fa-regular fa-file"></i> Salary Slip With / Without Leave Details</a>
       </div>
 
       <!-- Approve Requisitions (expandable) -->
       <a href="#" onclick="toggleSection('approve', this)" id="nav-approve">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-solid fa-calendar-check"></i> Approve Requisitions</span>
+          <span><i class="fa-regular fa-circle-check"></i> Approve Requisitions</span>
           <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
         </div>
       </a>
       <div class="notion-submenu" id="sub-approve" style="display:none;">
-        <a href="#" onclick="loadSubPage('approve-outduty', this)"><i class="fa-solid fa-plane"></i> Approve Outduty And Tour Request</a>
-        <a href="#" onclick="loadSubPage('approve-leave', this)"><i class="fa-solid fa-calendar-check"></i> Online Leave Approval</a>
-        <a href="#" onclick="loadSubPage('approve-reimbursement', this)"><i class="fa-solid fa-money-bill-transfer"></i> Reimbursement Approval</a>
-        <a href="#" onclick="loadSubPage('approve-expense', this)"><i class="fa-solid fa-wallet"></i> Expense Approval</a>
+        <a href="#" onclick="loadSubPage('approve-outduty', this)"><i class="fa-regular fa-paper-plane"></i> Approve Outduty And Tour Request</a>
+        <a href="#" onclick="loadSubPage('approve-leave', this)"><i class="fa-regular fa-calendar-check"></i> Online Leave Approval</a>
+        <a href="#" onclick="loadSubPage('approve-reimbursement', this)"><i class="fa-regular fa-credit-card"></i> Reimbursement Approval</a>
+        <a href="#" onclick="loadSubPage('approve-expense', this)"><i class="fa-regular fa-money-bill-1"></i> Expense Approval</a>
         <a href="#" onclick="loadSubPage('approve-exit', this)"><i class="fa-solid fa-door-open"></i> Exit Interview Approval</a>
-        <a href="#" onclick="loadSubPage('approve-clearance', this)"><i class="fa-solid fa-file-circle-check"></i> Clearance Approval</a>
-        <a href="#" onclick="loadSubPage('approve-overtime', this)"><i class="fa-solid fa-clock-rotate-left"></i> Overtime Approval</a>
-        <a href="#" onclick="loadSubPage('approve-resignation', this)"><i class="fa-solid fa-user-xmark"></i> Employee Resignation Approval</a>
-        <a href="#" onclick="loadSubPage('approve-objective', this)"><i class="fa-solid fa-clipboard-check"></i> Approval Objective Setting Form (Manager)</a>
-        <a href="#" onclick="loadSubPage('approve-overtime-associate', this)"><i class="fa-solid fa-clock"></i> Overtime Request (Associate)</a>
-        <a href="#" onclick="loadSubPage('approve-temp-overtime', this)"><i class="fa-solid fa-stopwatch"></i> Temporary Overtime Approval/Rejection (Associate)</a>
-        <a href="#" onclick="loadSubPage('approve-final-overtime', this)"><i class="fa-solid fa-stopwatch-20"></i> Final Overtime Approval/Rejection (Associate)</a>
-        <a href="#" onclick="loadSubPage('approve-incentive', this)"><i class="fa-solid fa-hand-holding-dollar"></i> Incentive Approval (Director)</a>
+        <a href="#" onclick="loadSubPage('approve-clearance', this)"><i class="fa-regular fa-circle-check"></i> Clearance Approval</a>
+        <a href="#" onclick="loadSubPage('approve-overtime', this)"><i class="fa-regular fa-clock"></i> Overtime Approval</a>
+        <a href="#" onclick="loadSubPage('approve-resignation', this)"><i class="fa-regular fa-user"></i> Employee Resignation Approval</a>
+        <a href="#" onclick="loadSubPage('approve-objective', this)"><i class="fa-regular fa-clipboard"></i> Approval Objective Setting Form (Manager)</a>
+        <a href="#" onclick="loadSubPage('approve-overtime-associate', this)"><i class="fa-regular fa-clock"></i> Overtime Request (Associate)</a>
+        <a href="#" onclick="loadSubPage('approve-temp-overtime', this)"><i class="fa-regular fa-hourglass-half"></i> Temporary Overtime Approval/Rejection (Associate)</a>
+        <a href="#" onclick="loadSubPage('approve-final-overtime', this)"><i class="fa-regular fa-hourglass"></i> Final Overtime Approval/Rejection (Associate)</a>
+        <a href="#" onclick="loadSubPage('approve-incentive', this)"><i class="fa-regular fa-gem"></i> Incentive Approval (Director)</a>
       </div>
 
       <!-- Reports (expandable) -->
       <a href="#" onclick="toggleSection('reports', this)" id="nav-reports">
         <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-          <span><i class="fa-solid fa-chart-line"></i> Reports</span>
+          <span><i class="fa-solid fa-chart-simple"></i> Reports</span>
           <i class="fa-solid fa-chevron-right chevron-icon" style="font-size:10px; width:auto;"></i>
         </div>
       </a>
       <div class="notion-submenu" id="sub-reports" style="display:none;">
-        <a href="#" onclick="loadSubPage('reports', this)"><i class="fa-solid fa-clipboard-user"></i> My Daily Attendance</a>
-        <a href="#"><i class="fa-solid fa-headset"></i> Search \\ Respond \\ Export Tickets</a>
-        <a href="#"><i class="fa-solid fa-clipboard-list"></i> My Daily Attendance Format 2</a>
-        <a href="#"><i class="fa-solid fa-list-check"></i> Task List/Roster</a>
-        <a href="#"><i class="fa-solid fa-clipboard-check"></i> Fixation - Objective Setting Form (Employee)</a>
-        <a href="#"><i class="fa-solid fa-file-signature"></i> Employee Assessment Form</a>
-        <a href="#"><i class="fa-solid fa-comment-dots"></i> Trainer's Feedback Form</a>
+        <a href="#" onclick="loadSubPage('reports', this)"><i class="fa-regular fa-clipboard"></i> My Daily Attendance</a>
+        <a href="#"><i class="fa-regular fa-envelope"></i> Search \\ Respond \\ Export Tickets</a>
+        <a href="#"><i class="fa-regular fa-clipboard"></i> My Daily Attendance Format 2</a>
+        <a href="#"><i class="fa-regular fa-square-check"></i> Task List/Roster</a>
+        <a href="#"><i class="fa-regular fa-pen-to-square"></i> Fixation - Objective Setting Form (Employee)</a>
+        <a href="#"><i class="fa-regular fa-file-lines"></i> Employee Assessment Form</a>
+        <a href="#"><i class="fa-regular fa-comments"></i> Trainer's Feedback Form</a>
       </div>
 
       <!-- Investment Declaration -->
       <a href="#" onclick="loadPage('investment')" id="nav-investment">
-        <i class="fa-solid fa-money-bill-trend-up"></i> Investment Declaration
+        <i class="fa-regular fa-chart-bar"></i> Investment Declaration
       </a>
     </nav>
     <div style="padding: 16px 20px; border-top: 1px solid var(--border-light); display: flex; align-items: center; gap: 12px; margin-top: auto;">

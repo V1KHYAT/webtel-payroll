@@ -1,8 +1,10 @@
-<div style="margin-bottom: 32px; display: flex; justify-content: space-between; align-items: center;">
-  <h2 style="font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Employee Dashboard</h2>
+<div style="margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end;">
+  <div>
+    <div style="font-size: 14px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px;">Today's Overview</div>
+    <h2 style="font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Good Morning, Surender! 👋</h2>
+  </div>
   <div style="display: flex; gap: 12px;">
     <button class="btn-primary" style="padding: 10px 20px;"><i class="fa-solid fa-download"></i> Download Report</button>
-    <button class="btn-secondary" style="padding: 10px 20px;">Quick Actions</button>
   </div>
 </div>
 
@@ -11,293 +13,196 @@
   <!-- LEFT COLUMN -->
   <div class="col-left" style="display:flex; flex-direction:column; gap:24px;">
     
-    <!-- TOP CARDS ROW -->
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-      
-      <!-- PROFILE CARD -->
-      <div class="card" style="margin-bottom:0; display:flex; flex-direction:column; justify-content:center;">
-        <div style="display:flex; gap:16px; align-items:flex-start;">
-          <div style="position:relative;">
-            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" style="width: 72px; height: 72px; border-radius: 12px; object-fit:cover;">
-            <div style="position:absolute; bottom:-4px; right:-4px; width:14px; height:14px; background:var(--accent-green); border-radius:50%; border:2px solid #fff;"></div>
-          </div>
-          <div>
-            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-              <h3 style="font-size:18px; font-weight:700; color:var(--text-main); margin:0;">Surender Singh</h3>
-              <span class="badge" style="background:#dcfce7; color:#15803d; font-size:10px; padding:2px 6px;">ACTIVE</span>
-            </div>
-            <div style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">ID: 450289</div>
-            
-            <div style="display:flex; flex-direction:column; gap:8px; color:var(--text-secondary); font-size:13px;">
-              <div style="display:flex; align-items:center; gap:8px;">
-                <i class="fa-solid fa-briefcase" style="color:var(--primary-color); width:16px; text-align:center;"></i> Senior Project Manager
-              </div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <i class="fa-solid fa-users-gear" style="color:var(--primary-color); width:16px; text-align:center;"></i> Engineering Operations
-              </div>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <i class="fa-solid fa-location-dot" style="color:var(--primary-color); width:16px; text-align:center;"></i> New Delhi Hub
-              </div>
-            </div>
-          </div>
+    <!-- TOP METRICS ROW -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-header" style="margin-bottom:8px;">
+          <h3 style="color:var(--text-muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Target Training Hours</h3>
         </div>
-      </div>
-
-      <!-- LEAVE REPORT -->
-      <div class="card" style="margin-bottom:0; display:flex; flex-direction:column;">
-        <div class="card-header" style="margin-bottom:24px;">
-          <h3 style="font-size:14px;">Leave Report</h3>
-          <a href="#" style="font-size:12px; color:var(--primary-color); font-weight:500;">View History</a>
-        </div>
-        
-        <div style="display:flex; gap:24px; margin-bottom:24px;">
-          <!-- Sick -->
-          <div style="flex:1;">
-            <div style="font-size:11px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Sick Leave</div>
-            <div style="display:flex; align-items:baseline; gap:4px; margin-bottom:8px;">
-              <span style="font-size:24px; font-weight:700; color:var(--text-main);">04</span>
-              <span style="font-size:12px; font-weight:500; color:var(--text-muted);">/ 12</span>
-            </div>
-            <div style="height:6px; background:var(--border-light); border-radius:3px; overflow:hidden;">
-              <div style="height:100%; width:33%; background:var(--accent-orange); border-radius:3px;"></div>
-            </div>
-          </div>
-          
-          <!-- Earned -->
-          <div style="flex:1;">
-             <div style="font-size:11px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Earned Leave</div>
-            <div style="display:flex; align-items:baseline; gap:4px; margin-bottom:8px;">
-              <span style="font-size:24px; font-weight:700; color:var(--text-main);">18</span>
-              <span style="font-size:12px; font-weight:500; color:var(--text-muted);">/ 24</span>
-            </div>
-            <div style="height:6px; background:var(--border-light); border-radius:3px; overflow:hidden;">
-              <div style="height:100%; width:75%; background:var(--accent-green); border-radius:3px;"></div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:auto; font-size:12px; display:flex; justify-content:space-between; align-items:center; color:var(--text-muted);">
-          <span>Last Leave taken: Oct 12, 2023</span>
-          <a href="#" style="color:var(--primary-color); font-weight:600;">Request Leave</a>
+        <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">10:00</div>
+        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
+          <span style="color:var(--accent-green);"><i class="fa-solid fa-arrow-up"></i> 0%</span>
+          <span style="color:var(--text-muted);">vs. last month</span>
         </div>
       </div>
       
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-header" style="margin-bottom:8px;">
+          <h3 style="color:var(--text-muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Undergone Training</h3>
+        </div>
+        <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">4:30</div>
+        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
+          <span style="color:var(--accent-red);"><i class="fa-solid fa-arrow-down"></i> 2.4%</span>
+          <span style="color:var(--text-muted);">vs. last month</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-header" style="margin-bottom:8px;">
+          <h3 style="color:var(--text-muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Remaining Training</h3>
+        </div>
+        <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">5:30</div>
+        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
+          <span style="color:var(--text-muted);">On track to complete</span>
+        </div>
+      </div>
     </div>
 
-    <!-- TRAINING & COMPLIANCE -->
-    <div class="card" style="margin-bottom:0;">
+    <!-- COMPREHENSIVE LEAVE REPORT -->
+    <div class="card" style="margin-bottom:0; flex:1;">
       <div class="card-header" style="margin-bottom:24px;">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <i class="fa-solid fa-graduation-cap" style="color:var(--primary-color); font-size:18px;"></i>
-          <h3 style="font-size:15px; margin:0;">Training & Compliance</h3>
-        </div>
-        <span class="badge" style="background:#ffedd5; color:#c2410c; font-weight:700;">85% COMPLETE</span>
+        <h3 style="font-size:16px;">Leave Report</h3>
+        <a href="#" style="font-size:13px; color:var(--primary-color); font-weight:500;">View Full History</a>
       </div>
-
-      <div style="display:grid; grid-template-columns: 140px 1fr; gap:32px; align-items:center;">
-        <div>
-           <div style="font-size:11px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Training Hours</div>
-           <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:4px;">
-             <div style="font-size:32px; font-weight:800; color:var(--text-main); letter-spacing:-1px;">42.5</div>
-             <div style="font-size:13px; font-weight:600; color:var(--accent-green);">+12%</div>
-           </div>
-           <div style="font-size:11px; color:var(--text-muted);">Total hours this quarter</div>
-        </div>
+      
+      <div style="display:flex; flex-direction:column; gap:20px;">
         
-        <div style="display:flex; flex-direction:column; gap:16px;">
-          <div>
-            <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-              <span style="font-weight:500;">Cybersecurity Essentials</span>
-              <span style="color:var(--accent-green); font-weight:600;">Completed</span>
-            </div>
-            <div style="height:4px; background:var(--accent-green); border-radius:2px;"></div>
+        <!-- Sick Leave -->
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Sick Leave (SL)</div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--accent-orange);">4 / 10</div>
           </div>
-          <div>
-            <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-              <span style="font-weight:500;">Project Management Professional (PMP)</span>
-              <span style="color:var(--primary-color); font-weight:600;">In Progress</span>
-            </div>
-            <div style="height:4px; background:var(--border-light); border-radius:2px; overflow:hidden;">
-               <div style="height:100%; width:60%; background:var(--primary-color); border-radius:2px;"></div>
-            </div>
+          <div style="width: 100%; height: 8px; background: rgba(245, 158, 11, 0.15); border-radius: 8px; overflow: hidden;">
+            <div style="width: 40%; height: 100%; background: var(--accent-orange); border-radius: 8px;"></div>
           </div>
         </div>
+
+        <!-- Casual Leave -->
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Casual Leave (CL)</div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--accent-green);">0 / 10</div>
+          </div>
+          <div style="width: 100%; height: 8px; background: rgba(16, 185, 129, 0.15); border-radius: 8px; overflow: hidden;">
+            <div style="width: 0%; height: 100%; background: var(--accent-green); border-radius: 8px;"></div>
+          </div>
+        </div>
+
+        <!-- Earned Leave -->
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Earned Leave (EL)</div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--primary-color);">0 / 48.75</div>
+          </div>
+          <div style="width: 100%; height: 8px; background: rgba(37, 99, 235, 0.15); border-radius: 8px; overflow: hidden;">
+            <div style="width: 0%; height: 100%; background: var(--primary-color); border-radius: 8px;"></div>
+          </div>
+        </div>
+
+        <!-- Comp Off -->
+        <div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Comp Off (CO)</div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-muted);">0 / 0</div>
+          </div>
+          <div style="width: 100%; height: 8px; background: var(--border-light); border-radius: 8px; overflow: hidden;">
+            <div style="width: 0%; height: 100%; background: var(--text-muted); border-radius: 8px;"></div>
+          </div>
+        </div>
+
       </div>
     </div>
+    
+  </div> <!-- end col-left -->
 
-    <!-- RECENT PAYROLL HISTORY -->
+  <!-- RIGHT COLUMN -->
+  <div class="col-right" style="display:flex; flex-direction:column; gap:24px;">
+    
+    <!-- MY PROFILE CARD -->
     <div class="card" style="margin-bottom:0;">
       <div class="card-header" style="margin-bottom:16px;">
-        <h3 style="font-size:15px;">Recent Payroll History</h3>
-        <a href="#" style="font-size:12px; color:var(--primary-color); font-weight:500;">View All Statements</a>
+        <h3 style="font-size:15px;">My Profile</h3>
+        <i class="fa-solid fa-ellipsis action-icon"></i>
       </div>
-      
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+        <div style="position:relative; margin-bottom:12px;">
+          <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+        </div>
+        <h4 style="font-size:16px; font-weight:700; color:var(--text-main); margin-bottom:4px;">Mr Surender Singh</h4>
+        <div style="font-size:12px; color:var(--text-muted); margin-bottom:20px; font-weight:500;">Senior Manager, Store & Purchase</div>
+        
+        <div style="width:100%; text-align:left; font-size:13px;">
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-light);">
+            <div style="color:var(--text-secondary);"><i class="fa-regular fa-id-badge" style="width:16px;"></i> ID Number</div>
+            <div style="font-weight:600; color:var(--text-main);">#100003</div>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0;">
+            <div style="color:var(--text-secondary);"><i class="fa-regular fa-building" style="width:16px;"></i> Department</div>
+            <div style="font-weight:600; color:var(--text-main);">Store & Purchase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM DETAILS CARD -->
+    <div class="card" style="margin-bottom:0; padding:24px 0;">
+      <div class="card-header" style="margin-bottom:16px; padding:0 24px;">
+        <h3 style="font-size:15px;">Team Details</h3>
+        <span style="font-size:12px; color:var(--primary-color); cursor:pointer; font-weight:600;">View All</span>
+      </div>
       <div class="table-wrapper">
-        <table class="table" style="width:100%; border-collapse:collapse; margin:0; font-size:13px;">
-          <thead style="border-bottom:1px solid var(--border-color);">
+        <table class="table" style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead style="background:var(--bg-app); border-top:1px solid var(--border-light);">
             <tr>
-              <th style="padding:12px 16px; font-weight:600; color:var(--text-secondary); text-align:left;">PAY PERIOD</th>
-              <th style="padding:12px 16px; font-weight:600; color:var(--text-secondary); text-align:left;">STATUS</th>
-              <th style="padding:12px 16px; font-weight:600; color:var(--text-secondary); text-align:right;">GROSS PAY</th>
-              <th style="padding:12px 16px; font-weight:600; color:var(--text-secondary); text-align:right;">NET PAY</th>
-              <th style="padding:12px 16px; font-weight:600; color:var(--text-secondary); text-align:center;">ACTION</th>
+              <th style="padding:10px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">EMP NO</th>
+              <th style="padding:10px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">Name</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding:16px; border-bottom:1px solid var(--border-light);">
-                <div style="font-weight:600; color:var(--text-main);">October 2023</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Paid on Oct 30, 2023</div>
-              </td>
-              <td style="padding:16px; border-bottom:1px solid var(--border-light);">
-                <span class="badge badge-green">PROCESSED</span>
-              </td>
-              <td style="padding:16px; border-bottom:1px solid var(--border-light); text-align:right; font-weight:500;">₹1,24,500</td>
-              <td style="padding:16px; border-bottom:1px solid var(--border-light); text-align:right; font-weight:600; color:var(--primary-color);">₹98,240</td>
-              <td style="padding:16px; border-bottom:1px solid var(--border-light); text-align:center;">
-                <i class="fa-solid fa-eye action-icon"></i>
-              </td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:500; color:var(--text-secondary);">100048</td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:600; color:var(--text-main);">Dalip Kumar</td>
             </tr>
             <tr>
-              <td style="padding:16px; border-bottom:none;">
-                <div style="font-weight:600; color:var(--text-main);">September 2023</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Paid on Sep 28, 2023</div>
-              </td>
-              <td style="padding:16px; border-bottom:none;">
-                <span class="badge badge-green">PROCESSED</span>
-              </td>
-              <td style="padding:16px; border-bottom:none; text-align:right; font-weight:500;">₹1,24,500</td>
-              <td style="padding:16px; border-bottom:none; text-align:right; font-weight:600; color:var(--primary-color);">₹98,240</td>
-              <td style="padding:16px; border-bottom:none; text-align:center;">
-                <i class="fa-solid fa-eye action-icon"></i>
-              </td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:500; color:var(--text-secondary);">100928</td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:600; color:var(--text-main);">Jitesh Kumar</td>
+            </tr>
+            <tr>
+              <td style="padding:14px 24px; border-bottom:none; font-weight:500; color:var(--text-secondary);">101516</td>
+              <td style="padding:14px 24px; border-bottom:none; font-weight:600; color:var(--text-main);">Vikas Patankar</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-  </div> <!-- end col-left -->
-
-  <!-- RIGHT COLUMN -->
-  <div class="col-right" style="display:flex; flex-direction:column; gap:24px;">
-    
-    <!-- MY TEAM -->
+    <!-- DOCUMENTS & LINKS CARD -->
     <div class="card" style="margin-bottom:0;">
-      <div class="card-header" style="margin-bottom:20px;">
-        <h3 style="font-size:14px;">My Team</h3>
-        <span style="font-size:11px; font-weight:600; color:var(--text-muted);">12 MEMBERS</span>
+      <div class="card-header" style="margin-bottom:16px;">
+        <h3 style="font-size:15px;">Documents & Links</h3>
       </div>
-      
-      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
-        <!-- Member -->
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <div style="display:flex; gap:12px; align-items:center;">
-            <img src="https://i.pravatar.cc/150?img=5" style="width:36px; height:36px; border-radius:50%;">
-            <div>
-              <div style="font-size:13px; font-weight:600; color:var(--text-main);">Anita Sharma</div>
-              <div style="font-size:11px; color:var(--text-muted);">UX Lead</div>
-            </div>
-          </div>
-          <div style="width:8px; height:8px; border-radius:50%; background:var(--accent-green);"></div>
-        </div>
-        
-        <!-- Member -->
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <div style="display:flex; gap:12px; align-items:center;">
-            <img src="https://i.pravatar.cc/150?img=11" style="width:36px; height:36px; border-radius:50%;">
-            <div>
-              <div style="font-size:13px; font-weight:600; color:var(--text-main);">Vikram Rao</div>
-              <div style="font-size:11px; color:var(--text-muted);">Full Stack Dev</div>
-            </div>
-          </div>
-          <div style="width:8px; height:8px; border-radius:50%; background:var(--accent-green);"></div>
-        </div>
-        
-        <!-- Member -->
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <div style="display:flex; gap:12px; align-items:center;">
-            <img src="https://i.pravatar.cc/150?img=9" style="width:36px; height:36px; border-radius:50%;">
-            <div>
-              <div style="font-size:13px; font-weight:600; color:var(--text-main);">Preeti Verma</div>
-              <div style="font-size:11px; color:var(--text-muted);">Technical Writer</div>
-            </div>
-          </div>
-          <div style="width:8px; height:8px; border-radius:50%; background:var(--border-color);"></div>
-        </div>
-      </div>
-      
-      <button class="btn-secondary" style="width:100%; justify-content:center;">View Team Structure</button>
-    </div>
-
-    <!-- TAX & STATUTORY (Blue Card) -->
-    <div class="card" style="margin-bottom:0; background:var(--primary-color); color:#fff; border:none; box-shadow:0 10px 25px rgba(37,99,235,0.2);">
-      <div class="card-header" style="margin-bottom:24px;">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <i class="fa-solid fa-shield-halved" style="font-size:18px; color:#fff;"></i>
-          <h3 style="font-size:15px; margin:0; color:#fff;">Tax & Statutory</h3>
-        </div>
-      </div>
-      
-      <div style="margin-bottom:24px;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:11px; font-weight:600; letter-spacing:0.5px; opacity:0.9;">
-          <span>TAX FILING (Q3)</span>
-          <span>COMPLETED</span>
-        </div>
-        <div style="height:4px; background:rgba(255,255,255,0.2); border-radius:2px; overflow:hidden;">
-          <div style="height:100%; width:100%; background:#fff; border-radius:2px;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom:32px;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:11px; font-weight:600; letter-spacing:0.5px; opacity:0.9;">
-          <span>PF CONTRIBUTION</span>
-          <span>UP TO DATE</span>
-        </div>
-        <div style="height:4px; background:rgba(255,255,255,0.2); border-radius:2px; overflow:hidden;">
-          <div style="height:100%; width:100%; background:#fff; border-radius:2px;"></div>
-        </div>
-      </div>
-      
-      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-        <div>
-          <div style="font-size:11px; opacity:0.8; margin-bottom:4px;">Tax Saved this Year</div>
-          <div style="font-size:24px; font-weight:700;">₹42,000</div>
-        </div>
-        <button style="width:36px; height:36px; border-radius:8px; background:#fff; border:none; color:var(--primary-color); font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-          <i class="fa-solid fa-plus"></i>
-        </button>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="#" style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--bg-app); border-radius:8px; transition:transform 0.1s;">
+          <div style="width:36px; height:36px; border-radius:6px; background:rgba(37, 99, 235, 0.1); color:var(--primary-color); display:flex; justify-content:center; align-items:center; font-size:16px;"><i class="fa-regular fa-file-pdf"></i></div>
+          <div style="font-size:13px; font-weight:600; color:var(--text-main);">Company Policy</div>
+        </a>
+        <a href="#" style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--bg-app); border-radius:8px; transition:transform 0.1s;">
+          <div style="width:36px; height:36px; border-radius:6px; background:rgba(37, 99, 235, 0.1); color:var(--primary-color); display:flex; justify-content:center; align-items:center; font-size:16px;"><i class="fa-regular fa-file-lines"></i></div>
+          <div style="font-size:13px; font-weight:600; color:var(--text-main);">Attendance Policy</div>
+        </a>
       </div>
     </div>
 
-    <!-- UPCOMING HOLIDAYS -->
+    <!-- BIRTHDAYS & CELEBRATIONS -->
     <div class="card" style="margin-bottom:0;">
-      <div class="card-header" style="margin-bottom:20px;">
-        <h3 style="font-size:14px;">Upcoming Holidays</h3>
+      <div class="card-header" style="margin-bottom:16px;">
+        <h3 style="font-size:15px;">Birthdays & Celebrations</h3>
+        <i class="fa-solid fa-gift action-icon" style="color: var(--primary-color);"></i>
       </div>
-      
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <!-- Holiday 1 -->
-        <div style="display:flex; gap:16px; align-items:center; padding:12px; background:var(--bg-app); border-radius:8px;">
-          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding-right:16px; border-right:1px solid var(--border-color); min-width:55px;">
-            <span style="font-size:10px; font-weight:700; color:var(--accent-red); text-transform:uppercase;">Nov</span>
-            <span style="font-size:20px; font-weight:800; color:var(--text-main); line-height:1;">12</span>
-          </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="https://ui-avatars.com/api/?name=Dalip+Kumar&background=10b981&color=fff&size=50" style="width:40px; height:40px; border-radius:50%;">
           <div>
-            <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;">Diwali</div>
-            <div style="font-size:11px; color:var(--text-muted);">Sunday - Public Holiday</div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Dalip Kumar</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500;">Birthday Today! <span style="font-size:12px;">🎂</span></div>
           </div>
         </div>
-        
-        <!-- Holiday 2 -->
-        <div style="display:flex; gap:16px; align-items:center; padding:12px; background:var(--bg-app); border-radius:8px;">
-          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding-right:16px; border-right:1px solid var(--border-color); min-width:55px;">
-            <span style="font-size:10px; font-weight:700; color:var(--accent-red); text-transform:uppercase;">Nov</span>
-            <span style="font-size:20px; font-weight:800; color:var(--text-main); line-height:1;">27</span>
-          </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="https://ui-avatars.com/api/?name=Vikas+Patankar&background=2563eb&color=fff&size=50" style="width:40px; height:40px; border-radius:50%;">
           <div>
-            <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;">Guru Nanak Jayanti</div>
-            <div style="font-size:11px; color:var(--text-muted);">Monday - Public Holiday</div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Vikas Patankar</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500;">Work Anniversary (5 Yrs) <span style="font-size:12px;">🌟</span></div>
           </div>
         </div>
       </div>
