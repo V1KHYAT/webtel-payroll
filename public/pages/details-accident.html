@@ -1,0 +1,118 @@
+<!-- Accident Details -->
+<div style="margin-bottom: 28px;">
+  <h2 style="font-size: 22px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Accident Details</h2>
+  <div style="font-size: 13px; color: var(--text-muted);">Report and track workplace accident incidents</div>
+</div>
+
+<!-- Accident Form -->
+<div class="card" style="margin-bottom:24px;">
+  <div class="card-header" style="margin-bottom:24px;">
+    <h3 style="font-size:14px; margin:0;">Report Accident</h3>
+  </div>
+  
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+    <!-- Left Column -->
+    <div>
+      <div class="form-group">
+        <label>Code</label>
+        <input type="text" class="form-control" value="100003" readonly style="background:var(--bg-app);">
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" value="Surender Singh" readonly style="background:var(--bg-app);">
+      </div>
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" class="form-control" value="STORE & PURCHASE" readonly style="background:var(--bg-app);">
+      </div>
+      <div class="form-group">
+        <label>Designation</label>
+        <input type="text" class="form-control" value="SENIOR MANAGER" readonly style="background:var(--bg-app);">
+      </div>
+      <div class="form-group">
+        <label>Accident Happened</label>
+        <div style="display:flex; gap:16px; padding-top:6px;">
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; cursor:pointer;"><input type="radio" name="accidenttype" checked> On Duty</label>
+          <label style="display:flex; align-items:center; gap:6px; font-size:13px; cursor:pointer;"><input type="radio" name="accidenttype"> Off Duty</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Accident Date*</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Condition*</label>
+        <select class="form-control"><option>-- Select All --</option><option>Minor</option><option>Critical</option><option>Fatal</option></select>
+      </div>
+      <div class="form-group">
+        <label>Accident Details*</label>
+        <textarea class="form-control" rows="3" placeholder="Describe the accident..."></textarea>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div>
+      <div class="form-group">
+        <label>Not Sure of Re-Joining Date</label>
+        <div style="padding-top:6px;"><input type="checkbox"></div>
+      </div>
+      <div class="form-group">
+        <label>Rejoin Date</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Compensation Given By*</label>
+        <select class="form-control"><option>-- Select All --</option><option>Self</option><option>Company</option></select>
+      </div>
+      <div class="form-group">
+        <label>Detail About Compensation</label>
+        <textarea class="form-control" rows="3" placeholder="Enter compensation details..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Compensation Amount</label>
+        <input type="text" class="form-control" placeholder="Enter amount">
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:12px; margin-top:8px;">
+    <button class="btn-primary"><i class="ph ph-floppy-disk"></i> Save</button>
+    <button class="btn-secondary"><i class="ph ph-arrow-counter-clockwise"></i> Reset</button>
+  </div>
+</div>
+
+<!-- Accident Plan List -->
+<div class="card" style="margin-bottom:24px;">
+  <div class="card-header" style="margin-bottom:16px;">
+    <h3 style="font-size:14px; margin:0;">List of Accident Plan</h3>
+    <span class="badge badge-blue">1 Record</span>
+  </div>
+  <div class="table-wrapper">
+    <table class="table" style="width:100%;">
+      <thead>
+        <tr>
+          <th style="padding:10px 16px;">Name</th>
+          <th style="padding:10px 16px;">Accident Date</th>
+          <th style="padding:10px 16px;">Condition</th>
+          <th style="padding:10px 16px;">Accident Happened</th>
+          <th style="padding:10px 16px;">Compensation Given By</th>
+          <th style="padding:10px 16px;">Compensation Amount</th>
+          <th style="padding:10px 16px;">Edit</th>
+          <th style="padding:10px 16px;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:14px 16px; font-weight:600;">Mr Surender Singh</td>
+          <td style="padding:14px 16px;">29 Jul 2025</td>
+          <td style="padding:14px 16px;"><span class="badge badge-red">Critical</span></td>
+          <td style="padding:14px 16px;">On Duty</td>
+          <td style="padding:14px 16px;">Self</td>
+          <td style="padding:14px 16px; font-weight:600;">₹3,001.00</td>
+          <td style="padding:14px 16px;"><i class="ph ph-pencil-simple action-icon" style="cursor:pointer;"></i></td>
+          <td style="padding:14px 16px;"><i class="ph ph-trash action-icon" style="cursor:pointer; color:var(--accent-red);"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
