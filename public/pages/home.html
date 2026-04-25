@@ -3,55 +3,82 @@
   <h2 style="font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Good Morning, Surender! 👋</h2>
 </div>
 
-<div class="main-container">
+<!-- TOP BENTO GRID: KPIs -->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px;">
   
-  <!-- LEFT COLUMN -->
-  <div class="col-left" style="display:flex; flex-direction:column; gap:24px;">
+  <!-- Bento Box 1: Highlighted Metric -->
+  <div class="card" style="margin-bottom:0; background:linear-gradient(135deg, var(--primary-color), var(--primary-hover)); color:#fff; border:none; box-shadow:0 8px 24px var(--primary-subtle); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
+    <!-- Background Decor -->
+    <i class="ph ph-trend-up" style="position:absolute; right:-20px; bottom:-20px; font-size:120px; color:rgba(255,255,255,0.08); transform:rotate(-15deg);"></i>
     
-    <!-- TOP METRICS ROW -->
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      <div class="card" style="margin-bottom:0; background:linear-gradient(135deg, #2563eb, #1e40af); color:#fff; border:none; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
-        <div class="card-header" style="margin-bottom:8px;">
-          <h3 style="color:rgba(255,255,255,0.8); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Target Training Hours</h3>
-        </div>
-        <div style="font-size: 32px; font-weight: 800; color:#fff; letter-spacing:-1px;">10:00</div>
-        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
-          <span style="color:rgba(255,255,255,0.8);"><i class="ph ph-arrow-up"></i> 0%</span>
-          <span style="color:rgba(255,255,255,0.6);">vs. last month</span>
-        </div>
-      </div>
-      
-      <div class="card" style="margin-bottom:0;">
-        <div class="card-header" style="margin-bottom:8px;">
-          <h3 style="color:var(--text-muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Undergone Training</h3>
-        </div>
-        <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">4:30</div>
-        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
-          <span style="color:var(--accent-red);"><i class="ph ph-arrow-down"></i> 2.4%</span>
-          <span style="color:var(--text-muted);">vs. last month</span>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:0;">
-        <div class="card-header" style="margin-bottom:8px;">
-          <h3 style="color:var(--text-muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Remaining Training</h3>
-        </div>
-        <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">5:30</div>
-        <div style="margin-top: 12px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500;">
-          <span style="color:var(--text-muted);">On track to complete</span>
-        </div>
+    <div style="position:relative; z-index:2;">
+      <h3 style="color:rgba(255,255,255,0.8); font-size:13px; font-weight:600; margin-bottom:12px;">Training Target</h3>
+      <div style="font-size: 36px; font-weight: 800; color:#fff; letter-spacing:-1px;">10<span style="font-size:20px; font-weight:600; opacity:0.8;">h</span></div>
+    </div>
+    <div style="margin-top: 24px; font-size: 12px; display:flex; align-items:center; gap:6px; font-weight:500; position:relative; z-index:2; background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; width:fit-content; backdrop-filter:blur(4px);">
+      <i class="ph ph-arrow-up"></i> 4.5h completed
+    </div>
+  </div>
+  
+  <!-- Bento Box 2 -->
+  <div class="card" style="margin-bottom:0; display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+      <h3 style="color:var(--text-secondary); font-size:13px; font-weight:600;">Pending Approvals</h3>
+      <div style="width:36px; height:36px; border-radius:10px; background:rgba(245, 158, 11, 0.1); color:var(--accent-orange); display:flex; align-items:center; justify-content:center; font-size:18px;"><i class="ph ph-check-circle"></i></div>
+    </div>
+    <div>
+      <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">12</div>
+      <div style="margin-top: 8px; font-size: 12px; font-weight:500; color:var(--text-muted);">
+        Requires attention
       </div>
     </div>
+  </div>
 
+  <!-- Bento Box 3 -->
+  <div class="card" style="margin-bottom:0; display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+      <h3 style="color:var(--text-secondary); font-size:13px; font-weight:600;">Earned Leave</h3>
+      <div style="width:36px; height:36px; border-radius:10px; background:var(--primary-subtle); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-size:18px;"><i class="ph ph-calendar-plus"></i></div>
+    </div>
+    <div>
+      <div style="font-size: 32px; font-weight: 800; color: var(--text-main); letter-spacing:-1px;">48<span style="font-size:20px; font-weight:600; color:var(--text-muted);">.75</span></div>
+      <div style="margin-top: 8px; font-size: 12px; font-weight:500; color:var(--accent-green); display:flex; align-items:center; gap:4px;">
+        <i class="ph ph-trend-up"></i> +2.0 accrued this month
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento Box 4 -->
+  <div class="card" style="margin-bottom:0; display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+      <h3 style="color:var(--text-secondary); font-size:13px; font-weight:600;">Upcoming Holiday</h3>
+      <div style="width:36px; height:36px; border-radius:10px; background:rgba(16, 185, 129, 0.1); color:var(--accent-green); display:flex; align-items:center; justify-content:center; font-size:18px;"><i class="ph ph-calendar-star"></i></div>
+    </div>
+    <div>
+      <div style="font-size: 18px; font-weight: 700; color: var(--text-main); line-height:1.2; margin-bottom:4px;">Independence Day</div>
+      <div style="font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom:12px;">Aug 15, 2026</div>
+      <div style="font-size: 12px; font-weight:500; color:var(--text-muted);">
+        In 112 days
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- MAIN LAYOUT COLUMNS -->
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+  
+  <!-- LEFT COLUMN -->
+  <div style="display:flex; flex-direction:column; gap:24px;">
+    
     <!-- COMPREHENSIVE LEAVE REPORT -->
-    <div class="card" style="margin-bottom:0; flex:1;">
+    <div class="card" style="margin-bottom:0;">
       <div class="card-header" style="margin-bottom:24px;">
-        <h3 style="font-size:16px;">Leave Report</h3>
-        <a href="#" style="font-size:13px; color:var(--primary-color); font-weight:500;">View Full History</a>
+        <h3 style="font-size:15px;"><i class="ph ph-chart-pie-slice" style="color:var(--primary-color); margin-right:8px;"></i>Leave Utilization</h3>
       </div>
       
-      <div style="display:flex; flex-direction:column; gap:20px;">
-        
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
         <!-- Sick Leave -->
         <div>
           <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
@@ -67,10 +94,10 @@
         <div>
           <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
             <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Casual Leave (CL)</div>
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent-green);">0 / 10</div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--accent-green);">2 / 10</div>
           </div>
           <div style="width: 100%; height: 8px; background: rgba(16, 185, 129, 0.15); border-radius: 8px; overflow: hidden;">
-            <div style="width: 0%; height: 100%; background: var(--accent-green); border-radius: 8px;"></div>
+            <div style="width: 20%; height: 100%; background: var(--accent-green); border-radius: 8px;"></div>
           </div>
         </div>
 
@@ -80,7 +107,7 @@
             <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Earned Leave (EL)</div>
             <div style="font-size: 13px; font-weight: 600; color: var(--primary-color);">0 / 48.75</div>
           </div>
-          <div style="width: 100%; height: 8px; background: rgba(37, 99, 235, 0.15); border-radius: 8px; overflow: hidden;">
+          <div style="width: 100%; height: 8px; background: var(--primary-subtle); border-radius: 8px; overflow: hidden;">
             <div style="width: 0%; height: 100%; background: var(--primary-color); border-radius: 8px;"></div>
           </div>
         </div>
@@ -95,113 +122,120 @@
             <div style="width: 0%; height: 100%; background: var(--text-muted); border-radius: 8px;"></div>
           </div>
         </div>
-
       </div>
     </div>
     
-  </div> <!-- end col-left -->
-
-  <!-- RIGHT COLUMN -->
-  <div class="col-right" style="display:flex; flex-direction:column; gap:24px;">
-    
-    <!-- MY PROFILE CARD -->
-    <div class="card" style="margin-bottom:0;">
-      <div class="card-header" style="margin-bottom:16px;">
-        <h3 style="font-size:15px;">My Profile</h3>
-        <i class="ph ph-dots-three action-icon"></i>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-        <div style="position:relative; margin-bottom:12px;">
-          <div style="width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg, #2563eb, #1d4ed8); color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; box-shadow:0 4px 12px rgba(37,99,235,0.3);">SS</div>
-        </div>
-        <h4 style="font-size:16px; font-weight:700; color:var(--text-main); margin-bottom:4px;">Mr Surender Singh</h4>
-        <div style="font-size:12px; color:var(--text-muted); margin-bottom:20px; font-weight:500;">Senior Manager, Store & Purchase</div>
-        
-        <div style="width:100%; text-align:left; font-size:13px;">
-          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-light);">
-            <div style="color:var(--text-secondary);"><i class="ph ph-identification-badge" style="width:16px;"></i> ID Number</div>
-            <div style="font-weight:600; color:var(--text-main);">#100003</div>
-          </div>
-          <div style="display:flex; justify-content:space-between; padding:8px 0;">
-            <div style="color:var(--text-secondary);"><i class="ph ph-building" style="width:16px;"></i> Department</div>
-            <div style="font-weight:600; color:var(--text-main);">Store & Purchase</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TEAM DETAILS CARD -->
+    <!-- TEAM DETAILS TABLE -->
     <div class="card" style="margin-bottom:0; padding:24px 0;">
       <div class="card-header" style="margin-bottom:16px; padding:0 24px;">
-        <h3 style="font-size:15px;">Team Details</h3>
-        <span style="font-size:12px; color:var(--primary-color); cursor:pointer; font-weight:600;">View All</span>
+        <h3 style="font-size:15px;"><i class="ph ph-users" style="color:var(--primary-color); margin-right:8px;"></i>My Team</h3>
+        <span style="font-size:12px; color:var(--primary-color); cursor:pointer; font-weight:600;">View All Team <i class="ph ph-arrow-right"></i></span>
       </div>
-      <div class="table-wrapper">
-        <table class="table" style="width:100%; border-collapse:collapse; font-size:13px;">
-          <thead style="background:var(--bg-app); border-top:1px solid var(--border-light);">
+      <div class="table-wrapper" style="border:none;">
+        <table class="table" style="width:100%; border-collapse:collapse; font-size:13px; margin:0;">
+          <thead style="background:var(--bg-sidebar); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
             <tr>
-              <th style="padding:10px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">EMP NO</th>
-              <th style="padding:10px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">Name</th>
+              <th style="padding:12px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">EMP NO</th>
+              <th style="padding:12px 24px; text-align:left; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">Name</th>
+              <th style="padding:12px 24px; text-align:right; font-weight:600; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.5px;">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr style="transition:background 0.2s; cursor:pointer;" onmouseover="this.style.background='var(--bg-app)'" onmouseout="this.style.background='transparent'">
               <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:500; color:var(--text-secondary);">100048</td>
               <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:600; color:var(--text-main);">Dalip Kumar</td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); text-align:right;"><span class="badge" style="background:rgba(16, 185, 129, 0.1); color:var(--accent-green);">Active</span></td>
             </tr>
-            <tr>
+            <tr style="transition:background 0.2s; cursor:pointer;" onmouseover="this.style.background='var(--bg-app)'" onmouseout="this.style.background='transparent'">
               <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:500; color:var(--text-secondary);">100928</td>
               <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); font-weight:600; color:var(--text-main);">Jitesh Kumar</td>
+              <td style="padding:14px 24px; border-bottom:1px solid var(--border-light); text-align:right;"><span class="badge" style="background:rgba(245, 158, 11, 0.1); color:var(--accent-orange);">On Leave</span></td>
             </tr>
-            <tr>
+            <tr style="transition:background 0.2s; cursor:pointer;" onmouseover="this.style.background='var(--bg-app)'" onmouseout="this.style.background='transparent'">
               <td style="padding:14px 24px; border-bottom:none; font-weight:500; color:var(--text-secondary);">101516</td>
               <td style="padding:14px 24px; border-bottom:none; font-weight:600; color:var(--text-main);">Vikas Patankar</td>
+              <td style="padding:14px 24px; border-bottom:none; text-align:right;"><span class="badge" style="background:rgba(16, 185, 129, 0.1); color:var(--accent-green);">Active</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    
+  </div> <!-- end left column -->
 
-    <!-- DOCUMENTS & LINKS CARD -->
+  <!-- RIGHT COLUMN -->
+  <div style="display:flex; flex-direction:column; gap:24px;">
+    
+    <!-- RECENT ACTIVITY BENTO -->
+    <div class="card" style="margin-bottom:0; flex:1;">
+      <div class="card-header" style="margin-bottom:20px;">
+        <h3 style="font-size:15px;"><i class="ph ph-bell" style="color:var(--primary-color); margin-right:8px;"></i>Recent Activity</h3>
+      </div>
+      
+      <div style="display:flex; flex-direction:column; gap:20px; position:relative;">
+        <!-- Timeline Line -->
+        <div style="position:absolute; left:15px; top:10px; bottom:10px; width:1px; background:var(--border-light); z-index:1;"></div>
+        
+        <!-- Activity Item 1 -->
+        <div style="display:flex; gap:16px; position:relative; z-index:2;">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid #fff; box-shadow:0 0 0 1px var(--border-color); color:var(--primary-color); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="ph ph-calendar-check"></i>
+          </div>
+          <div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:2px;">Leave Approved</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.4;">Your leave request for Apr 28 - Apr 29 was approved by HR Admin.</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">2 hours ago</div>
+          </div>
+        </div>
+        
+        <!-- Activity Item 2 -->
+        <div style="display:flex; gap:16px; position:relative; z-index:2;">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid #fff; box-shadow:0 0 0 1px var(--border-color); color:var(--accent-orange); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="ph ph-clock-counter-clockwise"></i>
+          </div>
+          <div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:2px;">Pending Action</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.4;">You have 12 pending requests waiting for your approval.</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Yesterday</div>
+          </div>
+        </div>
+        
+        <!-- Activity Item 3 -->
+        <div style="display:flex; gap:16px; position:relative; z-index:2;">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid #fff; box-shadow:0 0 0 1px var(--border-color); color:var(--accent-green); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="ph ph-wallet"></i>
+          </div>
+          <div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:2px;">Salary Processed</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.4;">March 2026 salary has been credited to your account.</div>
+            <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Mar 31, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTS & LINKS -->
     <div class="card" style="margin-bottom:0;">
       <div class="card-header" style="margin-bottom:16px;">
-        <h3 style="font-size:15px;">Documents & Links</h3>
+        <h3 style="font-size:15px;"><i class="ph ph-files" style="color:var(--primary-color); margin-right:8px;"></i>Quick Links</h3>
       </div>
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <a href="#" style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--bg-app); border-radius:8px; transition:transform 0.1s;">
-          <div style="width:36px; height:36px; border-radius:6px; background:rgba(37, 99, 235, 0.1); color:var(--primary-color); display:flex; justify-content:center; align-items:center; font-size:18px;"><i class="ph ph-file-pdf"></i></div>
-          <div style="font-size:13px; font-weight:600; color:var(--text-main);">Company Policy</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <a href="#" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--bg-app); border:1px solid transparent; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--primary-subtle)'; this.style.background='#fff'" onmouseout="this.style.borderColor='transparent'; this.style.background='var(--bg-app)'">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="color:var(--accent-red); font-size:18px;"><i class="ph ph-file-pdf"></i></div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Company Policy 2026</div>
+          </div>
+          <i class="ph ph-download-simple" style="color:var(--text-muted);"></i>
         </a>
-        <a href="#" style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--bg-app); border-radius:8px; transition:transform 0.1s;">
-          <div style="width:36px; height:36px; border-radius:6px; background:rgba(37, 99, 235, 0.1); color:var(--primary-color); display:flex; justify-content:center; align-items:center; font-size:18px;"><i class="ph ph-file-text"></i></div>
-          <div style="font-size:13px; font-weight:600; color:var(--text-main);">Attendance Policy</div>
+        <a href="#" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--bg-app); border:1px solid transparent; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--primary-subtle)'; this.style.background='#fff'" onmouseout="this.style.borderColor='transparent'; this.style.background='var(--bg-app)'">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="color:var(--primary-color); font-size:18px;"><i class="ph ph-file-text"></i></div>
+            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Leave Policy</div>
+          </div>
+          <i class="ph ph-download-simple" style="color:var(--text-muted);"></i>
         </a>
       </div>
     </div>
 
-    <!-- BIRTHDAYS & CELEBRATIONS -->
-    <div class="card" style="margin-bottom:0;">
-      <div class="card-header" style="margin-bottom:16px;">
-        <h3 style="font-size:15px;">Birthdays & Celebrations</h3>
-        <i class="ph ph-gift" style="color: var(--primary-color); font-size: 18px;"></i>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:#10b981; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">DK</div>
-          <div>
-            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Dalip Kumar</div>
-            <div style="font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500;">Birthday Today! <span style="font-size:12px;">🎂</span></div>
-          </div>
-        </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-color); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0;">VP</div>
-          <div>
-            <div style="font-size:13px; font-weight:600; color:var(--text-main);">Vikas Patankar</div>
-            <div style="font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500;">Work Anniversary (5 Yrs) <span style="font-size:12px;">🌟</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- end col-right -->
+  </div> <!-- end right column -->
 </div>

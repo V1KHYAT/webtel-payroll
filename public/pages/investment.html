@@ -67,41 +67,48 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Deposit in Public Provident Fund (PPF)</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Life Insurance Premium (LIC)</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Mutual Funds / ELSS</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Repayment of Housing Loan (Principal)</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80D</div>Medical Premium for Parent (Sr. Citizen)</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80E</div>Payment of Interest on Loan taken for Higher Education</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td><div style="font-weight:500; color:var(--text-main);">Section 80TTA</div>Interest on Savings Bank Account</td>
-              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
-            </tr>
+            <!-- Core 80C to 80CCD -->
+            <tr><td>1</td><td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>2</td><td><div style="font-weight:500; color:var(--text-main);">Section 80CCC</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>3</td><td><div style="font-weight:500; color:var(--text-main);">80CCD(1B)</div>Additional Employee Contribution to New Pension Scheme - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>4</td><td><div style="font-weight:500; color:var(--text-main);">NPS Tier-I</div>Employer contribution comes u/s 80CCD(2) (Max 10% of salary)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>5</td><td><div style="font-weight:500; color:var(--text-main);">Rajiv Gandhi Equity Saving Scheme</div>Section 80CCG - 50% deduction to new retail investors - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Health 80D variations -->
+            <tr><td>6</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Self, Spouse and Children - upto Rs. 25000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>7</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Parent (Age < 60) - upto Rs. 25000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>8</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Parent (Sr. Citizen) - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>9</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Medical Expenditure for Parent (Very Sr. Citizen) - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Disability & Medical 80DD / 80DDB -->
+            <tr><td>10</td><td><div style="font-weight:500; color:var(--text-main);">80DD</div>Maintenance/Medical treatment of dependent family member with disability (<80%) - upto Rs. 75000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>11</td><td><div style="font-weight:500; color:var(--text-main);">80DD</div>Maintenance/Medical treatment of dependent family member with disability (>80%) - upto Rs. 125000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>12</td><td><div style="font-weight:500; color:var(--text-main);">Section 80DDA</div>Handicap Dependent - upto Rs. 100000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>13</td><td><div style="font-weight:500; color:var(--text-main);">80DDB</div>Medical treatment of specified diseases (Age < 60) - upto Rs. 40000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>14</td><td><div style="font-weight:500; color:var(--text-main);">80DDB</div>Medical treatment of specified diseases (Sr. Citizen) - upto Rs. 100000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Education, Interest & Disability -->
+            <tr><td>15</td><td><div style="font-weight:500; color:var(--text-main);">Section 80E</div>Payment of Interest on Loan taken for Higher Education</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>16</td><td><div style="font-weight:500; color:var(--text-main);">Section 80EEA</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>17</td><td><div style="font-weight:500; color:var(--text-main);">Section 80TTA</div>Interest on Savings Bank Account - upto Rs. 10000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>18</td><td><div style="font-weight:500; color:var(--text-main);">80U</div>Deduction in case of self being totally blind or physically handicapped (40%-80%) - upto Rs. 75000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>19</td><td><div style="font-weight:500; color:var(--text-main);">80U</div>Deduction in case of self being totally blind or physically handicapped (>80%) - upto Rs. 125000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Section 80C Breakdowns -->
+            <tr><td colspan="3" style="background:#f8f9fb; font-weight:600; padding:12px 16px;">Under Section 80C</td></tr>
+            <tr><td>20a</td><td style="padding-left:32px;">Deposit in Public Provident Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20b</td><td style="padding-left:32px;">Approved Superannuation Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20c</td><td style="padding-left:32px;">Pension Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20d</td><td style="padding-left:32px;">LIC Direct</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20e</td><td style="padding-left:32px;">Payment of Unit Linked Insurance plan (ULIP)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20f</td><td style="padding-left:32px;">Purchase of National Saving Certificates</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20g</td><td style="padding-left:32px;">Payment of tuition fees for any of two children</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20h</td><td style="padding-left:32px;">FD above 5 yr</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20i</td><td style="padding-left:32px;">Mutual Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20j</td><td style="padding-left:32px;">Post office Savings Bank (Cumulative time deposit)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20k</td><td style="padding-left:32px;">Others (Please provide details)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20l</td><td style="padding-left:32px;">Repayment of Principal Amount of Housing Loan</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20m</td><td style="padding-left:32px;">ELSS</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
           </tbody>
         </table>
       </div>
@@ -198,30 +205,32 @@
   
   <!-- Wizard Footer Controls -->
   <div style="padding:20px 24px; border-top:1px solid var(--border-light); background:var(--bg-app); border-radius: 0 0 var(--radius-xl) var(--radius-xl); display:flex; justify-content:space-between; align-items:center;">
-    <button class="btn-secondary" style="padding:8px 24px;"><i class="ph ph-arrow-left"></i> Previous</button>
+    <button class="btn-secondary" style="padding:8px 24px;" onclick="prevTab()"><i class="ph ph-arrow-left"></i> Previous</button>
     <div style="display:flex; gap:12px;">
       <button class="btn-secondary" style="padding:8px 24px;">Reset Form</button>
-      <button class="btn-primary" style="padding:8px 32px;">Save & Next <i class="ph ph-arrow-right"></i></button>
+      <button class="btn-primary" id="save-next-btn" style="padding:8px 32px;" onclick="nextTab()">Save & Next <i class="ph ph-arrow-right"></i></button>
     </div>
   </div>
 
 </div>
 
 <script>
-  // Very basic visual tab switcher for demo purposes
+  let currentStep = 1;
+
   function switchTab(tabId, el) {
     document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
     document.getElementById(tabId).style.display = 'block';
     
     // Reset opacities
     const steps = el.parentElement.querySelectorAll('div[onclick]');
-    steps.forEach(s => {
+    steps.forEach((s, idx) => {
       s.style.opacity = '0.5';
       const circle = s.querySelector('div');
       circle.style.background = 'var(--bg-app)';
       circle.style.color = 'var(--text-secondary)';
       circle.style.border = '2px solid var(--border-color)';
       circle.style.boxShadow = 'none';
+      if (s === el) currentStep = idx + 1;
     });
     
     // Set active
@@ -231,5 +240,27 @@
     activeCircle.style.color = '#fff';
     activeCircle.style.border = 'none';
     activeCircle.style.boxShadow = '0 0 0 4px var(--primary-light)';
+    
+    // Update footer button
+    const nextBtn = document.getElementById('save-next-btn');
+    if (currentStep === 4) {
+      nextBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = 'block';
+    }
+  }
+  
+  function nextTab() {
+    if (currentStep < 4) {
+      const nextTabEl = document.querySelector(`div[onclick*="inv-step-${currentStep + 1}"]`);
+      if (nextTabEl) nextTabEl.click();
+    }
+  }
+
+  function prevTab() {
+    if (currentStep > 1) {
+      const prevTabEl = document.querySelector(`div[onclick*="inv-step-${currentStep - 1}"]`);
+      if (prevTabEl) prevTabEl.click();
+    }
   }
 </script>

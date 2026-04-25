@@ -21,11 +21,11 @@
   --text-muted: #94a3b8;
   --text-placeholder: #cbd5e1;
   
-  /* Accent System — Brighter Blue */
-  --primary-color: #3b82f6;
-  --primary-hover: #2563eb;
-  --primary-subtle: rgba(59, 130, 246, 0.08);
-  --primary-light: #eff6ff;
+  /* Accent System — Vibrant Indigo SaaS Theme */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-subtle: rgba(79, 70, 229, 0.08);
+  --primary-light: #e0e7ff;
   --accent-green: #10b981;
   --accent-red: #ef4444;
   --accent-orange: #f59e0b;
