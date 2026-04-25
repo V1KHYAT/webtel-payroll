@@ -6,17 +6,18 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 
 ## 🚀 Latest Changes & Status
 
-### Core Features Overhauled (Latest Update)
-- **Approve Requisitions Complete (13 Pages):** Built and wired all 13 approval pages (e.g. Leave, Expense, Overtime, Clearance) replacing old teal styles with a Premium Notion-inspired design system. Populated key modules like Expense and Leave with functional mock data tables.
-- **Bulk Floating Action Bar (FAB):** Engineered a dynamic, sticky frosted-glass action drawer. When managers select multiple rows in huge tables, the FAB smoothly slides up, offering immediate access to `APPROVE ALL` and `REJECT ALL` buttons.
-- **Advanced "View Profile" Modal:** Upgraded the legacy profile view into an expansive, segmented pop-up interface housing Personal, Statutory, Contact, and structured Family Relationship data tables.
-- **Dashboard Refinement & Bug Fixes:** Removed the Quick Shortcuts widget to maintain a strictly minimalist dashboard overview. Standardized global JavaScript `switchTab()` functions to resolve tab-switching bugs inside nested wizard modes (like the Edit Profile module).
-- **Navigation Redesign:** Reorganized the primary Sidebar schema, explicitly bisecting "Self Service" utilities from "HR Admin" configurations.
+### Premium SaaS Design System (Latest Update)
+- **Calm Design Framework:** Complete CSS rewrite shifting the interface to a lighter, premium aesthetic inspired by Linear and Notion. Features new CSS variable tokens, subtle borders, deep shadow elevations, pill badges, and custom scrollbars.
+- **Phosphor Icon Migration:** Globally deprecated all FontAwesome icons across 40+ files, replacing them with modern, thin-outline **Phosphor Icons** (`ph-`) for a cohesive, professional aesthetic.
+- **Split Bento Sidebar:** Redesigned the monolithic sidebar into a modern, two-part floating layout: a scrollable navigation container on top, and a fixed "Profile Bento" card displaying user initials, role, and quick-links at the bottom.
+- **Investment Declaration Wizard:** Completely rebuilt the legacy investment page into a premium, 4-step horizontal wizard covering Section 80C, HRA/Rent, Other Income, and Final Review.
+- **Details Module Finalization:** Built and integrated 5 new premium subpages (`details-punch`, `details-activity`, `details-salary-pf`, `details-salary-tax`, `details-salary-leave`) into the core SPA shell.
+- **Fluid Layout Refinement:** Eliminated "dead space" inside cards globally by removing hard `max-width` constraints, ensuring data grids and forms utilize horizontal space gracefully.
 
 - **Next Steps:** Implement advanced interactions (Glass-morphic Side Drawers over PDF links, customized Empty State SVGs, Skeleton loading) and systematically tackle the 'Reports' dashboard implementation.
 
 - **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
-- **Webtel Corporate Blue** (`#0284c7`) accent throughout
+- **Webtel Corporate Blue** (`#3b82f6`) accent throughout
 - **Inter font family** for modern, professional typography
 - **Design Language** — Pure flat, editorial design language
 - **Fluid layouts** that maximize horizontal screen real estate
