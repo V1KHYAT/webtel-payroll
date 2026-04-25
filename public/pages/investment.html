@@ -1,0 +1,235 @@
+<div class="page-title" style="display:flex; justify-content:space-between; align-items:flex-end;">
+  <div>
+    <h2>Investment Declaration</h2>
+    <div class="page-subtitle">Submit your tax-saving investments for the financial year</div>
+  </div>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <div style="display:flex; background:var(--bg-sidebar); border:1px solid var(--border-color); border-radius:30px; padding:4px;">
+      <button class="btn-ghost" style="border-radius:20px; padding:4px 16px; font-weight:600; font-size:12px; background:var(--primary-subtle); color:var(--primary-color);">Old Regime</button>
+      <button class="btn-ghost" style="border-radius:20px; padding:4px 16px; font-weight:500; font-size:12px; color:var(--text-secondary);">New Regime</button>
+    </div>
+    <div style="width:1px; height:24px; background:var(--border-color); margin:0 4px;"></div>
+    <button class="btn-secondary" style="font-size:12px; padding:6px 12px;"><i class="ph ph-clock-counter-clockwise"></i> Check Status</button>
+    <button class="btn-secondary" style="font-size:12px; padding:6px 12px;"><i class="ph ph-file-text"></i> View Computed Tax</button>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:24px; overflow:visible;">
+  
+  <!-- Wizard Progress Bar -->
+  <div style="display:flex; justify-content:space-between; padding:24px 40px; border-bottom:1px solid var(--border-light); position:relative;">
+    
+    <!-- Step 1 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer;" onclick="switchTab('inv-step-1', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--primary-color); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px; box-shadow:0 0 0 4px var(--primary-light);">1</div>
+      <div style="font-size:12px; font-weight:600; color:var(--text-main);">Section 80C</div>
+    </div>
+    
+    <!-- Step 2 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-2', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">2</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">HRA / Rent</div>
+    </div>
+    
+    <!-- Step 3 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-3', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">3</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">Other Income</div>
+    </div>
+    
+    <!-- Step 4 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-4', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">4</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">Review & Submit</div>
+    </div>
+    
+    <!-- Connecting Line -->
+    <div style="position:absolute; top:40px; left:12%; right:12%; height:2px; background:var(--border-color); z-index:1;"></div>
+    <div style="position:absolute; top:40px; left:12%; width:25%; height:2px; background:var(--primary-color); z-index:1;"></div>
+  </div>
+
+  <div style="padding:0;">
+    
+    <!-- ==================== STEP 1 ==================== -->
+    <div id="inv-step-1" class="tab-panel" style="display:block;">
+      <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-shield-check" style="color:var(--primary-color); margin-right:8px;"></i>Chapter VI-A Details</h3>
+        <div class="badge badge-blue">Max limit: ₹1,50,000</div>
+      </div>
+      
+      <div class="table-wrapper" style="max-height: 500px; overflow-y:auto; border-radius:0;">
+        <table class="table" style="margin:0;">
+          <thead style="position:sticky; top:0; z-index:10;">
+            <tr>
+              <th style="width:60px;">S.No.</th>
+              <th>Description</th>
+              <th style="width:200px;">Requested Amount (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Deposit in Public Provident Fund (PPF)</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Life Insurance Premium (LIC)</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Mutual Funds / ELSS</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>Repayment of Housing Loan (Principal)</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80D</div>Medical Premium for Parent (Sr. Citizen)</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80E</div>Payment of Interest on Loan taken for Higher Education</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><div style="font-weight:500; color:var(--text-main);">Section 80TTA</div>Interest on Savings Bank Account</td>
+              <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 2 ==================== -->
+    <div id="inv-step-2" class="tab-panel" style="display:none;">
+      <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+        <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-house-line" style="color:var(--primary-color); margin-right:8px;"></i>House Rent Paid</h3>
+      </div>
+      
+      <div style="padding:24px;">
+        <div class="table-wrapper" style="margin-bottom:16px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Rent/Month</th>
+                <th>City</th>
+                <th>Landlord Name</th>
+                <th>Landlord PAN</th>
+                <th style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="month" class="form-control" style="padding:6px;"></td>
+                <td><input type="month" class="form-control" style="padding:6px;"></td>
+                <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px;"></td>
+                <td><select class="form-control" style="padding:6px;"><option>Delhi</option><option>Mumbai</option><option>Other</option></select></td>
+                <td><input type="text" class="form-control" placeholder="Name" style="padding:6px;"></td>
+                <td><input type="text" class="form-control" placeholder="PAN" style="padding:6px;"></td>
+                <td style="text-align:center;"><button class="btn-ghost" style="color:var(--accent-red); padding:4px;"><i class="ph ph-trash"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-secondary" style="font-size:12px; padding:6px 16px;"><i class="ph ph-plus"></i> Add Row</button>
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 3 ==================== -->
+    <div id="inv-step-3" class="tab-panel" style="display:none;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+        
+        <!-- Left Col -->
+        <div style="border-right:1px solid var(--border-light);">
+          <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+            <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-coins" style="color:var(--primary-color); margin-right:8px;"></i>Other Income</h3>
+          </div>
+          <div style="padding:24px;">
+            <div class="form-group"><label>Capital Gain</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Income From House Property</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Interest earned through savings bank</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Loss from House Property</label><input type="number" class="form-control"></div>
+          </div>
+        </div>
+        
+        <!-- Right Col -->
+        <div>
+          <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+            <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-bank" style="color:var(--primary-color); margin-right:8px;"></i>Housing Loan Details</h3>
+          </div>
+          <div style="padding:24px;">
+            <div class="badge badge-orange" style="margin-bottom:20px; display:inline-flex;">Mandatory if "Interest Paid on Housing Loan" is claimed</div>
+            <div class="form-group"><label>Date of Possession</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Lender PAN</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Lender Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Lender Address</label><textarea class="form-control" style="min-height:60px;"></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 4 ==================== -->
+    <div id="inv-step-4" class="tab-panel" style="display:none;">
+      <div style="padding:40px; text-align:center;">
+        <div style="width:80px; height:80px; border-radius:50%; background:var(--primary-light); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-size:40px; margin:0 auto 24px;">
+          <i class="ph ph-check-circle"></i>
+        </div>
+        <h3 style="font-size:20px; font-weight:700; color:var(--text-main); margin-bottom:8px;">Ready to Submit</h3>
+        <p style="color:var(--text-muted); max-width:400px; margin:0 auto 32px; line-height:1.5;">You can submit your investment declaration a maximum of 10 times. This is submission #1.</p>
+        
+        <div style="display:flex; justify-content:center; gap:16px;">
+          <button class="btn-secondary" style="padding:10px 24px;"><i class="ph ph-printer"></i> Print Preview</button>
+          <button class="btn-primary" style="padding:10px 32px;"><i class="ph ph-paper-plane-tilt"></i> FINAL SUBMISSION</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- Wizard Footer Controls -->
+  <div style="padding:20px 24px; border-top:1px solid var(--border-light); background:var(--bg-app); border-radius: 0 0 var(--radius-xl) var(--radius-xl); display:flex; justify-content:space-between; align-items:center;">
+    <button class="btn-secondary" style="padding:8px 24px;"><i class="ph ph-arrow-left"></i> Previous</button>
+    <div style="display:flex; gap:12px;">
+      <button class="btn-secondary" style="padding:8px 24px;">Reset Form</button>
+      <button class="btn-primary" style="padding:8px 32px;">Save & Next <i class="ph ph-arrow-right"></i></button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Very basic visual tab switcher for demo purposes
+  function switchTab(tabId, el) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+    
+    // Reset opacities
+    const steps = el.parentElement.querySelectorAll('div[onclick]');
+    steps.forEach(s => {
+      s.style.opacity = '0.5';
+      const circle = s.querySelector('div');
+      circle.style.background = 'var(--bg-app)';
+      circle.style.color = 'var(--text-secondary)';
+      circle.style.border = '2px solid var(--border-color)';
+      circle.style.boxShadow = 'none';
+    });
+    
+    // Set active
+    el.style.opacity = '1';
+    const activeCircle = el.querySelector('div');
+    activeCircle.style.background = 'var(--primary-color)';
+    activeCircle.style.color = '#fff';
+    activeCircle.style.border = 'none';
+    activeCircle.style.boxShadow = '0 0 0 4px var(--primary-light)';
+  }
+</script>

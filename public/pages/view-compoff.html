@@ -1,13 +1,16 @@
 <!-- VIEW > ASSIGN COMPENSATORY OFF -->
 
-<div class="card" style="max-width: 800px;">
-  <h3 style="font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 24px;">
-    <i class="ph ph-clock-counter-clockwise" style="color: var(--primary-color); margin-right: 10px;"></i>Assign Compensatory Off
-  </h3>
+<div class="page-title">
+  <h2>Assign Compensatory Off</h2>
+  <div class="page-subtitle">Assign comp-off days for employees who worked on holidays or weekends</div>
+</div>
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+<div class="card">
+  <h3 class="section-title"><i class="ph ph-clock-counter-clockwise"></i> Compensatory Off Details</h3>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; ">
     <div class="form-group" style="margin-bottom:0;">
-      <label>Select Employee <span style="color:red">*</span></label>
+      <label>Select Employee <span style="color:var(--accent-red)">*</span></label>
       <select class="form-control">
         <option disabled selected>-- Select Employee --</option>
         <option>100048 — Dalip Kumar</option>
@@ -22,13 +25,13 @@
       </select>
     </div>
     <div class="form-group" style="margin-bottom:0;">
-      <label>Compensatory Off Day <span style="color:red">*</span></label>
+      <label>Compensatory Off Day <span style="color:var(--accent-red)">*</span></label>
       <input type="date" class="form-control">
     </div>
   </div>
 
   <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-light);">
-    <button class="btn-primary"><i class="ph ph-floppy-disk" style="margin-right: 8px;"></i>Save</button>
-    <button class="btn-secondary">Reset</button>
+    <button class="btn-primary"><i class="ph ph-floppy-disk"></i> Save</button>
+    <button class="btn-secondary"><i class="ph ph-arrow-counter-clockwise"></i> Reset</button>
   </div>
 </div>

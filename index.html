@@ -11,7 +11,10 @@
 </head>
 <body>
 
-  <!-- GLOBAL NOTION SIDEBAR -->
+  <!-- SIDEBAR COLUMN: Two Floating Bento Boxes -->
+  <div class="sidebar-column">
+
+  <!-- BOX 1: Navigation -->
   <aside class="notion-sidebar">
     <div class="notion-brand"><div><i class="ph ph-squares-four" style="font-size:22px;"></i> HR Pearls<small>Payroll Management</small></div></div>
     
@@ -127,15 +130,25 @@
         <i class="ph ph-chart-line-up"></i> Investment Declaration
       </a>
     </nav>
-    <!-- Sidebar Profile -->
-    <div style="padding: 16px 20px; border-top: 1px solid var(--border-light); display: flex; align-items: center; gap: 12px; margin-top: auto;">
-      <div style="width:36px; height:36px; border-radius:50%; background:var(--primary-color); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0;">SS</div>
-      <div>
-        <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">Surender Singh</div>
-        <div style="font-size: 11px; color: var(--text-muted);">HR Director</div>
+  </aside>
+
+  <!-- BOX 2: Profile Bento -->
+  <div class="profile-bento" onclick="loadSubPage('view', this)">
+    <div class="profile-bento-inner">
+      <div class="profile-bento-avatar">SS</div>
+      <div class="profile-bento-info">
+        <div class="profile-bento-name">Surender Singh</div>
+        <div class="profile-bento-role">Senior Manager &bull; Store & Purchase</div>
       </div>
     </div>
-  </aside>
+    <div class="profile-bento-meta">
+      <div class="profile-bento-meta-item"><i class="ph ph-identification-badge"></i> #100003</div>
+      <div class="profile-bento-meta-item"><i class="ph ph-building"></i> Store & Purchase</div>
+    </div>
+    <div class="profile-bento-link">View Full Profile <i class="ph ph-arrow-right"></i></div>
+  </div>
+
+  </div> <!-- /.sidebar-column -->
 
   <!-- MAIN CONTENT WRAPPER -->
   <div class="app-wrapper">
@@ -146,8 +159,8 @@
   <div class="floating-action-bar" id="bulkActionBar">
     <span class="fab-text" id="bulkActionCount">0 Selected</span>
     <div class="fab-divider"></div>
-    <button class="btn-primary" style="padding: 6px 20px;"><i class="fa-solid fa-check" style="margin-right:6px;"></i> APPROVE ALL</button>
-    <button class="btn-secondary" style="padding: 6px 20px; color:#ef4444; border-color:#fca5a5;"><i class="fa-solid fa-xmark" style="margin-right:6px;"></i> REJECT ALL</button>
+    <button class="btn-primary" style="padding: 6px 20px;"><i class="ph ph-check" style="margin-right:6px;"></i> APPROVE ALL</button>
+    <button class="btn-secondary" style="padding: 6px 20px; color:#ef4444; border-color:#fca5a5;"><i class="ph ph-x" style="margin-right:6px;"></i> REJECT ALL</button>
   </div>
 
   <script>
