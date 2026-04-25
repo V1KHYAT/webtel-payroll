@@ -13,6 +13,7 @@ A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosof
 - **Investment Declaration Wizard:** Completely rebuilt the legacy investment page into a premium, 4-step horizontal wizard covering Section 80C, HRA/Rent, Other Income, and Final Review.
 - **Details Module Finalization:** Built and integrated 5 new premium subpages (`details-punch`, `details-activity`, `details-salary-pf`, `details-salary-tax`, `details-salary-leave`) into the core SPA shell.
 - **Fluid Layout Refinement:** Eliminated "dead space" inside cards globally by removing hard `max-width` constraints, ensuring data grids and forms utilize horizontal space gracefully.
+- **Collapsible Profile Subsections:** Added "Edit Details" and "Change Password" as dedicated, collapsible panels directly beneath the main Bento Grid in `view.html`.
 
 - **Next Steps:** Implement advanced interactions (Glass-morphic Side Drawers over PDF links, customized Empty State SVGs, Skeleton loading) and systematically tackle the 'Reports' dashboard implementation.
 
