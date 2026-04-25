@@ -10,8 +10,8 @@
     <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Surender Singh</h2>
     <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Senior Manager  |  Store & Purchase</div>
     <div style="display: flex; gap: 12px;">
-      <button class="btn-primary" onclick="openModal('edit-profile-modal')"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</button>
-      <button class="btn-secondary" onclick="openModal('view-profile-modal')"><i class="fa-regular fa-eye"></i> View Profile</button>
+      <button class="btn-primary" onclick="openModal('edit-profile-modal')"><i class="ph ph-pencil-simple-line"></i> Edit Profile</button>
+      <button class="btn-secondary" onclick="openModal('view-profile-modal')"><i class="ph ph-eye"></i> View Profile</button>
     </div>
   </div>
 </div>
@@ -21,7 +21,7 @@
   
   <!-- Role Information -->
   <div class="card" style="padding: 24px; margin-bottom: 0;">
-    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="fa-solid fa-briefcase"></i> Role Information</h3>
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="ph ph-briefcase"></i> Role Information</h3>
     <div style="display:flex; flex-direction:column; gap:16px;">
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
         <div style="color: var(--text-secondary); font-size: 13px;">Employee No</div>
@@ -40,7 +40,7 @@
 
   <!-- Personal Information -->
   <div class="card" style="padding: 24px; margin-bottom: 0;">
-    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="fa-regular fa-user"></i> Personal Data</h3>
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="ph ph-user"></i> Personal Data</h3>
     <div style="display:flex; flex-direction:column; gap:16px;">
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
         <div style="color: var(--text-secondary); font-size: 13px;">Gender</div>
@@ -48,7 +48,7 @@
       </div>
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
         <div style="color: var(--text-secondary); font-size: 13px;">Date of Birth</div>
-        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"><i class="fa-solid fa-cake-candles" style="color:var(--accent-orange); margin-right:6px;"></i> 05 Apr 1972</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"><i class="ph ph-cake" style="color:var(--accent-orange); margin-right:6px;"></i> 05 Apr 1972</div>
       </div>
       <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
         <div style="color: var(--text-secondary); font-size: 13px;">Date of Joining</div>
@@ -62,8 +62,8 @@
 <div id="view-profile-modal" class="modal-overlay" style="display:none;">
   <div class="modal-window modal-xl">
     <div class="modal-header">
-      <div class="modal-title"><i class="fa-regular fa-user"></i> Employee Details</div>
-      <button class="modal-close" onclick="closeModal('view-profile-modal')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-title"><i class="ph ph-user"></i> Employee Details</div>
+      <button class="modal-close" onclick="closeModal('view-profile-modal')"><i class="ph ph-x"></i></button>
     </div>
     <div class="modal-body" style="background:#f4f9fd;">
       <!-- Profile Header -->
@@ -151,20 +151,20 @@
 <div id="edit-profile-modal" class="modal-overlay" style="display:none;">
   <div class="modal-window modal-xl">
     <div class="modal-header">
-      <div class="modal-title"><i class="fa-regular fa-pen-to-square"></i> Edit Profile Information</div>
-      <button class="modal-close" onclick="closeModal('edit-profile-modal')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-title"><i class="ph ph-pencil-simple-line"></i> Edit Profile Information</div>
+      <button class="modal-close" onclick="closeModal('edit-profile-modal')"><i class="ph ph-x"></i></button>
     </div>
     
     <div class="wizard-layout">
       <!-- Wizard Sidebar -->
       <div class="wizard-sidebar">
         <div class="wizard-nav">
-          <button class="active" onclick="switchTab('edit-personal', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-user" style="width:16px;"></i> Personal Details</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-address', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-location-dot" style="width:16px;"></i> Address Info</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-family', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-users" style="width:16px;"></i> Family Details</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-contact', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-phone" style="width:16px;"></i> Phone & Email</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-emergency', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-heart-pulse" style="width:16px;"></i> Emergency Contacts</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-passport', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-passport" style="width:16px;"></i> Passport Info</div> <i class="fa-solid fa-chevron-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button class="active" onclick="switchTab('edit-personal', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-user" style="width:16px;"></i> Personal Details</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-address', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-map-pin" style="width:16px;"></i> Address Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-family', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-users-three" style="width:16px;"></i> Family Details</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-contact', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-phone" style="width:16px;"></i> Phone & Email</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-emergency', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-heartbeat" style="width:16px;"></i> Emergency Contacts</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-passport', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-identification-card" style="width:16px;"></i> Passport Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
         </div>
       </div>
       
@@ -214,7 +214,7 @@
         <div id="edit-family" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Family Details</h3>
           <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="fa-solid fa-users" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <i class="ph ph-users-three" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
             <p>Family members and dependents will be listed here.</p>
           </div>
         </div>
@@ -232,7 +232,7 @@
         <div id="edit-emergency" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Emergency Contacts</h3>
           <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="fa-solid fa-heart-pulse" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <i class="ph ph-heartbeat" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
             <p>Emergency contact details form.</p>
           </div>
         </div>
@@ -240,14 +240,14 @@
         <div id="edit-passport" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Passport Information</h3>
            <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="fa-solid fa-passport" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
+            <i class="ph ph-identification-card" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
             <p>Passport and Visa details form.</p>
           </div>
         </div>
 
         <div style="margin-top:40px; border-top:1px solid var(--border-light); padding-top:24px; display:flex; justify-content:flex-end; gap:12px;">
           <button class="btn-secondary" onclick="closeModal('edit-profile-modal')">Cancel</button>
-          <button class="btn-primary" onclick="closeModal('edit-profile-modal'); togglePanel('toast')"><i class="fa-solid fa-check" style="margin-right:8px;"></i> Save Changes</button>
+          <button class="btn-primary" onclick="closeModal('edit-profile-modal'); togglePanel('toast')"><i class="ph ph-check" style="margin-right:8px;"></i> Save Changes</button>
         </div>
 
       </div>

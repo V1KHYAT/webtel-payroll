@@ -1,0 +1,123 @@
+<!-- My Activity List -->
+<div style="margin-bottom: 28px;">
+  <h2 style="font-size: 22px; font-weight: 700; color: var(--text-main); letter-spacing: -0.3px;">My Activity List</h2>
+  <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Search, add, and manage your assigned activities</div>
+</div>
+
+<!-- Search Section -->
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header" style="margin-bottom: 20px;">
+    <h3>Search Activities</h3>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 700px;">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label>Activity Description</label>
+      <input type="text" class="form-control" placeholder="Search by description...">
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label>Department</label>
+      <select class="form-control">
+        <option>— Select Department —</option>
+        <option>STORE & PURCHASE</option>
+        <option>IT</option>
+        <option>HR</option>
+        <option>Finance</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label>Project</label>
+      <select class="form-control">
+        <option>— Select Project —</option>
+        <option>HR Portal</option>
+        <option>Payroll System</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label>Activity</label>
+      <select class="form-control">
+        <option>— Select Activity —</option>
+        <option>Development</option>
+        <option>Testing</option>
+        <option>Documentation</option>
+      </select>
+    </div>
+  </div>
+  <div style="margin-top: 20px;">
+    <button class="btn-primary"><i class="ph ph-magnifying-glass"></i> Search</button>
+  </div>
+</div>
+
+<!-- Results Table -->
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header" style="margin-bottom: 16px;">
+    <h3>List of Assigned Activities</h3>
+    <span class="badge badge-gray">0 Records</span>
+  </div>
+  <div class="table-wrapper">
+    <table class="table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="padding: 10px 16px;">Activity Code</th>
+          <th style="padding: 10px 16px;">Activity Description</th>
+          <th style="padding: 10px 16px;">Project Code</th>
+          <th style="padding: 10px 16px;">Project Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">
+            <div class="empty-state" style="padding: 32px;">
+              <i class="ph ph-list-checks" style="font-size: 40px; display: block;"></i>
+              <h4>No activities found</h4>
+              <p>Try adjusting your search filters above</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Apply Activities Section -->
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header" style="margin-bottom: 20px;">
+    <h3>Apply Activity</h3>
+  </div>
+  <div style="display: flex; gap: 16px; align-items: flex-end; max-width: 600px;">
+    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+      <label>Activity Description</label>
+      <input type="text" class="form-control" placeholder="Enter activity description...">
+    </div>
+    <button class="btn-primary"><i class="ph ph-magnifying-glass"></i> Search</button>
+  </div>
+
+  <div class="table-wrapper" style="margin-top: 20px;">
+    <table class="table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="padding: 10px 16px;">Activity Code</th>
+          <th style="padding: 10px 16px;">Activity Description</th>
+          <th style="padding: 10px 16px;">Project Code</th>
+          <th style="padding: 10px 16px;">Project Description</th>
+          <th style="padding: 10px 16px;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5">
+            <div class="empty-state" style="padding: 32px;">
+              <i class="ph ph-clipboard-text" style="font-size: 40px; display: block;"></i>
+              <h4>No activities applied yet</h4>
+              <p>Use the search above to find and apply activities</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display: flex; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+    <button class="btn-primary"><i class="ph ph-check"></i> Apply</button>
+    <button class="btn-secondary"><i class="ph ph-arrow-counter-clockwise"></i> Reset</button>
+  </div>
+</div>

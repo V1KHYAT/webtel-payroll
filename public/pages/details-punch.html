@@ -1,0 +1,84 @@
+<!-- Team Punch Detail -->
+<div style="margin-bottom: 28px;">
+  <h2 style="font-size: 22px; font-weight: 700; color: var(--text-main); letter-spacing: -0.3px;">Team Punch Detail</h2>
+  <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">View and manage attendance punch records for your team</div>
+</div>
+
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header" style="margin-bottom: 24px;">
+    <h3>Search Criteria</h3>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+    <!-- Left Column -->
+    <div>
+      <div class="form-group">
+        <label>Employee Code(s)</label>
+        <input type="text" class="form-control" placeholder="Enter codes separated by comma (e.g. E0001, E0002)">
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Use ' , ' as separator for multiple codes</div>
+      </div>
+      <div class="form-group">
+        <label>From Date*</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>To Date*</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Select Employee(s)</label>
+        <select class="form-control">
+          <option>On/Under</option>
+          <option>Direct Reports Only</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div>
+      <div class="form-group">
+        <label>Employee Name</label>
+        <div style="display: flex; gap: 12px;">
+          <input type="text" class="form-control" placeholder="Search by name...">
+          <div style="display: flex; gap: 8px; align-items: center; flex-shrink: 0;">
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer; white-space: nowrap;">
+              <input type="radio" name="nametype" checked style="accent-color: var(--primary-color);"> First Name
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 12px; cursor: pointer; white-space: nowrap;">
+              <input type="radio" name="nametype" style="accent-color: var(--primary-color);"> Last Name
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Select Report</label>
+        <select class="form-control">
+          <option>Format 1</option>
+          <option>Format 2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Punch Information</label>
+        <div style="display: flex; gap: 16px; padding-top: 6px;">
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+            <input type="radio" name="punchinfo" checked style="accent-color: var(--primary-color);"> Processed Attendance
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer;">
+            <input type="radio" name="punchinfo" style="accent-color: var(--primary-color);"> Actual Punch
+          </label>
+        </div>
+      </div>
+      <div style="padding: 12px 16px; background: var(--primary-subtle); border-radius: var(--radius-md); margin-top: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-secondary);">
+          <i class="ph ph-info" style="color: var(--primary-color); font-size: 16px;"></i>
+          Would show all employees under Reporting Manager (You)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+    <button class="btn-primary"><i class="ph ph-eye"></i> Preview</button>
+    <button class="btn-secondary"><i class="ph ph-arrow-counter-clockwise"></i> Reset</button>
+  </div>
+</div>
