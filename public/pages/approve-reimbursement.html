@@ -4,15 +4,16 @@
 </div>
 
 <div class="card" style="margin-bottom: 24px;">
-  <div style=" padding-top: 12px;">
-    <div style="display:grid; grid-template-columns: 180px 1fr; align-items:center; margin-bottom:16px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Paycode <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><select class="form-control" style="max-width:250px;"><option>-- Select Reimbursement --</option><option>Travel Allowance</option><option>Medical Allowance</option></select></div>
-    </div>
-    <div style="display:grid; grid-template-columns: 180px 1fr; align-items:center; margin-bottom:24px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Request Status <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><select class="form-control" style="max-width:250px;"><option>-- Select Request Status --</option><option>Pending</option><option>Approved</option><option>Rejected</option></select></div>
-    </div>
+  <div style="display:grid; grid-template-columns: 180px 1fr 180px 1fr; gap:16px 24px; align-items:center;">
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Paycode</label>
+    <div><select class="form-control" style="max-width:250px;"><option>-- Select Reimbursement --</option><option>Travel Allowance</option><option>Medical Allowance</option></select></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Select Request Status</label>
+    <div><select class="form-control" style="max-width:250px;"><option>-- Select Request Status --</option><option>Pending</option><option>Approved</option><option>Rejected</option></select></div>
+  </div>
+  
+  <div style="display:flex; gap:12px; margin-top:24px; padding-top:24px; border-top:1px solid var(--border-light);">
+    <button class="btn-primary" style="padding:8px 32px;"><i class="ph ph-magnifying-glass" style="margin-right:6px;"></i> SEARCH</button>
   </div>
 
   <div style="background:var(--bg-body); padding:24px; text-align:center; border-radius:8px; border:1px dashed var(--border-color); color:var(--text-muted); font-size:13px;">

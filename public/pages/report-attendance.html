@@ -1,0 +1,31 @@
+<div class="page-title">
+  <h2>My Daily Attendance</h2>
+  <div class="page-subtitle">Generate your daily attendance report</div>
+</div>
+
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-header">
+    <h3 style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;"><i class="ph ph-funnel" style="margin-right:8px; color:var(--primary-color);"></i> Report Parameters</h3>
+  </div>
+  <div style="display:grid; grid-template-columns: 140px 1fr; gap:16px 24px; align-items:center;">
+    
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">From Date <span style="color:var(--accent-red);">*</span></label>
+    <div><input type="date" class="form-control" style="max-width:250px;"></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">To Date <span style="color:var(--accent-red);">*</span></label>
+    <div><input type="date" class="form-control" style="max-width:250px;"></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Type</label>
+    <div>
+      <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;">
+        <input type="radio" name="att_type" checked> Processed Attendance
+      </label>
+    </div>
+
+  </div>
+  
+  <div style="display:flex; gap:12px; margin-top:24px; padding-top:24px; border-top:1px solid var(--border-light);">
+    <button class="btn-primary" style="padding:8px 32px;"><i class="ph ph-magnifying-glass" style="margin-right:6px;"></i> SEARCH</button>
+    <button class="btn-secondary" style="padding:8px 32px;">RESET</button>
+  </div>
+</div>

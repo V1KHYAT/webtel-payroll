@@ -1,27 +1,20 @@
 # Webtel HR Pearls
 
-A modern, **Notion-inspired HR Portal** UI prototype built for Webtel Electrosoft Ltd. This is a complete front-end redesign of the legacy HR Pearls payroll/HR management system, reimagined as a clean, document-centric Single Page Application (SPA).
+A modern, **SaaS-inspired HR Portal** UI prototype built for Webtel Electrosoft Ltd. This is a complete front-end redesign of the legacy HR Pearls payroll/HR management system, reimagined as a clean, component-driven Single Page Application (SPA).
 
 ---
 
 ## 🚀 Latest Changes & Status
 
-### Premium SaaS Design System (Latest Update)
-- **Calm Design Framework:** Complete CSS rewrite shifting the interface to a lighter, premium aesthetic inspired by Linear and Notion. Features new CSS variable tokens, subtle borders, deep shadow elevations, pill badges, and custom scrollbars.
-- **Phosphor Icon Migration:** Globally deprecated all FontAwesome icons across 40+ files, replacing them with modern, thin-outline **Phosphor Icons** (`ph-`) for a cohesive, professional aesthetic.
+### Premium SaaS Design System (Phase 2 Finalized)
+- **Global Heading Standardization:** Swept across all 40+ pages to extract inline `<h2>` tags from cards and implemented a unified, premium `.page-title` block (Header + Subtitle) at the top of every page.
+- **Form Grid Optimization:** Converted legacy, single-column stacked forms (like Outduty Approval, Reimbursement Approval, Personal Details) into modern, responsive CSS Grids (2 and 3 columns) to maximize horizontal screen real estate.
+- **Redundant UI Cleanup:** Hunted down and removed duplicate static "Approve/Reject" buttons from all approval pages, completely shifting reliance to the sleek, unified Floating Action Bar for bulk processing.
+- **Reports Dashboard Completed:** Built and integrated the remaining complex report formats (My Daily Attendance, Tickets, Roster, Appraisals) with the unified SaaS aesthetic.
+- **Calm Design Framework:** Complete CSS rewrite shifting the interface to a lighter, premium aesthetic inspired by Linear and Stripe. Features new CSS variable tokens, subtle borders, deep shadow elevations, pill badges, and custom scrollbars.
+- **Phosphor Icon Migration:** Globally deprecated all FontAwesome icons across all files, replacing them with modern, thin-outline **Phosphor Icons** (`ph-`).
 - **Split Bento Sidebar:** Redesigned the monolithic sidebar into a modern, two-part floating layout: a scrollable navigation container on top, and a fixed "Profile Bento" card displaying user initials, role, and quick-links at the bottom.
-- **Investment Declaration Wizard:** Completely rebuilt the legacy investment page into a premium, 4-step horizontal wizard covering Section 80C, HRA/Rent, Other Income, and Final Review.
-- **Details Module Finalization:** Built and integrated 5 new premium subpages (`details-punch`, `details-activity`, `details-salary-pf`, `details-salary-tax`, `details-salary-leave`) into the core SPA shell.
 - **Fluid Layout Refinement:** Eliminated "dead space" inside cards globally by removing hard `max-width` constraints, ensuring data grids and forms utilize horizontal space gracefully.
-- **Collapsible Profile Subsections:** Added "Edit Details" and "Change Password" as dedicated, collapsible panels directly beneath the main Bento Grid in `view.html`.
-
-- **Next Steps:** Implement advanced interactions (Glass-morphic Side Drawers over PDF links, customized Empty State SVGs, Skeleton loading) and systematically tackle the 'Reports' dashboard implementation.
-
-- **Notion-inspired**: Clean, minimal, white-space-focused interface with a persistent sidebar
-- **Webtel Corporate Blue** (`#3b82f6`) accent throughout
-- **Inter font family** for modern, professional typography
-- **Design Language** — Pure flat, editorial design language
-- **Fluid layouts** that maximize horizontal screen real estate
 
 ---
 
@@ -32,26 +25,14 @@ webtel-hrpearls/
 ├── index.html          # SPA shell — global sidebar + content router
 ├── index.css           # Complete design system (tokens, components, utilities)
 ├── package.json        # Vite dev server config
-├── pages/              # Modular HTML templates loaded dynamically
+├── pages/              # Modular HTML templates loaded dynamically (40+ Files)
 │   ├── home.html               # Dashboard with KPIs, leave report, team details
-│   ├── view.html               # My Profile hub (merged: profile + password + personal details)
-│   ├── view-suggestions.html   # Send Your Suggestions
-│   ├── view-holiday.html       # Select Your Holiday
-│   ├── view-compoff.html       # Assign Compensatory Off
-│   ├── view-helpdesk.html      # Ticket Help Desk
-│   ├── view-documents.html     # Upload Documents
-│   ├── view-loan.html          # Loan And Advance Request
-│   ├── view-activities.html    # Extra Curricular Activities
-│   ├── view-shift-import.html  # Assign Shift Through Import
-│   ├── view-category-master.html   # Category Master (PMS)
-│   ├── view-category-param.html    # Create Category Parameter
-│   ├── view-appraisal.html         # Create Period, Appraisee And Appraiser
-│   ├── view-shortlist.html         # Shortlist And Rate Candidate
-│   ├── view-assign-shift.html      # Assign Shift To Employee's
-│   ├── view-weekly-off.html        # Assign Weekly Off To Employee's
-│   ├── details.html            # Leave Requisition (Details section)
-│   ├── approve.html            # Leave Approval (Approve Requisitions section)
-│   └── reports.html            # Daily Attendance Report (Reports section)
+│   ├── view.html               # My Profile hub (Profile + Change Password + Details)
+│   ├── details-*.html          # 10+ Self-Service Detail Pages (Accident, Income, Punch)
+│   ├── approve-*.html          # 13 Manager Approval Pages (Leaves, Expenses, Exit)
+│   ├── report-*.html           # 6 HR Report Dashboards (Attendance, Tickets)
+│   ├── view-*.html             # 14 Admin Setup Pages (Shifts, Appraisals, Masters)
+│   └── investment.html         # 4-Step Investment Declaration Wizard
 └── public/
     ├── favicon.svg
     └── icons.svg
@@ -93,23 +74,17 @@ npm run preview   # Preview the production build
 ## 🧩 Key Features
 
 ### Navigation
-- **Global Notion-style sidebar** with expandable dropdown sections
-- **Active state highlighting** with Webtel Blue accent
+- **Global Sidebar** with expandable dropdown sections
 - **SPA routing** — all pages load dynamically via `fetch()`, no full-page reloads
 
-### View Section (17 pages)
-| Category | Pages |
-|----------|-------|
-| **Account** | My Profile (merged hub with collapsible Change Password & Edit Profile) |
-| **Requests & Help** | Suggestions, Holiday Selection, Comp Off, Help Desk |
-| **Documents & Finance** | Upload Documents, Loan & Advance Request |
-| **HR Admin** | Extra Curricular Activities, Shift Import, Category Master, Category Parameter, Appraisal Period/Appraisee, Shortlist Candidates, Assign Shifts, Weekly Off |
-
-### Other Sections
-- **Dashboard** — KPI cards, leave balance bars, team directory, documents & links
-- **Details** — Leave requisition with calendar-based request form
-- **Approve Requisitions** — 13 complete manager approval workflows with unified styling and bulk-action processing
-- **Reports** — Daily attendance with date-range search
+### Section Breakdown (40+ pages)
+| Category | Description |
+|----------|-------------|
+| **Details (Self-Service)** | Leaves, Outduty, References, Accidents, Other Income, Team Punch, Activities, and all variations of Salary Slips. |
+| **Approve Requisitions (Manager)** | 13 complete approval workflows (Leaves, Reimbursements, Exits, Clearance, Overtime) with a global Floating Action Bar for bulk processing. |
+| **Reports** | Daily Attendance, Tickets Helpdesk, Rosters, Employee Assessments, and Feedback. |
+| **Operations & Setup (Admin)** | Extra Curricular Activities, Shift Import, Category Master, Appraisal Period/Appraisee Setup, Shortlisting. |
+| **Investment Declaration** | Premium 4-step wizard for populating Section 80C and Other Deductions. |
 
 ---
 
@@ -119,35 +94,27 @@ npm run preview   # Preview the production build
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--primary-color` | `#0284c7` | Webtel corporate blue — buttons, links, accents |
+| `--primary-color` | `#4f46e5` | Vibrant Indigo — buttons, links, accents |
 | `--text-main` | `#1e293b` | Primary body text |
 | `--text-secondary` | `#475569` | Supporting text |
 | `--text-muted` | `#94a3b8` | Disabled/tertiary text |
 | `--border-color` | `#e2e8f0` | Card/input borders |
 | `--border-light` | `#f1f5f9` | Subtle separators, readonly fields |
-| `--sidebar-bg` | `#f4f9fd` | Sidebar background tint |
-| `--accent-green` | `#10b981` | Success states |
-| `--accent-red` | `#ef4444` | Error/danger states |
-| `--accent-orange` | `#f59e0b` | Warning/pending states |
+| `--bg-app` | `#f8fafc` | Global body background |
+| `--bg-card` | `#ffffff` | White card background |
 
 ### Component Classes
 
 | Class | Description |
 |-------|-------------|
 | `.card` | Bordered container with padding and border-radius |
-| `.btn-primary` | Filled blue button |
+| `.btn-primary` | Filled vibrant indigo button |
 | `.btn-secondary` | Outlined/ghost button |
 | `.form-control` | Text inputs, selects, textareas |
-| `.form-group` | Label + input wrapper |
-| `.table` | Styled data table |
-| `.table-wrapper` | Scrollable table container |
-| `.badge` / `.badge-green` | Inline status badges |
-| `.tab-btn` | Tab bar button |
-| `.tab-panel` | Tab content panel |
-| `.notion-sidebar` | Global sidebar |
-| `.notion-nav` | Sidebar navigation links |
-| `.notion-submenu` | Expandable sidebar sub-items |
-| `.notion-group` | Sidebar section label |
+| `.page-title` | Global header structure for all pages |
+| `.table` | Styled data table with subtle borders |
+| `.badge` | Inline pill-shaped status badges |
+| `.floating-action-bar`| Bulk action bar used in Approval screens |
 
 ---
 
@@ -155,47 +122,26 @@ npm run preview   # Preview the production build
 
 ### Adding a New Page
 
-1. Create `pages/your-page.html` (HTML fragment — no `<html>`, `<head>`, or `<body>` tags)
-2. Add a sidebar link in `index.html`:
+1. Create `public/pages/your-page.html` (HTML fragment — no `<html>`, `<head>`, or `<body>` tags)
+2. Add a `div.page-title` at the very top of the file for standardization.
+3. Add a sidebar link in `index.html`:
    ```html
    <a href="#" onclick="loadSubPage('your-page', this)">
-     <i class="fa-solid fa-icon-name"></i> Page Title
+     <i class="ph ph-icon-name"></i> Page Title
    </a>
    ```
-3. Use the existing CSS classes (`.card`, `.form-group`, `.btn-primary`, `.table`, etc.)
-
-### Global JavaScript Functions (defined in `index.html`)
-
-| Function | Purpose |
-|----------|---------|
-| `loadPage(name)` | Load a top-level page and set sidebar active state |
-| `loadSubPage(name, element)` | Load a sub-page and highlight it in the sidebar |
-| `toggleSection(name, element)` | Expand/collapse a sidebar dropdown |
-| `togglePanel(id)` | Toggle accordion sections within loaded pages |
-| `switchTab(tabId, btn)` | Switch between tab panels within a page |
 
 ### Important Constraints
-
 - **No `<script>` tags inside page templates** — They won't execute when loaded via `innerHTML`. All JS functions must be defined globally in `index.html`.
-- **External Dependencies** — FontAwesome 6.4 (CDN), Google Fonts Inter (CDN). No npm runtime dependencies.
-- **State** — No client-side state management. This is a UI prototype. Backend integration will require replacing the static HTML with dynamic data binding.
+- **External Dependencies** — Phosphor Icons (CDN), Google Fonts Inter (CDN). No npm runtime dependencies.
 
 ---
 
 ## 🛣️ Roadmap
-
-- [ ] Migrate remaining Details sub-pages (Tour Request, Income Details, Salary Slip, etc.)
+- [x] Migrate remaining Details sub-pages
 - [x] Migrate remaining Approve Requisitions sub-pages
-- [ ] Migrate remaining Reports sub-pages
-- [ ] Add Investment Declaration page
-- [ ] Implement role-based sidebar visibility (Employee vs HR Admin)
-- [ ] Add breadcrumb navigation bar
-- [ ] Add toast notification system for form actions
-- [ ] Client-side form validation
+- [x] Migrate remaining Reports sub-pages
+- [x] Add Investment Declaration page
+- [x] Implement Global Title Standardization & Grid Optimizations
+- [ ] Implement Major IA UX Architecture Changes (Role-Based Hubs)
 - [ ] Backend API integration
-
----
-
-## 📄 License
-
-Proprietary — Webtel Electrosoft Ltd. Internal use only.

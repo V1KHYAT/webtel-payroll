@@ -7,26 +7,22 @@
   <div class="card-header">
     <h3 style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Custom Search Parameters</h3>
   </div>
-  <div style="">
-    <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:16px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">From Date <span style="color:red;">*</span> <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><input type="date" class="form-control" style="max-width:200px;"></div>
-    </div>
-    <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:16px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">To Date <span style="color:red;">*</span> <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><input type="date" class="form-control" style="max-width:200px;"></div>
-    </div>
-    <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:16px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Status <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><select class="form-control" style="max-width:200px;"><option>Pending from L1</option><option>Approved</option><option>Rejected</option></select></div>
-    </div>
-    <div style="display:grid; grid-template-columns: 140px 1fr; align-items:center; margin-bottom:24px;">
-      <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Generate Report <span style="float:right;">:</span></label>
-      <div style="padding-left:12px;"><input type="checkbox" style="width:16px; height:16px;"></div>
-    </div>
-    <div style="display:flex; gap:12px; margin-left:152px;">
-      <button class="btn-primary">SEARCH</button>
-      <button class="btn-secondary">RESET</button>
-    </div>
+  <div style="display:grid; grid-template-columns: 140px 1fr 140px 1fr; gap:16px 24px; align-items:center;">
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">From Date <span style="color:var(--accent-red);">*</span></label>
+    <div><input type="date" class="form-control" style="max-width:200px;"></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">To Date <span style="color:var(--accent-red);">*</span></label>
+    <div><input type="date" class="form-control" style="max-width:200px;"></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Status</label>
+    <div><select class="form-control" style="max-width:200px;"><option>Pending from L1</option><option>Approved</option><option>Rejected</option></select></div>
+
+    <label style="font-size:13px; font-weight:500; color:var(--text-secondary);">Generate Report</label>
+    <div><input type="checkbox" style="width:16px; height:16px;"></div>
+  </div>
+  
+  <div style="display:flex; gap:12px; margin-top:24px; padding-top:24px; border-top:1px solid var(--border-light);">
+    <button class="btn-primary" style="padding:8px 32px;"><i class="ph ph-magnifying-glass" style="margin-right:6px;"></i> SEARCH</button>
+    <button class="btn-secondary" style="padding:8px 32px;">RESET</button>
   </div>
 </div>
