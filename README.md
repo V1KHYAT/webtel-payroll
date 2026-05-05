@@ -6,15 +6,24 @@ A modern, **SaaS-inspired HR Portal** UI prototype built for Webtel Electrosoft 
 
 ## 🚀 Latest Changes & Status
 
-### Premium SaaS Design System (Phase 2 Finalized)
-- **Global Heading Standardization:** Swept across all 40+ pages to extract inline `<h2>` tags from cards and implemented a unified, premium `.page-title` block (Header + Subtitle) at the top of every page.
-- **Form Grid Optimization:** Converted legacy, single-column stacked forms (like Outduty Approval, Reimbursement Approval, Personal Details) into modern, responsive CSS Grids (2 and 3 columns) to maximize horizontal screen real estate.
-- **Redundant UI Cleanup:** Hunted down and removed duplicate static "Approve/Reject" buttons from all approval pages, completely shifting reliance to the sleek, unified Floating Action Bar for bulk processing.
-- **Reports Dashboard Completed:** Built and integrated the remaining complex report formats (My Daily Attendance, Tickets, Roster, Appraisals) with the unified SaaS aesthetic.
-- **Calm Design Framework:** Complete CSS rewrite shifting the interface to a lighter, premium aesthetic inspired by Linear and Stripe. Features new CSS variable tokens, subtle borders, deep shadow elevations, pill badges, and custom scrollbars.
-- **Phosphor Icon Migration:** Globally deprecated all FontAwesome icons across all files, replacing them with modern, thin-outline **Phosphor Icons** (`ph-`).
-- **Split Bento Sidebar:** Redesigned the monolithic sidebar into a modern, two-part floating layout: a scrollable navigation container on top, and a fixed "Profile Bento" card displaying user initials, role, and quick-links at the bottom.
-- **Fluid Layout Refinement:** Eliminated "dead space" inside cards globally by removing hard `max-width` constraints, ensuring data grids and forms utilize horizontal space gracefully.
+### Phase 3 — Dashboard Customization & Responsiveness
+- **Dynamic Accent Theming:** Users can switch between 8 curated accent colors (Indigo, Sky Blue, Blue, Purple, Emerald, Cyan, Rose, Slate) via a settings panel. Theme selection persists in `localStorage`.
+- **Fluid Dashboard Layout:** Rebuilt the dashboard from rigid CSS Grid into a **Flexbox wrap** architecture. KPI cards, Leave Utilization, Recent Activity, My Team, and Quick Links all live in a unified `.dashboard-grid` container.
+  - Hiding a KPI card causes remaining cards to **expand and fill the row** automatically.
+  - Hiding Quick Links no longer stretches Recent Activity — panels stay contained.
+- **Individual Widget Toggles:** Each KPI card (Training Target, Pending Approvals, Earned Leave, Upcoming Holiday) and section (Leave Utilization, My Team, Recent Activity, Quick Links) can be independently toggled on/off. States persist in `localStorage`.
+- **Responsive Breakpoints:** Added full media queries for **desktop**, **tablet (1024px)**, **mobile (768px)**, and **small mobile (480px)** — including horizontal sidebar navigation, stacking widgets to single column, and responsive modals/wizards.
+- **Edit Profile Overhaul:** The Edit Profile wizard modal now contains fully populated forms for all 7 sections:
+  - Personal Details, Address Information, Family Details (with children detail table), Phone & Email, Emergency Contacts (dual contact layout), Passport Information, Other Information (including resume upload and previous experience).
+
+### Phase 2 — Premium SaaS Design System
+- **Global Heading Standardization:** Swept across all 40+ pages to implement a unified `.page-title` block.
+- **Form Grid Optimization:** Converted legacy single-column forms into responsive CSS Grids (2 and 3 columns).
+- **Redundant UI Cleanup:** Removed duplicate static buttons, shifting to the unified Floating Action Bar.
+- **Reports Dashboard Completed:** Built and integrated complex report formats with the unified SaaS aesthetic.
+- **Calm Design Framework:** Complete CSS rewrite with subtle borders, deep shadow elevations, pill badges, and custom scrollbars.
+- **Phosphor Icon Migration:** Globally replaced FontAwesome with modern **Phosphor Icons** (`ph-`).
+- **Split Bento Sidebar:** Two-part floating layout: scrollable nav + fixed Profile Bento card.
 
 ---
 
@@ -22,20 +31,20 @@ A modern, **SaaS-inspired HR Portal** UI prototype built for Webtel Electrosoft 
 
 ```
 webtel-hrpearls/
-├── index.html          # SPA shell — global sidebar + content router
-├── index.css           # Complete design system (tokens, components, utilities)
-├── package.json        # Vite dev server config
-├── pages/              # Modular HTML templates loaded dynamically (40+ Files)
-│   ├── home.html               # Dashboard with KPIs, leave report, team details
-│   ├── view.html               # My Profile hub (Profile + Change Password + Details)
-│   ├── details-*.html          # 10+ Self-Service Detail Pages (Accident, Income, Punch)
-│   ├── approve-*.html          # 13 Manager Approval Pages (Leaves, Expenses, Exit)
-│   ├── report-*.html           # 6 HR Report Dashboards (Attendance, Tickets)
-│   ├── view-*.html             # 14 Admin Setup Pages (Shifts, Appraisals, Masters)
-│   └── investment.html         # 4-Step Investment Declaration Wizard
-└── public/
-    ├── favicon.svg
-    └── icons.svg
+├── index.html          # SPA shell — global sidebar + content router + JS logic
+├── index.css           # Complete design system (tokens, components, responsive queries)
+├── package.json        # Dev server config
+├── public/
+│   ├── favicon.svg
+│   ├── icons.svg
+│   └── pages/          # Modular HTML templates loaded dynamically (40+ Files)
+│       ├── home.html               # Dashboard — fluid KPI grid, leave report, team, activity
+│       ├── view.html               # My Profile hub (Profile + Edit Wizard + Change Password)
+│       ├── details-*.html          # 10+ Self-Service Detail Pages
+│       ├── approve-*.html          # 13 Manager Approval Pages
+│       ├── report-*.html           # 6 HR Report Dashboards
+│       ├── view-*.html             # 14 Admin Setup Pages
+│       └── investment.html         # 4-Step Investment Declaration Wizard
 ```
 
 ---
@@ -62,6 +71,14 @@ npm run dev
 
 The app will be available at `http://localhost:5173/`
 
+### Quick Start (No Build)
+
+You can also open `index.html` directly with any static file server:
+
+```bash
+npx -y live-server --port=5500
+```
+
 ### Build for Production
 
 ```bash
@@ -72,6 +89,11 @@ npm run preview   # Preview the production build
 ---
 
 ## 🧩 Key Features
+
+### Dashboard Customization
+- **Accent Color Picker** — 8 curated colors, persisted in `localStorage`
+- **Widget Visibility Toggles** — Show/hide individual KPI cards and sections
+- **Fluid Grid Reflow** — Remaining widgets auto-resize when others are hidden
 
 ### Navigation
 - **Global Sidebar** with expandable dropdown sections
@@ -85,6 +107,7 @@ npm run preview   # Preview the production build
 | **Reports** | Daily Attendance, Tickets Helpdesk, Rosters, Employee Assessments, and Feedback. |
 | **Operations & Setup (Admin)** | Extra Curricular Activities, Shift Import, Category Master, Appraisal Period/Appraisee Setup, Shortlisting. |
 | **Investment Declaration** | Premium 4-step wizard for populating Section 80C and Other Deductions. |
+| **Edit Profile Wizard** | 7-tab modal covering Personal Details, Address, Family, Phone & Email, Emergency Contacts, Passport, and Other Info. |
 
 ---
 
@@ -92,15 +115,17 @@ npm run preview   # Preview the production build
 
 ### CSS Tokens (defined in `index.css`)
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--primary-color` | `#4f46e5` | Vibrant Indigo — buttons, links, accents |
-| `--text-main` | `#1e293b` | Primary body text |
+| Token | Default | Usage |
+|-------|---------|-------|
+| `--primary-color` | `#4f46e5` | Vibrant Indigo — buttons, links, accents (user-swappable) |
+| `--primary-hover` | `#4338ca` | Darker shade for hover states |
+| `--primary-subtle` | `rgba(79,70,229,0.08)` | Tinted backgrounds |
+| `--text-main` | `#0f172a` | Primary body text |
 | `--text-secondary` | `#475569` | Supporting text |
 | `--text-muted` | `#94a3b8` | Disabled/tertiary text |
 | `--border-color` | `#e2e8f0` | Card/input borders |
-| `--border-light` | `#f1f5f9` | Subtle separators, readonly fields |
-| `--bg-app` | `#f8fafc` | Global body background |
+| `--border-light` | `#f1f5f9` | Subtle separators |
+| `--bg-app` | `#f8f9fb` | Global body background |
 | `--bg-card` | `#ffffff` | White card background |
 
 ### Component Classes
@@ -108,13 +133,27 @@ npm run preview   # Preview the production build
 | Class | Description |
 |-------|-------------|
 | `.card` | Bordered container with padding and border-radius |
-| `.btn-primary` | Filled vibrant indigo button |
+| `.btn-primary` | Filled vibrant accent button |
 | `.btn-secondary` | Outlined/ghost button |
 | `.form-control` | Text inputs, selects, textareas |
 | `.page-title` | Global header structure for all pages |
 | `.table` | Styled data table with subtle borders |
 | `.badge` | Inline pill-shaped status badges |
-| `.floating-action-bar`| Bulk action bar used in Approval screens |
+| `.floating-action-bar` | Bulk action bar used in Approval screens |
+| `.dashboard-grid` | Flex-wrap container for dashboard widgets |
+| `.widget-kpi` | Flex item for KPI cards (~25% width, grows to fill) |
+| `.widget-main` | Flex item for primary panels (~65% width) |
+| `.widget-side` | Flex item for sidebar panels (~30% width) |
+
+### Responsive Breakpoints
+
+| Breakpoint | Behavior |
+|------------|----------|
+| `> 1200px` | Full desktop — 4 KPIs across, 2-column content |
+| `≤ 1200px` | Narrower sidebar, tighter padding |
+| `≤ 1024px` | Widgets stack to full width |
+| `≤ 768px` | Sidebar collapses to horizontal nav bar, single column, responsive modals |
+| `≤ 480px` | KPIs stack to full width, reduced padding |
 
 ---
 
@@ -131,6 +170,14 @@ npm run preview   # Preview the production build
    </a>
    ```
 
+### Dashboard Widget Customization
+
+Widget visibility is controlled by:
+- **HTML**: Each widget has a unique `id` (e.g., `kpi-training`, `widget-leave`)
+- **Settings Panel**: Checkbox toggles call `toggleWidget(id, checkbox)` in `index.html`
+- **Persistence**: States saved in `localStorage` under key `hrp-widget-states`
+- **Theme**: Accent color saved under key `hrp-theme-color`
+
 ### Important Constraints
 - **No `<script>` tags inside page templates** — They won't execute when loaded via `innerHTML`. All JS functions must be defined globally in `index.html`.
 - **External Dependencies** — Phosphor Icons (CDN), Google Fonts Inter (CDN). No npm runtime dependencies.
@@ -143,5 +190,8 @@ npm run preview   # Preview the production build
 - [x] Migrate remaining Reports sub-pages
 - [x] Add Investment Declaration page
 - [x] Implement Global Title Standardization & Grid Optimizations
+- [x] Dashboard Customization (Theming + Widget Toggles)
+- [x] Responsive Breakpoints for Mobile/Tablet
+- [x] Edit Profile Form Completion (all 7 sections)
 - [ ] Implement Major IA UX Architecture Changes (Role-Based Hubs)
 - [ ] Backend API integration

@@ -1,4 +1,4 @@
-<!-- VIEW > MY PROFILE (merged: Profile + Change Password + Personal Details) -->
+﻿<!-- VIEW > MY PROFILE (merged: Profile + Change Password + Personal Details) -->
 
 <!-- Profile Header -->
 <div class="card" style="padding: 32px; display: flex; gap: 32px; align-items: center; margin-bottom: 24px;">
@@ -282,6 +282,7 @@
           <button onclick="switchTab('edit-contact', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-phone" style="width:16px;"></i> Phone & Email</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
           <button onclick="switchTab('edit-emergency', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-heartbeat" style="width:16px;"></i> Emergency Contacts</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
           <button onclick="switchTab('edit-passport', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-identification-card" style="width:16px;"></i> Passport Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
+          <button onclick="switchTab('edit-other', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-dots-three-circle" style="width:16px;"></i> Other Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
         </div>
       </div>
       
@@ -327,40 +328,142 @@
           </div>
         </div>
 
-        <!-- Placeholder Tabs for others -->
+                <!-- Tab: Family -->
         <div id="edit-family" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Family Details</h3>
-          <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="ph ph-users-three" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
-            <p>Family members and dependents will be listed here.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px; margin-bottom: 24px;">
+            <div class="form-group"><label>Marital Status</label><select class="form-control"><option>Single</option><option>Married</option></select></div>
+            <div class="form-group"><label>First Nominee Details</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Date of Marriage</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Relation with First Nominee</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Spouse Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Second Nominee Detail</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Spouse Date of Birth</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Relation with Second Nominee</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>No of Dependents (exc. children)</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total Number of Children</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total Dependent</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total School Going Children</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Name of Dependents</label><textarea class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Total Children in Hostel</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Parent Mediclaim</label><select class="form-control"><option>Not Applicable</option><option>Applicable</option></select></div>
+          </div>
+          
+          <h4 style="font-size:14px; font-weight:600; margin-bottom:12px; color:var(--primary-color);">Children Details</h4>
+          <div class="table-wrapper" style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden;">
+            <table class="table" style="width:100%; border-collapse:collapse; font-size:13px;">
+              <thead style="background:var(--bg-hover); color:var(--text-main);">
+                <tr>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Name</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Date of Birth</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Relation</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="date" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         
+        <!-- Tab: Contact -->
         <div id="edit-contact" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Phone & Email Details</h3>
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px;">
-            <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control" placeholder="+91"></div>
-            <div class="form-group"><label>Personal Email</label><input type="email" class="form-control" placeholder="example@gmail.com"></div>
             <div class="form-group"><label>Office Phone</label><input type="text" class="form-control"></div>
-            <div class="form-group"><label>Official Email</label><input type="email" class="form-control" placeholder="name@company.com"></div>
+            <div class="form-group"><label>Residence Phone</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control" placeholder="+91"></div>
+            <div class="form-group"><label>Official Email ID</label><input type="email" class="form-control" placeholder="name@company.com"></div>
+            <div class="form-group"><label>Personal Email ID</label><input type="email" class="form-control" placeholder="example@gmail.com"></div>
           </div>
         </div>
         
+        <!-- Tab: Emergency -->
         <div id="edit-emergency" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Emergency Contacts</h3>
-          <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="ph ph-heartbeat" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
-            <p>Emergency contact details form.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Emergency Contact 1</h4>
+              <div class="form-group"><label>Name</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Relationship</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Address</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Email</label><input type="email" class="form-control"></div>
+              <div class="form-group"><label>Landline Number</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control"></div>
+            </div>
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Emergency Contact 2</h4>
+              <div class="form-group"><label>Name</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Relationship</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Address</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Email</label><input type="email" class="form-control"></div>
+              <div class="form-group"><label>Landline Number</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control"></div>
+            </div>
           </div>
         </div>
         
+        <!-- Tab: Passport -->
         <div id="edit-passport" class="tab-panel" style="display:none;">
           <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Passport Information</h3>
-           <div style="padding:40px; text-align:center; color:var(--text-muted); border:1px dashed var(--border-color); border-radius:8px;">
-            <i class="ph ph-identification-card" style="font-size:32px; margin-bottom:12px; color:#e5e7eb;"></i>
-            <p>Passport and Visa details form.</p>
+          <div style="display:grid; grid-template-columns: 1fr; gap:16px; max-width: 500px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+              <input type="checkbox" id="has-passport" style="width:16px; height:16px; accent-color:var(--primary-color);"> 
+              <label for="has-passport" style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Has Passport</label>
+            </div>
+            <div class="form-group"><label>Passport No.</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Passport Issue Office</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Passport Issue Date</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Passport Expiry Date</label><input type="date" class="form-control"></div>
           </div>
         </div>
+
+        <!-- Tab: Other Info -->
+        <div id="edit-other" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Other Information</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px; margin-bottom:32px;">
+            <div class="form-group"><label>Field3</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field4</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field5</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field6</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Religion Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Project Done</label><textarea class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Identification Mark</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Blood Group</label><select class="form-control"><option>-- Select Blood Group --</option></select></div>
+            <div class="form-group"><label>Hobbies</label><textarea class="form-control" rows="2"></textarea></div>
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; height:20px;">
+                <input type="checkbox" id="severe-disability" style="width:16px; height:16px; accent-color:var(--primary-color);"> 
+                <label for="severe-disability" style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Severe Disability</label>
+              </div>
+              <div class="form-group"><label>Status Domicile</label><select class="form-control"><option>-- Select Domicile --</option></select></div>
+            </div>
+            <div class="form-group"><label>Details of Severe Disability</label><textarea class="form-control" rows="2"></textarea></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Resume</h4>
+              <div class="form-group"><label>Upload Resume</label><input type="file" class="form-control" style="padding:6px;"></div>
+              <div style="font-size:13px;"><span style="color:var(--text-secondary); font-weight:600;">View Resume:</span> <a href="#" style="color:var(--primary-color);">Resume</a></div>
+            </div>
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Previous Experience</h4>
+              <div style="display:flex; gap:16px;">
+                <div class="form-group" style="flex:1;"><label>Year</label><select class="form-control"><option>00</option></select></div>
+                <div class="form-group" style="flex:1;"><label>Month</label><select class="form-control"><option>00</option></select></div>
+              </div>
+              <div class="form-group"><label>Description</label><textarea class="form-control" rows="2"></textarea></div>
+            </div>
+          </div>
+        </div>
+
 
         <div style="margin-top:40px; border-top:1px solid var(--border-light); padding-top:24px; display:flex; justify-content:flex-end; gap:12px;">
           <button class="btn-secondary" onclick="closeModal('edit-profile-modal')">Cancel</button>
@@ -372,4 +475,6 @@
     
   </div>
 </div>
+
+
 

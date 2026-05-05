@@ -903,3 +903,193 @@ textarea.form-control {
 .profile-bento:hover .profile-bento-link {
   gap: 6px;
 }
+
+/* -------------------------------------------
+   DASHBOARD FLUID LAYOUT
+   ------------------------------------------- */
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* KPI cards: 4 across, flex to fill when siblings hidden */
+.widget-kpi {
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 100%;
+}
+
+/* Main content widgets (Leave, Team) */
+.widget-main {
+  flex: 2 1 500px;
+  min-width: 300px;
+}
+
+/* Side content widgets (Activity, Quick Links) */
+.widget-side {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+
+/* -------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   ------------------------------------------- */
+
+/* Large Tablet / Small Desktop */
+@media (max-width: 1200px) {
+  .sidebar-column {
+    width: 220px;
+  }
+  #app-content {
+    padding: 28px 24px;
+  }
+  .widget-kpi {
+    flex: 1 1 180px;
+    min-width: 180px;
+  }
+  .widget-main {
+    flex: 1 1 400px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sidebar-column {
+    width: 200px;
+  }
+  .notion-brand {
+    padding: 16px 14px 10px;
+    font-size: 15px;
+  }
+  .notion-nav a {
+    font-size: 12.5px;
+    padding: 6px 8px;
+  }
+  #app-content {
+    padding: 24px 20px;
+  }
+  .widget-kpi {
+    flex: 1 1 160px;
+    min-width: 160px;
+  }
+  .widget-main {
+    flex: 1 1 100%;
+  }
+  .widget-side {
+    flex: 1 1 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+  .sidebar-column {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    flex-direction: row;
+    gap: 0;
+  }
+  .sidebar-column .profile-bento {
+    display: none;
+  }
+  .notion-sidebar {
+    border-radius: 0;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 56px;
+    flex: none;
+  }
+  .notion-brand {
+    padding: 8px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .notion-brand small { display: none; }
+  .notion-group { display: none; }
+  .notion-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 4px 8px;
+    gap: 2px;
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .notion-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .notion-nav a.active::before {
+    display: none;
+  }
+  .notion-submenu { display: none; }
+  .app-wrapper {
+    overflow: visible;
+  }
+  #app-content {
+    padding: 16px 12px;
+  }
+  .widget-kpi {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 140px;
+  }
+  .widget-main,
+  .widget-side {
+    flex: 1 1 100%;
+  }
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  /* Modal responsiveness */
+  .modal-window {
+    width: 95vw !important;
+    max-height: 90vh;
+  }
+  .wizard-layout {
+    flex-direction: column !important;
+  }
+  .wizard-sidebar {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .wizard-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    gap: 0 !important;
+    padding: 8px !important;
+  }
+  .wizard-nav button {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .widget-kpi {
+    flex: 1 1 100%;
+  }
+  #app-content {
+    padding: 12px 8px;
+  }
+  .card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+}
+
