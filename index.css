@@ -1,4 +1,4 @@
-﻿/* -------------------------------------------
+/* -------------------------------------------
    HR PEARLS — Premium SaaS Design System
    Inspired by Linear, Notion, Rippling
    ------------------------------------------- */
@@ -670,14 +670,14 @@ textarea.form-control {
 /* Wizard Layout */
 .wizard-layout {
   display: flex;
+  flex-direction: column;
   height: min(700px, 80vh);
 }
 .wizard-sidebar {
-  width: 260px;
+  width: 100%;
   background: var(--bg-subtle);
-  border-right: 1px solid var(--border-light);
-  padding: 20px;
-  overflow-y: auto;
+  border-bottom: 1px solid var(--border-light);
+  padding: 0;
 }
 .wizard-nav {
   display: flex;

@@ -441,20 +441,9 @@
     <div class="wizard-layout">
       <!-- Wizard Sidebar -->
             <!-- Wizard Sidebar -->
+            <!-- Wizard Sidebar (Dropdown Only) -->
       <div class="wizard-sidebar">
-        <!-- Desktop Nav -->
-        <div class="wizard-nav desktop-wizard-nav">
-          <button class="active" onclick="switchTab('edit-personal', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-user" style="width:16px;"></i> Personal Details</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-address', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-map-pin" style="width:16px;"></i> Address Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-family', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-users-three" style="width:16px;"></i> Family Details</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-contact', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-phone" style="width:16px;"></i> Phone & Email</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-emergency', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-heartbeat" style="width:16px;"></i> Emergency Contacts</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-passport', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-identification-card" style="width:16px;"></i> Passport Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-          <button onclick="switchTab('edit-other', this)"><div style="display:flex; align-items:center; gap:8px;"><i class="ph ph-dots-three-circle" style="width:16px;"></i> Other Info</div> <i class="ph ph-caret-right" style="font-size:10px; opacity:0.5;"></i></button>
-        </div>
-        
-        <!-- Mobile Dropdown Nav -->
-        <div class="mobile-wizard-nav">
+        <div style="padding: 16px;">
           <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: block; font-weight: 500;">Select Profile Section</label>
           <select class="premium-select" onchange="switchTab(this.value, this)">
             <option value="edit-personal">Personal Details</option>
