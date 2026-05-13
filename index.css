@@ -1452,3 +1452,28 @@ textarea.form-control {
   .mobile-topbar-title { font-size: 15px; }
   #app-content > div:first-child h2 { font-size: 18px !important; letter-spacing: -0.3px !important; line-height: 1.2 !important; margin: 0 !important; }
 }
+
+
+/* Premium Dropdown Select */
+.premium-select {
+  appearance: none;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  width: 100%;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2364748b" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.premium-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+}
