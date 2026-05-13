@@ -210,3 +210,10 @@
     // Init
     
   
+// Initialize theme on page load
+(function() {
+  const savedTheme = localStorage.getItem('hrp-theme-color');
+  if (savedTheme) {
+    toggleTheme(savedTheme);
+  }
+})();
