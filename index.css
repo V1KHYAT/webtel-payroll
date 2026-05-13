@@ -1,4 +1,4 @@
-﻿/* -------------------------------------------
+/* -------------------------------------------
    HR PEARLS — Premium SaaS Design System
    Inspired by Linear, Notion, Rippling
    ------------------------------------------- */
@@ -1230,6 +1230,12 @@ textarea.form-control {
     min-width: calc(50% - 6px) !important;
     max-width: calc(50% - 6px) !important;
     box-sizing: border-box !important;
+  }
+  .widget-kpi:last-child:nth-child(odd) {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* Main/side widgets full width */
