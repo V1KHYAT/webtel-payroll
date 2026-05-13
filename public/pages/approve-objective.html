@@ -467,7 +467,19 @@
       // Set page name in mobile top bar
       var displayName = pageNameMap[currentFile] || currentFile;
       var pageNameEl = document.getElementById('mobile-page-name');
-      if (pageNameEl) pageNameEl.textContent = displayName;
+      if (pageNameEl) {
+        var activeLnk = document.querySelector('.notion-nav a[href*="' + currentFile + '.html"]') || document.querySelector('.notion-nav a[href="' + currentFile + '"]');
+        var iconHtml = activeLnk && activeLnk.querySelector('i') ? activeLnk.querySelector('i').outerHTML : (activeLnk && activeLnk.querySelector('.ph') ? activeLnk.querySelector('.ph').outerHTML : '');
+        if (iconHtml) {
+          pageNameEl.innerHTML = iconHtml + ' <span>' + displayName + '</span>';
+          pageNameEl.style.color = 'var(--primary-color)';
+          pageNameEl.style.display = 'flex';
+          pageNameEl.style.alignItems = 'center';
+          pageNameEl.style.gap = '8px';
+        } else {
+          pageNameEl.textContent = displayName;
+        }
+      }
       document.title = 'HR Pearls \u2014 ' + displayName;
 
       // Highlight active sidebar link
