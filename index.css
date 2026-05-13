@@ -1,4 +1,4 @@
-/* -------------------------------------------
+﻿/* -------------------------------------------
    HR PEARLS — Premium SaaS Design System
    Inspired by Linear, Notion, Rippling
    ------------------------------------------- */
@@ -1015,12 +1015,9 @@ textarea.form-control {
     flex: 1 1 100%;
   }
   
-  /* Collapse inline grids on tablet to avoid squishing */
-  [style*="grid-template-columns"] {
+  /* Collapse 2-column forms to 1 column on tablet */
+  .card [style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
-  }
-  [style*="display: flex"][style*="gap"] {
-    flex-wrap: wrap !important;
   }
 }
 
@@ -1372,6 +1369,8 @@ textarea.form-control {
     bottom: 16px;
     left: 16px;
     right: 16px;
+    transform: none !important;
+    width: auto !important;
     border-radius: var(--radius-lg);
     flex-wrap: wrap;
     gap: 8px;
