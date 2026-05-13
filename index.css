@@ -1201,13 +1201,10 @@ textarea.form-control {
     overflow-x: hidden;
     max-width: 100%;
   }
-  #app-content > * {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+  
 
   /* GREETING: prevent 2-line wrap, keep cog on right */
-  #app-content > div:first-child {
+  #app-content > div:first-child { overflow: visible !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -1331,11 +1328,13 @@ textarea.form-control {
     max-width: 100%;
   }
 
-  /* SETTINGS PANEL */
+    /* SETTINGS PANEL */
   #dashboard-settings-panel {
-    width: calc(100vw - 32px) !important;
+    position: fixed !important;
+    top: 72px !important;
     right: 16px !important;
-    left: 16px !important;
+    width: calc(100vw - 32px) !important;
+    z-index: 9999 !important;
   }
   /* Theme color swatches: proper grid */
   #dashboard-settings-panel [style*="flex-wrap: wrap"] {
