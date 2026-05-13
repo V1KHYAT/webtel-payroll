@@ -13,14 +13,10 @@
 
   <!-- MOBILE TOP BAR -->
   <div class="mobile-topbar">
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
       <i class="ph ph-list"></i>
     </button>
-    <div class="mobile-topbar-brand">
-      <i class="ph ph-squares-four"></i>
-      <span>HR Pearls</span>
-    </div>
-    <div class="mobile-topbar-page" id="mobile-page-name"></div>
+    <div class="mobile-topbar-title" id="mobile-page-name"></div>
   </div>
 
   <!-- SIDEBAR BACKDROP -->
@@ -166,6 +162,7 @@
   <div class="app-wrapper">
     <main id="app-content">
 
+
 <div class="page-title">
   <h2>Reimbursement Approval</h2>
   <div class="page-subtitle">Manage and track employee reimbursement claims</div>
@@ -190,6 +187,7 @@
   </div>
 </div>
 
+    
     
     </main>
   </div>
@@ -416,7 +414,6 @@
   </script>
 
   <script>
-    // --- PAGE NAME MAP ---
     var pageNameMap = {
   'home': 'Dashboard',
   'view': 'My Profile',
@@ -432,7 +429,7 @@
   'view-weekly-off': 'Assign Weekly Off',
   'view-category-master': 'Category Master',
   'view-category-param': 'Create Category Parameter',
-  'view-appraisal': 'Create Period, Appraisee And Appraiser',
+  'view-appraisal': 'Appraisee And Appraiser',
   'view-shortlist': 'Shortlist And Rate Candidate',
   'details-outduty': 'Outdoor And Tour Request',
   'details': 'Leave Requisition',
@@ -441,7 +438,7 @@
   'details-income': 'Other Income Details',
   'details-punch': 'Team Punch Detail',
   'details-activity': 'My Activity List',
-  'details-salary-pf': 'Salary Slip With PF And Loan',
+  'details-salary-pf': 'Salary Slip With PF',
   'details-salary-tax': 'Salary Slip With Tax',
   'details-salary-leave': 'Salary Slip With Leave',
   'approve': 'Approve Requisitions',
@@ -453,22 +450,22 @@
   'approve-clearance': 'Clearance Approval',
   'approve-overtime': 'Overtime Approval',
   'approve-resignation': 'Resignation Approval',
-  'approve-objective': 'Objective Setting Form',
-  'approve-overtime-associate': 'Overtime Request (Associate)',
-  'approve-temp-overtime': 'Temporary Overtime Approval',
+  'approve-objective': 'Objective Setting',
+  'approve-overtime-associate': 'Overtime Request',
+  'approve-temp-overtime': 'Temp Overtime Approval',
   'approve-final-overtime': 'Final Overtime Approval',
   'approve-incentive': 'Incentive Approval',
   'reports': 'Reports',
   'report-attendance': 'My Daily Attendance',
   'report-tickets': 'Search Tickets',
   'report-roster': 'Task List / Roster',
-  'report-objective': 'Objective Setting Form',
+  'report-objective': 'Objective Setting',
   'report-assessment': 'Employee Assessment',
   'report-feedback': 'Trainers Feedback',
   'investment': 'Investment Declaration'
 };
 
-    // --- ACTIVE STATE & MOBILE MENU ---
+    // --- ACTIVE STATE, MOBILE MENU, THEME ---
     (function() {
       var currentFile = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
       
@@ -476,9 +473,7 @@
       var displayName = pageNameMap[currentFile] || currentFile;
       var pageNameEl = document.getElementById('mobile-page-name');
       if (pageNameEl) pageNameEl.textContent = displayName;
-
-      // Set document title
-      document.title = 'HR Pearls — ' + displayName;
+      document.title = 'HR Pearls \u2014 ' + displayName;
 
       // Highlight active sidebar link
       var allLinks = document.querySelectorAll('.notion-nav a[href]');
@@ -486,18 +481,15 @@
         var href = link.getAttribute('href');
         if (href && href.replace('.html', '') === currentFile) {
           link.classList.add('active');
-          // If it's inside a submenu, expand the parent section
           var submenu = link.closest('.notion-submenu');
           if (submenu) {
             submenu.style.display = 'block';
-            var parentToggle = submenu.previousElementSibling;
-            while (parentToggle && parentToggle.tagName !== 'A') {
-              parentToggle = parentToggle.previousElementSibling;
-            }
-            if (parentToggle) {
-              parentToggle.classList.add('active');
-              var chevron = parentToggle.querySelector('.chevron-icon');
-              if (chevron) chevron.classList.add('chevron-expanded');
+            var prev = submenu.previousElementSibling;
+            while (prev && prev.tagName !== 'A') prev = prev.previousElementSibling;
+            if (prev) {
+              prev.classList.add('active');
+              var chev = prev.querySelector('.chevron-icon');
+              if (chev) chev.classList.add('chevron-expanded');
             }
           }
         }
@@ -524,13 +516,16 @@
       }
     })();
 
-    // Mobile menu functions
     function toggleMobileMenu() {
       var sidebar = document.querySelector('.sidebar-column');
       var backdrop = document.getElementById('sidebarBackdrop');
+      var isOpen = sidebar.classList.contains('mobile-open');
       sidebar.classList.toggle('mobile-open');
       backdrop.classList.toggle('visible');
-      document.body.style.overflow = sidebar.classList.contains('mobile-open') ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+      // Toggle icon between list and X
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = isOpen ? 'ph ph-list' : 'ph ph-x';
     }
     function closeMobileMenu() {
       var sidebar = document.querySelector('.sidebar-column');
@@ -538,6 +533,8 @@
       sidebar.classList.remove('mobile-open');
       backdrop.classList.remove('visible');
       document.body.style.overflow = '';
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = 'ph ph-list';
     }
   </script>
 </body>
