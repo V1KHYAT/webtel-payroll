@@ -1,4 +1,4 @@
-/* -------------------------------------------
+﻿/* -------------------------------------------
    HR PEARLS — Premium SaaS Design System
    Inspired by Linear, Notion, Rippling
    ------------------------------------------- */
@@ -982,63 +982,184 @@ textarea.form-control {
   }
 }
 
+/* -------------------------------------------
+   MOBILE TOP BAR & SIDEBAR OVERLAY
+   ------------------------------------------- */
+
+/* Mobile Top Bar - hidden on desktop */
+.mobile-topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 56px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 0 16px;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--primary-color);
+  flex: 1;
+  min-width: 0;
+}
+.mobile-topbar-brand i {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.mobile-topbar-page {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: auto;
+}
+
+.mobile-menu-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: var(--bg-app);
+  color: var(--text-secondary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.mobile-menu-btn:active {
+  background: var(--primary-subtle);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Sidebar Overlay - for mobile */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 299;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sidebar-backdrop.visible {
+  opacity: 1;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
+  .mobile-topbar {
+    display: flex;
+  }
   body {
     flex-direction: column;
     height: auto;
     overflow: auto;
+    padding-top: 56px;
   }
   .sidebar-column {
-    width: 100%;
-    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
     margin: 0;
-    flex-direction: row;
+    z-index: 300;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-direction: column;
     gap: 0;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
   }
-  .sidebar-column .profile-bento {
-    display: none;
+  .sidebar-column.mobile-open {
+    transform: translateX(0);
+  }
+  .sidebar-backdrop.visible {
+    display: block;
+    opacity: 1;
   }
   .notion-sidebar {
     border-radius: 0;
-    flex-direction: row;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    min-height: 56px;
-    flex: none;
+    border: none;
+    box-shadow: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
   }
   .notion-brand {
-    padding: 8px 14px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 16px 20px 12px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border-light);
   }
-  .notion-brand small { display: none; }
-  .notion-group { display: none; }
+  .notion-brand small { display: block; }
   .notion-nav {
     display: flex;
-    flex-direction: row;
-    padding: 4px 8px;
-    gap: 2px;
-    flex: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .notion-nav a {
-    white-space: nowrap;
-    flex-shrink: 0;
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-  .notion-nav a.active::before {
-    display: none;
-  }
-  .notion-submenu { display: none; }
-  .app-wrapper {
+    flex-direction: column;
+    padding: 8px 10px;
+    gap: 0;
     overflow: visible;
   }
+  .notion-nav a {
+    white-space: normal;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .notion-nav a.active::before {
+    display: block;
+  }
+  .notion-group {
+    display: block;
+    padding: 16px 12px 6px;
+  }
+  .notion-submenu {
+    padding-left: 12px;
+  }
+  .notion-submenu a {
+    padding: 10px 12px;
+    font-size: 13.5px;
+    min-height: 44px;
+  }
+  .sidebar-column .profile-bento {
+    display: block;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--border-light);
+    box-shadow: none;
+    margin: 0;
+    padding: 16px 20px;
+    flex-shrink: 0;
+  }
+  .app-wrapper {
+    overflow: visible;
+    width: 100%;
+  }
   #app-content {
-    padding: 16px 12px;
+    padding: 20px 16px;
   }
   .widget-kpi {
     flex: 1 1 calc(50% - 12px);
@@ -1050,6 +1171,12 @@ textarea.form-control {
   }
   .main-container {
     grid-template-columns: 1fr;
+  }
+  .page-title h2 {
+    font-size: 20px;
+  }
+  .card {
+    padding: 18px;
   }
   /* Modal responsiveness */
   .modal-window {
@@ -1077,6 +1204,11 @@ textarea.form-control {
     font-size: 12px !important;
     padding: 8px 12px !important;
   }
+  /* Table responsiveness */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Small Mobile */
@@ -1091,5 +1223,7 @@ textarea.form-control {
     padding: 16px;
     border-radius: var(--radius-md);
   }
+  .mobile-topbar {
+    padding: 0 12px;
+  }
 }
-

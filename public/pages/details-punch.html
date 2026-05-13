@@ -11,6 +11,21 @@
 </head>
 <body>
 
+  <!-- MOBILE TOP BAR -->
+  <div class="mobile-topbar">
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <i class="ph ph-list"></i>
+    </button>
+    <div class="mobile-topbar-brand">
+      <i class="ph ph-squares-four"></i>
+      <span>HR Pearls</span>
+    </div>
+    <div class="mobile-topbar-page" id="mobile-page-name"></div>
+  </div>
+
+  <!-- SIDEBAR BACKDROP -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMobileMenu()"></div>
+
   <!-- SIDEBAR COLUMN: Two Floating Bento Boxes -->
   <div class="sidebar-column">
 
@@ -21,7 +36,7 @@
     <nav class="notion-nav">
       
       <!-- Dashboard -->
-      <a href="home.html" id="nav-home" class="active">
+      <a href="home.html" id="nav-home">
         <i class="ph ph-squares-four"></i> Dashboard
       </a>
 
@@ -150,6 +165,7 @@
   <!-- MAIN CONTENT WRAPPER -->
   <div class="app-wrapper">
     <main id="app-content">
+
 <!-- Team Punch Detail -->
 <div class="page-title">
   <h2>Team Punch Detail</h2>
@@ -235,6 +251,7 @@
   </div>
 </div>
 
+    
     </main>
   </div>
 
@@ -460,10 +477,96 @@
   </script>
 
   <script>
-    // Restore theme on page load
+    // --- PAGE NAME MAP ---
+    var pageNameMap = {
+  'home': 'Dashboard',
+  'view': 'My Profile',
+  'view-holiday': 'Select Your Holiday',
+  'view-compoff': 'Assign Compensatory Off',
+  'view-loan': 'Loan And Advance Request',
+  'view-suggestions': 'Send Your Suggestions',
+  'view-helpdesk': 'Ticket Help Desk',
+  'view-documents': 'Upload Documents',
+  'view-activities': 'Extra Curricular Activities',
+  'view-shift-import': 'Assign Shift Through Import',
+  'view-assign-shift': 'Assign Shift To Employees',
+  'view-weekly-off': 'Assign Weekly Off',
+  'view-category-master': 'Category Master',
+  'view-category-param': 'Create Category Parameter',
+  'view-appraisal': 'Create Period, Appraisee And Appraiser',
+  'view-shortlist': 'Shortlist And Rate Candidate',
+  'details-outduty': 'Outdoor And Tour Request',
+  'details': 'Leave Requisition',
+  'details-references': 'My References',
+  'details-accident': 'Accident Details',
+  'details-income': 'Other Income Details',
+  'details-punch': 'Team Punch Detail',
+  'details-activity': 'My Activity List',
+  'details-salary-pf': 'Salary Slip With PF And Loan',
+  'details-salary-tax': 'Salary Slip With Tax',
+  'details-salary-leave': 'Salary Slip With Leave',
+  'approve': 'Approve Requisitions',
+  'approve-outduty': 'Approve Outduty Request',
+  'approve-leave': 'Online Leave Approval',
+  'approve-reimbursement': 'Reimbursement Approval',
+  'approve-expense': 'Expense Approval',
+  'approve-exit': 'Exit Interview Approval',
+  'approve-clearance': 'Clearance Approval',
+  'approve-overtime': 'Overtime Approval',
+  'approve-resignation': 'Resignation Approval',
+  'approve-objective': 'Objective Setting Form',
+  'approve-overtime-associate': 'Overtime Request (Associate)',
+  'approve-temp-overtime': 'Temporary Overtime Approval',
+  'approve-final-overtime': 'Final Overtime Approval',
+  'approve-incentive': 'Incentive Approval',
+  'reports': 'Reports',
+  'report-attendance': 'My Daily Attendance',
+  'report-tickets': 'Search Tickets',
+  'report-roster': 'Task List / Roster',
+  'report-objective': 'Objective Setting Form',
+  'report-assessment': 'Employee Assessment',
+  'report-feedback': 'Trainers Feedback',
+  'investment': 'Investment Declaration'
+};
+
+    // --- ACTIVE STATE & MOBILE MENU ---
     (function() {
-      const savedColor = localStorage.getItem('hrp-theme-color');
-      const themeMap = {
+      var currentFile = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+      
+      // Set page name in mobile top bar
+      var displayName = pageNameMap[currentFile] || currentFile;
+      var pageNameEl = document.getElementById('mobile-page-name');
+      if (pageNameEl) pageNameEl.textContent = displayName;
+
+      // Set document title
+      document.title = 'HR Pearls — ' + displayName;
+
+      // Highlight active sidebar link
+      var allLinks = document.querySelectorAll('.notion-nav a[href]');
+      allLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && href.replace('.html', '') === currentFile) {
+          link.classList.add('active');
+          // If it's inside a submenu, expand the parent section
+          var submenu = link.closest('.notion-submenu');
+          if (submenu) {
+            submenu.style.display = 'block';
+            var parentToggle = submenu.previousElementSibling;
+            while (parentToggle && parentToggle.tagName !== 'A') {
+              parentToggle = parentToggle.previousElementSibling;
+            }
+            if (parentToggle) {
+              parentToggle.classList.add('active');
+              var chevron = parentToggle.querySelector('.chevron-icon');
+              if (chevron) chevron.classList.add('chevron-expanded');
+            }
+          }
+        }
+      });
+
+      // Restore theme
+      var savedColor = localStorage.getItem('hrp-theme-color');
+      var themeMap = {
         '#4f46e5': { hover: '#4338ca', subtle: 'rgba(79,70,229,0.08)', light: '#e0e7ff' },
         '#0ea5e9': { hover: '#0284c7', subtle: 'rgba(14,165,233,0.08)', light: '#e0f2fe' },
         '#3b82f6': { hover: '#2563eb', subtle: 'rgba(59,130,246,0.08)', light: '#dbeafe' },
@@ -481,6 +584,22 @@
         document.documentElement.style.setProperty('--primary-light', m.light);
       }
     })();
+
+    // Mobile menu functions
+    function toggleMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      sidebar.classList.toggle('mobile-open');
+      backdrop.classList.toggle('visible');
+      document.body.style.overflow = sidebar.classList.contains('mobile-open') ? 'hidden' : '';
+    }
+    function closeMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      sidebar.classList.remove('mobile-open');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
   </script>
 </body>
 </html>
