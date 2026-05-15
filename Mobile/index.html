@@ -108,10 +108,12 @@
                     <!-- SCROLLABLE CARDS LAYER -->
                     <main class="scrollable-cards">
                         
-                        <!-- Regularization Summary -->
-                        <button class="summary-btn" onclick="openBottomSheet('regularisation-sheet')">
-                            <i data-lucide="alert-triangle"></i>
-                            15 days require regularisation
+                        <!-- Regularization Summary — prominent with accent blue -->
+                        <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
+                            <div class="summary-icon"><i data-lucide="alert-triangle"></i></div>
+                            <div class="summary-text">
+                                <span class="summary-count">15 days</span> require regularisation
+                            </div>
                             <i data-lucide="chevron-right"></i>
                         </button>
 
@@ -154,7 +156,7 @@
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon orange"><i data-lucide="megaphone"></i></div>
+                                    <div class="feed-icon"><i data-lucide="megaphone"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Townhall Meeting</div>
                                         <div class="feed-sub">Friday @ 4:00 PM • Main Cafeteria</div>
@@ -316,7 +318,7 @@
                             </div>
                         </div>
                         <div class="feed-item">
-                            <div class="feed-icon orange"><i data-lucide="alert-circle"></i></div>
+                            <div class="feed-icon"><i data-lucide="alert-circle"></i></div>
                             <div class="feed-content">
                                 <div class="feed-title">Missing Punch</div>
                                 <div class="feed-sub">You missed a punch out on May 14. Please regularise.</div>
@@ -326,27 +328,37 @@
                     </div>
                 </div>
 
-                <!-- Attendance Map Bottom Sheet (Full Screen) -->
-                <div class="bottom-sheet fullscreen" id="attendance-map-sheet">
-                    <div class="map-placeholder-bg"></div>
-                    <div class="map-header">
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="arrow-left"></i></button>
-                        <h3>Mark Your Attendance</h3>
+                <!-- Attendance Bottom Sheet (Clean card style, like notifications) -->
+                <div class="bottom-sheet" id="attendance-map-sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="sheet-header">
+                        <h3>Mark Attendance</h3>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
                     </div>
-                    <div class="map-pin">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <div class="attendance-info-card">
-                        <h4>Afternoon Vijay Pal</h4>
-                        <div class="timestamp" id="map-timestamp">15/05/2026 02:14:12 PM</div>
-                        <div class="shift-details">
-                            <span>Shift In: 10:00 AM</span>
-                            <span>Shift Out: 07:00 PM</span>
+                    <div class="sheet-scroll-content">
+                        <!-- Greeting -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 15px; font-weight: 600; color: var(--color-text);">Good Afternoon, Vijay Pal</div>
+                            <div style="font-size: 28px; font-weight: 700; color: var(--color-text); font-variant-numeric: tabular-nums; margin: 8px 0 4px;" id="map-timestamp">--:--:-- PM</div>
                         </div>
-                        <div class="address-block">
-                            107-109, Rajendra Place, New Delhi, Delhi Division, Delhi, 110008, India
+
+                        <!-- Details list -->
+                        <div class="attendance-detail-list">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock" style="width:14px;height:14px;margin-right:6px;"></i>Shift In</span>
+                                <span class="detail-value">10:00 AM</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock" style="width:14px;height:14px;margin-right:6px;"></i>Shift Out</span>
+                                <span class="detail-value">07:00 PM</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="map-pin" style="width:14px;height:14px;margin-right:6px;"></i>Location</span>
+                                <span class="detail-value" style="text-align: right; max-width: 200px;">107-109, Rajendra Place, New Delhi, 110008</span>
+                            </div>
                         </div>
-                        <button class="btn btn-primary btn-block" id="btn-punch-confirm" onclick="mockPunchIn()">
+
+                        <button class="btn btn-primary btn-block" id="btn-punch-confirm" onclick="mockPunchIn()" style="margin-top: 20px;">
                             Mark With Selfie
                         </button>
                     </div>

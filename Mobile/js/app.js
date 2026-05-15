@@ -148,9 +148,9 @@ function closeBottomSheet() {
 function startMapClock() {
     const updateMapTime = () => {
         const now = new Date();
-        const dateStr = now.toLocaleDateString('en-GB'); // DD/MM/YYYY
         const timeStr = now.toLocaleTimeString('en-US'); // HH:MM:SS AM/PM
-        document.getElementById('map-timestamp').innerText = `${dateStr} ${timeStr}`;
+        const el = document.getElementById('map-timestamp');
+        if (el) el.innerText = timeStr;
     };
     updateMapTime();
     mapInterval = setInterval(updateMapTime, 1000);
