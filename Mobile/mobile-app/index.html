@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Webtel Unified Mobile Handoff</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="stage">
+        <main class="phone-frame" aria-label="Unified Webtel mobile prototype">
+            <section class="shell-header">
+                <div class="brand-row">
+                    <div>
+                        <p class="eyebrow">Webtel mobile handoff</p>
+                        <h1>One app for HR, attendance, and payroll.</h1>
+                    </div>
+                    <button class="icon-button" type="button" aria-label="Open settings">
+                        <i data-lucide="sliders-horizontal"></i>
+                    </button>
+                </div>
+
+                <div class="product-switcher" role="tablist" aria-label="Product focus">
+                    <button class="switch-pill is-active" type="button" data-focus="unified">Unified</button>
+                    <button class="switch-pill" type="button" data-focus="hrpearls">HR Pearls</button>
+                    <button class="switch-pill" type="button" data-focus="ipay">iPay</button>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <p class="hero-label">Current scope</p>
+                        <h2>Employee self-service first. Payroll second. One system overall.</h2>
+                        <p class="hero-text">This scaffold keeps the employee journey simple: check status, mark attendance, request leave, review pay, and find help without bouncing between screens.</p>
+                    </div>
+                    <div class="hero-metrics" aria-label="Key metrics">
+                        <div>
+                            <strong>6</strong>
+                            <span>core tabs</span>
+                        </div>
+                        <div>
+                            <strong>2</strong>
+                            <span>merged products</span>
+                        </div>
+                        <div>
+                            <strong>1</strong>
+                            <span>design language</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-stack">
+                <div class="status-strip">
+                    <span class="status-dot"></span>
+                    <p>Design principles: calm hierarchy, minimal noise, large touch targets, and task-first navigation.</p>
+                </div>
+
+                <div class="view-tabs" aria-label="Primary navigation">
+                    <button class="view-tab is-active" type="button" data-view="home">
+                        <i data-lucide="layout-grid"></i>
+                        <span>Home</span>
+                    </button>
+                    <button class="view-tab" type="button" data-view="attendance">
+                        <i data-lucide="fingerprint"></i>
+                        <span>Attendance</span>
+                    </button>
+                    <button class="view-tab" type="button" data-view="people">
+                        <i data-lucide="users"></i>
+                        <span>People</span>
+                    </button>
+                    <button class="view-tab" type="button" data-view="pay">
+                        <i data-lucide="wallet"></i>
+                        <span>Pay</span>
+                    </button>
+                    <button class="view-tab" type="button" data-view="requests">
+                        <i data-lucide="file-text"></i>
+                        <span>Requests</span>
+                    </button>
+                    <button class="view-tab" type="button" data-view="more">
+                        <i data-lucide="more-horizontal"></i>
+                        <span>More</span>
+                    </button>
+                </div>
+
+                <section class="screen is-active" data-screen="home" aria-label="Home overview">
+                    <article class="primary-card pulse-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Today</p>
+                                <h3>Good afternoon, Vijay.</h3>
+                            </div>
+                            <span class="badge badge-neutral">On shift</span>
+                        </div>
+                        <div class="attendance-tile">
+                            <div>
+                                <span class="tile-label">Last punch</span>
+                                <strong>09:58 AM</strong>
+                            </div>
+                            <div>
+                                <span class="tile-label">Next action</span>
+                                <strong>Mark out</strong>
+                            </div>
+                        </div>
+                        <button class="primary-action" type="button">Mark attendance</button>
+                    </article>
+
+                    <article class="primary-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Priority</p>
+                                <h3>Work items that need attention</h3>
+                            </div>
+                            <span class="badge badge-warn">15 items</span>
+                        </div>
+                        <div class="stack-list">
+                            <div class="stack-row">
+                                <div class="row-icon tone-alert"><i data-lucide="alert-triangle"></i></div>
+                                <div>
+                                    <strong>Regularisation</strong>
+                                    <p>Missing punches and attendance corrections.</p>
+                                </div>
+                            </div>
+                            <div class="stack-row">
+                                <div class="row-icon tone-accent"><i data-lucide="calendar-plus"></i></div>
+                                <div>
+                                    <strong>Leave request</strong>
+                                    <p>Apply leave and track approval status.</p>
+                                </div>
+                            </div>
+                            <div class="stack-row">
+                                <div class="row-icon tone-ink"><i data-lucide="receipt-text"></i></div>
+                                <div>
+                                    <strong>Payroll review</strong>
+                                    <p>Pay slip, salary register, and attendance summary.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="grid-card">
+                        <div class="module-chip">
+                            <i data-lucide="shield-check"></i>
+                            <span>Compliance</span>
+                        </div>
+                        <h4>HR Pearls modules</h4>
+                        <p>Leave, attendance, employee data, policies, reports, helpdesk, business trip, and team management.</p>
+                    </article>
+                    <article class="grid-card">
+                        <div class="module-chip">
+                            <i data-lucide="banknote"></i>
+                            <span>Payroll</span>
+                        </div>
+                        <h4>iPay modules</h4>
+                        <p>Login, payroll, salary and attendance reports, business trip expense approval, and employee HR access.</p>
+                    </article>
+                </section>
+
+                <section class="screen" data-screen="attendance" aria-label="Attendance view">
+                    <article class="primary-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Attendance</p>
+                                <h3>Fast path to punch in and regularise</h3>
+                            </div>
+                            <span class="badge badge-success">Location verified</span>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-marker"></div>
+                            <div>
+                                <strong>10:00 AM shift</strong>
+                                <p>Show current shift, time, location, and the next action in one place.</p>
+                            </div>
+                        </div>
+                        <div class="action-row">
+                            <button class="secondary-action" type="button">Selfie punch</button>
+                            <button class="secondary-action" type="button">Regularise</button>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="screen" data-screen="people" aria-label="People view">
+                    <article class="primary-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">People</p>
+                                <h3>Employee context without clutter</h3>
+                            </div>
+                            <span class="badge badge-neutral">Profile</span>
+                        </div>
+                        <div class="mini-profile">
+                            <div class="avatar">VP</div>
+                            <div>
+                                <strong>Vijay Pal</strong>
+                                <p>Employee ID EMP001 • New Delhi</p>
+                            </div>
+                        </div>
+                        <div class="meta-grid">
+                            <div>
+                                <span>Leave balance</span>
+                                <strong>66.0</strong>
+                            </div>
+                            <div>
+                                <span>Reports</span>
+                                <strong>HR + pay</strong>
+                            </div>
+                            <div>
+                                <span>Helpdesk</span>
+                                <strong>Open</strong>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="screen" data-screen="pay" aria-label="Pay view">
+                    <article class="primary-card pay-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Pay</p>
+                                <h3>Salary details built for scanning</h3>
+                            </div>
+                            <span class="badge badge-ink">Monthly</span>
+                        </div>
+                        <div class="amount-block">
+                            <span>Net pay</span>
+                            <strong>₹ 84,500</strong>
+                        </div>
+                        <div class="detail-list">
+                            <div><span>Salary register</span><strong>Open</strong></div>
+                            <div><span>Attendance report</span><strong>Ready</strong></div>
+                            <div><span>Expense approval</span><strong>3 pending</strong></div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="screen" data-screen="requests" aria-label="Requests view">
+                    <article class="primary-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Requests</p>
+                                <h3>Actions that deserve their own lane</h3>
+                            </div>
+                            <span class="badge badge-warn">Pending</span>
+                        </div>
+                        <div class="request-list">
+                            <div class="request-item">
+                                <strong>Leave application</strong>
+                                <span>Starts with reason, dates, and balance.</span>
+                            </div>
+                            <div class="request-item">
+                                <strong>Business trip expense</strong>
+                                <span>Amount, purpose, and approval in one flow.</span>
+                            </div>
+                            <div class="request-item">
+                                <strong>Helpdesk ticket</strong>
+                                <span>HR support and follow-up history.</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="screen" data-screen="more" aria-label="More view">
+                    <article class="primary-card">
+                        <div class="card-head">
+                            <div>
+                                <p class="card-kicker">Merge map</p>
+                                <h3>What belongs where</h3>
+                            </div>
+                        </div>
+                        <div class="merge-list">
+                            <div>
+                                <strong>HR Pearls</strong>
+                                <p>Leave, attendance, employee data, policies, helpdesk, transfers, reports.</p>
+                            </div>
+                            <div>
+                                <strong>iPay</strong>
+                                <p>Payroll, salary and attendance reports, business trip expenses, employee HR access.</p>
+                            </div>
+                            <div>
+                                <strong>Shared system</strong>
+                                <p>Single sign-in, unified navigation, consistent states, and one language for all tasks.</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Primary actions">
+                <button class="nav-action is-active" type="button">
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-action" type="button">
+                    <i data-lucide="bell"></i>
+                    <span>Alerts</span>
+                </button>
+                <button class="nav-action nav-action-primary" type="button">
+                    <i data-lucide="scan-face"></i>
+                    <span>Mark</span>
+                </button>
+                <button class="nav-action" type="button">
+                    <i data-lucide="message-square-more"></i>
+                    <span>Help</span>
+                </button>
+                <button class="nav-action" type="button">
+                    <i data-lucide="settings-2"></i>
+                    <span>More</span>
+                </button>
+            </nav>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,3 +1,110 @@
+// --- AUTO ZOOM TO FIT PHONE ON SCREEN ---
+
+function autoZoomToFit() {
+    const deviceFrame = document.querySelector('.device-frame');
+    if (!deviceFrame) return;
+    
+    const phoneWidth = 390 + 24; // device width + padding
+    const phoneHeight = 844 + 24; // device height + padding
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    const scaleX = (viewportWidth - 40) / phoneWidth; // 40px for margins
+    const scaleY = (viewportHeight - 40) / phoneHeight; // 40px for margins
+    const scale = Math.min(scaleX, scaleY, 1); // Don't zoom in, only out
+    
+    // Use CSS transform on the device frame instead of setting document zoom.
+    // This preserves computed CSS values inside the iframe-like preview
+    // while visually scaling the phone to fit the viewport.
+    deviceFrame.style.transformOrigin = 'top center';
+    deviceFrame.style.transform = `scale(${scale})`;
+    // Ensure the device wrapper keeps enough space to avoid clipping when scaled
+    const wrapper = document.querySelector('.device-preview-wrapper');
+    if (wrapper) wrapper.style.height = Math.round(phoneHeight * scale + 40) + 'px';
+}
+
+// Run on load and on window resize
+window.addEventListener('load', autoZoomToFit);
+window.addEventListener('resize', autoZoomToFit);
+
+// --- SCROLL MINIMIZE CARD LOGIC ---
+function initScrollMinimize() {
+    const scrollableCards = document.querySelector('.scrollable-cards');
+    const attendanceWidget = document.querySelector('.attendance-widget');
+    
+    if (!scrollableCards || !attendanceWidget) return;
+
+    let scheduled = false;
+
+    const updateCollapseState = () => {
+        const scrollTop = scrollableCards.scrollTop;
+        const end = 260;
+        const progress = Math.max(0, Math.min(1, scrollTop / end));
+
+        attendanceWidget.style.setProperty('--collapse-progress', progress.toString());
+
+        attendanceWidget.classList.toggle('minimized', progress > 0.01);
+    };
+
+    scrollableCards.addEventListener('scroll', function() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+            updateCollapseState();
+            scheduled = false;
+        });
+    });
+
+    updateCollapseState();
+}
+
+function initDragScroll() {
+    const scrollableCards = document.querySelector('.scrollable-cards');
+    if (!scrollableCards) return;
+
+    let isDragging = false;
+    let startY = 0;
+    let startScrollTop = 0;
+
+        scrollableCards.addEventListener('pointerdown', function(event) {
+        if (event.pointerType !== 'mouse' || event.button !== 0) return;
+
+        const interactiveTarget = event.target.closest('button, a, input, textarea, select, label, [role="button"]');
+        if (interactiveTarget) return;
+
+        event.preventDefault();
+
+        isDragging = true;
+        startY = event.clientY;
+        startScrollTop = scrollableCards.scrollTop;
+        scrollableCards.classList.add('drag-scrolling');
+        scrollableCards.style.scrollBehavior = 'auto';
+
+        try {
+            scrollableCards.setPointerCapture(event.pointerId);
+        } catch (error) {
+            // Ignore capture failures on browsers that do not support it reliably.
+        }
+    });
+
+    scrollableCards.addEventListener('pointermove', function(event) {
+        if (!isDragging) return;
+        event.preventDefault();
+        const deltaY = event.clientY - startY;
+        scrollableCards.scrollTop = startScrollTop - deltaY;
+    });
+
+    const stopDragging = function() {
+        isDragging = false;
+        scrollableCards.classList.remove('drag-scrolling');
+        scrollableCards.style.scrollBehavior = '';
+    };
+
+    scrollableCards.addEventListener('pointerup', stopDragging);
+    scrollableCards.addEventListener('pointercancel', stopDragging);
+    scrollableCards.addEventListener('pointerleave', stopDragging);
+}
+
 // --- NAVIGATION LOGIC ---
 
 function goToCredentials() {
@@ -76,7 +183,12 @@ function toggleSubmenu(btn) {
 function initHome() {
     populateRegularisation();
     updateClock();
+    initScrollMinimize();
+    initDragScroll();
+    initToggleState();
+    updateCurrentTime();
     setInterval(updateClock, 60000); // Update every minute
+    setInterval(updateCurrentTime, 60000);
 }
 
 function populateRegularisation() {
@@ -114,7 +226,23 @@ function updateClock() {
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0' + minutes : minutes;
     
-    timeReadout.innerHTML = `${hours}:${minutes} <span style="font-size: 20px; font-weight: 500; color: var(--color-text-tertiary)">${ampm}</span>`;
+    timeReadout.innerHTML = `${hours}:${minutes}<span class="meridian">${ampm}</span>`;
+}
+
+function updateCurrentTime() {
+    const currentTime = document.getElementById('current-time');
+    if (!currentTime) return;
+
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    currentTime.innerHTML = `${hours}:${minutes}<span class="meridian">${ampm}</span>`;
 }
 
 // --- BOTTOM SHEET LOGIC ---
@@ -125,10 +253,15 @@ function openBottomSheet(sheetId) {
     const sheet = document.getElementById(sheetId);
     const overlay = document.getElementById('sheet-overlay');
     
-    if (sheet && overlay) {
-        sheet.classList.add('open');
-        overlay.classList.add('open');
+    if (!sheet || !overlay) {
+        return;
     }
+
+    document.querySelectorAll('.bottom-sheet').forEach(existingSheet => existingSheet.classList.remove('open'));
+    overlay.classList.remove('open');
+    
+    sheet.classList.add('open');
+    overlay.classList.add('open');
 
     if (sheetId === 'attendance-map-sheet') {
         startMapClock();
@@ -169,7 +302,7 @@ function mockPunchIn() {
     setTimeout(() => {
         // Confirmation State
         btn.innerHTML = '<i data-lucide="check" class="lucide"></i> Attendance Marked';
-        btn.style.backgroundColor = '#10B981'; // Green
+        btn.style.backgroundColor = '#2563EB';
         lucide.createIcons();
 
         setTimeout(() => {
@@ -188,22 +321,38 @@ function mockPunchIn() {
             
             const mainBtn = document.getElementById('btn-punch-main');
             mainBtn.textContent = 'Punch Out';
-            mainBtn.classList.remove('btn-primary');
-            mainBtn.classList.add('btn-dark'); // Use dark button for Punch Out
+            mainBtn.classList.add('btn-primary');
+            mainBtn.classList.remove('btn-dark');
             
             lucide.createIcons();
             
             // Restore button state for next time
             setTimeout(() => {
-                btn.textContent = originalText;
+                btn.innerHTML = originalText;
                 btn.style.backgroundColor = originalBg;
                 btn.style.opacity = '1';
                 btn.style.pointerEvents = 'auto';
-            }, 500);
-            
+                lucide.createIcons();
+            }, 800);
         }, 1200);
-        
-    }, 1500);
+    }, 1000);
+}
+
+// --- TOGGLE STATE MANAGEMENT ---
+function initToggleState() {
+    const toggle = document.getElementById('advanced-features-toggle');
+    if (!toggle) return;
+    
+    // Restore toggle state from localStorage
+    const savedState = localStorage.getItem('advanced-features-enabled');
+    if (savedState === 'true') {
+        toggle.checked = true;
+    }
+    
+    // Save toggle state when changed
+    toggle.addEventListener('change', function() {
+        localStorage.setItem('advanced-features-enabled', this.checked);
+    });
 }
 
 // Add simple spin animation to head dynamically
@@ -220,3 +369,69 @@ document.head.appendChild(style);
 window.onload = () => {
     initHome();
 };
+
+// --- PROFILE ACCORDION LOGIC ---
+function toggleAccordion(btn) {
+    const header = btn;
+    const card = header.parentElement;
+    const content = card.querySelector('.accordion-content');
+    const chevron = btn.querySelector('.acc-chevron');
+    
+    if (!content) return;
+    
+    if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        header.classList.remove('open');
+        if (card) card.classList.remove('open');
+        chevron.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.add('open');
+        header.classList.add('open');
+        if (card) card.classList.add('open');
+        chevron.style.transform = 'rotate(180deg)';
+    }
+    lucide.createIcons();
+}
+
+function goToProfile() {
+    toggleSidebar(); // Close sidebar if open
+    document.getElementById('home-screen').classList.remove('active');
+    document.getElementById('profile-screen').classList.add('active');
+    
+    // Setup drag scroll for profile screen if needed, using the existing initDragScroll on its scrollable-cards
+    const profCards = document.querySelector('#profile-screen .scrollable-cards');
+        // initialize drag-scrolling for profile screen (no padding override)
+    if (profCards && !profCards.dataset.dragInit) {
+        profCards.dataset.dragInit = 'true';
+        // Reuse the logic from initDragScroll here or create a generalized version.
+        let isDragging = false, startY = 0, startScrollTop = 0;
+        profCards.addEventListener('pointerdown', function(e) {
+            if (e.pointerType !== 'mouse' || e.button !== 0) return;
+            if (e.target.closest('button, a, input, textarea, select, label, [role="button"]')) return;
+            e.preventDefault();
+            isDragging = true; startY = e.clientY; startScrollTop = profCards.scrollTop;
+            profCards.classList.add('drag-scrolling');
+            profCards.style.scrollBehavior = 'auto';
+            try { profCards.setPointerCapture(e.pointerId); } catch(err){}
+        });
+        profCards.addEventListener('pointermove', function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            profCards.scrollTop = startScrollTop - (e.clientY - startY);
+        });
+        const stopDragging = function() {
+            isDragging = false; profCards.classList.remove('drag-scrolling'); profCards.style.scrollBehavior = '';
+        };
+        profCards.addEventListener('pointerup', stopDragging);
+        profCards.addEventListener('pointercancel', stopDragging);
+        profCards.addEventListener('pointerleave', stopDragging);
+    }
+}
+
+function goToHome() {
+    document.getElementById('profile-screen').classList.remove('active');
+    document.getElementById('home-screen').classList.add('active');
+    // restore default spacing safety for home screen
+    const homeCards = document.querySelector('#home-screen .scrollable-cards');
+    if (homeCards) homeCards.style.paddingBottom = '40px';
+}

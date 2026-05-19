@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Webtel HR Mobile Prototype</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -58,7 +57,15 @@
                 </div>
 
                 <!-- HOME SCREEN -->
-                <div id="home-screen" class="screen app-layout active">
+                <div id="home-screen" class="screen app-layout">
+                    <div class="status-bar-dummy" aria-hidden="true">
+                        <span class="status-time">9:41</span>
+                        <div class="status-icons">
+                            <i data-lucide="signal"></i>
+                            <i data-lucide="wifi"></i>
+                            <i data-lucide="battery-full"></i>
+                        </div>
+                    </div>
                     
                     <!-- FIXED BASE LAYER -->
                     <div class="fixed-base">
@@ -84,18 +91,21 @@
                                 <i data-lucide="sun"></i>
                                 General Shift: 10:00 AM - 07:00 PM
                             </div>
-                            
-                            <div class="time-readout">--:--</div>
-                            <div class="time-label" id="punch-label">Ready to punch in</div>
-
-                            <div class="punch-details">
-                                <div class="punch-col">
-                                    <span>Punch In</span>
-                                    <strong id="punch-in-time">--:--</strong>
+                            <div class="attendance-summary">
+                                <div class="attendance-clock">
+                                    <div class="time-readout">--:--</div>
+                                    <div class="time-label" id="punch-label">Ready to punch in</div>
                                 </div>
-                                <div class="punch-col right">
-                                    <span>Punch Out</span>
-                                    <strong id="punch-out-time">--:--</strong>
+
+                                <div class="punch-details">
+                                    <div class="punch-line">
+                                        <span>Shift In</span>
+                                        <strong id="punch-in-time">--:--</strong>
+                                    </div>
+                                    <div class="punch-line">
+                                        <span>Shift Out</span>
+                                        <strong id="punch-out-time">--:--</strong>
+                                    </div>
                                 </div>
                             </div>
 
@@ -189,7 +199,168 @@
                         </div>
                         
                     </main>
+
+                    <div class="gesture-pill-dummy" aria-hidden="true"></div>
                 </div> <!-- End home screen -->
+
+                <!-- PROFILE SCREEN -->
+                <div id="profile-screen" class="screen app-layout">
+                    <div class="status-bar-dummy" aria-hidden="true">
+                        <span class="status-time">9:41</span>
+                        <div class="status-icons">
+                            <i data-lucide="signal"></i>
+                            <i data-lucide="wifi"></i>
+                            <i data-lucide="battery-full"></i>
+                        </div>
+                    </div>
+                    
+                    <header class="base-header" style="background: var(--color-surface); padding-bottom: var(--space-4);">
+                        <div class="header-left">
+                            <button class="ghost-btn" onclick="goToHome()">
+                                <i data-lucide="arrow-left"></i>
+                            </button>
+                            <h2 style="margin-left: 8px;">Profile</h2>
+                        </div>
+                        <button class="ghost-btn" onclick="openBottomSheet('change-password-sheet')">
+                            <i data-lucide="lock"></i>
+                        </button>
+                    </header>
+
+                    <main class="scrollable-cards">
+                        
+                        <div class="accordion-card">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="acc-title"><i data-lucide="user"></i> Employee Details</div>
+                                <i data-lucide="chevron-up" class="acc-chevron"></i>
+                            </button>
+                            <div class="accordion-preview">
+                                <div class="info-row"><span class="info-label">Name</span><span class="info-val">Vijay Pal</span></div>
+                                <div class="info-row"><span class="info-label">Mobile</span><span class="info-val">+91 98765 43210</span></div>
+                            </div>
+                            <div class="accordion-content open">
+                                <div class="info-grid">
+                                    <div class="info-row"><span class="info-label">Code:</span><span class="info-val">SAEL142</span></div>
+                                    <div class="info-row"><span class="info-label">Name:</span><span class="info-val">Vijay Pal</span></div>
+                                    <div class="info-row"><span class="info-label">Gender:</span><span class="info-val">Male</span></div>
+                                    <div class="info-row"><span class="info-label">Mobile Number:</span><span class="info-val">+91 98765 43210</span></div>
+                                    <div class="info-row"><span class="info-label">Email Id:</span><span class="info-val">vijay.pal@webtel.in</span></div>
+                                    <div class="info-row"><span class="info-label">Father Name:</span><span class="info-val">Ramesh Singh</span></div>
+                                    <div class="info-row"><span class="info-label">Spouse Name:</span><span class="info-val">N/A</span></div>
+                                    <div class="info-row"><span class="info-label">Present Address:</span><span class="info-val">3285A Sector 3, Faridabad, Haryana, 121004</span></div>
+                                    <div class="info-row"><span class="info-label">Permanent Address:</span><span class="info-val">Same as Present</span></div>
+                                    <div class="info-row"><span class="info-label">Date Of Birth:</span><span class="info-val">19 Jun 1972</span></div>
+                                    <div class="info-row"><span class="info-label">Blood Group:</span><span class="info-val">O+</span></div>
+                                    <div class="info-row"><span class="info-label">Emergency Contact No.:</span><span class="info-val">+91 91531 45453</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-card">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="acc-title"><i data-lucide="building-2"></i> Organisation Details</div>
+                                <i data-lucide="chevron-down" class="acc-chevron"></i>
+                            </button>
+                            <div class="accordion-preview">
+                                <div class="info-row"><span class="info-label">Designation</span><span class="info-val">General Manager</span></div>
+                                <div class="info-row"><span class="info-label">Department</span><span class="info-val">IT</span></div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="info-grid">
+                                    <div class="info-row"><span class="info-label">Pan No.:</span><span class="info-val">AIJPP9811H</span></div>
+                                    <div class="info-row"><span class="info-label">Joining Date:</span><span class="info-val">19 Jun 2016</span></div>
+                                    <div class="info-row"><span class="info-label">Designation:</span><span class="info-val">General Manager</span></div>
+                                    <div class="info-row"><span class="info-label">Department:</span><span class="info-val">IT</span></div>
+                                    <div class="info-row"><span class="info-label">Business Unit:</span><span class="info-val">Delhi HO</span></div>
+                                    <div class="info-row"><span class="info-label">Cost Centre:</span><span class="info-val">RS & Company</span></div>
+                                    <div class="info-row"><span class="info-label">Location:</span><span class="info-val">Corporate</span></div>
+                                    <div class="info-row"><span class="info-label">Address:</span><span class="info-val">New Delhi, Delhi</span></div>
+                                    <div class="info-row"><span class="info-label">Bank Name:</span><span class="info-val">ICICI Bank Limited</span></div>
+                                    <div class="info-row"><span class="info-label">Account Number:</span><span class="info-val">008301033692</span></div>
+                                    <div class="info-row"><span class="info-label">PF No.:</span><span class="info-val">42454546534</span></div>
+                                    <div class="info-row"><span class="info-label">Senior Name:</span><span class="info-val">Jasbir Singh</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-card">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="acc-title"><i data-lucide="wallet"></i> CTC Details</div>
+                                <i data-lucide="chevron-down" class="acc-chevron"></i>
+                            </button>
+                            <div class="accordion-preview">
+                                <div class="info-row"><span class="info-label">Total Gross</span><span class="info-val">₹12,114.50</span></div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="gross-pay-wrap">
+                                    <div class="gross-pay-amt">₹12114.5</div>
+                                    <div class="gross-pay-sub">Total Gross Pay</div>
+                                </div>
+                                <div class="info-grid mt-4">
+                                    <div class="info-row"><span class="info-label"><span class="dot red"></span> Basic</span><span class="info-val text-red">₹10,000.00</span></div>
+                                    <div class="info-row"><span class="info-label"><span class="dot green"></span> House Rent Allowance</span><span class="info-val text-green">₹3,000.00</span></div>
+                                    <div class="info-row"><span class="info-label"><span class="dot blue"></span> Food Expense Reimbursement</span><span class="info-val text-blue">₹500.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-card">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="acc-title"><i data-lucide="settings"></i> Account Settings</div>
+                                <i data-lucide="chevron-down" class="acc-chevron"></i>
+                            </button>
+                            <div class="accordion-preview">
+                                <div class="info-row"><span class="info-label">Security</span><span class="info-val">Last changed: 6 months ago</span></div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="info-grid">
+                                    <div class="info-row"><span class="info-label">Change Password</span><span class="info-val"><button class="btn btn-primary" onclick="openBottomSheet('change-password-sheet')">Change</button></span></div>
+                                    <div class="info-row"><span class="info-label">Two-Factor</span><span class="info-val">Disabled</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-card" style="margin-top: var(--space-4);">
+                            <div class="card-header">
+                                <span class="card-title">Documents</span>
+                            </div>
+                            <div class="document-list">
+                                <div class="doc-item">
+                                    <div class="doc-icon"><i data-lucide="file-text"></i></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">Company Policy 2025</div>
+                                        <div class="doc-sub">company_policy_2025.pdf</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                </div>
+                                <div class="doc-item">
+                                    <div class="doc-icon"><i data-lucide="bar-chart-3"></i></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">Quarterly Report Q3</div>
+                                        <div class="doc-sub">report_q3_2025.xlsx</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                </div>
+                                <div class="doc-item">
+                                    <div class="doc-icon"><i data-lucide="book-open"></i></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">Product Catalog</div>
+                                        <div class="doc-sub">catalog.docx</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                </div>
+                                <div class="doc-item">
+                                    <div class="doc-icon"><i data-lucide="file-text"></i></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">User Manual</div>
+                                        <div class="doc-sub">user_manual.pdf</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </main>
+                    <div class="gesture-pill-dummy" aria-hidden="true"></div>
+                </div> <!-- End profile screen -->
 
                 <!-- OVERLAYS HARDCODED WITHIN APP CONTAINER TO PREVENT OVERFLOW BUGS -->
                 
@@ -202,14 +373,29 @@
                             <div class="user-name">Vijay Pal</div>
                             <div class="user-domain">demo.webtel.in</div>
                         </div>
-                        <button class="ghost-btn" onclick="toggleSidebar()" style="width:32px;height:32px;background:rgba(255,255,255,0.15);color:white;"><i data-lucide="x" style="width:16px;height:16px;"></i></button>
+                        <div class="sidebar-header-actions">
+                            <label class="toggle-switch sidebar-header-toggle" title="Future feature control">
+                                <input type="checkbox" id="advanced-features-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><i data-lucide="x"></i></button>
+                        </div>
                     </div>
                     <div class="sidebar-content">
                         <div class="nav-menu-item">
                             <button class="nav-link active-link" onclick="toggleSidebar()"><i data-lucide="layout-dashboard"></i> Dashboard</button>
                         </div>
                         <div class="nav-menu-item">
-                            <button class="nav-link"><i data-lucide="user"></i> Profile</button>
+                            <button class="nav-link" onclick="goToProfile()"><i data-lucide="user"></i> Profile</button>
+                        </div>
+
+                        <div class="nav-menu-item">
+                            <button class="nav-link" onclick="toggleSubmenu(this)">
+                                <i data-lucide="fingerprint"></i> Attendance <i data-lucide="chevron-down" class="chevron"></i>
+                            </button>
+                            <div class="nav-submenu">
+                                <a href="#" onclick="openBottomSheet('attendance-map-sheet'); toggleSidebar();">Mark Attendance</a>
+                            </div>
                         </div>
                         
                         <div class="nav-menu-item">
@@ -220,15 +406,6 @@
                                 <a href="#">Apply Leave</a>
                                 <a href="#">Leave Balances</a>
                                 <a href="#">Leave History</a>
-                            </div>
-                        </div>
-
-                        <div class="nav-menu-item">
-                            <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="fingerprint"></i> Attendance <i data-lucide="chevron-down" class="chevron"></i>
-                            </button>
-                            <div class="nav-submenu">
-                                <a href="#" onclick="openBottomSheet('attendance-map-sheet'); toggleSidebar();">Mark Attendance</a>
                             </div>
                         </div>
 
@@ -255,16 +432,6 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="settings"></i> Utility <i data-lucide="chevron-down" class="chevron"></i>
-                            </button>
-                            <div class="nav-submenu">
-                                <a href="#">Change Password</a>
-                                <a href="#">Document</a>
-                            </div>
-                        </div>
-
-                        <div class="nav-menu-item">
-                            <button class="nav-link" onclick="toggleSubmenu(this)">
                                 <i data-lucide="users"></i> Manage Team <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
@@ -281,7 +448,7 @@
                     </div>
                     <div class="sidebar-footer">
                         <button class="sidebar-footer-btn"><i data-lucide="help-circle"></i> Help</button>
-                        <button class="sidebar-footer-btn logout"><i data-lucide="log-out"></i> Logout</button>
+                        <button class="sidebar-footer-btn"><i data-lucide="log-out"></i> Logout</button>
                     </div>
                 </div>
 
@@ -296,6 +463,42 @@
                         <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
                     </div>
                     <div class="sheet-scroll-content" id="regularisation-list"></div>
+                </div>
+
+                                <!-- Change Password Bottom Sheet -->
+                <div class="bottom-sheet" id="change-password-sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="sheet-header">
+                        <h3>Change Password</h3>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
+                    </div>
+                    <div class="sheet-scroll-content" style="padding-top: var(--space-4);">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="lock" class="input-icon"></i>
+                                <input type="password" class="form-input" style="padding-left: 40px;" placeholder="Current Password">
+                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="lock" class="input-icon"></i>
+                                <input type="password" class="form-input" style="padding-left: 40px;" placeholder="New Password">
+                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="lock" class="input-icon"></i>
+                                <input type="password" class="form-input" style="padding-left: 40px;" placeholder="Confirm Password">
+                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block mt-4" onclick="closeBottomSheet()">Submit</button>
+                    </div>
                 </div>
 
                 <!-- Notifications Bottom Sheet -->
@@ -326,25 +529,30 @@
                 </div>
 
                 <!-- Attendance Bottom Sheet (Map + Location) -->
-                <div class="bottom-sheet fullscreen" id="attendance-map-sheet">
-                    <div class="map-placeholder-bg"></div>
-                    <div class="map-header">
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="arrow-left"></i></button>
+                <div class="bottom-sheet attendance-sheet" id="attendance-map-sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="sheet-header">
                         <h3>Mark Attendance</h3>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
                     </div>
-                    <div class="map-pin">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <div class="attendance-info-card">
-                        <div style="font-size: 15px; font-weight: 600; color: var(--color-text); margin-bottom: 4px;">Good Afternoon, Vijay Pal</div>
-                        <div class="timestamp" id="map-timestamp">--:--:-- PM</div>
-                        <div class="address-block">
-                            <i data-lucide="map-pin" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px;"></i>
-                            107-109, Rajendra Place, New Delhi, 110008, India
+                    <div class="attendance-sheet-body">
+                        <div class="attendance-map-stage">
+                            <div class="map-placeholder-bg"></div>
+                            <div class="map-pin">
+                                <i data-lucide="map-pin"></i>
+                            </div>
                         </div>
-                        <button class="btn btn-primary btn-block" id="btn-punch-confirm" onclick="mockPunchIn()">
-                            Mark With Selfie
-                        </button>
+                        <div class="attendance-info-card">
+                            <div style="font-size: 15px; font-weight: 600; color: var(--color-text); margin-bottom: 4px;">Good Afternoon, Vijay Pal</div>
+                            <div class="timestamp" id="map-timestamp">--:--:-- PM</div>
+                            <div class="address-block">
+                                <i data-lucide="map-pin" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px;"></i>
+                                107-109, Rajendra Place, New Delhi, 110008, India
+                            </div>
+                            <button class="btn btn-primary btn-block" id="btn-punch-confirm" onclick="mockPunchIn()">
+                                Mark With Selfie
+                            </button>
+                        </div>
                     </div>
                 </div>
 
