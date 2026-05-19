@@ -4,23 +4,19 @@ function autoZoomToFit() {
     const deviceFrame = document.querySelector('.device-frame');
     if (!deviceFrame) return;
     
-    const phoneWidth = 390 + 24; // device width + padding
-    const phoneHeight = 844 + 24; // device height + padding
+    const phoneWidth = 390 + 24;
+    const phoneHeight = 844 + 24;
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     
-    const scaleX = (viewportWidth - 40) / phoneWidth; // 40px for margins
-    const scaleY = (viewportHeight - 40) / phoneHeight; // 40px for margins
-    const scale = Math.min(scaleX, scaleY, 1); // Don't zoom in, only out
+    const scaleX = (viewportWidth - 40) / phoneWidth;
+    const scaleY = (viewportHeight - 40) / phoneHeight;
+    const scale = Math.min(scaleX, scaleY, 1);
     
-    // Use CSS transform on the device frame instead of setting document zoom.
-    // This preserves computed CSS values inside the iframe-like preview
-    // while visually scaling the phone to fit the viewport.
-    deviceFrame.style.transformOrigin = 'top center';
+    deviceFrame.style.transformOrigin = 'center center';
     deviceFrame.style.transform = `scale(${scale})`;
-    // Ensure the device wrapper keeps enough space to avoid clipping when scaled
     const wrapper = document.querySelector('.device-preview-wrapper');
-    if (wrapper) wrapper.style.height = Math.round(phoneHeight * scale + 40) + 'px';
+    if (wrapper) wrapper.style.height = '';
 }
 
 // Run on load and on window resize
@@ -434,4 +430,23 @@ function goToHome() {
     // restore default spacing safety for home screen
     const homeCards = document.querySelector('#home-screen .scrollable-cards');
     if (homeCards) homeCards.style.paddingBottom = '40px';
+}
+
+// --- PROFILE BENTO EXPAND/COLLAPSE ---
+function toggleProfileDetail(btn) {
+    const list = btn.nextElementSibling;
+    if (!list || !list.classList.contains('expandable-detail-list')) return;
+    
+    const isOpen = list.classList.contains('open');
+    list.classList.toggle('open');
+    btn.classList.toggle('open');
+    
+    const label = btn.querySelector('span');
+    if (label) {
+        if (isOpen) {
+            label.textContent = label.textContent.replace('Hide', 'Show');
+        } else {
+            label.textContent = label.textContent.replace('Show', 'Hide');
+        }
+    }
 }

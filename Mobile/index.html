@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
             <div class="app-container">
                 
                 <!-- Login Screen -->
-                <div id="login-domain-screen" class="screen">
+                <div id="login-domain-screen" class="screen active">
                     <div class="login-header">
                         <div class="logo">Webtel</div>
                         <h1>Welcome Back</h1>
@@ -118,7 +118,7 @@
                     <!-- SCROLLABLE CARDS LAYER -->
                     <main class="scrollable-cards">
                         
-                        <!-- Regularization Summary — prominent with accent blue -->
+                        <!-- Regularization Summary â€” prominent with accent blue -->
                         <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
                             <div class="summary-icon"><i data-lucide="alert-triangle"></i></div>
                             <div class="summary-text">
@@ -155,7 +155,7 @@
                                     <div class="feed-icon blue"><i data-lucide="party-popper"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Anil Yadav's Birthday</div>
-                                        <div class="feed-sub">Rice Lab • Today</div>
+                                        <div class="feed-sub">Rice Lab â€¢ Today</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
@@ -169,7 +169,7 @@
                                     <div class="feed-icon solid"><i data-lucide="megaphone"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Townhall Meeting</div>
-                                        <div class="feed-sub">Friday @ 4:00 PM • Main Cafeteria</div>
+                                        <div class="feed-sub">Friday @ 4:00 PM â€¢ Main Cafeteria</div>
                                     </div>
                                 </div>
                             </div>
@@ -185,14 +185,14 @@
                                     <div class="feed-icon blue"><i data-lucide="palmtree"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Independence Day</div>
-                                        <div class="feed-sub">National Holiday • Aug 15</div>
+                                        <div class="feed-sub">National Holiday â€¢ Aug 15</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
                                     <div class="feed-icon blue"><i data-lucide="gift"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Raksha Bandhan</div>
-                                        <div class="feed-sub">Restricted Holiday • Aug 28</div>
+                                        <div class="feed-sub">Restricted Holiday â€¢ Aug 28</div>
                                     </div>
                                 </div>
                             </div>
@@ -202,6 +202,7 @@
 
                     <div class="gesture-pill-dummy" aria-hidden="true"></div>
                 </div> <!-- End home screen -->
+
 
                 <!-- PROFILE SCREEN -->
                 <div id="profile-screen" class="screen app-layout">
@@ -214,114 +215,163 @@
                         </div>
                     </div>
                     
-                    <header class="base-header" style="background: var(--color-surface); padding-bottom: var(--space-4);">
-                        <div class="header-left">
-                            <button class="ghost-btn" onclick="goToHome()">
-                                <i data-lucide="arrow-left"></i>
+                    <div class="fixed-base profile-header-base">
+                        <header class="base-header">
+                            <div class="header-left">
+                                <button class="ghost-btn" onclick="goToHome()">
+                                    <i data-lucide="arrow-left"></i>
+                                </button>
+                                <h2 style="color: white; font-size: 17px; font-weight: 600;">Profile</h2>
+                            </div>
+                            <button class="ghost-btn" onclick="toggleSidebar()">
+                                <i data-lucide="menu"></i>
                             </button>
-                            <h2 style="margin-left: 8px;">Profile</h2>
+                        </header>
+                        <div class="profile-hero">
+                            <div class="profile-avatar-large">VP</div>
+                            <div class="profile-hero-info">
+                                <div class="profile-hero-name">Vijay Pal</div>
+                                <div class="profile-hero-role">General Manager Â· IT</div>
+                                <div class="profile-hero-code">SAEL142</div>
+                            </div>
                         </div>
-                        <button class="ghost-btn" onclick="openBottomSheet('change-password-sheet')">
-                            <i data-lucide="lock"></i>
-                        </button>
-                    </header>
+                    </div>
 
                     <main class="scrollable-cards">
                         
-                        <div class="accordion-card">
-                            <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="acc-title"><i data-lucide="user"></i> Employee Details</div>
-                                <i data-lucide="chevron-up" class="acc-chevron"></i>
-                            </button>
-                            <div class="accordion-preview">
-                                <div class="info-row"><span class="info-label">Name</span><span class="info-val">Vijay Pal</span></div>
-                                <div class="info-row"><span class="info-label">Mobile</span><span class="info-val">+91 98765 43210</span></div>
-                            </div>
-                            <div class="accordion-content open">
-                                <div class="info-grid">
-                                    <div class="info-row"><span class="info-label">Code:</span><span class="info-val">SAEL142</span></div>
-                                    <div class="info-row"><span class="info-label">Name:</span><span class="info-val">Vijay Pal</span></div>
-                                    <div class="info-row"><span class="info-label">Gender:</span><span class="info-val">Male</span></div>
-                                    <div class="info-row"><span class="info-label">Mobile Number:</span><span class="info-val">+91 98765 43210</span></div>
-                                    <div class="info-row"><span class="info-label">Email Id:</span><span class="info-val">vijay.pal@webtel.in</span></div>
-                                    <div class="info-row"><span class="info-label">Father Name:</span><span class="info-val">Ramesh Singh</span></div>
-                                    <div class="info-row"><span class="info-label">Spouse Name:</span><span class="info-val">N/A</span></div>
-                                    <div class="info-row"><span class="info-label">Present Address:</span><span class="info-val">3285A Sector 3, Faridabad, Haryana, 121004</span></div>
-                                    <div class="info-row"><span class="info-label">Permanent Address:</span><span class="info-val">Same as Present</span></div>
-                                    <div class="info-row"><span class="info-label">Date Of Birth:</span><span class="info-val">19 Jun 1972</span></div>
-                                    <div class="info-row"><span class="info-label">Blood Group:</span><span class="info-val">O+</span></div>
-                                    <div class="info-row"><span class="info-label">Emergency Contact No.:</span><span class="info-val">+91 91531 45453</span></div>
+                        <div class="data-card">
+                            <div class="card-header"><span class="card-title">Employee Details</span></div>
+                            <div class="bento-grid-2x2">
+                                <div class="bento-box">
+                                    <span class="bento-label">Mobile</span>
+                                    <span class="bento-value">+91 98765 43210</span>
                                 </div>
+                                <div class="bento-box accent">
+                                    <span class="bento-label">Date of Birth</span>
+                                    <span class="bento-value">19 Jun 1972</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Email</span>
+                                    <span class="bento-value">vijay.pal@webtel.in</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Blood Group</span>
+                                    <span class="bento-value">O+</span>
+                                </div>
+                            </div>
+                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show All Details</span>
+                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">Gender</span><span class="info-val">Male</span></div>
+                                <div class="info-row"><span class="info-label">Father Name</span><span class="info-val">Ramesh Singh</span></div>
+                                <div class="info-row"><span class="info-label">Spouse Name</span><span class="info-val">N/A</span></div>
+                                <div class="info-row"><span class="info-label">Present Address</span><span class="info-val">3285A Sector 3, Faridabad, Haryana, 121004</span></div>
+                                <div class="info-row"><span class="info-label">Permanent Address</span><span class="info-val">Same as Present</span></div>
+                                <div class="info-row"><span class="info-label">Emergency Contact</span><span class="info-val">+91 91531 45453</span></div>
                             </div>
                         </div>
 
-                        <div class="accordion-card">
-                            <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="acc-title"><i data-lucide="building-2"></i> Organisation Details</div>
-                                <i data-lucide="chevron-down" class="acc-chevron"></i>
+                        <div class="data-card">
+                            <div class="card-header"><span class="card-title">Organisation Details</span></div>
+                            <div class="bento-grid-2x2">
+                                <div class="bento-box accent">
+                                    <span class="bento-label">Joining Date</span>
+                                    <span class="bento-value">19 Jun 2016</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Business Unit</span>
+                                    <span class="bento-value">Delhi HO</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Location</span>
+                                    <span class="bento-value">Corporate</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Senior</span>
+                                    <span class="bento-value">Jasbir Singh</span>
+                                </div>
+                            </div>
+                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show All Details</span>
+                                <i data-lucide="chevron-down" class="expand-chevron"></i>
                             </button>
-                            <div class="accordion-preview">
+                            <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">PAN No.</span><span class="info-val">AIJPP9811H</span></div>
                                 <div class="info-row"><span class="info-label">Designation</span><span class="info-val">General Manager</span></div>
                                 <div class="info-row"><span class="info-label">Department</span><span class="info-val">IT</span></div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="info-grid">
-                                    <div class="info-row"><span class="info-label">Pan No.:</span><span class="info-val">AIJPP9811H</span></div>
-                                    <div class="info-row"><span class="info-label">Joining Date:</span><span class="info-val">19 Jun 2016</span></div>
-                                    <div class="info-row"><span class="info-label">Designation:</span><span class="info-val">General Manager</span></div>
-                                    <div class="info-row"><span class="info-label">Department:</span><span class="info-val">IT</span></div>
-                                    <div class="info-row"><span class="info-label">Business Unit:</span><span class="info-val">Delhi HO</span></div>
-                                    <div class="info-row"><span class="info-label">Cost Centre:</span><span class="info-val">RS & Company</span></div>
-                                    <div class="info-row"><span class="info-label">Location:</span><span class="info-val">Corporate</span></div>
-                                    <div class="info-row"><span class="info-label">Address:</span><span class="info-val">New Delhi, Delhi</span></div>
-                                    <div class="info-row"><span class="info-label">Bank Name:</span><span class="info-val">ICICI Bank Limited</span></div>
-                                    <div class="info-row"><span class="info-label">Account Number:</span><span class="info-val">008301033692</span></div>
-                                    <div class="info-row"><span class="info-label">PF No.:</span><span class="info-val">42454546534</span></div>
-                                    <div class="info-row"><span class="info-label">Senior Name:</span><span class="info-val">Jasbir Singh</span></div>
-                                </div>
+                                <div class="info-row"><span class="info-label">Cost Centre</span><span class="info-val">RS &amp; Company</span></div>
+                                <div class="info-row"><span class="info-label">Address</span><span class="info-val">New Delhi, Delhi</span></div>
+                                <div class="info-row"><span class="info-label">Bank</span><span class="info-val">ICICI Bank Limited</span></div>
+                                <div class="info-row"><span class="info-label">Account No.</span><span class="info-val">008301033692</span></div>
+                                <div class="info-row"><span class="info-label">PF No.</span><span class="info-val">42454546534</span></div>
                             </div>
                         </div>
 
-                        <div class="accordion-card">
-                            <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="acc-title"><i data-lucide="wallet"></i> CTC Details</div>
-                                <i data-lucide="chevron-down" class="acc-chevron"></i>
-                            </button>
-                            <div class="accordion-preview">
-                                <div class="info-row"><span class="info-label">Total Gross</span><span class="info-val">₹12,114.50</span></div>
+                        <div class="data-card">
+                            <div class="card-header"><span class="card-title">CTC Details</span></div>
+                            <div class="ctc-bento-grid">
+                                <div class="bento-box accent ctc-hero">
+                                    <span class="bento-label">Total Gross Pay</span>
+                                    <span class="ctc-amount">&#8377;12,114.50</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">Basic</span>
+                                    <span class="bento-value">&#8377;1,000</span>
+                                </div>
+                                <div class="bento-box">
+                                    <span class="bento-label">HRA</span>
+                                    <span class="bento-value">&#8377;9,000</span>
+                                </div>
                             </div>
-                            <div class="accordion-content">
-                                <div class="gross-pay-wrap">
-                                    <div class="gross-pay-amt">₹12114.5</div>
-                                    <div class="gross-pay-sub">Total Gross Pay</div>
-                                </div>
-                                <div class="info-grid mt-4">
-                                    <div class="info-row"><span class="info-label"><span class="dot red"></span> Basic</span><span class="info-val text-red">₹10,000.00</span></div>
-                                    <div class="info-row"><span class="info-label"><span class="dot green"></span> House Rent Allowance</span><span class="info-val text-green">₹3,000.00</span></div>
-                                    <div class="info-row"><span class="info-label"><span class="dot blue"></span> Food Expense Reimbursement</span><span class="info-val text-blue">₹500.00</span></div>
-                                </div>
+                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show All Components</span>
+                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">Food Expense Reimb.</span><span class="info-val">&#8377;500.00</span></div>
+                                <div class="info-row"><span class="info-label">Special Allowance</span><span class="info-val">&#8377;1,000.00</span></div>
+                                <div class="info-row"><span class="info-label">Leave Travel Allow.</span><span class="info-val">&#8377;100.00</span></div>
+                                <div class="info-row"><span class="info-label">Books Allowance P</span><span class="info-val">&#8377;100.00</span></div>
+                                <div class="info-row"><span class="info-label">Uniform Allowance P</span><span class="info-val">&#8377;100.00</span></div>
+                                <div class="info-row"><span class="info-label">Transport Allow. P</span><span class="info-val">&#8377;100.00</span></div>
+                                <div class="info-row"><span class="info-label">Gratuity</span><span class="info-val">&#8377;0.00</span></div>
+                                <div class="info-row"><span class="info-label">Bonus Pay</span><span class="info-val">&#8377;0.00</span></div>
+                                <div class="info-row"><span class="info-label">Gratuity Yly Due</span><span class="info-val">&#8377;0.00</span></div>
+                                <div class="info-row"><span class="info-label">Employer PF</span><span class="info-val">&#8377;130.00</span></div>
+                                <div class="info-row"><span class="info-label">Employer ESI</span><span class="info-val">&#8377;84.50</span></div>
+                                <div class="info-row ctc-total"><span class="info-label">Total Earning</span><span class="info-val">&#8377;12,114.50</span></div>
                             </div>
                         </div>
-                        
-                        <div class="accordion-card">
-                            <button class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="acc-title"><i data-lucide="settings"></i> Account Settings</div>
-                                <i data-lucide="chevron-down" class="acc-chevron"></i>
-                            </button>
-                            <div class="accordion-preview">
-                                <div class="info-row"><span class="info-label">Security</span><span class="info-val">Last changed: 6 months ago</span></div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="info-grid">
-                                    <div class="info-row"><span class="info-label">Change Password</span><span class="info-val"><button class="btn btn-primary" onclick="openBottomSheet('change-password-sheet')">Change</button></span></div>
-                                    <div class="info-row"><span class="info-label">Two-Factor</span><span class="info-val">Disabled</span></div>
+
+                        <div class="data-card">
+                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)" style="margin:0;padding:0;">
+                                <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
+                                    <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-text-secondary);"></i>
+                                    <span class="card-title">Change Password</span>
                                 </div>
+                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>Current Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter current password">
+                                </div>
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>New Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-input" placeholder="Confirm new password">
+                                </div>
+                                <button class="btn btn-primary btn-block">Update Password</button>
                             </div>
                         </div>
-                        <div class="data-card" style="margin-top: var(--space-4);">
-                            <div class="card-header">
-                                <span class="card-title">Documents</span>
-                            </div>
+
+                        <div class="data-card">
+                            <div class="card-header"><span class="card-title">Documents</span></div>
                             <div class="document-list">
                                 <div class="doc-item">
                                     <div class="doc-icon"><i data-lucide="file-text"></i></div>
@@ -339,28 +389,13 @@
                                     </div>
                                     <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
                                 </div>
-                                <div class="doc-item">
-                                    <div class="doc-icon"><i data-lucide="book-open"></i></div>
-                                    <div class="doc-info">
-                                        <div class="doc-title">Product Catalog</div>
-                                        <div class="doc-sub">catalog.docx</div>
-                                    </div>
-                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
-                                </div>
-                                <div class="doc-item">
-                                    <div class="doc-icon"><i data-lucide="file-text"></i></div>
-                                    <div class="doc-info">
-                                        <div class="doc-title">User Manual</div>
-                                        <div class="doc-sub">user_manual.pdf</div>
-                                    </div>
-                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
-                                </div>
                             </div>
                         </div>
 
                     </main>
                     <div class="gesture-pill-dummy" aria-hidden="true"></div>
                 </div> <!-- End profile screen -->
+
 
                 <!-- OVERLAYS HARDCODED WITHIN APP CONTAINER TO PREVENT OVERFLOW BUGS -->
                 
