@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -118,7 +118,7 @@
                     <!-- SCROLLABLE CARDS LAYER -->
                     <main class="scrollable-cards">
                         
-                        <!-- Regularization Summary â€” prominent with accent blue -->
+                        <!-- Regularization Summary Ã¢â‚¬â€ prominent with accent blue -->
                         <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
                             <div class="summary-icon"><i data-lucide="alert-triangle"></i></div>
                             <div class="summary-text">
@@ -155,7 +155,7 @@
                                     <div class="feed-icon blue"><i data-lucide="party-popper"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Anil Yadav's Birthday</div>
-                                        <div class="feed-sub">Rice Lab â€¢ Today</div>
+                                        <div class="feed-sub">Rice Lab Ã¢â‚¬Â¢ Today</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
@@ -169,7 +169,7 @@
                                     <div class="feed-icon solid"><i data-lucide="megaphone"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Townhall Meeting</div>
-                                        <div class="feed-sub">Friday @ 4:00 PM â€¢ Main Cafeteria</div>
+                                        <div class="feed-sub">Friday @ 4:00 PM Ã¢â‚¬Â¢ Main Cafeteria</div>
                                     </div>
                                 </div>
                             </div>
@@ -185,14 +185,14 @@
                                     <div class="feed-icon blue"><i data-lucide="palmtree"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Independence Day</div>
-                                        <div class="feed-sub">National Holiday â€¢ Aug 15</div>
+                                        <div class="feed-sub">National Holiday Ã¢â‚¬Â¢ Aug 15</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
                                     <div class="feed-icon blue"><i data-lucide="gift"></i></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Raksha Bandhan</div>
-                                        <div class="feed-sub">Restricted Holiday â€¢ Aug 28</div>
+                                        <div class="feed-sub">Restricted Holiday Ã¢â‚¬Â¢ Aug 28</div>
                                     </div>
                                 </div>
                             </div>
@@ -218,29 +218,27 @@
                     <div class="fixed-base profile-header-base">
                         <header class="base-header">
                             <div class="header-left">
-                                <button class="ghost-btn" onclick="goToHome()">
-                                    <i data-lucide="arrow-left"></i>
+                                <button class="ghost-btn" onclick="toggleSidebar()">
+                                    <i data-lucide="menu"></i>
                                 </button>
-                                <h2 style="color: white; font-size: 17px; font-weight: 600;">Profile</h2>
+                                <div class="profile-hero">
+                                    <div class="profile-avatar-large">VP</div>
+                                    <div class="profile-hero-info">
+                                        <div class="profile-hero-name">Vijay Pal</div>
+                                        <div class="profile-hero-role">General Manager &middot; IT</div>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="ghost-btn" onclick="toggleSidebar()">
-                                <i data-lucide="menu"></i>
+                            <button class="ghost-btn" onclick="openBottomSheet('notifications-sheet')">
+                                <i data-lucide="bell"></i>
                             </button>
                         </header>
-                        <div class="profile-hero">
-                            <div class="profile-avatar-large">VP</div>
-                            <div class="profile-hero-info">
-                                <div class="profile-hero-name">Vijay Pal</div>
-                                <div class="profile-hero-role">General Manager &middot; IT</div>
-                                <div class="profile-hero-code">SAEL142</div>
-                            </div>
-                        </div>
                     </div>
 
                     <main class="scrollable-cards">
                         
-                        <div class="data-card">
-                            <div class="card-header"><span class="card-title">Employee Details</span></div>
+                        <!-- Employee Details â€” Apple Bento -->
+                        <div class="bento-section">
                             <div class="bento-grid-2x2">
                                 <div class="bento-box">
                                     <span class="bento-label">Mobile</span>
@@ -259,11 +257,12 @@
                                     <span class="bento-value">O+</span>
                                 </div>
                             </div>
-                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
-                                <span>Show All Details</span>
+                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+                                <span>Show Employee Details</span>
                                 <i data-lucide="chevron-down" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">Code</span><span class="info-val">SAEL142</span></div>
                                 <div class="info-row"><span class="info-label">Gender</span><span class="info-val">Male</span></div>
                                 <div class="info-row"><span class="info-label">Father Name</span><span class="info-val">Ramesh Singh</span></div>
                                 <div class="info-row"><span class="info-label">Spouse Name</span><span class="info-val">N/A</span></div>
@@ -273,8 +272,8 @@
                             </div>
                         </div>
 
-                        <div class="data-card">
-                            <div class="card-header"><span class="card-title">Organisation Details</span></div>
+                        <!-- Organisation Details â€” Apple Bento -->
+                        <div class="bento-section">
                             <div class="bento-grid-2x2">
                                 <div class="bento-box accent">
                                     <span class="bento-label">Joining Date</span>
@@ -293,8 +292,8 @@
                                     <span class="bento-value">Jasbir Singh</span>
                                 </div>
                             </div>
-                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
-                                <span>Show All Details</span>
+                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+                                <span>Show Organisation Details</span>
                                 <i data-lucide="chevron-down" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
@@ -309,8 +308,8 @@
                             </div>
                         </div>
 
-                        <div class="data-card">
-                            <div class="card-header"><span class="card-title">CTC Details</span></div>
+                        <!-- CTC Details â€” Apple Bento -->
+                        <div class="bento-section">
                             <div class="ctc-bento-grid">
                                 <div class="bento-box accent ctc-hero">
                                     <span class="bento-label">Total Gross Pay</span>
@@ -325,7 +324,7 @@
                                     <span class="bento-value">&#8377;9,000</span>
                                 </div>
                             </div>
-                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)">
+                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
                                 <span>Show All Components</span>
                                 <i data-lucide="chevron-down" class="expand-chevron"></i>
                             </button>
@@ -345,11 +344,12 @@
                             </div>
                         </div>
 
-                        <div class="data-card">
-                            <button class="expand-detail-btn" onclick="toggleProfileDetail(this)" style="margin:0;padding:0;">
+                        <!-- Change Password â€” bento expand box -->
+                        <div class="bento-section">
+                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
                                 <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
-                                    <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-text-secondary);"></i>
-                                    <span class="card-title">Change Password</span>
+                                    <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-accent);"></i>
+                                    <span>Change Password</span>
                                 </div>
                                 <i data-lucide="chevron-down" class="expand-chevron"></i>
                             </button>
@@ -370,6 +370,7 @@
                             </div>
                         </div>
 
+                        <!-- Documents -->
                         <div class="data-card">
                             <div class="card-header"><span class="card-title">Documents</span></div>
                             <div class="document-list">

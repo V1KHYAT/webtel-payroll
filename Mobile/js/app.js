@@ -1,4 +1,4 @@
-// --- AUTO ZOOM TO FIT PHONE ON SCREEN ---
+﻿// --- AUTO ZOOM TO FIT PHONE ON SCREEN ---
 
 function autoZoomToFit() {
     const deviceFrame = document.querySelector('.device-frame');
@@ -13,10 +13,11 @@ function autoZoomToFit() {
     const scaleY = (viewportHeight - 40) / phoneHeight;
     const scale = Math.min(scaleX, scaleY, 1);
     
-    deviceFrame.style.transformOrigin = 'center center';
+    deviceFrame.style.transformOrigin = 'top center';
     deviceFrame.style.transform = `scale(${scale})`;
     const wrapper = document.querySelector('.device-preview-wrapper');
-    if (wrapper) wrapper.style.height = '';
+    const unusedHeight = phoneHeight * (1 - scale);
+    deviceFrame.style.marginBottom = '-' + unusedHeight + 'px';
 }
 
 // Run on load and on window resize
