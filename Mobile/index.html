@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
             <div class="app-container">
                 
                 <!-- Login Screen -->
-                <div id="login-domain-screen" class="screen active">
+                <div id="login-domain-screen" class="screen">
                     <div class="login-header">
                         <div class="logo">Webtel</div>
                         <h1>Welcome Back</h1>
@@ -57,7 +57,7 @@
                 </div>
 
                 <!-- HOME SCREEN -->
-                <div id="home-screen" class="screen app-layout">
+                <div id="home-screen" class="screen app-layout active">
                     <div class="status-bar-dummy" aria-hidden="true">
                         <span class="status-time">9:41</span>
                         <div class="status-icons">
@@ -215,29 +215,39 @@
                         </div>
                     </div>
                     
-                    <div class="fixed-base profile-header-base">
+                    <div class="fixed-base profile-header-base" id="profile-fixed-base">
                         <header class="base-header">
                             <div class="header-left">
                                 <button class="ghost-btn" onclick="toggleSidebar()">
                                     <i data-lucide="menu"></i>
                                 </button>
-                                <div class="profile-hero">
-                                    <div class="profile-avatar-large">VP</div>
-                                    <div class="profile-hero-info">
-                                        <div class="profile-hero-name">Vijay Pal</div>
-                                        <div class="profile-hero-role">General Manager &middot; IT</div>
-                                    </div>
-                                </div>
+                                <h2 class="profile-page-title">Profile</h2>
                             </div>
                             <button class="ghost-btn" onclick="openBottomSheet('notifications-sheet')">
                                 <i data-lucide="bell"></i>
                             </button>
                         </header>
+
+                        <!-- Expanded profile card (collapses on scroll) -->
+                        <div class="profile-expanded-card">
+                            <div class="profile-avatar-large">VP</div>
+                            <div class="profile-expanded-info">
+                                <div class="profile-hero-name">Vijay Pal</div>
+                                <div class="profile-hero-role">General Manager &middot; IT</div>
+                                <div class="profile-hero-code">SAEL142 &middot; demo.webtel.in</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Minimized inline (shown on scroll) -->
+                        <div class="profile-mini-inline">
+                            <div class="profile-mini-avatar">VP</div>
+                            <div class="profile-mini-name">Vijay Pal</div>
+                        </div>
                     </div>
 
-                    <main class="scrollable-cards">
+                    <main class="scrollable-cards" id="profile-scroll-area">
                         
-                        <!-- Employee Details â€” Apple Bento -->
+                        <!-- Employee Details -->
                         <div class="bento-section">
                             <div class="bento-grid-2x2">
                                 <div class="bento-box">
@@ -272,7 +282,7 @@
                             </div>
                         </div>
 
-                        <!-- Organisation Details â€” Apple Bento -->
+                        <!-- Organisation Details -->
                         <div class="bento-section">
                             <div class="bento-grid-2x2">
                                 <div class="bento-box accent">
@@ -308,7 +318,7 @@
                             </div>
                         </div>
 
-                        <!-- CTC Details â€” Apple Bento -->
+                        <!-- CTC Details -->
                         <div class="bento-section">
                             <div class="ctc-bento-grid">
                                 <div class="bento-box accent ctc-hero">
@@ -344,7 +354,7 @@
                             </div>
                         </div>
 
-                        <!-- Change Password â€” bento expand box -->
+                        <!-- Change Password -->
                         <div class="bento-section">
                             <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
                                 <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
@@ -418,10 +428,10 @@
                         </div>
                     </div>
                     <div class="sidebar-content">
-                        <div class="nav-menu-item">
-                            <button class="nav-link active-link" onclick="toggleSidebar()"><i data-lucide="layout-dashboard"></i> Dashboard</button>
+                        <div class="nav-menu-item" id="nav-dashboard">
+                            <button class="nav-link active-link" onclick="goToHome()"><i data-lucide="layout-dashboard"></i> Dashboard</button>
                         </div>
-                        <div class="nav-menu-item">
+                        <div class="nav-menu-item" id="nav-profile">
                             <button class="nav-link" onclick="goToProfile()"><i data-lucide="user"></i> Profile</button>
                         </div>
 
@@ -484,7 +494,7 @@
                     </div>
                     <div class="sidebar-footer">
                         <button class="sidebar-footer-btn"><i data-lucide="help-circle"></i> Help</button>
-                        <button class="sidebar-footer-btn"><i data-lucide="log-out"></i> Logout</button>
+                        <button class="sidebar-footer-btn" onclick="logout()"><i data-lucide="log-out"></i> Logout</button>
                     </div>
                 </div>
 

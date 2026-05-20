@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    WEBTEL HR MOBILE â€” DESIGN SYSTEM
    Font: Geist Sans (Vercel)
    Palette: Blue-tinted neutrals + Blue-600 (#2563EB)
@@ -408,9 +408,9 @@ input:checked + .toggle-slider:before {
 /* Fixed card panel: Header + Attendance */
 .fixed-base {
     flex-shrink: 0;
-    background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 25%, #2563EB 50%, #3b82f6 75%, #2563EB 100%);
+    background: linear-gradient(135deg, #2563EB 0%, #2460e4 30%, #2563EB 50%, #2d6af0 70%, #2563EB 100%);
     background-size: 400% 400%;
-    animation: meshGradient 8s ease infinite;
+    animation: meshGradient 16s ease infinite;
     padding: 0 16px 16px 16px;
     padding-top: calc(16px + 32px);
     display: flex; flex-direction: column;
@@ -873,50 +873,95 @@ input:checked + .toggle-slider:before {
 }
 
 /* ============================
-   PROFILE PAGE â€” APPLE BENTO
+   PROFILE PAGE - APPLE BENTO
    ============================ */
 
 .profile-header-base {
-    padding-bottom: 12px !important;
+    padding-bottom: 16px !important;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
+    transition: padding 0.35s ease, border-radius 0.35s ease;
 }
 
-.profile-hero {
-    display: flex; align-items: center; gap: 10px;
+.profile-page-title {
+    color: white; font-size: 17px; font-weight: 600;
+    opacity: 0; transition: opacity 0.3s ease;
 }
+.profile-header-base.minimized .profile-page-title { opacity: 0; }
+
+/* Expanded profile card */
+.profile-expanded-card {
+    display: flex; align-items: center; gap: 14px;
+    padding: 4px 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+    max-height: 80px; opacity: 1; overflow: hidden;
+}
+.profile-header-base.minimized .profile-expanded-card {
+    max-height: 0; opacity: 0; padding: 0;
+}
+
 .profile-avatar-large {
-    width: 36px; height: 36px; border-radius: 50%;
+    width: 48px; height: 48px; border-radius: 50%;
     background: rgba(255,255,255,0.2); color: white;
     display: flex; align-items: center; justify-content: center;
-    font-size: var(--text-sm); font-weight: 700; flex-shrink: 0;
+    font-size: var(--text-base); font-weight: 700; flex-shrink: 0;
 }
-.profile-hero-info { display: flex; flex-direction: column; }
-.profile-hero-name { font-size: var(--text-sm); font-weight: 600; color: white; line-height: 1.2; }
-.profile-hero-role { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.65); }
+.profile-expanded-info { display: flex; flex-direction: column; gap: 1px; }
+.profile-hero-name { font-size: var(--text-base); font-weight: 700; color: white; }
+.profile-hero-role { font-size: var(--text-xs); font-weight: 500; color: rgba(255,255,255,0.75); }
+.profile-hero-code { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
+
+/* Mini inline (shown on scroll) */
+.profile-mini-inline {
+    display: flex; align-items: center; gap: 8px;
+    max-height: 0; opacity: 0; overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.profile-header-base.minimized .profile-mini-inline {
+    max-height: 40px; opacity: 1;
+}
+.profile-mini-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.2); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; flex-shrink: 0;
+}
+.profile-mini-name { font-size: var(--text-sm); font-weight: 600; color: white; }
+
+.profile-header-base.minimized {
+    padding-bottom: 12px !important;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+}
 
 #profile-screen .scrollable-cards { padding-top: 12px !important; }
 
-/* Bento section â€” no outer card wrapper */
+/* Bento section - match data-card width */
 .bento-section {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     padding: 0 var(--space-4);
 }
 
 /* Apple-style bento boxes */
 .bento-grid-2x2 {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
 }
 .bento-box {
     background: var(--color-surface);
     border: none;
-    border-radius: 16px;
-    padding: 14px;
-    display: flex; flex-direction: column; gap: 4px;
-    min-height: 64px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    border-radius: 14px;
+    padding: 12px;
+    display: flex; flex-direction: column; gap: 3px;
+    min-height: 58px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
 }
+/* Inner corners (touching other boxes) are tighter */
+.bento-grid-2x2 .bento-box:nth-child(1) { border-bottom-right-radius: 6px; }
+.bento-grid-2x2 .bento-box:nth-child(2) { border-bottom-left-radius: 6px; }
+.bento-grid-2x2 .bento-box:nth-child(3) { border-top-right-radius: 6px; }
+.bento-grid-2x2 .bento-box:nth-child(4) { border-top-left-radius: 6px; }
+
 .bento-box.accent {
     background: var(--color-accent);
 }
@@ -936,29 +981,32 @@ input:checked + .toggle-slider:before {
 /* CTC grid */
 .ctc-bento-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
 }
 .ctc-hero {
     grid-column: 1 / -1;
-    text-align: center; padding: 20px 14px;
+    text-align: center; padding: 18px 14px;
+    border-radius: 14px !important;
 }
+.ctc-bento-grid .bento-box:nth-child(2) { border-top-right-radius: 6px; }
+.ctc-bento-grid .bento-box:nth-child(3) { border-top-left-radius: 6px; }
 .ctc-amount {
     font-size: var(--text-2xl); font-weight: 700;
     color: white; font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
 }
 
-/* Bento expand box â€” full width bento that toggles dropdown */
+/* Bento expand box */
 .bento-expand-box {
     display: flex; align-items: center; justify-content: space-between;
-    width: 100%; margin-top: 8px;
+    width: 100%; margin-top: 6px;
     background: var(--color-surface);
-    border: none; border-radius: 16px;
-    padding: 14px 16px;
+    border: none; border-radius: 14px;
+    padding: 13px 14px;
     font-size: var(--text-sm); font-weight: 600;
     color: var(--color-accent); cursor: pointer;
     font-family: inherit;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
     transition: box-shadow 0.2s ease;
 }
 .bento-expand-box:active { box-shadow: 0 0 0 rgba(0,0,0,0); }
@@ -968,26 +1016,25 @@ input:checked + .toggle-slider:before {
     color: var(--color-accent);
 }
 .bento-expand-box.open .expand-chevron { transform: rotate(180deg); }
+.bento-expand-box.open { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 
 /* Expandable list */
 .expandable-detail-list {
     max-height: 0; overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease, margin 0.3s ease;
-    padding: 0; margin: 0;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+    padding: 0;
     background: var(--color-surface);
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 14px 14px;
 }
 .expandable-detail-list.open {
     max-height: 800px;
-    padding: 4px 16px 12px;
-    margin-top: -8px;
-    border-top: 1px solid var(--color-border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    padding: 4px 14px 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .info-row {
     display: flex; justify-content: space-between;
-    font-size: var(--text-sm); padding: 8px 0;
+    font-size: var(--text-sm); padding: 7px 0;
     border-bottom: 1px solid var(--color-border);
 }
 .info-row:last-child { border-bottom: none; }

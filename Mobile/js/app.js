@@ -1,4 +1,4 @@
-﻿// --- AUTO ZOOM TO FIT PHONE ON SCREEN ---
+// --- AUTO ZOOM TO FIT PHONE ON SCREEN ---
 
 function autoZoomToFit() {
     const deviceFrame = document.querySelector('.device-frame');
@@ -365,6 +365,7 @@ document.head.appendChild(style);
 // Run init on load
 window.onload = () => {
     initHome();
+    initProfileScrollMinimize();
 };
 
 // --- PROFILE ACCORDION LOGIC ---
@@ -390,17 +391,77 @@ function toggleAccordion(btn) {
     lucide.createIcons();
 }
 
+function updateSidebarActiveLink(activeId) {
+    document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+        link.classList.remove('active-link');
+    });
+    const activeItem = document.getElementById(activeId);
+    if (activeItem) {
+        const link = activeItem.querySelector('.nav-link');
+        if (link) link.classList.add('active-link');
+    }
+}
+
+function initProfileScrollMinimize() {
+    const scrollArea = document.getElementById('profile-scroll-area');
+    const fixedBase = document.getElementById('profile-fixed-base');
+    if (!scrollArea || !fixedBase) return;
+    
+    let scheduled = false;
+    const update = () => {
+        const scrollTop = scrollArea.scrollTop;
+        fixedBase.classList.toggle('minimized', scrollTop > 10);
+    };
+    
+    scrollArea.addEventListener('scroll', () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+            update();
+            scheduled = false;
+        });
+    });
+    
+    update();
+}
+
+function logout() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar && sidebar.classList.contains('open')) {
+        toggleSidebar();
+    }
+    
+    // Hide home and profile screens
+    document.getElementById('home-screen').classList.remove('active');
+    document.getElementById('profile-screen').classList.remove('active');
+    
+    // Show login screen
+    document.getElementById('login-domain-screen').classList.add('active');
+    
+    // Reset credentials screen if it was active
+    document.getElementById('login-credentials-screen').classList.remove('active');
+    
+    // Reset input fields
+    const domainInput = document.getElementById('domain');
+    if (domainInput) domainInput.value = 'demo';
+    
+    const passwordInput = document.getElementById('password');
+    if (passwordInput) passwordInput.value = 'password';
+}
+
 function goToProfile() {
-    toggleSidebar(); // Close sidebar if open
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar && sidebar.classList.contains('open')) {
+        toggleSidebar(); // Close sidebar if open
+    }
     document.getElementById('home-screen').classList.remove('active');
     document.getElementById('profile-screen').classList.add('active');
+    updateSidebarActiveLink('nav-profile');
     
     // Setup drag scroll for profile screen if needed, using the existing initDragScroll on its scrollable-cards
     const profCards = document.querySelector('#profile-screen .scrollable-cards');
-        // initialize drag-scrolling for profile screen (no padding override)
     if (profCards && !profCards.dataset.dragInit) {
         profCards.dataset.dragInit = 'true';
-        // Reuse the logic from initDragScroll here or create a generalized version.
         let isDragging = false, startY = 0, startScrollTop = 0;
         profCards.addEventListener('pointerdown', function(e) {
             if (e.pointerType !== 'mouse' || e.button !== 0) return;
@@ -426,8 +487,14 @@ function goToProfile() {
 }
 
 function goToHome() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar && sidebar.classList.contains('open')) {
+        toggleSidebar(); // Close sidebar if open
+    }
     document.getElementById('profile-screen').classList.remove('active');
     document.getElementById('home-screen').classList.add('active');
+    updateSidebarActiveLink('nav-dashboard');
+    
     // restore default spacing safety for home screen
     const homeCards = document.querySelector('#home-screen .scrollable-cards');
     if (homeCards) homeCards.style.paddingBottom = '40px';
