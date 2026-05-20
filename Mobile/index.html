@@ -215,61 +215,78 @@
                         </div>
                     </div>
                     
-                    <div class="fixed-base profile-header-base" id="profile-fixed-base">
+                    <!-- Fixed white header -->
+                    <div class="profile-fixed-header" id="profile-fixed-base">
                         <header class="base-header">
                             <div class="header-left">
-                                <button class="ghost-btn" onclick="toggleSidebar()">
+                                <button class="ghost-btn profile-ghost-btn" onclick="toggleSidebar()">
                                     <i data-lucide="menu"></i>
                                 </button>
                                 <h2 class="profile-page-title">Profile</h2>
                             </div>
-                            <button class="ghost-btn" onclick="openBottomSheet('notifications-sheet')">
+                            <button class="ghost-btn profile-ghost-btn profile-bell" onclick="openBottomSheet('notifications-sheet')">
                                 <i data-lucide="bell"></i>
+                                <span class="notification-dot"></span>
                             </button>
                         </header>
-
-                        <!-- Expanded profile card (collapses on scroll) -->
-                        <div class="profile-expanded-card">
-                            <div class="profile-avatar-large">VP</div>
-                            <div class="profile-expanded-info">
-                                <div class="profile-hero-name">Vijay Pal</div>
-                                <div class="profile-hero-role">General Manager &middot; IT</div>
-                                <div class="profile-hero-code">SAEL142 &middot; demo.webtel.in</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Minimized inline (shown on scroll) -->
-                        <div class="profile-mini-inline">
-                            <div class="profile-mini-avatar">VP</div>
-                            <div class="profile-mini-name">Vijay Pal</div>
-                        </div>
                     </div>
 
-                    <main class="scrollable-cards" id="profile-scroll-area">
+                    <!-- Scrollable content -->
+                    <main class="scrollable-cards profile-scroll" id="profile-scroll-area">
                         
-                        <!-- Employee Details -->
-                        <div class="bento-section">
-                            <div class="bento-grid-2x2">
-                                <div class="bento-box">
-                                    <span class="bento-label">Mobile</span>
-                                    <span class="bento-value">+91 98765 43210</span>
-                                </div>
-                                <div class="bento-box accent">
-                                    <span class="bento-label">Date of Birth</span>
-                                    <span class="bento-value">19 Jun 1972</span>
-                                </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Email</span>
-                                    <span class="bento-value">vijay.pal@webtel.in</span>
-                                </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Blood Group</span>
-                                    <span class="bento-value">O+</span>
+                        <!-- ========== PERSONAL INFORMATION ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <div class="prof-section-icon"><i data-lucide="user-round"></i></div>
+                                <span class="prof-section-title">Personal Information</span>
+                            </div>
+
+                            <!-- Profile Hero Card -->
+                            <div class="prof-hero-card">
+                                <div class="prof-hero-avatar">VP</div>
+                                <div class="prof-hero-info">
+                                    <div class="prof-hero-name">Vijay Pal</div>
+                                    <div class="prof-hero-role">General Manager &middot; IT</div>
+                                    <div class="prof-hero-code">SAEL142 &middot; demo.webtel.in</div>
                                 </div>
                             </div>
-                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+
+                            <!-- Bento Grid -->
+                            <div class="prof-bento-grid">
+                                <div class="prof-bento-box tinted">
+                                    <div class="prof-bento-icon"><i data-lucide="phone"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Mobile</span>
+                                        <span class="prof-bento-value">+91 98765 43210</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="calendar"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Date of Birth</span>
+                                        <span class="prof-bento-value">19 Jun 1972</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box tinted">
+                                    <div class="prof-bento-icon"><i data-lucide="mail"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Email</span>
+                                        <span class="prof-bento-value">vijay.pal@webtel.in</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="droplet"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Blood Group</span>
+                                        <span class="prof-bento-value">O+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Expand Button -->
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Employee Details</span>
-                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                                <i data-lucide="chevron-right" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Code</span><span class="info-val">SAEL142</span></div>
@@ -282,29 +299,47 @@
                             </div>
                         </div>
 
-                        <!-- Organisation Details -->
-                        <div class="bento-section">
-                            <div class="bento-grid-2x2">
-                                <div class="bento-box accent">
-                                    <span class="bento-label">Joining Date</span>
-                                    <span class="bento-value">19 Jun 2016</span>
+                        <!-- ========== WORK INFORMATION ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <div class="prof-section-icon"><i data-lucide="briefcase"></i></div>
+                                <span class="prof-section-title">Work Information</span>
+                            </div>
+
+                            <div class="prof-bento-grid">
+                                <div class="prof-bento-box tinted">
+                                    <div class="prof-bento-icon"><i data-lucide="calendar-check"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Joining Date</span>
+                                        <span class="prof-bento-value">19 Jun 2016</span>
+                                    </div>
                                 </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Business Unit</span>
-                                    <span class="bento-value">Delhi HO</span>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="building-2"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Business Unit</span>
+                                        <span class="prof-bento-value">Delhi HO</span>
+                                    </div>
                                 </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Location</span>
-                                    <span class="bento-value">Corporate</span>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="map-pin"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Location</span>
+                                        <span class="prof-bento-value">Corporate</span>
+                                    </div>
                                 </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Senior</span>
-                                    <span class="bento-value">Jasbir Singh</span>
+                                <div class="prof-bento-box tinted">
+                                    <div class="prof-bento-icon"><i data-lucide="user-check"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Senior</span>
+                                        <span class="prof-bento-value">Jasbir Singh</span>
+                                    </div>
                                 </div>
                             </div>
-                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Organisation Details</span>
-                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                                <i data-lucide="chevron-right" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">PAN No.</span><span class="info-val">AIJPP9811H</span></div>
@@ -318,25 +353,41 @@
                             </div>
                         </div>
 
-                        <!-- CTC Details -->
-                        <div class="bento-section">
-                            <div class="ctc-bento-grid">
-                                <div class="bento-box accent ctc-hero">
-                                    <span class="bento-label">Total Gross Pay</span>
-                                    <span class="ctc-amount">&#8377;12,114.50</span>
+                        <!-- ========== COMPENSATION ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <div class="prof-section-icon"><i data-lucide="indian-rupee"></i></div>
+                                <span class="prof-section-title">Compensation</span>
+                            </div>
+
+                            <!-- CTC Hero Card -->
+                            <div class="ctc-hero-card">
+                                <div class="ctc-hero-label">TOTAL GROSS PAY</div>
+                                <div class="ctc-hero-amount">&#8377;12,114.50</div>
+                                <div class="ctc-hero-watermark">&#8377;</div>
+                            </div>
+
+                            <!-- Basic + HRA row -->
+                            <div class="prof-bento-grid prof-bento-1x2">
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="landmark"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Basic</span>
+                                        <span class="prof-bento-value">&#8377;1,000</span>
+                                    </div>
                                 </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">Basic</span>
-                                    <span class="bento-value">&#8377;1,000</span>
-                                </div>
-                                <div class="bento-box">
-                                    <span class="bento-label">HRA</span>
-                                    <span class="bento-value">&#8377;9,000</span>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-icon"><i data-lucide="home"></i></div>
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">HRA</span>
+                                        <span class="prof-bento-value">&#8377;9,000</span>
+                                    </div>
                                 </div>
                             </div>
-                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show All Components</span>
-                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                                <i data-lucide="chevron-right" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Food Expense Reimb.</span><span class="info-val">&#8377;500.00</span></div>
@@ -354,14 +405,14 @@
                             </div>
                         </div>
 
-                        <!-- Change Password -->
-                        <div class="bento-section">
-                            <button class="bento-expand-box" onclick="toggleProfileDetail(this)">
+                        <!-- ========== CHANGE PASSWORD ========== -->
+                        <div class="prof-section">
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
                                     <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-accent);"></i>
                                     <span>Change Password</span>
                                 </div>
-                                <i data-lucide="chevron-down" class="expand-chevron"></i>
+                                <i data-lucide="chevron-right" class="expand-chevron"></i>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="form-group" style="margin-bottom:12px;">
@@ -380,7 +431,7 @@
                             </div>
                         </div>
 
-                        <!-- Documents -->
+                        <!-- ========== DOCUMENTS ========== -->
                         <div class="data-card">
                             <div class="card-header"><span class="card-title">Documents</span></div>
                             <div class="document-list">

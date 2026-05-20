@@ -457,6 +457,7 @@ function goToProfile() {
     document.getElementById('home-screen').classList.remove('active');
     document.getElementById('profile-screen').classList.add('active');
     updateSidebarActiveLink('nav-profile');
+    lucide.createIcons();
     
     // Setup drag scroll for profile screen if needed, using the existing initDragScroll on its scrollable-cards
     const profCards = document.querySelector('#profile-screen .scrollable-cards');
@@ -494,6 +495,7 @@ function goToHome() {
     document.getElementById('profile-screen').classList.remove('active');
     document.getElementById('home-screen').classList.add('active');
     updateSidebarActiveLink('nav-dashboard');
+    lucide.createIcons();
     
     // restore default spacing safety for home screen
     const homeCards = document.querySelector('#home-screen .scrollable-cards');
