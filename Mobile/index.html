@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Webtel HR Mobile Prototype</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -33,7 +34,7 @@
                 <!-- Credentials Screen -->
                 <div id="login-credentials-screen" class="screen">
                     <button class="btn-back" onclick="goToDomain()">
-                        <i data-lucide="arrow-left"></i>
+                        <iconify-icon icon="solar:alt-arrow-left-linear"></iconify-icon>
                     </button>
                     <div class="login-header">
                         <div class="logo">Webtel</div>
@@ -61,9 +62,9 @@
                     <div class="status-bar-dummy" aria-hidden="true">
                         <span class="status-time">9:41</span>
                         <div class="status-icons">
-                            <i data-lucide="signal"></i>
-                            <i data-lucide="wifi"></i>
-                            <i data-lucide="battery-full"></i>
+                            <iconify-icon icon="solar:tag-linear"></iconify-icon>
+                            <iconify-icon icon="solar:wi-fi-router-minimalistic-linear"></iconify-icon>
+                            <iconify-icon icon="solar:battery-full-linear"></iconify-icon>
                         </div>
                     </div>
                     
@@ -72,7 +73,7 @@
                         <header class="base-header">
                             <div class="header-left">
                                 <button class="ghost-btn" onclick="toggleSidebar()">
-                                    <i data-lucide="menu"></i>
+                                    <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
                                 </button>
                                 <div class="user-greeting">
                                     <h1>Good Afternoon</h1>
@@ -80,7 +81,7 @@
                                 </div>
                             </div>
                             <button class="ghost-btn" onclick="openBottomSheet('notifications-sheet')">
-                                <i data-lucide="bell"></i>
+                                <iconify-icon icon="solar:bell-bing-linear"></iconify-icon>
                                 <span class="notification-dot"></span>
                             </button>
                         </header>
@@ -88,7 +89,7 @@
                         <!-- Attendance Widget -->
                         <div class="attendance-widget">
                             <div class="shift-info-pill">
-                                <i data-lucide="sun"></i>
+                                <iconify-icon icon="solar:sun-2-linear"></iconify-icon>
                                 General Shift: 10:00 AM - 07:00 PM
                             </div>
                             <div class="attendance-summary">
@@ -118,15 +119,6 @@
                     <!-- SCROLLABLE CARDS LAYER -->
                     <main class="scrollable-cards">
                         
-                        <!-- Regularization Summary Ã¢â‚¬â€ prominent with accent blue -->
-                        <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
-                            <div class="summary-icon"><i data-lucide="alert-triangle"></i></div>
-                            <div class="summary-text">
-                                <span class="summary-count">15 days</span> require regularisation
-                            </div>
-                            <i data-lucide="chevron-right"></i>
-                        </button>
-
                         <!-- Data Card: Leave Status -->
                         <div class="data-card">
                             <div class="card-header">
@@ -145,6 +137,15 @@
                             </div>
                         </div>
 
+                        <!-- Regularization Summary — prominent with accent blue -->
+                        <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
+                            <div class="summary-icon"><iconify-icon icon="solar:danger-triangle-linear"></iconify-icon></div>
+                            <div class="summary-text">
+                                <span class="summary-count">15 days</span> require regularisation
+                            </div>
+                            <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
+                        </button>
+
                         <!-- Data Card: Company Feed -->
                         <div class="data-card">
                             <div class="card-header">
@@ -152,21 +153,21 @@
                             </div>
                             <div class="feed-list">
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><i data-lucide="party-popper"></i></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:confetti-minimalistic-linear"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Anil Yadav's Birthday</div>
                                         <div class="feed-sub">Rice Lab Ã¢â‚¬Â¢ Today</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><i data-lucide="medal"></i></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:medal-ribbons-star-linear"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">5 Year Work Anniversary</div>
                                         <div class="feed-sub">Congratulations to Sarah Jenkins!</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon solid"><i data-lucide="megaphone"></i></div>
+                                    <div class="feed-icon solid"><iconify-icon icon="solar:megaphone-linear"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Townhall Meeting</div>
                                         <div class="feed-sub">Friday @ 4:00 PM Ã¢â‚¬Â¢ Main Cafeteria</div>
@@ -182,14 +183,14 @@
                             </div>
                             <div class="feed-list">
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><i data-lucide="palmtree"></i></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:tree-linear"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Independence Day</div>
                                         <div class="feed-sub">National Holiday Ã¢â‚¬Â¢ Aug 15</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><i data-lucide="gift"></i></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:gift-linear"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Raksha Bandhan</div>
                                         <div class="feed-sub">Restricted Holiday Ã¢â‚¬Â¢ Aug 28</div>
@@ -209,9 +210,9 @@
                     <div class="status-bar-dummy" aria-hidden="true">
                         <span class="status-time">9:41</span>
                         <div class="status-icons">
-                            <i data-lucide="signal"></i>
-                            <i data-lucide="wifi"></i>
-                            <i data-lucide="battery-full"></i>
+                            <iconify-icon icon="solar:tag-linear"></iconify-icon>
+                            <iconify-icon icon="solar:wi-fi-router-minimalistic-linear"></iconify-icon>
+                            <iconify-icon icon="solar:battery-full-linear"></iconify-icon>
                         </div>
                     </div>
                     
@@ -220,12 +221,12 @@
                         <header class="base-header">
                             <div class="header-left">
                                 <button class="ghost-btn profile-ghost-btn" onclick="toggleSidebar()">
-                                    <i data-lucide="menu"></i>
+                                    <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
                                 </button>
                                 <h2 class="profile-page-title">Profile</h2>
                             </div>
                             <button class="ghost-btn profile-ghost-btn profile-bell" onclick="openBottomSheet('notifications-sheet')">
-                                <i data-lucide="bell"></i>
+                                <iconify-icon icon="solar:bell-bing-linear"></iconify-icon>
                                 <span class="notification-dot"></span>
                             </button>
                         </header>
@@ -237,7 +238,6 @@
                         <!-- ========== PERSONAL INFORMATION ========== -->
                         <div class="prof-section">
                             <div class="prof-section-header">
-                                <div class="prof-section-icon"><i data-lucide="user-round"></i></div>
                                 <span class="prof-section-title">Personal Information</span>
                             </div>
 
@@ -253,29 +253,25 @@
 
                             <!-- Bento Grid -->
                             <div class="prof-bento-grid">
-                                <div class="prof-bento-box tinted">
-                                    <div class="prof-bento-icon"><i data-lucide="phone"></i></div>
+                                <div class="prof-bento-box">
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Mobile</span>
                                         <span class="prof-bento-value">+91 98765 43210</span>
                                     </div>
                                 </div>
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="calendar"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Date of Birth</span>
                                         <span class="prof-bento-value">19 Jun 1972</span>
                                     </div>
                                 </div>
-                                <div class="prof-bento-box tinted">
-                                    <div class="prof-bento-icon"><i data-lucide="mail"></i></div>
+                                <div class="prof-bento-box">
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Email</span>
                                         <span class="prof-bento-value">vijay.pal@webtel.in</span>
                                     </div>
                                 </div>
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="droplet"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Blood Group</span>
                                         <span class="prof-bento-value">O+</span>
@@ -286,7 +282,7 @@
                             <!-- Expand Button -->
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Employee Details</span>
-                                <i data-lucide="chevron-right" class="expand-chevron"></i>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Code</span><span class="info-val">SAEL142</span></div>
@@ -302,34 +298,29 @@
                         <!-- ========== WORK INFORMATION ========== -->
                         <div class="prof-section">
                             <div class="prof-section-header">
-                                <div class="prof-section-icon"><i data-lucide="briefcase"></i></div>
                                 <span class="prof-section-title">Work Information</span>
                             </div>
 
                             <div class="prof-bento-grid">
-                                <div class="prof-bento-box tinted">
-                                    <div class="prof-bento-icon"><i data-lucide="calendar-check"></i></div>
+                                <div class="prof-bento-box">
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Joining Date</span>
                                         <span class="prof-bento-value">19 Jun 2016</span>
                                     </div>
                                 </div>
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="building-2"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Business Unit</span>
                                         <span class="prof-bento-value">Delhi HO</span>
                                     </div>
                                 </div>
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="map-pin"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Location</span>
                                         <span class="prof-bento-value">Corporate</span>
                                     </div>
                                 </div>
-                                <div class="prof-bento-box tinted">
-                                    <div class="prof-bento-icon"><i data-lucide="user-check"></i></div>
+                                <div class="prof-bento-box">
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Senior</span>
                                         <span class="prof-bento-value">Jasbir Singh</span>
@@ -339,7 +330,7 @@
 
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Organisation Details</span>
-                                <i data-lucide="chevron-right" class="expand-chevron"></i>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">PAN No.</span><span class="info-val">AIJPP9811H</span></div>
@@ -356,7 +347,6 @@
                         <!-- ========== COMPENSATION ========== -->
                         <div class="prof-section">
                             <div class="prof-section-header">
-                                <div class="prof-section-icon"><i data-lucide="indian-rupee"></i></div>
                                 <span class="prof-section-title">Compensation</span>
                             </div>
 
@@ -370,14 +360,12 @@
                             <!-- Basic + HRA row -->
                             <div class="prof-bento-grid prof-bento-1x2">
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="landmark"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">Basic</span>
                                         <span class="prof-bento-value">&#8377;1,000</span>
                                     </div>
                                 </div>
                                 <div class="prof-bento-box">
-                                    <div class="prof-bento-icon"><i data-lucide="home"></i></div>
                                     <div class="prof-bento-text">
                                         <span class="prof-bento-label">HRA</span>
                                         <span class="prof-bento-value">&#8377;9,000</span>
@@ -387,7 +375,7 @@
 
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show All Components</span>
-                                <i data-lucide="chevron-right" class="expand-chevron"></i>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Food Expense Reimb.</span><span class="info-val">&#8377;500.00</span></div>
@@ -412,7 +400,7 @@
                                     <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-accent);"></i>
                                     <span>Change Password</span>
                                 </div>
-                                <i data-lucide="chevron-right" class="expand-chevron"></i>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="form-group" style="margin-bottom:12px;">
@@ -436,20 +424,20 @@
                             <div class="card-header"><span class="card-title">Documents</span></div>
                             <div class="document-list">
                                 <div class="doc-item">
-                                    <div class="doc-icon"><i data-lucide="file-text"></i></div>
+                                    <div class="doc-icon"><iconify-icon icon="solar:document-text-linear"></iconify-icon></div>
                                     <div class="doc-info">
                                         <div class="doc-title">Company Policy 2025</div>
                                         <div class="doc-sub">company_policy_2025.pdf</div>
                                     </div>
-                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-linear"></iconify-icon></button>
                                 </div>
                                 <div class="doc-item">
-                                    <div class="doc-icon"><i data-lucide="bar-chart-3"></i></div>
+                                    <div class="doc-icon"><iconify-icon icon="solar:chart-square-linear"></iconify-icon></div>
                                     <div class="doc-info">
                                         <div class="doc-title">Quarterly Report Q3</div>
                                         <div class="doc-sub">report_q3_2025.xlsx</div>
                                     </div>
-                                    <button class="ghost-btn doc-download"><i data-lucide="download"></i></button>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-linear"></iconify-icon></button>
                                 </div>
                             </div>
                         </div>
@@ -475,20 +463,20 @@
                                 <input type="checkbox" id="advanced-features-toggle">
                                 <span class="toggle-slider"></span>
                             </label>
-                            <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><i data-lucide="x"></i></button>
+                            <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
                         </div>
                     </div>
                     <div class="sidebar-content">
                         <div class="nav-menu-item" id="nav-dashboard">
-                            <button class="nav-link active-link" onclick="goToHome()"><i data-lucide="layout-dashboard"></i> Dashboard</button>
+                            <button class="nav-link active-link" onclick="goToHome()"><iconify-icon icon="solar:widget-4-linear"></iconify-icon> Dashboard</button>
                         </div>
                         <div class="nav-menu-item" id="nav-profile">
-                            <button class="nav-link" onclick="goToProfile()"><i data-lucide="user"></i> Profile</button>
+                            <button class="nav-link" onclick="goToProfile()"><iconify-icon icon="solar:user-linear"></iconify-icon> Profile</button>
                         </div>
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="fingerprint"></i> Attendance <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:fingerprint-linear"></iconify-icon> Attendance <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#" onclick="openBottomSheet('attendance-map-sheet'); toggleSidebar();">Mark Attendance</a>
@@ -497,7 +485,7 @@
                         
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="calendar"></i> Leave <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:calendar-linear"></iconify-icon> Leave <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Apply Leave</a>
@@ -508,7 +496,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="bar-chart-2"></i> Reports <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:bar-chart-2-linear"></iconify-icon> Reports <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Expense Report</a>
@@ -520,7 +508,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="receipt"></i> Expense <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:receipt-linear"></iconify-icon> Expense <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Add Visits</a>
@@ -529,7 +517,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <i data-lucide="users"></i> Manage Team <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:users-linear"></iconify-icon> Manage Team <i data-lucide="chevron-down" class="chevron"></i>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Leave Sanction</a>
@@ -540,12 +528,12 @@
                         </div>
 
                         <div class="nav-menu-item">
-                            <button class="nav-link"><i data-lucide="contact"></i> Employee Directory</button>
+                            <button class="nav-link"><iconify-icon icon="solar:contact-linear"></iconify-icon> Employee Directory</button>
                         </div>
                     </div>
                     <div class="sidebar-footer">
-                        <button class="sidebar-footer-btn"><i data-lucide="help-circle"></i> Help</button>
-                        <button class="sidebar-footer-btn" onclick="logout()"><i data-lucide="log-out"></i> Logout</button>
+                        <button class="sidebar-footer-btn"><iconify-icon icon="solar:help-circle-linear"></iconify-icon> Help</button>
+                        <button class="sidebar-footer-btn" onclick="logout()"><iconify-icon icon="solar:log-out-linear"></iconify-icon> Logout</button>
                     </div>
                 </div>
 
@@ -557,7 +545,7 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>15 Days Require Regularisation</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content" id="regularisation-list"></div>
                 </div>
@@ -567,7 +555,7 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Change Password</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content" style="padding-top: var(--space-4);">
                         <div class="form-group">
@@ -603,11 +591,11 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Notifications</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content feed-list">
                         <div class="feed-item">
-                            <div class="feed-icon blue"><i data-lucide="check-circle"></i></div>
+                            <div class="feed-icon blue"><iconify-icon icon="solar:check-circle-linear"></iconify-icon></div>
                             <div class="feed-content">
                                 <div class="feed-title">Leave Approved</div>
                                 <div class="feed-sub">Your Privilege Leave for May 20 has been approved by your manager.</div>
@@ -615,7 +603,7 @@
                             </div>
                         </div>
                         <div class="feed-item">
-                            <div class="feed-icon solid"><i data-lucide="alert-circle"></i></div>
+                            <div class="feed-icon solid"><iconify-icon icon="solar:alert-circle-linear"></iconify-icon></div>
                             <div class="feed-content">
                                 <div class="feed-title">Missing Punch</div>
                                 <div class="feed-sub">You missed a punch out on May 14. Please regularise.</div>
@@ -630,13 +618,13 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Mark Attendance</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><i data-lucide="x"></i></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
                     </div>
                     <div class="attendance-sheet-body">
                         <div class="attendance-map-stage">
                             <div class="map-placeholder-bg"></div>
                             <div class="map-pin">
-                                <i data-lucide="map-pin"></i>
+                                <iconify-icon icon="solar:map-point-linear"></iconify-icon>
                             </div>
                         </div>
                         <div class="attendance-info-card">

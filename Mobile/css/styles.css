@@ -408,19 +408,18 @@ input:checked + .toggle-slider:before {
 /* Fixed card panel: Header + Attendance */
 .fixed-base {
     flex-shrink: 0;
-    background: linear-gradient(135deg, #2563EB 0%, #2460e4 30%, #2563EB 50%, #2d6af0 70%, #2563EB 100%);
-    background-size: 400% 400%;
-    animation: meshGradient 16s ease infinite;
+    background: transparent;
     padding: 0 16px 16px 16px;
     padding-top: calc(16px + 32px);
     display: flex; flex-direction: column;
     gap: 16px;
     position: relative; z-index: 10;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
-    overflow: hidden;
-    transition: padding 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1), gap 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible;
+    transition: padding 0.45s cubic-bezier(0.16, 1, 0.3, 1), gap 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-layout {
+    background: linear-gradient(180deg, #fef4cc 0%, #ffffff 40%);
 }
 
 .fixed-base.minimized .status-bar-dummy {
@@ -448,8 +447,6 @@ input:checked + .toggle-slider:before {
 .fixed-base.minimized {
     padding: 0 16px 16px 16px;
     padding-top: calc(16px + 32px);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
     gap: 16px;
 }
 
@@ -502,26 +499,26 @@ input:checked + .toggle-slider:before {
 }
 
 .ghost-btn {
-    background: rgba(255, 255, 255, 0.15); border: none;
-    color: white; width: 36px; height: 36px;
+    background: rgba(9, 9, 11, 0.05); border: none;
+    color: var(--color-text); width: 36px; height: 36px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     position: relative; cursor: pointer;
     transition: background 0.12s;
 }
-.ghost-btn:active { background: rgba(255, 255, 255, 0.25); }
-.ghost-btn .lucide { width: 20px; height: 20px; stroke-width: 1.5; }
+.ghost-btn:active { background: rgba(9, 9, 11, 0.1); }
+.ghost-btn .lucide { width: 20px; height: 20px; stroke-width: 1.5; color: var(--color-text); }
 
 .notification-dot {
     position: absolute; top: 8px; right: 8px;
     width: 6px; height: 6px;
     background-color: #EF4444; border-radius: 50%;
-    border: 2px solid var(--color-accent);
+    border: 2px solid transparent;
 }
 
 .user-greeting { display: flex; flex-direction: column; gap: 2px; }
-.user-greeting h1 { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: white; }
-.user-greeting span { font-size: 13px; font-weight: 400; color: rgba(255, 255, 255, 0.7); }
+.user-greeting h1 { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--color-text); }
+.user-greeting span { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); }
 
 /* ============================
    ATTENDANCE WIDGET (inside fixed card)
@@ -537,6 +534,13 @@ input:checked + .toggle-slider:before {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     transition: padding 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
+#btn-punch-main {
+    background: #fbc343;
+    color: #000;
+    font-weight: 700;
+    box-shadow: none;
+}
+#btn-punch-main:hover { background: #eab308; }
 
 .attendance-widget.minimized {
     padding: 12px 14px;
@@ -910,6 +914,8 @@ input:checked + .toggle-slider:before {
     background: var(--color-canvas);
     gap: 4px !important;
     padding-top: 8px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* --- Section structure --- */
@@ -1079,16 +1085,18 @@ input:checked + .toggle-slider:before {
 .prof-expand-btn {
     display: flex; align-items: center; justify-content: space-between;
     width: 100%;
-    background: transparent;
-    border: none;
-    padding: 12px 2px;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+    padding: 14px 16px;
     font-size: var(--text-sm); font-weight: 600;
-    color: var(--color-accent);
+    color: var(--color-text);
     cursor: pointer;
     font-family: inherit;
-    transition: opacity 0.2s ease;
+    transition: background 0.2s ease;
+    margin-top: 12px;
 }
-.prof-expand-btn:active { opacity: 0.7; }
+.prof-expand-btn:active { background: #e4e4e7; }
 .prof-expand-btn .expand-chevron {
     width: 16px; height: 16px;
     transition: transform 0.3s ease;
