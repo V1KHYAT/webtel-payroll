@@ -6,7 +6,7 @@
     <title>Webtel HR Mobile Prototype</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
     <div class="device-preview-wrapper">
@@ -34,7 +34,7 @@
                 <!-- Credentials Screen -->
                 <div id="login-credentials-screen" class="screen">
                     <button class="btn-back" onclick="goToDomain()">
-                        <iconify-icon icon="solar:alt-arrow-left-linear"></iconify-icon>
+                        <iconify-icon icon="solar:alt-arrow-left-broken"></iconify-icon>
                     </button>
                     <div class="login-header">
                         <div class="logo">Webtel</div>
@@ -62,9 +62,9 @@
                     <div class="status-bar-dummy" aria-hidden="true">
                         <span class="status-time">9:41</span>
                         <div class="status-icons">
-                            <iconify-icon icon="solar:tag-linear"></iconify-icon>
-                            <iconify-icon icon="solar:wi-fi-router-minimalistic-linear"></iconify-icon>
-                            <iconify-icon icon="solar:battery-full-linear"></iconify-icon>
+                            <iconify-icon icon="solar:tag-broken"></iconify-icon>
+                            <iconify-icon icon="solar:wi-fi-router-minimalistic-broken"></iconify-icon>
+                            <iconify-icon icon="solar:battery-full-broken"></iconify-icon>
                         </div>
                     </div>
                     
@@ -73,7 +73,7 @@
                         <header class="base-header">
                             <div class="header-left">
                                 <button class="ghost-btn" onclick="toggleSidebar()">
-                                    <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
+                                    <iconify-icon icon="solar:hamburger-menu-broken"></iconify-icon>
                                 </button>
                                 <div class="user-greeting">
                                     <h1>Good Afternoon</h1>
@@ -81,15 +81,19 @@
                                 </div>
                             </div>
                             <button class="ghost-btn" onclick="openBottomSheet('notifications-sheet')">
-                                <iconify-icon icon="solar:bell-bing-linear"></iconify-icon>
+                                <iconify-icon icon="solar:bell-bing-broken"></iconify-icon>
                                 <span class="notification-dot"></span>
                             </button>
                         </header>
+                    </div>
 
+                    <!-- SCROLLABLE CARDS LAYER -->
+                    <main class="scrollable-cards">
+                        
                         <!-- Attendance Widget -->
                         <div class="attendance-widget">
                             <div class="shift-info-pill">
-                                <iconify-icon icon="solar:sun-2-linear"></iconify-icon>
+                                <iconify-icon icon="solar:sun-2-broken"></iconify-icon>
                                 General Shift: 10:00 AM - 07:00 PM
                             </div>
                             <div class="attendance-summary">
@@ -114,10 +118,6 @@
                                 Mark Attendance
                             </button>
                         </div>
-                    </div>
-
-                    <!-- SCROLLABLE CARDS LAYER -->
-                    <main class="scrollable-cards">
                         
                         <!-- Data Card: Leave Status -->
                         <div class="data-card">
@@ -139,11 +139,11 @@
 
                         <!-- Regularization Summary — prominent with accent blue -->
                         <button class="summary-btn-important" onclick="openBottomSheet('regularisation-sheet')">
-                            <div class="summary-icon"><iconify-icon icon="solar:danger-triangle-linear"></iconify-icon></div>
+                            <div class="summary-icon"><iconify-icon icon="solar:danger-triangle-broken"></iconify-icon></div>
                             <div class="summary-text">
                                 <span class="summary-count">15 days</span> require regularisation
                             </div>
-                            <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
+                            <iconify-icon icon="solar:alt-arrow-right-broken"></iconify-icon>
                         </button>
 
                         <!-- Data Card: Company Feed -->
@@ -153,24 +153,24 @@
                             </div>
                             <div class="feed-list">
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><iconify-icon icon="solar:confetti-minimalistic-linear"></iconify-icon></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:confetti-minimalistic-broken"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Anil Yadav's Birthday</div>
-                                        <div class="feed-sub">Rice Lab Ã¢â‚¬Â¢ Today</div>
+                                        <div class="feed-sub">Rice Lab &bull; Today</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><iconify-icon icon="solar:medal-ribbons-star-linear"></iconify-icon></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:medal-ribbons-star-broken"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">5 Year Work Anniversary</div>
                                         <div class="feed-sub">Congratulations to Sarah Jenkins!</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon solid"><iconify-icon icon="solar:megaphone-linear"></iconify-icon></div>
+                                    <div class="feed-icon solid"><iconify-icon icon="solar:megaphone-broken"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Townhall Meeting</div>
-                                        <div class="feed-sub">Friday @ 4:00 PM Ã¢â‚¬Â¢ Main Cafeteria</div>
+                                        <div class="feed-sub">Friday @ 4:00 PM &bull; Main Cafeteria</div>
                                     </div>
                                 </div>
                             </div>
@@ -183,17 +183,17 @@
                             </div>
                             <div class="feed-list">
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><iconify-icon icon="solar:tree-linear"></iconify-icon></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:tree-broken"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Independence Day</div>
-                                        <div class="feed-sub">National Holiday Ã¢â‚¬Â¢ Aug 15</div>
+                                        <div class="feed-sub">National Holiday &bull; Aug 15</div>
                                     </div>
                                 </div>
                                 <div class="feed-item">
-                                    <div class="feed-icon blue"><iconify-icon icon="solar:gift-linear"></iconify-icon></div>
+                                    <div class="feed-icon blue"><iconify-icon icon="solar:gift-broken"></iconify-icon></div>
                                     <div class="feed-content">
                                         <div class="feed-title">Raksha Bandhan</div>
-                                        <div class="feed-sub">Restricted Holiday Ã¢â‚¬Â¢ Aug 28</div>
+                                        <div class="feed-sub">Restricted Holiday &bull; Aug 28</div>
                                     </div>
                                 </div>
                             </div>
@@ -210,9 +210,9 @@
                     <div class="status-bar-dummy" aria-hidden="true">
                         <span class="status-time">9:41</span>
                         <div class="status-icons">
-                            <iconify-icon icon="solar:tag-linear"></iconify-icon>
-                            <iconify-icon icon="solar:wi-fi-router-minimalistic-linear"></iconify-icon>
-                            <iconify-icon icon="solar:battery-full-linear"></iconify-icon>
+                            <iconify-icon icon="solar:tag-broken"></iconify-icon>
+                            <iconify-icon icon="solar:wi-fi-router-minimalistic-broken"></iconify-icon>
+                            <iconify-icon icon="solar:battery-full-broken"></iconify-icon>
                         </div>
                     </div>
                     
@@ -221,12 +221,12 @@
                         <header class="base-header">
                             <div class="header-left">
                                 <button class="ghost-btn profile-ghost-btn" onclick="toggleSidebar()">
-                                    <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
+                                    <iconify-icon icon="solar:hamburger-menu-broken"></iconify-icon>
                                 </button>
                                 <h2 class="profile-page-title">Profile</h2>
                             </div>
                             <button class="ghost-btn profile-ghost-btn profile-bell" onclick="openBottomSheet('notifications-sheet')">
-                                <iconify-icon icon="solar:bell-bing-linear"></iconify-icon>
+                                <iconify-icon icon="solar:bell-bing-broken"></iconify-icon>
                                 <span class="notification-dot"></span>
                             </button>
                         </header>
@@ -282,7 +282,7 @@
                             <!-- Expand Button -->
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Employee Details</span>
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
+                                <iconify-icon icon="solar:alt-arrow-right-broken" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Code</span><span class="info-val">SAEL142</span></div>
@@ -330,7 +330,7 @@
 
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show Organisation Details</span>
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
+                                <iconify-icon icon="solar:alt-arrow-right-broken" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">PAN No.</span><span class="info-val">AIJPP9811H</span></div>
@@ -375,7 +375,7 @@
 
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <span>Show All Components</span>
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
+                                <iconify-icon icon="solar:alt-arrow-right-broken" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label">Food Expense Reimb.</span><span class="info-val">&#8377;500.00</span></div>
@@ -397,10 +397,10 @@
                         <div class="prof-section">
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
                                 <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
-                                    <i data-lucide="lock" style="width:16px;height:16px;color:var(--color-accent);"></i>
+                                    <iconify-icon icon="solar:lock-password-broken" style="width:16px;height:16px;color:var(--color-accent);"></iconify-icon>
                                     <span>Change Password</span>
                                 </div>
-                                <iconify-icon icon="solar:alt-arrow-right-linear" class="expand-chevron"></iconify-icon>
+                                <iconify-icon icon="solar:alt-arrow-right-broken" class="expand-chevron"></iconify-icon>
                             </button>
                             <div class="expandable-detail-list">
                                 <div class="form-group" style="margin-bottom:12px;">
@@ -424,20 +424,20 @@
                             <div class="card-header"><span class="card-title">Documents</span></div>
                             <div class="document-list">
                                 <div class="doc-item">
-                                    <div class="doc-icon"><iconify-icon icon="solar:document-text-linear"></iconify-icon></div>
+                                    <div class="doc-icon"><iconify-icon icon="solar:document-text-broken"></iconify-icon></div>
                                     <div class="doc-info">
                                         <div class="doc-title">Company Policy 2025</div>
                                         <div class="doc-sub">company_policy_2025.pdf</div>
                                     </div>
-                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-linear"></iconify-icon></button>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-broken"></iconify-icon></button>
                                 </div>
                                 <div class="doc-item">
-                                    <div class="doc-icon"><iconify-icon icon="solar:chart-square-linear"></iconify-icon></div>
+                                    <div class="doc-icon"><iconify-icon icon="solar:chart-square-broken"></iconify-icon></div>
                                     <div class="doc-info">
                                         <div class="doc-title">Quarterly Report Q3</div>
                                         <div class="doc-sub">report_q3_2025.xlsx</div>
                                     </div>
-                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-linear"></iconify-icon></button>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="solar:import-broken"></iconify-icon></button>
                                 </div>
                             </div>
                         </div>
@@ -463,20 +463,20 @@
                                 <input type="checkbox" id="advanced-features-toggle">
                                 <span class="toggle-slider"></span>
                             </label>
-                            <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
+                            <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><iconify-icon icon="solar:close-circle-broken"></iconify-icon></button>
                         </div>
                     </div>
                     <div class="sidebar-content">
                         <div class="nav-menu-item" id="nav-dashboard">
-                            <button class="nav-link active-link" onclick="goToHome()"><iconify-icon icon="solar:widget-4-linear"></iconify-icon> Dashboard</button>
+                            <button class="nav-link active-link" onclick="goToHome()"><iconify-icon icon="solar:widget-4-broken"></iconify-icon> Dashboard</button>
                         </div>
                         <div class="nav-menu-item" id="nav-profile">
-                            <button class="nav-link" onclick="goToProfile()"><iconify-icon icon="solar:user-linear"></iconify-icon> Profile</button>
+                            <button class="nav-link" onclick="goToProfile()"><iconify-icon icon="solar:user-broken"></iconify-icon> Profile</button>
                         </div>
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="solar:fingerprint-linear"></iconify-icon> Attendance <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:fingerprint-broken"></iconify-icon> Attendance <iconify-icon icon="solar:alt-arrow-down-broken" class="chevron"></iconify-icon>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#" onclick="openBottomSheet('attendance-map-sheet'); toggleSidebar();">Mark Attendance</a>
@@ -485,7 +485,7 @@
                         
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="solar:calendar-linear"></iconify-icon> Leave <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:calendar-broken"></iconify-icon> Leave <iconify-icon icon="solar:alt-arrow-down-broken" class="chevron"></iconify-icon>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Apply Leave</a>
@@ -496,7 +496,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="solar:bar-chart-2-linear"></iconify-icon> Reports <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:bar-chart-2-broken"></iconify-icon> Reports <iconify-icon icon="solar:alt-arrow-down-broken" class="chevron"></iconify-icon>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Expense Report</a>
@@ -508,7 +508,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="solar:receipt-linear"></iconify-icon> Expense <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:receipt-broken"></iconify-icon> Expense <iconify-icon icon="solar:alt-arrow-down-broken" class="chevron"></iconify-icon>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Add Visits</a>
@@ -517,7 +517,7 @@
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="solar:users-linear"></iconify-icon> Manage Team <i data-lucide="chevron-down" class="chevron"></i>
+                                <iconify-icon icon="solar:users-broken"></iconify-icon> Manage Team <iconify-icon icon="solar:alt-arrow-down-broken" class="chevron"></iconify-icon>
                             </button>
                             <div class="nav-submenu">
                                 <a href="#">Leave Sanction</a>
@@ -528,12 +528,12 @@
                         </div>
 
                         <div class="nav-menu-item">
-                            <button class="nav-link"><iconify-icon icon="solar:contact-linear"></iconify-icon> Employee Directory</button>
+                            <button class="nav-link"><iconify-icon icon="solar:contact-broken"></iconify-icon> Employee Directory</button>
                         </div>
                     </div>
                     <div class="sidebar-footer">
-                        <button class="sidebar-footer-btn"><iconify-icon icon="solar:help-circle-linear"></iconify-icon> Help</button>
-                        <button class="sidebar-footer-btn" onclick="logout()"><iconify-icon icon="solar:log-out-linear"></iconify-icon> Logout</button>
+                        <button class="sidebar-footer-btn"><iconify-icon icon="solar:help-circle-broken"></iconify-icon> Help</button>
+                        <button class="sidebar-footer-btn" onclick="logout()"><iconify-icon icon="solar:log-out-broken"></iconify-icon> Logout</button>
                     </div>
                 </div>
 
@@ -545,7 +545,7 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>15 Days Require Regularisation</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-broken"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content" id="regularisation-list"></div>
                 </div>
@@ -555,31 +555,31 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Change Password</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-broken"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content" style="padding-top: var(--space-4);">
                         <div class="form-group">
                             <label>Current Password</label>
                             <div class="input-wrapper">
-                                <i data-lucide="lock" class="input-icon"></i>
+                                <iconify-icon icon="solar:lock-password-broken" class="input-icon"></iconify-icon>
                                 <input type="password" class="form-input" style="padding-left: 40px;" placeholder="Current Password">
-                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                                <iconify-icon icon="solar:eye-closed-broken" class="input-icon-right"></iconify-icon>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>New Password</label>
                             <div class="input-wrapper">
-                                <i data-lucide="lock" class="input-icon"></i>
+                                <iconify-icon icon="solar:lock-password-broken" class="input-icon"></iconify-icon>
                                 <input type="password" class="form-input" style="padding-left: 40px;" placeholder="New Password">
-                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                                <iconify-icon icon="solar:eye-closed-broken" class="input-icon-right"></iconify-icon>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
                             <div class="input-wrapper">
-                                <i data-lucide="lock" class="input-icon"></i>
+                                <iconify-icon icon="solar:lock-password-broken" class="input-icon"></iconify-icon>
                                 <input type="password" class="form-input" style="padding-left: 40px;" placeholder="Confirm Password">
-                                <i data-lucide="eye-off" class="input-icon-right"></i>
+                                <iconify-icon icon="solar:eye-closed-broken" class="input-icon-right"></iconify-icon>
                             </div>
                         </div>
                         <button class="btn btn-primary btn-block mt-4" onclick="closeBottomSheet()">Submit</button>
@@ -591,11 +591,11 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Notifications</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-broken"></iconify-icon></button>
                     </div>
                     <div class="sheet-scroll-content feed-list">
                         <div class="feed-item">
-                            <div class="feed-icon blue"><iconify-icon icon="solar:check-circle-linear"></iconify-icon></div>
+                            <div class="feed-icon blue"><iconify-icon icon="solar:check-circle-broken"></iconify-icon></div>
                             <div class="feed-content">
                                 <div class="feed-title">Leave Approved</div>
                                 <div class="feed-sub">Your Privilege Leave for May 20 has been approved by your manager.</div>
@@ -603,7 +603,7 @@
                             </div>
                         </div>
                         <div class="feed-item">
-                            <div class="feed-icon solid"><iconify-icon icon="solar:alert-circle-linear"></iconify-icon></div>
+                            <div class="feed-icon solid"><iconify-icon icon="solar:alert-circle-broken"></iconify-icon></div>
                             <div class="feed-content">
                                 <div class="feed-title">Missing Punch</div>
                                 <div class="feed-sub">You missed a punch out on May 14. Please regularise.</div>
@@ -618,20 +618,20 @@
                     <div class="sheet-handle"></div>
                     <div class="sheet-header">
                         <h3>Mark Attendance</h3>
-                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></button>
+                        <button class="close-sheet-btn" onclick="closeBottomSheet()"><iconify-icon icon="solar:close-circle-broken"></iconify-icon></button>
                     </div>
                     <div class="attendance-sheet-body">
                         <div class="attendance-map-stage">
                             <div class="map-placeholder-bg"></div>
                             <div class="map-pin">
-                                <iconify-icon icon="solar:map-point-linear"></iconify-icon>
+                                <iconify-icon icon="solar:map-point-broken"></iconify-icon>
                             </div>
                         </div>
                         <div class="attendance-info-card">
                             <div style="font-size: 15px; font-weight: 600; color: var(--color-text); margin-bottom: 4px;">Good Afternoon, Vijay Pal</div>
                             <div class="timestamp" id="map-timestamp">--:--:-- PM</div>
                             <div class="address-block">
-                                <i data-lucide="map-pin" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px;"></i>
+                                <iconify-icon icon="solar:map-point-broken" style="width:14px;height:14px;margin-right:4px;vertical-align:-2px;"></iconify-icon>
                                 107-109, Rajendra Place, New Delhi, 110008, India
                             </div>
                             <button class="btn btn-primary btn-block" id="btn-punch-confirm" onclick="mockPunchIn()">
@@ -646,7 +646,7 @@
     </div> <!-- End device-preview-wrapper -->
 
     <script>
-        lucide.createIcons();
+        
     </script>
     <script src="js/app.js"></script>
 </body>

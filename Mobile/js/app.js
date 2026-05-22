@@ -24,36 +24,7 @@ function autoZoomToFit() {
 window.addEventListener('load', autoZoomToFit);
 window.addEventListener('resize', autoZoomToFit);
 
-// --- SCROLL MINIMIZE CARD LOGIC ---
-function initScrollMinimize() {
-    const scrollableCards = document.querySelector('.scrollable-cards');
-    const attendanceWidget = document.querySelector('.attendance-widget');
-    
-    if (!scrollableCards || !attendanceWidget) return;
-
-    let scheduled = false;
-
-    const updateCollapseState = () => {
-        const scrollTop = scrollableCards.scrollTop;
-        const end = 260;
-        const progress = Math.max(0, Math.min(1, scrollTop / end));
-
-        attendanceWidget.style.setProperty('--collapse-progress', progress.toString());
-
-        attendanceWidget.classList.toggle('minimized', progress > 0.01);
-    };
-
-    scrollableCards.addEventListener('scroll', function() {
-        if (scheduled) return;
-        scheduled = true;
-        requestAnimationFrame(() => {
-            updateCollapseState();
-            scheduled = false;
-        });
-    });
-
-    updateCollapseState();
-}
+// --- SCROLL MINIMIZE CARD LOGIC REMOVED ---
 
 function initDragScroll() {
     const scrollableCards = document.querySelector('.scrollable-cards');
@@ -180,7 +151,6 @@ function toggleSubmenu(btn) {
 function initHome() {
     populateRegularisation();
     updateClock();
-    initScrollMinimize();
     initDragScroll();
     initToggleState();
     updateCurrentTime();
@@ -294,13 +264,13 @@ function mockPunchIn() {
     btn.innerHTML = '<i data-lucide="loader-2" class="lucide" style="animation: spin 1s linear infinite;"></i> Processing...';
     btn.style.opacity = '0.9';
     btn.style.pointerEvents = 'none';
-    lucide.createIcons();
+    
     
     setTimeout(() => {
         // Confirmation State
         btn.innerHTML = '<i data-lucide="check" class="lucide"></i> Attendance Marked';
         btn.style.backgroundColor = '#2563EB';
-        lucide.createIcons();
+        
 
         setTimeout(() => {
             closeBottomSheet();
@@ -321,7 +291,7 @@ function mockPunchIn() {
             mainBtn.classList.add('btn-primary');
             mainBtn.classList.remove('btn-dark');
             
-            lucide.createIcons();
+            
             
             // Restore button state for next time
             setTimeout(() => {
@@ -329,7 +299,7 @@ function mockPunchIn() {
                 btn.style.backgroundColor = originalBg;
                 btn.style.opacity = '1';
                 btn.style.pointerEvents = 'auto';
-                lucide.createIcons();
+                
             }, 800);
         }, 1200);
     }, 1000);
@@ -388,7 +358,7 @@ function toggleAccordion(btn) {
         if (card) card.classList.add('open');
         chevron.style.transform = 'rotate(180deg)';
     }
-    lucide.createIcons();
+    
 }
 
 function updateSidebarActiveLink(activeId) {
@@ -457,7 +427,7 @@ function goToProfile() {
     document.getElementById('home-screen').classList.remove('active');
     document.getElementById('profile-screen').classList.add('active');
     updateSidebarActiveLink('nav-profile');
-    lucide.createIcons();
+    
     
     // Setup drag scroll for profile screen if needed, using the existing initDragScroll on its scrollable-cards
     const profCards = document.querySelector('#profile-screen .scrollable-cards');
@@ -495,7 +465,7 @@ function goToHome() {
     document.getElementById('profile-screen').classList.remove('active');
     document.getElementById('home-screen').classList.add('active');
     updateSidebarActiveLink('nav-dashboard');
-    lucide.createIcons();
+    
     
     // restore default spacing safety for home screen
     const homeCards = document.querySelector('#home-screen .scrollable-cards');
