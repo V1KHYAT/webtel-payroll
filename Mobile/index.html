@@ -2458,44 +2458,78 @@
                                     </div>
                                 </div>
                             </div>
+            <div data-user="2">
+                        <div class="custom-report-card crc-yellow">
+                            <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
+                                <div class="crc-header-left">
+                                    <div>
+                                        <div class="crc-title">OD Tour</div>
+                                        <div class="crc-subtitle">Applied on 02 Jun 2026</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="crc-pill yellow">Still Pending</div>
+                                    <div class="expand-chevron"><iconify-icon icon="lucide:chevron-down"></iconify-icon></div>
+                                </div>
+                            </div>
+                            
+                            <div class="crc-expanded-content">
+                                <div style="height: 16px;"></div>
+                                <div class="crc-data-box yellow">
+                                    <div class="crc-data-col">
+                                        <span class="crc-data-label">Date</span>
+                                        <span class="crc-data-value">02 May 2026</span>
+                                    </div>
+                                    <div class="crc-data-col" style="padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                        <span class="crc-data-label">Time</span>
+                                        <span class="crc-data-value" style="font-weight: 700;">07:29 AM – 09:29 AM</span>
+                                    </div>
+                                    <div class="crc-data-col" style="padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                        <span class="crc-data-label">Remarks</span>
+                                        <span class="crc-data-value" style="line-height: 1.4;">Test</span>
+                                    </div>
+                                </div>
+                                
+                                <div style="border-top: 1px solid var(--color-border); padding-top: 16px; margin-top: 16px; display: flex; justify-content: flex-end;">
+                                    <button class="crc-btn-delete">
+                                        <iconify-icon icon="lucide:trash-2" style="font-size: 18px;"></iconify-icon> Delete
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-    </div>
-    <div data-user="2" style=" padding: 16px; display:flex; flex-direction:column; gap:12px;">
-        
-<div class="custom-report-card" style="padding: 16px;">
-    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
-    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Emplyoyee Code: sael001</div>
-    
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">OD</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Applied:</span><span class="info-val">02/06/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">02/05/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">02/05/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">In Time:</span><span class="info-val">07:29</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Out Time:</span><span class="info-val">09:29</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">Test</span></div>
-    
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; font-size:13px; font-weight:700;">
-        <div style="display:flex; align-items:center; gap:8px;">
-            <span>Status:</span> <span style="background:rgba(59,130,246,0.1); border:1px solid #3b82f6; color:#3b82f6; border-radius:16px; padding:4px 12px; font-weight:600;">Still Pending</span>
-        </div>
-        <button class="ghost-btn" style="color:#ef4444; border:1px solid #ef4444; border-radius:6px; padding:4px 12px; font-size:12px; font-weight:600; height:auto;">Delete</button>
-    </div>
-</div>
-<div class="custom-report-card" style="padding: 16px;">
-    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
-    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Emplyoyee Code: sael001</div>
-    
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">OD</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Applied:</span><span class="info-val">30/03/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">30/03/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">30/03/2026</span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">In Time:</span><span class="info-val"></span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Out Time:</span><span class="info-val"></span></div>
-    <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">yj</span></div>
-    
-    <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
-        <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
+                        <div class="custom-report-card crc-green">
+                            <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
+                                <div class="crc-header-left">
+                                    <div>
+                                        <div class="crc-title">OD Tour</div>
+                                        <div class="crc-subtitle">Applied on 30 Mar 2026</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="crc-pill green">
+                                        <span>Approved</span>
+                                        <span class="crc-pill-sub">by Manager</span>
+                                    </div>
+                                    <div class="expand-chevron"><iconify-icon icon="lucide:chevron-down"></iconify-icon></div>
+                                </div>
+                            </div>
+                            
+                            <div class="crc-expanded-content">
+                                <div style="height: 16px;"></div>
+                                <div class="crc-data-box gray">
+                                    <div class="crc-data-col">
+                                        <span class="crc-data-label">Date</span>
+                                        <span class="crc-data-value">30 Mar 2026</span>
+                                    </div>
+                                    <div class="crc-data-col" style="padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                        <span class="crc-data-label">Remarks</span>
+                                        <span class="crc-data-value" style="line-height: 1.4;">yj</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </div>pan>
     </div>
 </div>
 
@@ -2680,36 +2714,71 @@
     
 
 
-<div data-user="2" style="padding-top: 8px; display:flex; flex-direction:column; gap:16px;">
-    <div class="custom-report-card" style="padding: 16px; margin-bottom: 12px;">
-        <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
-        <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
-        
-        <div class="info-row"><span class="info-label" style="font-weight:600;">No of Leave:</span><span class="info-val">0.5</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">Privilege Leave</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">03/04/2026</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">03/04/2026</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">uu</span></div>
-        
-        <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
-            <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
-        </div>
+    <div data-user="2">
+                        <!-- Card 1 -->
+                        <div class="custom-report-card crc-green">
+                            <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
+                                <div class="crc-header-left">
+                                    <div class="crc-icon-box green"><iconify-icon icon="lucide:check-circle"></iconify-icon></div>
+                                    <div>
+                                        <div class="crc-title">Privilege Leave</div>
+                                        <div class="crc-subtitle">0.5 Days</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="crc-pill green">
+                                        <span>Approved</span>
+                                    </div>
+                                    <div class="expand-chevron"><iconify-icon icon="lucide:chevron-down"></iconify-icon></div>
+                                </div>
+                            </div>
+                            <div class="crc-expanded-content">
+                                <div style="height: 16px;"></div>
+                                <div class="crc-data-box gray">
+                                    <div class="crc-data-col">
+                                        <span class="crc-data-label">Duration</span>
+                                        <span class="crc-data-value">03 Apr 2026 – 03 Apr 2026</span>
+                                    </div>
+                                    <div class="crc-data-col" style="padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                        <span class="crc-data-label">Remarks</span>
+                                        <span class="crc-data-value" style="line-height: 1.4;">uu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="custom-report-card crc-green">
+                            <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
+                                <div class="crc-header-left">
+                                    <div class="crc-icon-box green"><iconify-icon icon="lucide:check-circle"></iconify-icon></div>
+                                    <div>
+                                        <div class="crc-title">Privilege Leave</div>
+                                        <div class="crc-subtitle">1 Day</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div class="crc-pill green">
+                                        <span>Approved</span>
+                                    </div>
+                                    <div class="expand-chevron"><iconify-icon icon="lucide:chevron-down"></iconify-icon></div>
+                                </div>
+                            </div>
+                            <div class="crc-expanded-content">
+                                <div style="height: 16px;"></div>
+                                <div class="crc-data-box gray">
+                                    <div class="crc-data-col">
+                                        <span class="crc-data-label">Duration</span>
+                                        <span class="crc-data-value">02 Apr 2026 – 02 Apr 2026</span>
+                                    </div>
+                                    <div class="crc-data-col" style="padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                        <span class="crc-data-label">Remarks</span>
+                                        <span class="crc-data-value" style="line-height: 1.4;">hh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
     </div>
-    <div class="custom-report-card" style="padding: 16px; margin-bottom: 12px;">
-        <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
-        <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
-        
-        <div class="info-row"><span class="info-label" style="font-weight:600;">No of Leave:</span><span class="info-val">1.0</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">Privilege Leave</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">02/04/2026</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">02/04/2026</span></div>
-        <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">hh</span></div>
-        
-        <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
-            <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
-        </div>
-    </div>
-</div>
 </main>
                 </div>
 
