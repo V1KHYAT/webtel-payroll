@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Pearls</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="../../index.css">
+  <script src="../main.js" defer></script>
+</head>
+<body>
+
+  <!-- MOBILE TOP BAR -->
+  <div class="mobile-topbar">
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
+      <i class="ph ph-list"></i>
+    </button>
+    <div class="mobile-topbar-title" id="mobile-page-name"></div>
+  </div>
+
+  <!-- SIDEBAR BACKDROP -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMobileMenu()"></div>
+
+  <!-- SIDEBAR COLUMN: Two Floating Bento Boxes -->
+  <div class="sidebar-column">
+
+  <!-- BOX 1: Navigation -->
+  <aside class="notion-sidebar">
+    <div class="notion-brand"><div><i class="ph ph-squares-four" style="font-size:22px;"></i> HR Pearls<small>Payroll Management</small></div></div>
+    
+    <nav class="notion-nav">
+      
+      <!-- Dashboard -->
+      <a href="home.html" id="nav-home">
+        <i class="ph ph-squares-four"></i> Dashboard
+      </a>
+
+      <!-- Self Service (expandable) -->
+      <a href="#" onclick="toggleSection('selfservice', this)" id="nav-selfservice">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-user-circle"></i> Self Service</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-selfservice" style="display:none;">
+        <div class="notion-group">Requests</div>
+        <a href="view-holiday.html"><i class="ph ph-calendar-blank"></i> Select Your Holiday</a>
+        <a href="view-compoff.html"><i class="ph ph-clock-counter-clockwise"></i> Assign Compensatory Off</a>
+        <a href="view-loan.html"><i class="ph ph-credit-card"></i> Loan And Advance Request</a>
+        <div class="notion-group">Help & Docs</div>
+        <a href="view-suggestions.html"><i class="ph ph-chat-circle-text"></i> Send Your Suggestions</a>
+        <a href="view-helpdesk.html"><i class="ph ph-question"></i> Ticket Help Desk</a>
+        <a href="view-documents.html"><i class="ph ph-folder-open"></i> Upload Documents</a>
+      </div>
+
+      <!-- HR Admin (expandable) -->
+      <a href="#" onclick="toggleSection('admin', this)" id="nav-admin">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-shield-check"></i> HR Admin</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-admin" style="display:none;">
+        <div class="notion-group">Operations</div>
+        <a href="view-activities.html"><i class="ph ph-trophy"></i> Extra Curricular Activities</a>
+        <a href="view-shift-import.html"><i class="ph ph-file-arrow-up"></i> Assign Shift Through Import</a>
+        <a href="view-assign-shift.html"><i class="ph ph-calendar-dots"></i> Assign Shift To Employee's</a>
+        <a href="view-weekly-off.html"><i class="ph ph-calendar-check"></i> Assign Weekly Off To Employee's</a>
+        <div class="notion-group">Performance</div>
+        <a href="view-category-master.html"><i class="ph ph-bookmark-simple"></i> Category Master</a>
+        <a href="view-category-param.html"><i class="ph ph-sliders-horizontal"></i> Create Category Parameter</a>
+        <a href="view-appraisal.html"><i class="ph ph-clipboard-text"></i> Create Period, Appraisee And Appraiser</a>
+        <a href="view-shortlist.html"><i class="ph ph-star-half"></i> Shortlist And Rate Candidate</a>
+      </div>
+
+      <!-- Details (expandable) -->
+      <a href="#" onclick="toggleSection('details', this)" id="nav-details">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-list-dashes"></i> Details</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-details" style="display:none;">
+        <a href="details-outduty.html"><i class="ph ph-airplane-tilt"></i> Outdoor And Tour Request</a>
+        <a href="details.html"><i class="ph ph-calendar-minus"></i> Leave Requisition</a>
+        <a href="details-references.html"><i class="ph ph-users-three"></i> My References</a>
+        <a href="details-accident.html"><i class="ph ph-first-aid-kit"></i> Accident Details</a>
+        <a href="details-income.html"><i class="ph ph-currency-inr"></i> Other Income Details</a>
+        <a href="details-punch.html"><i class="ph ph-fingerprint"></i> Team Punch Detail</a>
+        <a href="details-activity.html"><i class="ph ph-list-checks"></i> My Activity List</a>
+        <a href="details-salary-pf.html"><i class="ph ph-receipt"></i> My Salary Slip With PF And Loan Details</a>
+        <a href="details-salary-tax.html"><i class="ph ph-calculator"></i> My Salary Slip With Tax Details</a>
+        <a href="details-salary-leave.html"><i class="ph ph-note"></i> Salary Slip With / Without Leave Details</a>
+      </div>
+
+      <!-- Approve Requisitions (expandable) -->
+      <a href="#" onclick="toggleSection('approve', this)" id="nav-approve">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-check-circle"></i> Approve Requisitions</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-approve" style="display:none;">
+        <a href="approve-outduty.html"><i class="ph ph-paper-plane-tilt"></i> Approve Outduty And Tour Request</a>
+        <a href="approve-leave.html"><i class="ph ph-calendar-check"></i> Online Leave Approval</a>
+        <a href="approve-reimbursement.html"><i class="ph ph-credit-card"></i> Reimbursement Approval</a>
+        <a href="approve-expense.html"><i class="ph ph-wallet"></i> Expense Approval</a>
+        <a href="approve-exit.html"><i class="ph ph-sign-out"></i> Exit Interview Approval</a>
+        <a href="approve-clearance.html"><i class="ph ph-seal-check"></i> Clearance Approval</a>
+        <a href="approve-overtime.html"><i class="ph ph-clock"></i> Overtime Approval</a>
+        <a href="approve-resignation.html"><i class="ph ph-user-minus"></i> Employee Resignation Approval</a>
+        <a href="approve-objective.html"><i class="ph ph-clipboard-text"></i> Approval Objective Setting Form (Manager)</a>
+        <a href="approve-overtime-associate.html"><i class="ph ph-clock"></i> Overtime Request (Associate)</a>
+        <a href="approve-temp-overtime.html"><i class="ph ph-hourglass-medium"></i> Temporary Overtime Approval/Rejection (Associate)</a>
+        <a href="approve-final-overtime.html"><i class="ph ph-hourglass-low"></i> Final Overtime Approval/Rejection (Associate)</a>
+        <a href="approve-incentive.html"><i class="ph ph-diamond"></i> Incentive Approval (Director)</a>
+      </div>
+
+      <!-- Reports (expandable) -->
+      <a href="#" onclick="toggleSection('reports', this)" id="nav-reports">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-chart-bar"></i> Reports</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-reports" style="display:none;">
+        <a href="report-attendance.html"><i class="ph ph-clipboard-text"></i> My Daily Attendance</a>
+        <a href="report-tickets.html"><i class="ph ph-envelope-simple"></i> Search \\ Respond \\ Export Tickets</a>
+        <a href="report-roster.html"><i class="ph ph-list-checks"></i> Task List/Roster</a>
+        <a href="report-objective.html"><i class="ph ph-pencil-simple-line"></i> Fixation - Objective Setting Form (Employee)</a>
+        <a href="report-assessment.html"><i class="ph ph-file-text"></i> Employee Assessment Form</a>
+        <a href="report-feedback.html"><i class="ph ph-chat-circle-dots"></i> Trainer's Feedback Form</a>
+      </div>
+
+      <!-- Investment Declaration -->
+      <a href="investment.html" id="nav-investment">
+        <i class="ph ph-chart-line-up"></i> Investment Declaration
+      </a>
+    </nav>
+  </aside>
+
+  <!-- BOX 2: Profile Bento -->
+  <div class="profile-bento" onclick="window.location.href='view.html'" style="cursor: pointer;">
+    <div class="profile-bento-inner">
+      <div class="profile-bento-avatar">SS</div>
+      <div class="profile-bento-info">
+        <div class="profile-bento-name">Surender Singh</div>
+        <div class="profile-bento-role">Senior Manager &bull; Store & Purchase</div>
+      </div>
+    </div>
+    <div class="profile-bento-meta">
+      <div class="profile-bento-meta-item"><i class="ph ph-identification-badge"></i> #100003</div>
+      <div class="profile-bento-meta-item"><i class="ph ph-building"></i> Store & Purchase</div>
+    </div>
+    <div class="profile-bento-link">View Full Profile <i class="ph ph-arrow-right"></i></div>
+  </div>
+
+  </div> <!-- /.sidebar-column -->
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="app-wrapper">
+    <main id="app-content">
+
+
+
+<div class="page-title" style="display:flex; justify-content:space-between; align-items:flex-end;">
+  <div>
+    <h2>Investment Declaration</h2>
+    <div class="page-subtitle">Submit your tax-saving investments for the financial year</div>
+  </div>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <div style="display:flex; background:var(--bg-sidebar); border:1px solid var(--border-color); border-radius:30px; padding:4px;">
+      <button class="btn-ghost" style="border-radius:20px; padding:4px 16px; font-weight:600; font-size:12px; background:var(--primary-subtle); color:var(--primary-color);">Old Regime</button>
+      <button class="btn-ghost" style="border-radius:20px; padding:4px 16px; font-weight:500; font-size:12px; color:var(--text-secondary);">New Regime</button>
+    </div>
+    <div style="width:1px; height:24px; background:var(--border-color); margin:0 4px;"></div>
+    <button class="btn-secondary" style="font-size:12px; padding:6px 12px;"><i class="ph ph-clock-counter-clockwise"></i> Check Status</button>
+    <button class="btn-secondary" style="font-size:12px; padding:6px 12px;"><i class="ph ph-file-text"></i> View Computed Tax</button>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:24px; overflow:visible;">
+  
+  <!-- Wizard Progress Bar -->
+  <div style="display:flex; justify-content:space-between; padding:24px 40px; border-bottom:1px solid var(--border-light); position:relative;">
+    
+    <!-- Step 1 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer;" onclick="switchTab('inv-step-1', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--primary-color); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px; box-shadow:0 0 0 4px var(--primary-light);">1</div>
+      <div style="font-size:12px; font-weight:600; color:var(--text-main);">Section 80C</div>
+    </div>
+    
+    <!-- Step 2 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-2', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">2</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">HRA / Rent</div>
+    </div>
+    
+    <!-- Step 3 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-3', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">3</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">Other Income</div>
+    </div>
+    
+    <!-- Step 4 -->
+    <div style="display:flex; flex-direction:column; align-items:center; position:relative; z-index:2; flex:1; cursor:pointer; opacity:0.5;" onclick="switchTab('inv-step-4', this)">
+      <div style="width:32px; height:32px; border-radius:50%; background:var(--bg-app); border:2px solid var(--border-color); color:var(--text-secondary); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:8px;">4</div>
+      <div style="font-size:12px; font-weight:500; color:var(--text-secondary);">Review & Submit</div>
+    </div>
+    
+    <!-- Connecting Line -->
+    <div style="position:absolute; top:40px; left:12%; right:12%; height:2px; background:var(--border-color); z-index:1;"></div>
+    <div style="position:absolute; top:40px; left:12%; width:25%; height:2px; background:var(--primary-color); z-index:1;"></div>
+  </div>
+
+  <div style="padding:0;">
+    
+    <!-- ==================== STEP 1 ==================== -->
+    <div id="inv-step-1" class="tab-panel" style="display:block;">
+      <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-shield-check" style="color:var(--primary-color); margin-right:8px;"></i>Chapter VI-A Details</h3>
+        <div class="badge badge-blue">Max limit: ₹1,50,000</div>
+      </div>
+      
+      <div class="table-wrapper" style="max-height: 500px; overflow-y:auto; border-radius:0;">
+        <table class="table" style="margin:0;">
+          <thead style="position:sticky; top:0; z-index:10;">
+            <tr>
+              <th style="width:60px;">S.No.</th>
+              <th>Description</th>
+              <th style="width:200px;">Requested Amount (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Core 80C to 80CCD -->
+            <tr><td>1</td><td><div style="font-weight:500; color:var(--text-main);">Section 80C</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>2</td><td><div style="font-weight:500; color:var(--text-main);">Section 80CCC</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>3</td><td><div style="font-weight:500; color:var(--text-main);">80CCD(1B)</div>Additional Employee Contribution to New Pension Scheme - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>4</td><td><div style="font-weight:500; color:var(--text-main);">NPS Tier-I</div>Employer contribution comes u/s 80CCD(2) (Max 10% of salary)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>5</td><td><div style="font-weight:500; color:var(--text-main);">Rajiv Gandhi Equity Saving Scheme</div>Section 80CCG - 50% deduction to new retail investors - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Health 80D variations -->
+            <tr><td>6</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Self, Spouse and Children - upto Rs. 25000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>7</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Parent (Age < 60) - upto Rs. 25000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>8</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Mediclaim Premium of Parent (Sr. Citizen) - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>9</td><td><div style="font-weight:500; color:var(--text-main);">80D</div>Medical Expenditure for Parent (Very Sr. Citizen) - upto Rs. 50000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Disability & Medical 80DD / 80DDB -->
+            <tr><td>10</td><td><div style="font-weight:500; color:var(--text-main);">80DD</div>Maintenance/Medical treatment of dependent family member with disability (<80%) - upto Rs. 75000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>11</td><td><div style="font-weight:500; color:var(--text-main);">80DD</div>Maintenance/Medical treatment of dependent family member with disability (>80%) - upto Rs. 125000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>12</td><td><div style="font-weight:500; color:var(--text-main);">Section 80DDA</div>Handicap Dependent - upto Rs. 100000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>13</td><td><div style="font-weight:500; color:var(--text-main);">80DDB</div>Medical treatment of specified diseases (Age < 60) - upto Rs. 40000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>14</td><td><div style="font-weight:500; color:var(--text-main);">80DDB</div>Medical treatment of specified diseases (Sr. Citizen) - upto Rs. 100000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Education, Interest & Disability -->
+            <tr><td>15</td><td><div style="font-weight:500; color:var(--text-main);">Section 80E</div>Payment of Interest on Loan taken for Higher Education</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>16</td><td><div style="font-weight:500; color:var(--text-main);">Section 80EEA</div>upto Rs. 150000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>17</td><td><div style="font-weight:500; color:var(--text-main);">Section 80TTA</div>Interest on Savings Bank Account - upto Rs. 10000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>18</td><td><div style="font-weight:500; color:var(--text-main);">80U</div>Deduction in case of self being totally blind or physically handicapped (40%-80%) - upto Rs. 75000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>19</td><td><div style="font-weight:500; color:var(--text-main);">80U</div>Deduction in case of self being totally blind or physically handicapped (>80%) - upto Rs. 125000/-</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            
+            <!-- Section 80C Breakdowns -->
+            <tr><td colspan="3" style="background:#f8f9fb; font-weight:600; padding:12px 16px;">Under Section 80C</td></tr>
+            <tr><td>20a</td><td style="padding-left:32px;">Deposit in Public Provident Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20b</td><td style="padding-left:32px;">Approved Superannuation Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20c</td><td style="padding-left:32px;">Pension Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20d</td><td style="padding-left:32px;">LIC Direct</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20e</td><td style="padding-left:32px;">Payment of Unit Linked Insurance plan (ULIP)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20f</td><td style="padding-left:32px;">Purchase of National Saving Certificates</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20g</td><td style="padding-left:32px;">Payment of tuition fees for any of two children</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20h</td><td style="padding-left:32px;">FD above 5 yr</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20i</td><td style="padding-left:32px;">Mutual Fund</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20j</td><td style="padding-left:32px;">Post office Savings Bank (Cumulative time deposit)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20k</td><td style="padding-left:32px;">Others (Please provide details)</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20l</td><td style="padding-left:32px;">Repayment of Principal Amount of Housing Loan</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+            <tr><td>20m</td><td style="padding-left:32px;">ELSS</td><td><input type="number" class="form-control" placeholder="0.00" style="padding:6px 12px;"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 2 ==================== -->
+    <div id="inv-step-2" class="tab-panel" style="display:none;">
+      <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+        <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-house-line" style="color:var(--primary-color); margin-right:8px;"></i>House Rent Paid</h3>
+      </div>
+      
+      <div style="padding:24px;">
+        <div class="table-wrapper" style="margin-bottom:16px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Rent/Month</th>
+                <th>City</th>
+                <th>Landlord Name</th>
+                <th>Landlord PAN</th>
+                <th style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="month" class="form-control" style="padding:6px;"></td>
+                <td><input type="month" class="form-control" style="padding:6px;"></td>
+                <td><input type="number" class="form-control" placeholder="0.00" style="padding:6px;"></td>
+                <td><select class="form-control" style="padding:6px;"><option>Delhi</option><option>Mumbai</option><option>Other</option></select></td>
+                <td><input type="text" class="form-control" placeholder="Name" style="padding:6px;"></td>
+                <td><input type="text" class="form-control" placeholder="PAN" style="padding:6px;"></td>
+                <td style="text-align:center;"><button class="btn-ghost" style="color:var(--accent-red); padding:4px;"><i class="ph ph-trash"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-secondary" style="font-size:12px; padding:6px 16px;"><i class="ph ph-plus"></i> Add Row</button>
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 3 ==================== -->
+    <div id="inv-step-3" class="tab-panel" style="display:none;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+        
+        <!-- Left Col -->
+        <div style="border-right:1px solid var(--border-light);">
+          <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+            <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-coins" style="color:var(--primary-color); margin-right:8px;"></i>Other Income</h3>
+          </div>
+          <div style="padding:24px;">
+            <div class="form-group"><label>Capital Gain</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Income From House Property</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Interest earned through savings bank</label><input type="number" class="form-control"></div>
+            <div class="form-group"><label>Loss from House Property</label><input type="number" class="form-control"></div>
+          </div>
+        </div>
+        
+        <!-- Right Col -->
+        <div>
+          <div style="padding:20px 24px; background:var(--bg-app); border-bottom:1px solid var(--border-light);">
+            <h3 style="margin:0; font-size:15px; font-weight:600; color:var(--text-main);"><i class="ph ph-bank" style="color:var(--primary-color); margin-right:8px;"></i>Housing Loan Details</h3>
+          </div>
+          <div style="padding:24px;">
+            <div class="badge badge-orange" style="margin-bottom:20px; display:inline-flex;">Mandatory if "Interest Paid on Housing Loan" is claimed</div>
+            <div class="form-group"><label>Date of Possession</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Lender PAN</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Lender Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Lender Address</label><textarea class="form-control" style="min-height:60px;"></textarea></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- ==================== STEP 4 ==================== -->
+    <div id="inv-step-4" class="tab-panel" style="display:none;">
+      <div style="padding:40px; text-align:center;">
+        <div style="width:80px; height:80px; border-radius:50%; background:var(--primary-light); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-size:40px; margin:0 auto 24px;">
+          <i class="ph ph-check-circle"></i>
+        </div>
+        <h3 style="font-size:20px; font-weight:700; color:var(--text-main); margin-bottom:8px;">Ready to Submit</h3>
+        <p style="color:var(--text-muted); max-width:400px; margin:0 auto 32px; line-height:1.5;">You can submit your investment declaration a maximum of 10 times. This is submission #1.</p>
+        
+        <div style="display:flex; justify-content:center; gap:16px;">
+          <button class="btn-secondary" style="padding:10px 24px;"><i class="ph ph-printer"></i> Print Preview</button>
+          <button class="btn-primary" style="padding:10px 32px;"><i class="ph ph-paper-plane-tilt"></i> FINAL SUBMISSION</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- Wizard Footer Controls -->
+  <div style="padding:20px 24px; border-top:1px solid var(--border-light); background:var(--bg-app); border-radius: 0 0 var(--radius-xl) var(--radius-xl); display:flex; justify-content:space-between; align-items:center;">
+    <button class="btn-secondary" style="padding:8px 24px;" onclick="prevTab()"><i class="ph ph-arrow-left"></i> Previous</button>
+    <div style="display:flex; gap:12px;">
+      <button class="btn-secondary" style="padding:8px 24px;">Reset Form</button>
+      <button class="btn-primary" id="save-next-btn" style="padding:8px 32px;" onclick="nextTab()">Save & Next <i class="ph ph-arrow-right"></i></button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let currentStep = 1;
+
+  function switchTab(tabId, el) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+    
+    // Reset opacities
+    const steps = el.parentElement.querySelectorAll('div[onclick]');
+    steps.forEach((s, idx) => {
+      s.style.opacity = '0.5';
+      const circle = s.querySelector('div');
+      circle.style.background = 'var(--bg-app)';
+      circle.style.color = 'var(--text-secondary)';
+      circle.style.border = '2px solid var(--border-color)';
+      circle.style.boxShadow = 'none';
+      if (s === el) currentStep = idx + 1;
+    });
+    
+    // Set active
+    el.style.opacity = '1';
+    const activeCircle = el.querySelector('div');
+    activeCircle.style.background = 'var(--primary-color)';
+    activeCircle.style.color = '#fff';
+    activeCircle.style.border = 'none';
+    activeCircle.style.boxShadow = '0 0 0 4px var(--primary-light)';
+    
+    // Update footer button
+    const nextBtn = document.getElementById('save-next-btn');
+    if (currentStep === 4) {
+      nextBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = 'block';
+    }
+  }
+  
+  function nextTab() {
+    if (currentStep < 4) {
+      const nextTabEl = document.querySelector(`div[onclick*="inv-step-${currentStep + 1}"]`);
+      if (nextTabEl) nextTabEl.click();
+    }
+  }
+
+  function prevTab() {
+    if (currentStep > 1) {
+      const prevTabEl = document.querySelector(`div[onclick*="inv-step-${currentStep - 1}"]`);
+      if (prevTabEl) prevTabEl.click();
+    }
+  }
+</script>
+
+    
+    
+    
+    </main>
+  </div>
+
+
+  
+
+  <script>
+    var pageNameMap = {
+  'home': 'Dashboard',
+  'view': 'My Profile',
+  'view-holiday': 'Select Your Holiday',
+  'view-compoff': 'Assign Compensatory Off',
+  'view-loan': 'Loan And Advance Request',
+  'view-suggestions': 'Send Your Suggestions',
+  'view-helpdesk': 'Ticket Help Desk',
+  'view-documents': 'Upload Documents',
+  'view-activities': 'Extra Curricular Activities',
+  'view-shift-import': 'Assign Shift Through Import',
+  'view-assign-shift': 'Assign Shift To Employees',
+  'view-weekly-off': 'Assign Weekly Off',
+  'view-category-master': 'Category Master',
+  'view-category-param': 'Create Category Parameter',
+  'view-appraisal': 'Appraisee And Appraiser',
+  'view-shortlist': 'Shortlist And Rate Candidate',
+  'details-outduty': 'Outdoor And Tour Request',
+  'details': 'Leave Requisition',
+  'details-references': 'My References',
+  'details-accident': 'Accident Details',
+  'details-income': 'Other Income Details',
+  'details-punch': 'Team Punch Detail',
+  'details-activity': 'My Activity List',
+  'details-salary-pf': 'Salary Slip With PF',
+  'details-salary-tax': 'Salary Slip With Tax',
+  'details-salary-leave': 'Salary Slip With Leave',
+  'approve': 'Approve Requisitions',
+  'approve-outduty': 'Approve Outduty Request',
+  'approve-leave': 'Online Leave Approval',
+  'approve-reimbursement': 'Reimbursement Approval',
+  'approve-expense': 'Expense Approval',
+  'approve-exit': 'Exit Interview Approval',
+  'approve-clearance': 'Clearance Approval',
+  'approve-overtime': 'Overtime Approval',
+  'approve-resignation': 'Resignation Approval',
+  'approve-objective': 'Objective Setting',
+  'approve-overtime-associate': 'Overtime Request',
+  'approve-temp-overtime': 'Temp Overtime Approval',
+  'approve-final-overtime': 'Final Overtime Approval',
+  'approve-incentive': 'Incentive Approval',
+  'reports': 'Reports',
+  'report-attendance': 'My Daily Attendance',
+  'report-tickets': 'Search Tickets',
+  'report-roster': 'Task List / Roster',
+  'report-objective': 'Objective Setting',
+  'report-assessment': 'Employee Assessment',
+  'report-feedback': 'Trainers Feedback',
+  'investment': 'Investment Declaration'
+};
+
+    // --- ACTIVE STATE, MOBILE MENU, THEME ---
+    (function() {
+      var currentFile = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+      
+      // Set page name in mobile top bar
+      var displayName = pageNameMap[currentFile] || currentFile;
+      var pageNameEl = document.getElementById('mobile-page-name');
+      if (pageNameEl) {
+        var activeLnk = document.querySelector('.notion-nav a[href*="' + currentFile + '.html"]') || document.querySelector('.notion-nav a[href="' + currentFile + '"]');
+        var iconHtml = activeLnk && activeLnk.querySelector('i') ? activeLnk.querySelector('i').outerHTML : (activeLnk && activeLnk.querySelector('.ph') ? activeLnk.querySelector('.ph').outerHTML : '');
+        if (iconHtml) {
+          pageNameEl.innerHTML = iconHtml + ' <span>' + displayName + '</span>';
+          pageNameEl.style.color = 'var(--primary-color)';
+          pageNameEl.style.display = 'flex';
+          pageNameEl.style.alignItems = 'center';
+          pageNameEl.style.gap = '8px';
+        } else {
+          pageNameEl.textContent = displayName;
+        }
+      }
+      document.title = 'HR Pearls \u2014 ' + displayName;
+
+      // Highlight active sidebar link
+      var allLinks = document.querySelectorAll('.notion-nav a[href]');
+      allLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && href.replace('.html', '') === currentFile) {
+          link.classList.add('active');
+          var submenu = link.closest('.notion-submenu');
+          if (submenu) {
+            submenu.style.display = 'block';
+            var prev = submenu.previousElementSibling;
+            while (prev && prev.tagName !== 'A') prev = prev.previousElementSibling;
+            if (prev) {
+              prev.classList.add('active');
+              var chev = prev.querySelector('.chevron-icon');
+              if (chev) chev.classList.add('chevron-expanded');
+            }
+          }
+        }
+      });
+
+      // Restore theme
+      var savedColor = localStorage.getItem('hrp-theme-color');
+      var themeMap = {
+        '#4f46e5': { hover: '#4338ca', subtle: 'rgba(79,70,229,0.08)', light: '#e0e7ff' },
+        '#0ea5e9': { hover: '#0284c7', subtle: 'rgba(14,165,233,0.08)', light: '#e0f2fe' },
+        '#3b82f6': { hover: '#2563eb', subtle: 'rgba(59,130,246,0.08)', light: '#dbeafe' },
+        '#7c3aed': { hover: '#6d28d9', subtle: 'rgba(124,58,237,0.08)', light: '#ede9fe' },
+        '#059669': { hover: '#047857', subtle: 'rgba(5,150,105,0.08)', light: '#d1fae5' },
+        '#0891b2': { hover: '#0e7490', subtle: 'rgba(8,145,178,0.08)', light: '#cffafe' },
+        '#e11d48': { hover: '#be123c', subtle: 'rgba(225,29,72,0.08)', light: '#ffe4e6' },
+        '#334155': { hover: '#1e293b', subtle: 'rgba(51,65,85,0.08)', light: '#e2e8f0' }
+      };
+      if (savedColor && themeMap[savedColor]) {
+        var m = themeMap[savedColor];
+        document.documentElement.style.setProperty('--primary-color', savedColor);
+        document.documentElement.style.setProperty('--primary-hover', m.hover);
+        document.documentElement.style.setProperty('--primary-subtle', m.subtle);
+        document.documentElement.style.setProperty('--primary-light', m.light);
+      }
+    })();
+
+    function toggleMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      var isOpen = sidebar.classList.contains('mobile-open');
+      sidebar.classList.toggle('mobile-open');
+      backdrop.classList.toggle('visible');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+      // Toggle icon between list and X
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = isOpen ? 'ph ph-list' : 'ph ph-x';
+    }
+    function closeMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      sidebar.classList.remove('mobile-open');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = 'ph ph-list';
+    }
+  </script>
+</body>
+</html>

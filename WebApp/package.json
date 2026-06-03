@@ -1,0 +1,15 @@
+{
+  "name": "webtel-hrpearls",
+  "version": "1.0.0",
+  "description": "Webtel HR Pearls — Modern Notion-inspired HR Portal UI Prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.4"
+  }
+}

@@ -1,0 +1,808 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Pearls</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="../../index.css">
+  <script src="../main.js" defer></script>
+</head>
+<body>
+
+  <!-- MOBILE TOP BAR -->
+  <div class="mobile-topbar">
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
+      <i class="ph ph-list"></i>
+    </button>
+    <div class="mobile-topbar-title" id="mobile-page-name"></div>
+  </div>
+
+  <!-- SIDEBAR BACKDROP -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMobileMenu()"></div>
+
+  <!-- SIDEBAR COLUMN: Two Floating Bento Boxes -->
+  <div class="sidebar-column">
+
+  <!-- BOX 1: Navigation -->
+  <aside class="notion-sidebar">
+    <div class="notion-brand"><div><i class="ph ph-squares-four" style="font-size:22px;"></i> HR Pearls<small>Payroll Management</small></div></div>
+    
+    <nav class="notion-nav">
+      
+      <!-- Dashboard -->
+      <a href="home.html" id="nav-home">
+        <i class="ph ph-squares-four"></i> Dashboard
+      </a>
+
+      <!-- Self Service (expandable) -->
+      <a href="#" onclick="toggleSection('selfservice', this)" id="nav-selfservice">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-user-circle"></i> Self Service</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-selfservice" style="display:none;">
+        <div class="notion-group">Requests</div>
+        <a href="view-holiday.html"><i class="ph ph-calendar-blank"></i> Select Your Holiday</a>
+        <a href="view-compoff.html"><i class="ph ph-clock-counter-clockwise"></i> Assign Compensatory Off</a>
+        <a href="view-loan.html"><i class="ph ph-credit-card"></i> Loan And Advance Request</a>
+        <div class="notion-group">Help & Docs</div>
+        <a href="view-suggestions.html"><i class="ph ph-chat-circle-text"></i> Send Your Suggestions</a>
+        <a href="view-helpdesk.html"><i class="ph ph-question"></i> Ticket Help Desk</a>
+        <a href="view-documents.html"><i class="ph ph-folder-open"></i> Upload Documents</a>
+      </div>
+
+      <!-- HR Admin (expandable) -->
+      <a href="#" onclick="toggleSection('admin', this)" id="nav-admin">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-shield-check"></i> HR Admin</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-admin" style="display:none;">
+        <div class="notion-group">Operations</div>
+        <a href="view-activities.html"><i class="ph ph-trophy"></i> Extra Curricular Activities</a>
+        <a href="view-shift-import.html"><i class="ph ph-file-arrow-up"></i> Assign Shift Through Import</a>
+        <a href="view-assign-shift.html"><i class="ph ph-calendar-dots"></i> Assign Shift To Employee's</a>
+        <a href="view-weekly-off.html"><i class="ph ph-calendar-check"></i> Assign Weekly Off To Employee's</a>
+        <div class="notion-group">Performance</div>
+        <a href="view-category-master.html"><i class="ph ph-bookmark-simple"></i> Category Master</a>
+        <a href="view-category-param.html"><i class="ph ph-sliders-horizontal"></i> Create Category Parameter</a>
+        <a href="view-appraisal.html"><i class="ph ph-clipboard-text"></i> Create Period, Appraisee And Appraiser</a>
+        <a href="view-shortlist.html"><i class="ph ph-star-half"></i> Shortlist And Rate Candidate</a>
+      </div>
+
+      <!-- Details (expandable) -->
+      <a href="#" onclick="toggleSection('details', this)" id="nav-details">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-list-dashes"></i> Details</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-details" style="display:none;">
+        <a href="details-outduty.html"><i class="ph ph-airplane-tilt"></i> Outdoor And Tour Request</a>
+        <a href="details.html"><i class="ph ph-calendar-minus"></i> Leave Requisition</a>
+        <a href="details-references.html"><i class="ph ph-users-three"></i> My References</a>
+        <a href="details-accident.html"><i class="ph ph-first-aid-kit"></i> Accident Details</a>
+        <a href="details-income.html"><i class="ph ph-currency-inr"></i> Other Income Details</a>
+        <a href="details-punch.html"><i class="ph ph-fingerprint"></i> Team Punch Detail</a>
+        <a href="details-activity.html"><i class="ph ph-list-checks"></i> My Activity List</a>
+        <a href="details-salary-pf.html"><i class="ph ph-receipt"></i> My Salary Slip With PF And Loan Details</a>
+        <a href="details-salary-tax.html"><i class="ph ph-calculator"></i> My Salary Slip With Tax Details</a>
+        <a href="details-salary-leave.html"><i class="ph ph-note"></i> Salary Slip With / Without Leave Details</a>
+      </div>
+
+      <!-- Approve Requisitions (expandable) -->
+      <a href="#" onclick="toggleSection('approve', this)" id="nav-approve">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-check-circle"></i> Approve Requisitions</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-approve" style="display:none;">
+        <a href="approve-outduty.html"><i class="ph ph-paper-plane-tilt"></i> Approve Outduty And Tour Request</a>
+        <a href="approve-leave.html"><i class="ph ph-calendar-check"></i> Online Leave Approval</a>
+        <a href="approve-reimbursement.html"><i class="ph ph-credit-card"></i> Reimbursement Approval</a>
+        <a href="approve-expense.html"><i class="ph ph-wallet"></i> Expense Approval</a>
+        <a href="approve-exit.html"><i class="ph ph-sign-out"></i> Exit Interview Approval</a>
+        <a href="approve-clearance.html"><i class="ph ph-seal-check"></i> Clearance Approval</a>
+        <a href="approve-overtime.html"><i class="ph ph-clock"></i> Overtime Approval</a>
+        <a href="approve-resignation.html"><i class="ph ph-user-minus"></i> Employee Resignation Approval</a>
+        <a href="approve-objective.html"><i class="ph ph-clipboard-text"></i> Approval Objective Setting Form (Manager)</a>
+        <a href="approve-overtime-associate.html"><i class="ph ph-clock"></i> Overtime Request (Associate)</a>
+        <a href="approve-temp-overtime.html"><i class="ph ph-hourglass-medium"></i> Temporary Overtime Approval/Rejection (Associate)</a>
+        <a href="approve-final-overtime.html"><i class="ph ph-hourglass-low"></i> Final Overtime Approval/Rejection (Associate)</a>
+        <a href="approve-incentive.html"><i class="ph ph-diamond"></i> Incentive Approval (Director)</a>
+      </div>
+
+      <!-- Reports (expandable) -->
+      <a href="#" onclick="toggleSection('reports', this)" id="nav-reports">
+        <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+          <span><i class="ph ph-chart-bar"></i> Reports</span>
+          <i class="ph ph-caret-right chevron-icon" style="font-size:12px; width:auto;"></i>
+        </div>
+      </a>
+      <div class="notion-submenu" id="sub-reports" style="display:none;">
+        <a href="report-attendance.html"><i class="ph ph-clipboard-text"></i> My Daily Attendance</a>
+        <a href="report-tickets.html"><i class="ph ph-envelope-simple"></i> Search \\ Respond \\ Export Tickets</a>
+        <a href="report-roster.html"><i class="ph ph-list-checks"></i> Task List/Roster</a>
+        <a href="report-objective.html"><i class="ph ph-pencil-simple-line"></i> Fixation - Objective Setting Form (Employee)</a>
+        <a href="report-assessment.html"><i class="ph ph-file-text"></i> Employee Assessment Form</a>
+        <a href="report-feedback.html"><i class="ph ph-chat-circle-dots"></i> Trainer's Feedback Form</a>
+      </div>
+
+      <!-- Investment Declaration -->
+      <a href="investment.html" id="nav-investment">
+        <i class="ph ph-chart-line-up"></i> Investment Declaration
+      </a>
+    </nav>
+  </aside>
+
+  <!-- BOX 2: Profile Bento -->
+  <div class="profile-bento" onclick="window.location.href='view.html'" style="cursor: pointer;">
+    <div class="profile-bento-inner">
+      <div class="profile-bento-avatar">SS</div>
+      <div class="profile-bento-info">
+        <div class="profile-bento-name">Surender Singh</div>
+        <div class="profile-bento-role">Senior Manager &bull; Store & Purchase</div>
+      </div>
+    </div>
+    <div class="profile-bento-meta">
+      <div class="profile-bento-meta-item"><i class="ph ph-identification-badge"></i> #100003</div>
+      <div class="profile-bento-meta-item"><i class="ph ph-building"></i> Store & Purchase</div>
+    </div>
+    <div class="profile-bento-link">View Full Profile <i class="ph ph-arrow-right"></i></div>
+  </div>
+
+  </div> <!-- /.sidebar-column -->
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="app-wrapper">
+    <main id="app-content">
+
+
+
+<!-- VIEW > MY PROFILE (merged: Profile + Change Password + Personal Details) -->
+
+<!-- Profile Header -->
+<div class="card" style="padding: 32px; display: flex; gap: 32px; align-items: center; margin-bottom: 24px;">
+  <div style="position: relative;">
+    <img src="https://ui-avatars.com/api/?name=Surender+Singh&background=0284c7&color=fff&size=200" alt="Avatar" style="width: 120px; height: 120px; border-radius: 50%;">
+    <div style="position: absolute; bottom: 0; right: 0; background: var(--accent-green); width: 24px; height: 24px; border-radius: 50%; border: 3px solid #fff;"></div>
+  </div>
+  <div style="flex: 1;">
+    <h2 style="font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Surender Singh</h2>
+    <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Senior Manager  |  Store & Purchase</div>
+    <div style="display: flex; gap: 12px;">
+      <button class="btn-primary" onclick="openModal('edit-profile-modal')"><i class="ph ph-pencil-simple-line"></i> Edit Profile</button>
+      <button class="btn-secondary" onclick="openModal('view-profile-modal')"><i class="ph ph-eye"></i> View Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bento Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+  
+  <!-- Role Information -->
+  <div class="card" style="padding: 24px; margin-bottom: 0;">
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="ph ph-briefcase"></i> Role Information</h3>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Employee No</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"># 100003</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Department</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);">Store & Purchase</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Sub Department</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-muted);">N/A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Information -->
+  <div class="card" style="padding: 24px; margin-bottom: 0;">
+    <h3 style="font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 20px;"><i class="ph ph-user"></i> Personal Data</h3>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Gender</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);">Male</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 12px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Date of Birth</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--text-main);"><i class="ph ph-cake" style="color:var(--accent-orange); margin-right:6px;"></i> 05 Apr 1972</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+        <div style="color: var(--text-secondary); font-size: 13px;">Date of Joining</div>
+        <div style="font-weight: 600; font-size: 13px; color: var(--primary-color);">01 Jun 1998</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COLLAPSIBLE SECTIONS -->
+
+<!-- COLLAPSIBLE SETTINGS LIST -->
+<div class="card" style="padding: 0; overflow: hidden; margin-bottom: 24px;">
+  
+  <!-- Enter Personal Details -->
+  <div style="border-bottom: 1px solid var(--border-light);">
+    <div style="padding: 16px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-app)'" onmouseout="this.style.background='#fff'" onclick="togglePanel('personal-details-panel')">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div style="width:36px; height:36px; border-radius:10px; background:var(--primary-subtle); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-size:18px;"><i class="ph ph-identification-card"></i></div>
+        <div>
+          <h3 style="font-size:14px; font-weight:600; margin:0; color:var(--text-main);">Enter Personal Details</h3>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">Update communication, experience, and background verification</div>
+        </div>
+      </div>
+      <i class="ph ph-caret-down" id="personal-details-panel-chevron" style="transition:transform 0.2s; color:var(--text-muted);"></i>
+    </div>
+    <div id="personal-details-panel" style="display:none; padding:32px 24px; background: #fff; border-top: 1px solid var(--border-light);">
+      
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px 40px; max-width: 900px;">
+        
+        <!-- Left Column -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Employee Code <span style="color:var(--accent-red)">*</span></label>
+            <div style="display:flex; gap:8px;">
+              <input type="text" class="form-control" placeholder="Code">
+              <button class="btn-secondary" style="padding:0 12px; border-radius:6px; background:var(--primary-subtle); border-color:transparent; color:var(--primary-color);"><i class="ph ph-dots-three"></i></button>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:0;"><label>Employee Name</label><input type="text" class="form-control" disabled></div>
+          <div class="form-group" style="margin-bottom:0;"><label>Department</label><input type="text" class="form-control" disabled></div>
+          <div class="form-group" style="margin-bottom:0;"><label>Designation</label><input type="text" class="form-control" disabled></div>
+          
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Communication</label>
+            <div style="display:flex; gap:16px; margin-top:8px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="comm" checked> Best</label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="comm"> Good</label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="comm"> Avg</label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="comm"> Poor</label>
+            </div>
+          </div>
+          
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Presentable</label>
+            <div style="display:flex; gap:16px; margin-top:8px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="pres" checked> Yes</label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="pres"> No</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Family Background</label>
+            <textarea class="form-control" style="height: 70px; resize:vertical;"></textarea>
+          </div>
+          
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Experience <span style="color:var(--accent-red)">*</span></label>
+            <textarea class="form-control" style="height: 70px; resize:vertical;"></textarea>
+          </div>
+          
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Verification From Last Employer</label>
+            <div style="display:flex; gap:16px; margin-top:8px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="veri" checked> Yes</label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-main); cursor:pointer;"><input type="radio" name="veri"> No</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Comments</label>
+            <textarea class="form-control" style="height: 70px; resize:vertical;"></textarea>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Action Buttons -->
+      <div style="display:flex; gap:12px; margin-top:32px; padding-top:24px; border-top:1px solid var(--border-light);">
+        <button class="btn-primary" style="padding:8px 32px; font-weight:600;"><i class="ph ph-floppy-disk" style="margin-right:6px;"></i> SAVE</button>
+        <button class="btn-secondary" style="padding:8px 32px; font-weight:600;">RESET</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Change Password -->
+  <div>
+    <div style="padding: 16px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-app)'" onmouseout="this.style.background='#fff'" onclick="togglePanel('change-password-panel')">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div style="width:36px; height:36px; border-radius:10px; background:rgba(245, 158, 11, 0.1); color:var(--accent-orange); display:flex; align-items:center; justify-content:center; font-size:18px;"><i class="ph ph-lock-key"></i></div>
+        <div>
+          <h3 style="font-size:14px; font-weight:600; margin:0; color:var(--text-main);">Change Password</h3>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">Update your account security credentials</div>
+        </div>
+      </div>
+      <i class="ph ph-caret-down" id="change-password-panel-chevron" style="transition:transform 0.2s; color:var(--text-muted);"></i>
+    </div>
+    <div id="change-password-panel" style="display:none; padding:32px 24px; background: #fff; border-top: 1px solid var(--border-light);">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px; max-width: 900px;">
+        <div class="form-group" style="margin-bottom:0;"><label>Current Password</label><input type="password" class="form-control"></div>
+        <div class="form-group" style="margin-bottom:0;"><label>New Password</label><input type="password" class="form-control"></div>
+        <div class="form-group" style="margin-bottom:0;"><label>Confirm New Password</label><input type="password" class="form-control"></div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; margin-top:24px; padding-top:24px; border-top:1px solid var(--border-light);">
+        <button class="btn-primary" style="padding:8px 32px; font-weight:600;">Update Password</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- VIEW PROFILE MODAL -->
+<div id="view-profile-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-window modal-xl">
+    <div class="modal-header">
+      <div class="modal-title"><i class="ph ph-user"></i> Employee Details</div>
+      <button class="modal-close" onclick="closeModal('view-profile-modal')"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="modal-body" style="background:#f4f9fd;">
+      <!-- Profile Header -->
+      <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:32px;">
+        <h2 style="font-size:20px; font-weight:700;">Surender Singh</h2>
+        <div style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">Senior Manager, Store & Purchase</div>
+        <img src="https://ui-avatars.com/api/?name=Surender+Singh&background=0284c7&color=fff&size=150" style="width:80px; height:80px; border-radius:50%; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);">
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+        
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Personal Details</h3>
+          <div class="info-row"><span class="info-label">Employee No</span><span class="info-value">100003</span></div>
+          <div class="info-row"><span class="info-label">Gender</span><span class="info-value">Male</span></div>
+          <div class="info-row"><span class="info-label">Date of Birth</span><span class="info-value">05 Apr 1972</span></div>
+          <div class="info-row"><span class="info-label">Date of Joining</span><span class="info-value">01 Jun 1998</span></div>
+        </div>
+
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Positions Details</h3>
+          <div class="info-row"><span class="info-label">Department</span><span class="info-value">Store & Purchase</span></div>
+          <div class="info-row"><span class="info-label">Designation</span><span class="info-value">Senior Manager</span></div>
+          <div class="info-row"><span class="info-label">Employee Type</span><span class="info-value">Regular</span></div>
+          <div class="info-row"><span class="info-label">Experience</span><span class="info-value">0 Year(s) and 6 Month(s)</span></div>
+        </div>
+        
+        <div class="card" style="grid-column: span 2; margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Current Address</h3>
+          <div class="info-row"><span class="info-label">Address</span><span class="info-value" style="font-weight:400; text-align:right;">BONY POLYMERS PVT. LTD.<br>FARIDABAD, HARYANA, India</span></div>
+        </div>
+
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Statutory Details</h3>
+          <div class="info-row"><span class="info-label">PAN Number</span><span class="info-value">BBVPS1982D</span></div>
+          <div class="info-row"><span class="info-label">UAN Number</span><span class="info-value">100392817263</span></div>
+          <div class="info-row"><span class="info-label">PF Number</span><span class="info-value">HR/FBD/00123/000/0000001</span></div>
+          <div class="info-row"><span class="info-label">ESIC Number</span><span class="info-value">Pending</span></div>
+        </div>
+
+        <div class="card" style="margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Phone & Email</h3>
+          <div class="info-row"><span class="info-label">Mobile No</span><span class="info-value">+91 9876543210</span></div>
+          <div class="info-row"><span class="info-label">Official Email</span><span class="info-value">surender@webtel.co.in</span></div>
+          <div class="info-row"><span class="info-label">Personal Email</span><span class="info-value">surender1972@gmail.com</span></div>
+          <div class="info-row"><span class="info-label">Extension</span><span class="info-value">103</span></div>
+        </div>
+
+        <div class="card" style="grid-column: span 2; margin-bottom:0; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:none;">
+          <h3 style="font-size:12px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:8px;">Family Details</h3>
+          <div class="table-wrapper">
+            <table class="table" style="width:100%; border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="text-align:left; padding-bottom:8px; border-bottom:1px solid #eee;">Name</th>
+                  <th style="text-align:left; padding-bottom:8px; border-bottom:1px solid #eee;">Relation</th>
+                  <th style="text-align:left; padding-bottom:8px; border-bottom:1px solid #eee;">Date of Birth</th>
+                  <th style="text-align:right; padding-bottom:8px; border-bottom:1px solid #eee;">Dependent</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:12px 0; border-bottom:1px solid #eee;">Anita Singh</td>
+                  <td style="padding:12px 0; border-bottom:1px solid #eee;">Wife</td>
+                  <td style="padding:12px 0; border-bottom:1px solid #eee;">12 May 1976</td>
+                  <td style="padding:12px 0; border-bottom:1px solid #eee; text-align:right;">Yes</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 0;">Rohan Singh</td>
+                  <td style="padding:12px 0;">Son</td>
+                  <td style="padding:12px 0;">20 Aug 2002</td>
+                  <td style="padding:12px 0; text-align:right;">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT PROFILE MODAL (PREMIUM WIZARD) -->
+<div id="edit-profile-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-window modal-xl">
+    <div class="modal-header">
+      <div class="modal-title"><i class="ph ph-pencil-simple-line"></i> Edit Profile Information</div>
+      <button class="modal-close" onclick="closeModal('edit-profile-modal')"><i class="ph ph-x"></i></button>
+    </div>
+    
+    <div class="wizard-layout">
+      <div class="wizard-sidebar">
+        <div class="wizard-sidebar-desktop">
+          <div style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin: 6px 8px 10px;">Profile Sections</div>
+          <div class="wizard-nav">
+            <button class="active" type="button" onclick="switchTab('edit-personal', this)"><span>Personal Details</span></button>
+            <button type="button" onclick="switchTab('edit-address', this)"><span>Address Info</span></button>
+            <button type="button" onclick="switchTab('edit-family', this)"><span>Family Details</span></button>
+            <button type="button" onclick="switchTab('edit-contact', this)"><span>Phone & Email</span></button>
+            <button type="button" onclick="switchTab('edit-emergency', this)"><span>Emergency Contacts</span></button>
+            <button type="button" onclick="switchTab('edit-passport', this)"><span>Passport Info</span></button>
+            <button type="button" onclick="switchTab('edit-other', this)"><span>Other Info</span></button>
+          </div>
+        </div>
+        <div class="wizard-sidebar-mobile">
+          <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: block; font-weight: 600;">Select Profile Section</label>
+          <select class="premium-select" onchange="switchTab(this.value, null)">
+            <option value="edit-personal">Personal Details</option>
+            <option value="edit-address">Address Info</option>
+            <option value="edit-family">Family Details</option>
+            <option value="edit-contact">Phone & Email</option>
+            <option value="edit-emergency">Emergency Contacts</option>
+            <option value="edit-passport">Passport Info</option>
+            <option value="edit-other">Other Info</option>
+          </select>
+        </div>
+      </div>
+      <!-- Wizard Content -->
+      <div class="wizard-content card" style="border:none; border-radius:0; box-shadow:none;">
+        
+        <!-- Tab: Personal Details -->
+        <div id="edit-personal" class="tab-panel">
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-main); margin-bottom:24px;">Personal Details</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px;">
+            <div class="form-group"><label>First Name</label><input type="text" class="form-control" value="Surender"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" class="form-control" value="Singh"></div>
+            <div class="form-group"><label>Father Name</label><input type="text" class="form-control" value="Ram Kumar"></div>
+            <div class="form-group"><label>Mother Name</label><input type="text" class="form-control" placeholder="Mother's Name"></div>
+            <div class="form-group"><label>Date of Birth</label><input type="date" class="form-control" value="1972-04-05"></div>
+            <div class="form-group"><label>Nationality</label><select class="form-control"><option>Indian</option><option>Other</option></select></div>
+            <div class="form-group"><label>PAN Number</label><input type="text" class="form-control" value="BBVPS1982D"></div>
+            <div class="form-group"><label>Upload Photo</label><input type="file" class="form-control" style="padding:6px;"></div>
+          </div>
+        </div>
+
+        <!-- Tab: Address -->
+        <div id="edit-address" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; color:var(--text-main); margin-bottom:24px;">Address Information</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:13px; font-weight:600; margin-bottom:12px; color:var(--primary-color);">Current Address</h4>
+              <div class="form-group"><label>Address Line 1</label><input type="text" class="form-control" value="BONY POLYMERS PVT. LTD."></div>
+              <div class="form-group"><label>City</label><input type="text" class="form-control" value="FARIDABAD"></div>
+              <div class="form-group"><label>State</label><select class="form-control"><option>HARYANA</option></select></div>
+              <div class="form-group"><label>Country</label><select class="form-control"><option>India</option></select></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <h4 style="font-size:13px; font-weight:600; color:var(--primary-color);">Permanent Address</h4>
+                <label style="font-size:12px; color:var(--text-muted); display:flex; gap:6px; align-items:center;"><input type="checkbox"> Same as Current</label>
+              </div>
+              <div class="form-group"><label>Address Line 1</label><input type="text" class="form-control" value="BONY POLYMERS PVT. LTD."></div>
+              <div class="form-group"><label>City</label><input type="text" class="form-control" value="FARIDABAD"></div>
+              <div class="form-group"><label>State</label><select class="form-control"><option>HARYANA</option></select></div>
+              <div class="form-group"><label>Country</label><select class="form-control"><option>India</option></select></div>
+            </div>
+          </div>
+        </div>
+
+                <!-- Tab: Family -->
+        <div id="edit-family" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Family Details</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px; margin-bottom: 24px;">
+            <div class="form-group"><label>Marital Status</label><select class="form-control"><option>Single</option><option>Married</option></select></div>
+            <div class="form-group"><label>First Nominee Details</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Date of Marriage</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Relation with First Nominee</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Spouse Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Second Nominee Detail</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Spouse Date of Birth</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Relation with Second Nominee</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>No of Dependents (exc. children)</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total Number of Children</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total Dependent</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Total School Going Children</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Name of Dependents</label><textarea class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Total Children in Hostel</label><input type="number" class="form-control" value="0"></div>
+            <div class="form-group"><label>Parent Mediclaim</label><select class="form-control"><option>Not Applicable</option><option>Applicable</option></select></div>
+          </div>
+          
+          <h4 style="font-size:14px; font-weight:600; margin-bottom:12px; color:var(--primary-color);">Children Details</h4>
+          <div class="table-wrapper" style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden;">
+            <table class="table" style="width:100%; border-collapse:collapse; font-size:13px;">
+              <thead style="background:var(--bg-hover); color:var(--text-main);">
+                <tr>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Name</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Date of Birth</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Relation</th>
+                  <th style="padding:10px 16px; text-align:left; font-weight:600;">Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="date" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                  <td style="padding:8px 16px; border-bottom:1px solid var(--border-light);"><input type="text" class="form-control" style="padding:4px 8px; height:auto;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Tab: Contact -->
+        <div id="edit-contact" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Phone & Email Details</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px;">
+            <div class="form-group"><label>Office Phone</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Residence Phone</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control" placeholder="+91"></div>
+            <div class="form-group"><label>Official Email ID</label><input type="email" class="form-control" placeholder="name@company.com"></div>
+            <div class="form-group"><label>Personal Email ID</label><input type="email" class="form-control" placeholder="example@gmail.com"></div>
+          </div>
+        </div>
+        
+        <!-- Tab: Emergency -->
+        <div id="edit-emergency" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Emergency Contacts</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Emergency Contact 1</h4>
+              <div class="form-group"><label>Name</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Relationship</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Address</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Email</label><input type="email" class="form-control"></div>
+              <div class="form-group"><label>Landline Number</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control"></div>
+            </div>
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Emergency Contact 2</h4>
+              <div class="form-group"><label>Name</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Relationship</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Address</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Email</label><input type="email" class="form-control"></div>
+              <div class="form-group"><label>Landline Number</label><input type="text" class="form-control"></div>
+              <div class="form-group"><label>Mobile No.</label><input type="text" class="form-control"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tab: Passport -->
+        <div id="edit-passport" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Passport Information</h3>
+          <div style="display:grid; grid-template-columns: 1fr; gap:16px; max-width: 500px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+              <input type="checkbox" id="has-passport" style="width:16px; height:16px; accent-color:var(--primary-color);"> 
+              <label for="has-passport" style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Has Passport</label>
+            </div>
+            <div class="form-group"><label>Passport No.</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Passport Issue Office</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Passport Issue Date</label><input type="date" class="form-control"></div>
+            <div class="form-group"><label>Passport Expiry Date</label><input type="date" class="form-control"></div>
+          </div>
+        </div>
+
+        <!-- Tab: Other Info -->
+        <div id="edit-other" class="tab-panel" style="display:none;">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Other Information</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px 24px; margin-bottom:32px;">
+            <div class="form-group"><label>Field3</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field4</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field5</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Field6</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Religion Name</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Project Done</label><textarea class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Identification Mark</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>Blood Group</label><select class="form-control"><option>-- Select Blood Group --</option></select></div>
+            <div class="form-group"><label>Hobbies</label><textarea class="form-control" rows="2"></textarea></div>
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; height:20px;">
+                <input type="checkbox" id="severe-disability" style="width:16px; height:16px; accent-color:var(--primary-color);"> 
+                <label for="severe-disability" style="font-size:14px; font-weight:600; color:var(--text-main); margin:0;">Severe Disability</label>
+              </div>
+              <div class="form-group"><label>Status Domicile</label><select class="form-control"><option>-- Select Domicile --</option></select></div>
+            </div>
+            <div class="form-group"><label>Details of Severe Disability</label><textarea class="form-control" rows="2"></textarea></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Resume</h4>
+              <div class="form-group"><label>Upload Resume</label><input type="file" class="form-control" style="padding:6px;"></div>
+              <div style="font-size:13px;"><span style="color:var(--text-secondary); font-weight:600;">View Resume:</span> <a href="#" style="color:var(--primary-color);">Resume</a></div>
+            </div>
+            <div>
+              <h4 style="font-size:14px; font-weight:600; margin-bottom:16px; color:var(--primary-color);">Previous Experience</h4>
+              <div style="display:flex; gap:16px;">
+                <div class="form-group" style="flex:1;"><label>Year</label><select class="form-control"><option>00</option></select></div>
+                <div class="form-group" style="flex:1;"><label>Month</label><select class="form-control"><option>00</option></select></div>
+              </div>
+              <div class="form-group"><label>Description</label><textarea class="form-control" rows="2"></textarea></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="closeModal('edit-profile-modal')">Cancel</button>
+          <button class="btn-primary" onclick="closeModal('edit-profile-modal'); togglePanel('toast')"><i class="ph ph-check" style="margin-right:8px;"></i> Save Changes</button>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    </main>
+  </div>
+
+
+  
+
+  <script>
+    var pageNameMap = {
+  'home': 'Dashboard',
+  'view': 'My Profile',
+  'view-holiday': 'Select Your Holiday',
+  'view-compoff': 'Assign Compensatory Off',
+  'view-loan': 'Loan And Advance Request',
+  'view-suggestions': 'Send Your Suggestions',
+  'view-helpdesk': 'Ticket Help Desk',
+  'view-documents': 'Upload Documents',
+  'view-activities': 'Extra Curricular Activities',
+  'view-shift-import': 'Assign Shift Through Import',
+  'view-assign-shift': 'Assign Shift To Employees',
+  'view-weekly-off': 'Assign Weekly Off',
+  'view-category-master': 'Category Master',
+  'view-category-param': 'Create Category Parameter',
+  'view-appraisal': 'Appraisee And Appraiser',
+  'view-shortlist': 'Shortlist And Rate Candidate',
+  'details-outduty': 'Outdoor And Tour Request',
+  'details': 'Leave Requisition',
+  'details-references': 'My References',
+  'details-accident': 'Accident Details',
+  'details-income': 'Other Income Details',
+  'details-punch': 'Team Punch Detail',
+  'details-activity': 'My Activity List',
+  'details-salary-pf': 'Salary Slip With PF',
+  'details-salary-tax': 'Salary Slip With Tax',
+  'details-salary-leave': 'Salary Slip With Leave',
+  'approve': 'Approve Requisitions',
+  'approve-outduty': 'Approve Outduty Request',
+  'approve-leave': 'Online Leave Approval',
+  'approve-reimbursement': 'Reimbursement Approval',
+  'approve-expense': 'Expense Approval',
+  'approve-exit': 'Exit Interview Approval',
+  'approve-clearance': 'Clearance Approval',
+  'approve-overtime': 'Overtime Approval',
+  'approve-resignation': 'Resignation Approval',
+  'approve-objective': 'Objective Setting',
+  'approve-overtime-associate': 'Overtime Request',
+  'approve-temp-overtime': 'Temp Overtime Approval',
+  'approve-final-overtime': 'Final Overtime Approval',
+  'approve-incentive': 'Incentive Approval',
+  'reports': 'Reports',
+  'report-attendance': 'My Daily Attendance',
+  'report-tickets': 'Search Tickets',
+  'report-roster': 'Task List / Roster',
+  'report-objective': 'Objective Setting',
+  'report-assessment': 'Employee Assessment',
+  'report-feedback': 'Trainers Feedback',
+  'investment': 'Investment Declaration'
+};
+
+    // --- ACTIVE STATE, MOBILE MENU, THEME ---
+    (function() {
+      var currentFile = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+      
+      // Set page name in mobile top bar
+      var displayName = pageNameMap[currentFile] || currentFile;
+      var pageNameEl = document.getElementById('mobile-page-name');
+      if (pageNameEl) {
+        var activeLnk = document.querySelector('.notion-nav a[href*="' + currentFile + '.html"]') || document.querySelector('.notion-nav a[href="' + currentFile + '"]');
+        var iconHtml = activeLnk && activeLnk.querySelector('i') ? activeLnk.querySelector('i').outerHTML : (activeLnk && activeLnk.querySelector('.ph') ? activeLnk.querySelector('.ph').outerHTML : '');
+        if (iconHtml) {
+          pageNameEl.innerHTML = iconHtml + ' <span>' + displayName + '</span>';
+          pageNameEl.style.color = 'var(--primary-color)';
+          pageNameEl.style.display = 'flex';
+          pageNameEl.style.alignItems = 'center';
+          pageNameEl.style.gap = '8px';
+        } else {
+          pageNameEl.textContent = displayName;
+        }
+      }
+      document.title = 'HR Pearls \u2014 ' + displayName;
+
+      // Highlight active sidebar link
+      var allLinks = document.querySelectorAll('.notion-nav a[href]');
+      allLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && href.replace('.html', '') === currentFile) {
+          link.classList.add('active');
+          var submenu = link.closest('.notion-submenu');
+          if (submenu) {
+            submenu.style.display = 'block';
+            var prev = submenu.previousElementSibling;
+            while (prev && prev.tagName !== 'A') prev = prev.previousElementSibling;
+            if (prev) {
+              prev.classList.add('active');
+              var chev = prev.querySelector('.chevron-icon');
+              if (chev) chev.classList.add('chevron-expanded');
+            }
+          }
+        }
+      });
+
+      // Restore theme
+      var savedColor = localStorage.getItem('hrp-theme-color');
+      var themeMap = {
+        '#4f46e5': { hover: '#4338ca', subtle: 'rgba(79,70,229,0.08)', light: '#e0e7ff' },
+        '#0ea5e9': { hover: '#0284c7', subtle: 'rgba(14,165,233,0.08)', light: '#e0f2fe' },
+        '#3b82f6': { hover: '#2563eb', subtle: 'rgba(59,130,246,0.08)', light: '#dbeafe' },
+        '#7c3aed': { hover: '#6d28d9', subtle: 'rgba(124,58,237,0.08)', light: '#ede9fe' },
+        '#059669': { hover: '#047857', subtle: 'rgba(5,150,105,0.08)', light: '#d1fae5' },
+        '#0891b2': { hover: '#0e7490', subtle: 'rgba(8,145,178,0.08)', light: '#cffafe' },
+        '#e11d48': { hover: '#be123c', subtle: 'rgba(225,29,72,0.08)', light: '#ffe4e6' },
+        '#334155': { hover: '#1e293b', subtle: 'rgba(51,65,85,0.08)', light: '#e2e8f0' }
+      };
+      if (savedColor && themeMap[savedColor]) {
+        var m = themeMap[savedColor];
+        document.documentElement.style.setProperty('--primary-color', savedColor);
+        document.documentElement.style.setProperty('--primary-hover', m.hover);
+        document.documentElement.style.setProperty('--primary-subtle', m.subtle);
+        document.documentElement.style.setProperty('--primary-light', m.light);
+      }
+    })();
+
+    function toggleMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      var isOpen = sidebar.classList.contains('mobile-open');
+      sidebar.classList.toggle('mobile-open');
+      backdrop.classList.toggle('visible');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+      // Toggle icon between list and X
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = isOpen ? 'ph ph-list' : 'ph ph-x';
+    }
+    function closeMobileMenu() {
+      var sidebar = document.querySelector('.sidebar-column');
+      var backdrop = document.getElementById('sidebarBackdrop');
+      sidebar.classList.remove('mobile-open');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+      var btn = document.querySelector('.mobile-menu-btn i');
+      if (btn) btn.className = 'ph ph-list';
+    }
+  </script>
+</body>
+</html>

@@ -548,6 +548,7 @@ function switchLeaveTab(tab) {
 }
 
 function switchAttendanceTab(tab) {
+    alert("Tab clicked: " + tab); // DIAGNOSTIC
     var tabs = document.querySelectorAll('#attendance-screen .tabs-container .tab-btn');
     tabs.forEach(function(t) { t.classList.remove('active'); });
     

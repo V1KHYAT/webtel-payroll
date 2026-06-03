@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Webtel HR Mobile Prototype</title>
-    <link rel="stylesheet" href="css/styles.css?v=41">
+    <link rel="stylesheet" href="css/styles.css?v=42">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
@@ -615,9 +615,9 @@
 
                     <!-- SCROLLABLE CONTENT AREA -->
                     <main class="scrollable-cards">                    
-                        <div class="tabs-container" id="attendance-tabs">
-                            <button class="tab-btn active" onclick="document.querySelectorAll('#attendance-tabs .tab-btn').forEach(function(t){t.classList.remove('active')});this.classList.add('active');document.getElementById('attendance-reports-tab').style.display='block';document.getElementById('attendance-logs-tab').style.display='none';">Reports</button>
-                            <button class="tab-btn" onclick="document.querySelectorAll('#attendance-tabs .tab-btn').forEach(function(t){t.classList.remove('active')});this.classList.add('active');document.getElementById('attendance-reports-tab').style.display='none';document.getElementById('attendance-logs-tab').style.display='block';">Logs</button>
+                        <div class="tabs-container" id="attendance-tabs" style="position: relative; z-index: 99999; pointer-events: auto;">
+                            <button class="tab-btn active" onclick="switchAttendanceTab('reports')">Reports</button>
+                            <button class="tab-btn" onclick="switchAttendanceTab('logs')">Logs</button>
                         </div>
 
                         <!-- TAB: REPORTS -->
@@ -3412,6 +3412,6 @@
     <script>
         
     </script>
-    <script src="js/app.js?v=40"></script>
+    <script src="js/app.js?v=42"></script>
 </body>
 </html>
