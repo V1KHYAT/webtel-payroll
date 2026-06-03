@@ -194,9 +194,9 @@ label { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); m
     font-family: inherit; outline: none; gap: 8px;
 }
 .btn:active { transform: scale(0.97); }
-.btn-primary { background-color: #2563eb; color: white; }
-.btn-primary:hover { background-color: #2563eb; opacity: 1; }
-.btn-primary:active { background-color: #1d4ed8 !important; filter: brightness(0.9); }
+.btn-primary { background-color: #60a5fa; color: white; }
+.btn-primary:hover { background-color: #60a5fa; opacity: 1; }
+.btn-primary:active { background-color: #3b82f6 !important; filter: brightness(0.9); }
 .btn-secondary { background-color: rgba(var(--color-accent-rgb),  0.1); color: var(--color-accent); }
 .btn-secondary:hover { background-color: rgba(var(--color-accent-rgb),  0.15); }
 .btn-secondary:active { background-color: rgba(var(--color-accent-rgb),  0.2); }
@@ -2622,12 +2622,8 @@ textarea.form-input { padding-top: 14px !important; }
     z-index: 50;
     /* 40px covers padding-top (12px) + half of the pill height (28px) */
     background: linear-gradient(to bottom, #f9fafb 40px, transparent 40px);
-    pointer-events: none;
-    margin-top: 0 !important; 
-}
-
-.screen:not(#home-screen) .app-header-wrapper .app-header-pill {
     pointer-events: auto;
+    margin-top: 0 !important; 
 }
 
 .screen:not(#home-screen) .scrollable-cards {
@@ -2636,6 +2632,7 @@ textarea.form-input { padding-top: 14px !important; }
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    z-index: 1 !important; /* MUST be below header wrapper z-index:50 so tabs receive clicks */
     /* push content down past the 40px top + 12px padding + 56px pill = 108px + 16px gap = 124px */
     padding-top: 124px !important;
     margin-top: 0 !important;
@@ -2655,6 +2652,82 @@ textarea.form-input { padding-top: 14px !important; }
     left: 24px !important;
     width: calc(100% - 48px) !important;
     z-index: 9999 !important;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4) !important;
     margin-top: 0 !important;
+}
+
+/* User 2 Toggle Logic */
+body.user-2-active [data-user="1"] { display: none !important; }
+body:not(.user-2-active) [data-user="2"] { display: none !important; }
+
+/* CTC Donut Chart */
+.ctc-donut-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    margin-bottom: 16px;
+}
+.ctc-donut {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: conic-gradient(#22c55e 0% 85%, #f1f5f9 85% 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.ctc-donut::after {
+    content: '';
+    width: 48px;
+    height: 48px;
+    background: var(--color-surface);
+    border-radius: 50%;
+    position: absolute;
+}
+.ctc-total-info { display: flex; flex-direction: column; }
+.ctc-total-amt { font-size: 20px; font-weight: 800; color: var(--color-text); letter-spacing: -0.02em; }
+.ctc-total-lbl { font-size: 12px; color: var(--color-text-tertiary); font-weight: 500; }
+.ctc-indicator { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+
+
+/* Removed broken header override */
+
+
+/* TABS CONTAINER STYLING */
+.tabs-container {
+    display: flex;
+    margin: 16px 0 0 0 !important; /* Same width as pill */
+    background: #f4f4f5 !important;
+    border-radius: var(--radius-full);
+    padding: 4px !important;
+    pointer-events: auto;
+}
+.tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0 !important;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-tertiary) !important;
+    background: transparent !important;
+    border: none;
+    border-radius: var(--radius-full) !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.tab-btn.active {
+    background: #ffffff !important;
+    color: var(--color-text) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important; /* Subtle drop shadow from screenshot */
+}
+
+/* Tabs inside scrollable-cards need top margin to not overlap header */
+.scrollable-cards .tabs-container {
+    margin-top: 0;
 }

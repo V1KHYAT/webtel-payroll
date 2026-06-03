@@ -548,8 +548,8 @@ function switchLeaveTab(tab) {
 }
 
 function switchAttendanceTab(tab) {
-    const tabs = document.querySelectorAll('#attendance-screen .tabs-container .tab-btn');
-    tabs.forEach(t => t.classList.remove('active'));
+    var tabs = document.querySelectorAll('#attendance-screen .tabs-container .tab-btn');
+    tabs.forEach(function(t) { t.classList.remove('active'); });
     
     document.getElementById('attendance-reports-tab').style.display = 'none';
     document.getElementById('attendance-logs-tab').style.display = 'none';
@@ -794,3 +794,13 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Toggle User Account Logic
+function switchUserAccount(isActive) {
+    if(isActive) {
+        document.body.classList.add('user-2-active');
+        // Update local storage if needed
+    } else {
+        document.body.classList.remove('user-2-active');
+    }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Webtel HR Mobile Prototype</title>
-    <link rel="stylesheet" href="css/styles.css?v=23">
+    <link rel="stylesheet" href="css/styles.css?v=41">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
@@ -80,7 +80,8 @@
                                 </button>
                                 <div class="app-header-greeting">
                                     <h1>Good Evening</h1>
-                                    <span>Vijay Pal</span>
+                                    <span data-user="1">Vijay Pal</span>
+                                    <span data-user="2">Umesh Chandra Rav</span>
                                 </div>
                                 <button class="app-header-btn" onclick="openBottomSheet('notifications-sheet')">
                                     <iconify-icon icon="lucide:bell"></iconify-icon>
@@ -236,7 +237,7 @@
                     </div>
 
                     <!-- Scrollable content -->
-                    <main class="scrollable-cards profile-scroll" id="profile-scroll-area">
+                    <main class="scrollable-cards profile-scroll" id="profile-scroll-area"><div data-user="1">
                         
                         <!-- ========== PERSONAL INFORMATION ========== -->
                         <div class="prof-section">
@@ -354,49 +355,24 @@
                                 <span class="prof-section-title">Compensation</span>
                             </div>
 
-                            <!-- CTC Hero Card -->
-                            <div class="ctc-hero-card">
-                                <div class="ctc-hero-label">TOTAL GROSS PAY</div>
-                                <div class="ctc-hero-amount">&#8377;12,114.50</div>
-                                <div class="ctc-hero-watermark">&#8377;</div>
-                            </div>
-
-                            <!-- Basic + HRA row -->
-                            <div class="prof-bento-grid prof-bento-1x2">
-                                <div class="prof-bento-box">
-                                    <div class="prof-bento-text">
-                                        <span class="prof-bento-label">Basic</span>
-                                        <span class="prof-bento-value">&#8377;1,000</span>
-                                    </div>
-                                </div>
-                                <div class="prof-bento-box">
-                                    <div class="prof-bento-text">
-                                        <span class="prof-bento-label">HRA</span>
-                                        <span class="prof-bento-value">&#8377;9,000</span>
-                                    </div>
+                            <div class="ctc-donut-container">
+                                <div class="ctc-donut"></div>
+                                <div class="ctc-total-info">
+                                    <span class="ctc-total-lbl">TOTAL GROSS PAY</span>
+                                    <span class="ctc-total-amt">&#8377;50,00,000</span>
                                 </div>
                             </div>
 
-                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
-                                <span>Show All Components</span>
-                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
-                            </button>
-                            <div class="expandable-detail-list">
-                                <div class="info-row"><span class="info-label">Food Expense Reimb.</span><span class="info-val">&#8377;500.00</span></div>
-                                <div class="info-row"><span class="info-label">Special Allowance</span><span class="info-val">&#8377;1,000.00</span></div>
-                                <div class="info-row"><span class="info-label">Leave Travel Allow.</span><span class="info-val">&#8377;100.00</span></div>
-                                <div class="info-row"><span class="info-label">Books Allowance P</span><span class="info-val">&#8377;100.00</span></div>
-                                <div class="info-row"><span class="info-label">Uniform Allowance P</span><span class="info-val">&#8377;100.00</span></div>
-                                <div class="info-row"><span class="info-label">Transport Allow. P</span><span class="info-val">&#8377;100.00</span></div>
-                                <div class="info-row"><span class="info-label">Gratuity</span><span class="info-val">&#8377;0.00</span></div>
-                                <div class="info-row"><span class="info-label">Bonus Pay</span><span class="info-val">&#8377;0.00</span></div>
-                                <div class="info-row"><span class="info-label">Gratuity Yly Due</span><span class="info-val">&#8377;0.00</span></div>
-                                <div class="info-row"><span class="info-label">Employer PF</span><span class="info-val">&#8377;130.00</span></div>
-                                <div class="info-row"><span class="info-label">Employer ESI</span><span class="info-val">&#8377;84.50</span></div>
-                                <div class="info-row ctc-total"><span class="info-label">Total Earning</span><span class="info-val">&#8377;12,114.50</span></div>
+                            <div class="expandable-detail-list" style="display: block; margin-top: 0; padding-top: 0; border-top: none;">
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#ef4444;"></span>Basic</span><span class="info-val">&#8377;25,00,000</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#22c55e;"></span>HRA</span><span class="info-val">&#8377;15,00,000</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#3b82f6;"></span>Special Allowance</span><span class="info-val">&#8377;5,00,000</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#f59e0b;"></span>Bonus</span><span class="info-val">&#8377;3,00,000</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#8b5cf6;"></span>Employer PF</span><span class="info-val">&#8377;2,00,000</span></div>
+                                <div class="info-row ctc-total" style="margin-top: 12px;"><span class="info-label">Total Earning</span><span class="info-val">&#8377;50,00,000</span></div>
                             </div>
                         </div>
-
+                        
                         <!-- ========== CHANGE PASSWORD ========== -->
                         <div class="prof-section">
                             <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
@@ -450,7 +426,150 @@
                             </div>
                         </div>
 
-                    </main>
+                    </div><div data-user="2" style="">
+                        <!-- ========== PERSONAL INFORMATION (USER 2) ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <span class="prof-section-title">Personal Information</span>
+                            </div>
+
+                            <!-- Profile Hero Card -->
+                            <div class="prof-hero-card">
+                                <div class="prof-hero-watermark">UC</div>
+                                <div class="prof-hero-avatar" style="background: #e0e7ff; color: #4338ca;">UC</div>
+                                <div class="prof-hero-info">
+                                    <div class="prof-hero-name">Umesh Chandra Rav</div>
+                                    <div class="prof-hero-role">Senior System Administrator &middot; IT</div>
+                                    <div class="prof-hero-code">SAEL001 &middot; demo.webtel.in</div>
+                                </div>
+                            </div>
+
+                            <!-- Bento Grid -->
+                            <div class="prof-bento-grid">
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Mobile</span>
+                                        <span class="prof-bento-value">7465850654</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Date of Birth</span>
+                                        <span class="prof-bento-value">03 Jul 1991</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Email</span>
+                                        <span class="prof-bento-value">rishabh.sharma@webtel.in</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Blood Group</span>
+                                        <span class="prof-bento-value">A+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show Employee Details</span>
+                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">Code</span><span class="info-val">SAEL001</span></div>
+                                <div class="info-row"><span class="info-label">Gender</span><span class="info-val">Male</span></div>
+                                <div class="info-row"><span class="info-label">Father Name</span><span class="info-val">Sh. Ramkishun Ram</span></div>
+                                <div class="info-row"><span class="info-label">Spouse Name</span><span class="info-val">-</span></div>
+                                <div class="info-row"><span class="info-label">Present Address</span><span class="info-val" style="text-align:right;">B 86 87 RAJPUR EXTENTION DELHI DELHI India 110068</span></div>
+                                <div class="info-row"><span class="info-label">Permanent Address</span><span class="info-val" style="text-align:right;">B 86 87 RAJPUR EXTENTION DELHI DELHI India 110068</span></div>
+                            </div>
+                        </div>
+
+                        <!-- ========== WORK INFORMATION (USER 2) ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <span class="prof-section-title">Work Information</span>
+                            </div>
+
+                            <div class="prof-bento-grid">
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Joining Date</span>
+                                        <span class="prof-bento-value">01 Jun 2026</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Business Unit</span>
+                                        <span class="prof-bento-value">Delhi HO</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Location</span>
+                                        <span class="prof-bento-value">Corporate</span>
+                                    </div>
+                                </div>
+                                <div class="prof-bento-box">
+                                    <div class="prof-bento-text">
+                                        <span class="prof-bento-label">Senior</span>
+                                        <span class="prof-bento-value">Vijay Pal</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show Organisation Details</span>
+                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="info-row"><span class="info-label">PAN No.</span><span class="info-val">BVQPR1584J</span></div>
+                                <div class="info-row"><span class="info-label">Designation</span><span class="info-val">Senior System Administrator</span></div>
+                                <div class="info-row"><span class="info-label">Department</span><span class="info-val">IT</span></div>
+                                <div class="info-row"><span class="info-label">Cost Centre</span><span class="info-val" style="text-align:right;">Sukhbir Agro Energy Ltd.</span></div>
+                                <div class="info-row"><span class="info-label">Category</span><span class="info-val">HO Staff</span></div>
+                                <div class="info-row"><span class="info-label">State</span><span class="info-val">DELHI</span></div>
+                                <div class="info-row"><span class="info-label">Address</span><span class="info-val">New Delhi Delhi</span></div>
+                                <div class="info-row"><span class="info-label">Bank</span><span class="info-val">ICICI Bank Limited</span></div>
+                                <div class="info-row"><span class="info-label">Account No.</span><span class="info-val">386901500597</span></div>
+                                <div class="info-row"><span class="info-label">ESI No.</span><span class="info-val">456456546546</span></div>
+                                <div class="info-row"><span class="info-label">PF No.</span><span class="info-val">5646546546546</span></div>
+                                <div class="info-row"><span class="info-label">UAN No.</span><span class="info-val">dsxf434</span></div>
+                            </div>
+                        </div>
+
+                        <!-- ========== COMPENSATION (USER 2) ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <span class="prof-section-title">Compensation</span>
+                            </div>
+
+                            <div class="ctc-donut-container">
+                                <div class="ctc-donut"></div>
+                                <div class="ctc-total-info">
+                                    <span class="ctc-total-lbl">TOTAL GROSS PAY</span>
+                                    <span class="ctc-total-amt">&#8377;30,18,405.0</span>
+                                </div>
+                            </div>
+
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show All Components</span>
+                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
+                            </button>
+                            <div class="expandable-detail-list" style="display: block; margin-top: 0; padding-top: 0; border-top: none;">
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#ef4444;"></span>Basic</span><span class="info-val">&#8377;30,00,000.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#22c55e;"></span>House Rent Allowance</span><span class="info-val">&#8377;9,303.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#3b82f6;"></span>Food Expence Reimb.</span><span class="info-val">&#8377;500.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#f59e0b;"></span>Gratuity</span><span class="info-val">&#8377;895.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#8b5cf6;"></span>Special Allowance</span><span class="info-val">&#8377;2,366.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#e11d48;"></span>Leave Travel Allowance</span><span class="info-val">&#8377;1,550.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#06b6d4;"></span>Uniform Allowance P</span><span class="info-val">&#8377;1,000.0</span></div>
+                                <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#84cc16;"></span>Transport Allowance P</span><span class="info-val">&#8377;2,791.0</span></div>
+                                <div class="info-row ctc-total" style="margin-top: 12px;"><span class="info-label">Total Earning</span><span class="info-val">&#8377;30,18,405.0</span></div>
+                            </div>
+                        </div>
+</div></main>
                     <div class="gesture-pill-dummy" aria-hidden="true"></div>
                 </div> <!-- End profile screen -->
 
@@ -492,14 +611,15 @@
                     </div>
 
                     <!-- TABS COMPONENT -->
-                    <div class="tabs-container">
-                        <button class="tab-btn active" onclick="switchAttendanceTab('reports')">Reports</button>
-                        <button class="tab-btn" onclick="switchAttendanceTab('logs')">Logs</button>
-                    </div>
+
 
                     <!-- SCROLLABLE CONTENT AREA -->
-                    <main class="scrollable-cards">
-                        
+                    <main class="scrollable-cards">                    
+                        <div class="tabs-container" id="attendance-tabs">
+                            <button class="tab-btn active" onclick="document.querySelectorAll('#attendance-tabs .tab-btn').forEach(function(t){t.classList.remove('active')});this.classList.add('active');document.getElementById('attendance-reports-tab').style.display='block';document.getElementById('attendance-logs-tab').style.display='none';">Reports</button>
+                            <button class="tab-btn" onclick="document.querySelectorAll('#attendance-tabs .tab-btn').forEach(function(t){t.classList.remove('active')});this.classList.add('active');document.getElementById('attendance-reports-tab').style.display='none';document.getElementById('attendance-logs-tab').style.display='block';">Logs</button>
+                        </div>
+
                         <!-- TAB: REPORTS -->
                         <div id="attendance-reports-tab">
                             <!-- Filters -->
@@ -873,14 +993,15 @@
                         </header>
                     </div>
 
-                    <div class="tabs-container">
-                        <button class="tab-btn active" onclick="switchLeaveTab('leave')">Leave</button>
-                        <button class="tab-btn" onclick="switchLeaveTab('od')">OD/TourPunch</button>
-                    </div>
+
 
                     <!-- SCROLLABLE CARDS LAYER -->
-                    <main class="scrollable-cards">
-                        
+                    <main class="scrollable-cards">                    
+                        <div class="tabs-container" id="leave-tabs">
+                            <button class="tab-btn active" onclick="switchLeaveTab('leave')">Leave</button>
+                            <button class="tab-btn" onclick="switchLeaveTab('od')">OD/TourPunch</button>
+                        </div>
+
                         <!-- TAB: LEAVE PLAN -->
                         
                         <div id="leave-plan-tab">
@@ -983,7 +1104,7 @@
 
                             <!-- Submit Button -->
                             <div style="margin-top: 24px;">
-                                <button onclick="submitAction(this, 'Leave Request Submitted')" class="btn btn-primary btn-block" style="background: #2563eb; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                                <button onclick="submitAction(this, 'Leave Request Submitted')" class="btn btn-primary btn-block" style="background: #60a5fa; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
                                     Submit Leave Request
                                 </button>
                             </div>
@@ -1025,7 +1146,7 @@
                                 <textarea class="form-input" style="min-height: 80px; resize: none;" placeholder="Enter details"></textarea>
                             </div>
                             
-                            <button class="btn btn-primary btn-block" style="background: #2563eb; color: white; height: 50px; font-size: 14px; border-radius: 12px; border: none; font-weight: 600;">
+                            <button class="btn btn-primary btn-block" style="background: #60a5fa; color: white; height: 50px; font-size: 14px; border-radius: 12px; border: none; font-weight: 600;">
                                 Apply Special Leave
                             </button>
                         </div>
@@ -1150,7 +1271,7 @@
 
                         <!-- Submit Button -->
                         <div style="margin-top: 24px;">
-                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #2563eb; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #60a5fa; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
                                 Submit Expense
                             </button>
                         </div>
@@ -1279,7 +1400,7 @@
 
                         <!-- Submit Button -->
                         <div style="margin-top: 24px;">
-                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #2563eb; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #60a5fa; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
                                 Submit Expense
                             </button>
                         </div>
@@ -1409,7 +1530,7 @@
 
                         <!-- Submit Button -->
                         <div style="margin-top: 24px;">
-                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #2563eb; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                            <button onclick="submitAction(this, 'Expense Report Submitted')" class="btn btn-primary btn-block" style="background: #60a5fa; color: white; border: none; font-weight: 700; height: 56px; font-size: 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center;">
                                 Submit Expense
                             </button>
                         </div>
@@ -1454,6 +1575,8 @@
                         </header>
                     </div>
                     <main class="scrollable-cards" style="padding-bottom: 80px;">
+    <div data-user="1">
+        
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             
                             <div class="custom-report-card crc-blue expanded">
@@ -1577,7 +1700,47 @@
                             </div>
 
                         </div>
-</main>
+
+    </div>
+    <div data-user="2" style=" padding: 16px; display:flex; flex-direction:column; gap:12px;">
+        
+<div class="custom-report-card" style="padding: 16px;">
+    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
+    
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Approve Level:</span><span class="info-val">ET</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Expense Type:</span><span class="info-val">AIR TICKET APPROVAL DOMESTIC</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Distance:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Transport Mode:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Requesting Amount:</span><span class="info-val">5.00</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Sanction Amount:</span><span class="info-val">3.00</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">03/27/2026 12:00:00 AM</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">03/27/2026 12:00:00 AM</span></div>
+    
+    <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
+        <span>Status:</span> <span style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; color:#ef4444; border-radius:16px; padding:4px 12px; font-weight:600;">Rejected</span>
+    </div>
+</div>
+<div class="custom-report-card" style="padding: 16px;">
+    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
+    
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Approve Level:</span><span class="info-val">ET</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Expense Type:</span><span class="info-val">AIR TICKET APPROVAL DOMESTIC</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Distance:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Transport Mode:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Requesting Amount:</span><span class="info-val">588.00</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Sanction Amount:</span><span class="info-val">1.00</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">03/19/2026 12:00:00 AM</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">03/19/2026 12:00:00 AM</span></div>
+    
+    <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
+        <span>Status:</span> <span style="background:rgba(59,130,246,0.1); border:1px solid #3b82f6; color:#3b82f6; border-radius:16px; padding:4px 12px; font-weight:600;">Closed</span>
+    </div>
+</div>
+
+    </div>
+    </main>
                 </div>
 
                 <!-- ==========================================
@@ -1952,7 +2115,7 @@
                                 </div>
                             </div>
                             <div style="display: flex; gap: 8px;">
-                                <button class="btn btn-primary" onclick="mockSalaryLoad()" style="flex: 1; background: #2563eb; color: white; border: none; font-weight: 600; border-radius: 8px;">
+                                <button class="btn btn-primary" onclick="mockSalaryLoad()" style="flex: 1; background: #60a5fa; color: white; border: none; font-weight: 600; border-radius: 8px;">
                                     Load Data
                                 </button>
                                 <button class="btn btn-primary" onclick="mockSalaryExport()" style="flex: 1; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); border-radius: 8px;">
@@ -2117,6 +2280,8 @@
                         </header>
                     </div>
                     <main class="scrollable-cards" style="padding: 24px 16px;">
+    <div data-user="1">
+        
                         <div class="custom-report-card crc-yellow expanded">
                             <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
                                 <div class="crc-header-left">
@@ -2238,7 +2403,48 @@
                                 </div>
                             </div>
                         </div>
-</main>
+
+    </div>
+    <div data-user="2" style=" padding: 16px; display:flex; flex-direction:column; gap:12px;">
+        
+<div class="custom-report-card" style="padding: 16px;">
+    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Emplyoyee Code: sael001</div>
+    
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">OD</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Applied:</span><span class="info-val">02/06/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">02/05/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">02/05/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">In Time:</span><span class="info-val">07:29</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Out Time:</span><span class="info-val">09:29</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">Test</span></div>
+    
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; font-size:13px; font-weight:700;">
+        <div style="display:flex; align-items:center; gap:8px;">
+            <span>Status:</span> <span style="background:rgba(59,130,246,0.1); border:1px solid #3b82f6; color:#3b82f6; border-radius:16px; padding:4px 12px; font-weight:600;">Still Pending</span>
+        </div>
+        <button class="ghost-btn" style="color:#ef4444; border:1px solid #ef4444; border-radius:6px; padding:4px 12px; font-size:12px; font-weight:600; height:auto;">Delete</button>
+    </div>
+</div>
+<div class="custom-report-card" style="padding: 16px;">
+    <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+    <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Emplyoyee Code: sael001</div>
+    
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">OD</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Applied:</span><span class="info-val">30/03/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">30/03/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">30/03/2026</span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">In Time:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Out Time:</span><span class="info-val"></span></div>
+    <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">yj</span></div>
+    
+    <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
+        <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
+    </div>
+</div>
+
+    </div>
+    </main>
                     <div class="gesture-pill-dummy" aria-hidden="true"></div>
                 </div>
 
@@ -2276,6 +2482,8 @@
                         </header>
                     </div>
                     <main class="scrollable-cards" style="padding: 24px 16px;">
+    <div data-user="1">
+        
                         <!-- Card 1 -->
                         <div class="custom-report-card crc-red expanded">
                             <div class="crc-header" onclick="toggleCard(this)" style="cursor: pointer;">
@@ -2411,6 +2619,41 @@
                                 </div>
                             </div>
                         </div>
+
+    </div>
+    
+
+
+<div data-user="2" style="padding-top: 8px; display:flex; flex-direction:column; gap:16px;">
+    <div class="custom-report-card" style="padding: 16px; margin-bottom: 12px;">
+        <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+        <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
+        
+        <div class="info-row"><span class="info-label" style="font-weight:600;">No of Leave:</span><span class="info-val">0.5</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">Privilege Leave</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">03/04/2026</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">03/04/2026</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">uu</span></div>
+        
+        <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
+            <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
+        </div>
+    </div>
+    <div class="custom-report-card" style="padding: 16px; margin-bottom: 12px;">
+        <div style="font-size:16px; font-weight:700; color:var(--color-text); margin-bottom:4px;">Umesh Chandra Rav</div>
+        <div style="font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">Code: sael001</div>
+        
+        <div class="info-row"><span class="info-label" style="font-weight:600;">No of Leave:</span><span class="info-val">1.0</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">Leave Type:</span><span class="info-val">Privilege Leave</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">From Date:</span><span class="info-val">02/04/2026</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">To Date:</span><span class="info-val">02/04/2026</span></div>
+        <div class="info-row"><span class="info-label" style="font-weight:600;">Remarks:</span><span class="info-val">hh</span></div>
+        
+        <div style="display:flex; align-items:center; margin-top:16px; font-size:13px; font-weight:700; gap:8px;">
+            <span>Status:</span> <span style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; color:#22c55e; border-radius:16px; padding:4px 12px; font-weight:600;">Approved</span>
+        </div>
+    </div>
+</div>
 </main>
                 </div>
 
@@ -2420,14 +2663,17 @@
                 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
                 <div class="sidebar" id="sidebar">
                     <div class="sidebar-header">
-                        <div class="sidebar-avatar">VP</div>
+                        <div class="sidebar-avatar" data-user="1">VP</div>
+                        <div class="sidebar-avatar" data-user="2" style="background: #e0e7ff; color: #4338ca;">UC</div>
                         <div class="sidebar-user-info">
-                            <div class="user-name">Vijay Pal</div>
-                            <div class="user-domain">demo.webtel.in</div>
+                            <div class="user-name" data-user="1">Vijay Pal</div>
+                            <div class="user-domain" data-user="1">demo.webtel.in</div>
+                            <div class="user-name" data-user="2">Umesh Chandra Rav</div>
+                            <div class="user-domain" data-user="2">demo.webtel.in</div>
                         </div>
                         <div class="sidebar-header-actions">
                             <label class="toggle-switch sidebar-header-toggle" title="Future feature control">
-                                <input type="checkbox" id="advanced-features-toggle">
+                                <input type="checkbox" id="user-account-toggle" onchange="switchUserAccount(this.checked)">
                                 <span class="toggle-slider"></span>
                             </label>
                             <button class="ghost-btn sidebar-close-btn" onclick="toggleSidebar()"><iconify-icon icon="lucide:x-circle"></iconify-icon></button>
@@ -3166,6 +3412,6 @@
     <script>
         
     </script>
-    <script src="js/app.js?v=14"></script>
+    <script src="js/app.js?v=40"></script>
 </body>
 </html>
