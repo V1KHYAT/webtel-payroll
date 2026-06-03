@@ -133,12 +133,6 @@ function toggleSidebar() {
     } else {
         sidebar.classList.add('open');
         overlay.classList.add('open');
-
-    if (sheetId === 'team-attendance-sheet' && contextData) {
-        const nameSpan = document.getElementById('team-attendance-name');
-        if (nameSpan) nameSpan.innerText = contextData.toUpperCase();
-    }
-
     }
 }
 
@@ -807,11 +801,9 @@ function switchUserAccount(isActive) {
 }
 
 function goToRoomRequest() {
-    closeSidebar();
-    switchScreen('room-request-screen');
+    handleNavigation('room-request-screen');
 }
 
 function goToComplaint() {
-    closeSidebar();
-    switchScreen('complaint-screen');
+    handleNavigation('complaint-screen');
 }
