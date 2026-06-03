@@ -808,10 +808,10 @@ function switchUserAccount(isActive) {
 
 function goToRoomRequest() {
     closeSidebar();
-    handleNavigation('room-request-screen');
+    switchScreen('room-request-screen');
 }
 
 function goToComplaint() {
     closeSidebar();
-    handleNavigation('complaint-screen');
+    switchScreen('complaint-screen');
 }
