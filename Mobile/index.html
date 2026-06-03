@@ -356,14 +356,18 @@
                             </div>
 
                             <div class="ctc-donut-container">
-                                <div class="ctc-donut"></div>
+                                <div class="ctc-donut" style="background: conic-gradient(#ef4444 0% 50%, #22c55e 50% 80%, #3b82f6 80% 90%, #f59e0b 90% 96%, #8b5cf6 96% 100%);"></div>
                                 <div class="ctc-total-info">
                                     <span class="ctc-total-lbl">TOTAL GROSS PAY</span>
                                     <span class="ctc-total-amt">&#8377;50,00,000</span>
                                 </div>
                             </div>
 
-                            <div class="expandable-detail-list" style="display: block; margin-top: 0; padding-top: 0; border-top: none;">
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
+                                <span>Show All Components</span>
+                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
+                            </button>
+                            <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#ef4444;"></span>Basic</span><span class="info-val">&#8377;25,00,000</span></div>
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#22c55e;"></span>HRA</span><span class="info-val">&#8377;15,00,000</span></div>
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#3b82f6;"></span>Special Allowance</span><span class="info-val">&#8377;5,00,000</span></div>
@@ -546,7 +550,7 @@
                             </div>
 
                             <div class="ctc-donut-container">
-                                <div class="ctc-donut"></div>
+                                <div class="ctc-donut" style="background: conic-gradient(#ef4444 0% 99%, #22c55e 99% 99.3%, #3b82f6 99.3% 99.4%, #f59e0b 99.4% 99.5%, #8b5cf6 99.5% 99.6%, #e11d48 99.6% 99.7%, #06b6d4 99.7% 99.8%, #84cc16 99.8% 100%);"></div>
                                 <div class="ctc-total-info">
                                     <span class="ctc-total-lbl">TOTAL GROSS PAY</span>
                                     <span class="ctc-total-amt">&#8377;30,18,405.0</span>
@@ -557,7 +561,7 @@
                                 <span>Show All Components</span>
                                 <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
                             </button>
-                            <div class="expandable-detail-list" style="display: block; margin-top: 0; padding-top: 0; border-top: none;">
+                            <div class="expandable-detail-list">
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#ef4444;"></span>Basic</span><span class="info-val">&#8377;30,00,000.0</span></div>
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#22c55e;"></span>House Rent Allowance</span><span class="info-val">&#8377;9,303.0</span></div>
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#3b82f6;"></span>Food Expence Reimb.</span><span class="info-val">&#8377;500.0</span></div>
@@ -567,6 +571,58 @@
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#06b6d4;"></span>Uniform Allowance P</span><span class="info-val">&#8377;1,000.0</span></div>
                                 <div class="info-row"><span class="info-label"><span class="ctc-indicator" style="background:#84cc16;"></span>Transport Allowance P</span><span class="info-val">&#8377;2,791.0</span></div>
                                 <div class="info-row ctc-total" style="margin-top: 12px;"><span class="info-label">Total Earning</span><span class="info-val">&#8377;30,18,405.0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- ========== CHANGE PASSWORD ========== -->
+                        <div class="prof-section">
+                            <button class="prof-expand-btn" onclick="toggleProfileDetail(this)">
+                                <div style="display:flex;align-items:center;gap:8px;flex:1;pointer-events:none;">
+                                    <iconify-icon icon="lucide:lock" style="width:16px;height:16px;color:var(--color-accent);"></iconify-icon>
+                                    <span>Change Password</span>
+                                </div>
+                                <iconify-icon icon="lucide:chevron-right" class="expand-chevron"></iconify-icon>
+                            </button>
+                            <div class="expandable-detail-list">
+                                <div class="form-group" style="margin-bottom: 6px;">
+                                    <label>Current Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter current password">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 6px;">
+                                    <label>New Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 6px;">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-input" placeholder="Confirm new password">
+                                </div>
+                                <button class="btn btn-primary btn-block">Update Password</button>
+                            </div>
+                        </div>
+                        
+                        <!-- ========== DOCUMENTS ========== -->
+                        <div class="prof-section">
+                            <div class="prof-section-header">
+                                <div class="prof-section-icon"><iconify-icon icon="lucide:folder"></iconify-icon></div>
+                                <span class="prof-section-title">Documents</span>
+                            </div>
+                            <div class="document-list" style="margin-top: 8px;">
+                                <div class="doc-item">
+                                    <div class="doc-icon"><iconify-icon icon="lucide:file-text"></iconify-icon></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">Company Policy 2025</div>
+                                        <div class="doc-sub">company_policy_2025.pdf</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="lucide:download"></iconify-icon></button>
+                                </div>
+                                <div class="doc-item">
+                                    <div class="doc-icon"><iconify-icon icon="lucide:file-text"></iconify-icon></div>
+                                    <div class="doc-info">
+                                        <div class="doc-title">Quarterly Report Q3</div>
+                                        <div class="doc-sub">report_q3_2025.xlsx</div>
+                                    </div>
+                                    <button class="ghost-btn doc-download"><iconify-icon icon="lucide:download"></iconify-icon></button>
+                                </div>
                             </div>
                         </div>
 </div></main>
