@@ -805,3 +805,13 @@ function switchUserAccount(isActive) {
         document.body.classList.remove('user-2-active');
     }
 }
+
+function goToRoomRequest() {
+    closeSidebar();
+    switchScreen('room-request-screen');
+}
+
+function goToComplaint() {
+    closeSidebar();
+    switchScreen('complaint-screen');
+}
