@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Webtel HR Mobile Prototype</title>
-    <link rel="stylesheet" href="css/styles.css?v=43">
+    <link rel="stylesheet" href="css/styles.css?v=44">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
@@ -2706,6 +2706,17 @@
                             </button>
                         </div>
 
+
+                        <div class="nav-menu-item">
+                            <button class="nav-link" onclick="toggleSubmenu(this)">
+                                <iconify-icon icon="lucide:clipboard-list"></iconify-icon> Requests / Services <iconify-icon icon="lucide:chevron-down" class="chevron"></iconify-icon>
+                            </button>
+                            <div class="nav-submenu">
+                                <a href="#" onclick="goToRoomRequest(); return false;">Room Request</a>
+                                <a href="#" onclick="goToComplaint(); return false;">Complaint</a>
+                            </div>
+                        </div>
+
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="toggleSubmenu(this)">
                                 <iconify-icon icon="lucide:bar-chart-2"></iconify-icon> Reports <iconify-icon icon="lucide:chevron-down" class="chevron"></iconify-icon>
@@ -2731,15 +2742,7 @@
                         </div>
 
                         
-                        <div class="nav-menu-item">
-                            <button class="nav-link" onclick="toggleSubmenu(this)">
-                                <iconify-icon icon="lucide:clipboard-list"></iconify-icon> Requests / Services <iconify-icon icon="lucide:chevron-down" class="chevron"></iconify-icon>
-                            </button>
-                            <div class="nav-submenu">
-                                <a href="#" onclick="goToRoomRequest(); return false;">Room Request</a>
-                                <a href="#" onclick="goToComplaint(); return false;">Complaint</a>
-                            </div>
-                        </div>
+                        
 
                         <div class="nav-menu-item">
                             <button class="nav-link" onclick="goToEmployeeDirectory()"><iconify-icon icon="lucide:book-open"></iconify-icon> Employee Directory</button>
@@ -3570,6 +3573,6 @@
     <script>
         
     </script>
-    <script src="js/app.js?v=43"></script>
+    <script src="js/app.js?v=44"></script>
 </body>
 </html>
